@@ -10,8 +10,6 @@ class BWFaceApp extends App.AppBase {
 
     // onStart() is called on application start up
     function onStart(state) {
-    	//System.println("Hello ....");
-    	System.println("Hello... ");
     }
 
     // onStop() is called when your application is exiting
