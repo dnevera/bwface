@@ -2,6 +2,9 @@
 
     <property id="BackgroundColor" type="number">0x000000</property>
     <property id="ForegroundColor" type="number">#8F8F8F</property>
+    <property id="FramesColor" type="number">#4F4F4F</property>
+    <property id="BatteryLowColor" type="number">#F42416</property>
+    <property id="BatteryWarnColor" type="number">#FFA500</property>
     <property id="HoursColor" type="number">#32CD32</property>
     <property id="TimeColonColor" type="number">#888998</property>
     <property id="MinutesColor" type="number">#FFA500</property>

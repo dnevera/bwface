@@ -13,6 +13,8 @@ class BWFaceView extends Ui.WatchFace {
  	var string_HR;
     var HR_graph;
         
+    var iconsFont = null;
+        
 	var digitsFont = null;
 	var digitsMonoFont = null;
 	var calendarFont = Gfx.FONT_SYSTEM_LARGE;
@@ -29,10 +31,15 @@ class BWFaceView extends Ui.WatchFace {
 	var colonColor = null;
 	var minutesColor = null;
 	var bgColor = null;
+	var framesColor = null;
+	var batteryLowColor = null;
+	var batteryWarnColor = null;
+	
 	var colonString  = ":";
     var colonSize = 10;
     
     var timeUnderLinePos;
+    var infoUnderLinePos;
     
     function initialize() {
         WatchFace.initialize();
@@ -44,11 +51,13 @@ class BWFaceView extends Ui.WatchFace {
     function onLayout(dc) {
         setLayout(Rez.Layouts.WatchFace(dc));
         
-        digitsFont = Ui.loadResource(Rez.Fonts.digits7Font);	
+        iconsFont      = Ui.loadResource(Rez.Fonts.iconsFont);	        
+        digitsFont     = Ui.loadResource(Rez.Fonts.digits7Font);	
         digitsMonoFont = Ui.loadResource(Rez.Fonts.digits7monoFont);	
-        calendarFont = Ui.loadResource(Rez.Fonts.calendarFont);	
-        weekDayFont = Ui.loadResource(Rez.Fonts.weekDayFont);	
-        infoFont = Ui.loadResource(Rez.Fonts.infoFont);	
+        calendarFont   = Ui.loadResource(Rez.Fonts.calendarFont);	
+        weekDayFont    = Ui.loadResource(Rez.Fonts.weekDayFont);
+        	
+        infoFont      = Ui.loadResource(Rez.Fonts.infoFont);	
         infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);	
         
         labelColor   = App.getApp().getProperty("ForegroundColor");
@@ -56,8 +65,28 @@ class BWFaceView extends Ui.WatchFace {
         hoursColor   = App.getApp().getProperty("HoursColor");
         colonColor   = App.getApp().getProperty("TimeColonColor");
         minutesColor = App.getApp().getProperty("MinutesColor");
+        framesColor  = App.getApp().getProperty("FramesColor");
+        batteryLowColor = App.getApp().getProperty("BatteryLowColor");
+        batteryWarnColor = App.getApp().getProperty("BatteryWarnColor");
+        
         colonSize    = dc.getTextDimensions(colonString, digitsFont);
     
+    }
+
+	function heatRateDraw(dc) {
+    	var info = Info.getActivityInfo();
+    	var hr = info.currentHeartRate;
+    	
+    	System.println("hr:" + hr);
+    	
+        /*dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_BLACK);
+        dc.clear();
+
+        dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
+
+        dc.drawText(dc.getWidth() / 2, 90, Gfx.FONT_LARGE, string_HR, Gfx.TEXT_JUSTIFY_CENTER);*/
+
+        //HR_graph.draw(dc, [0, 0], [dc.getWidth(), dc.getHeight()]);
     }
 
 	function calendarDraw(dc){
@@ -156,6 +185,8 @@ class BWFaceView extends Ui.WatchFace {
 		dc.drawText(caloriesx+framePadding, timeUnderLinePos, infoFont, calories, Gfx.TEXT_JUSTIFY_LEFT);
 		dc.drawText(caloriesx+framePadding, timeUnderLinePos+dSize[1], infoTitleFont, "kCal", Gfx.TEXT_JUSTIFY_LEFT);
 		
+		dc.setColor(framesColor, bgColor);
+		
 		var frameH = steph+1;
 		dc.drawRoundedRectangle(stepx-(stepw+framePadding)/2, stepy, stepw+framePadding/2, frameH, frameRadius);
 				
@@ -163,7 +194,40 @@ class BWFaceView extends Ui.WatchFace {
 		dc.drawRoundedRectangle(0,         stepy, dh,         frameH, frameRadius);		
 
 		var cx = stepx-(stepw+framePadding)/2 + stepw+framePadding/2+1;
-		dc.drawRoundedRectangle(cx, stepy, dc.getWidth(), frameH, frameRadius);		
+		dc.drawRoundedRectangle(cx, stepy, dc.getWidth(), frameH, frameRadius);
+		
+		infoUnderLinePos = stepy +  frameH;
+	}
+
+	function sysInfoDraw(dc) {
+	
+		var systemStats = Sys.getSystemStats();
+		var battery = systemStats.battery;
+		var size = [20,20]; //dc.getTextDimensions("d", iconsFont);
+        var fbattery =  battery.format("%d") + "%";
+        var fsize = dc.getTextDimensions(fbattery, infoTitleFont);
+		var w = size[0];
+		var h = size[1]/2;
+        var x = dc.getWidth()/2-w/2-fsize[0]/2;
+		var y = infoUnderLinePos+h/2+2;
+		//dc.drawText( x, y, iconsFont, "d",  Gfx.TEXT_JUSTIFY_LEFT);
+        //dc.fillRectangle(x, y, w*battery/100-2, h/2);
+        
+        if (battery>50){
+        	dc.setColor(labelColor, bgColor);
+        }
+        else if (battery>20){
+        	dc.setColor(batteryWarnColor, bgColor);
+        }
+        else {
+        	dc.setColor(batteryLowColor, bgColor);
+        }
+        
+        dc.drawRectangle(x+w, y+h/3, 2, h/2-1);
+        dc.drawRoundedRectangle(x, y, w, h, 2);
+        dc.fillRoundedRectangle(x, y, w*battery/100, h, 2);
+        
+        dc.drawText(x+w+framePadding, y-fsize[1]/2+h/2-2, infoTitleFont,fbattery , Gfx.TEXT_JUSTIFY_LEFT);
 	}
 
     function onUpdate(dc) {
@@ -172,7 +236,8 @@ class BWFaceView extends Ui.WatchFace {
 	    clockDraw(dc); 
 	    calendarDraw(dc);
 	    activityDraw(dc);
-	    //heatRateDraw(dc);       
+	    sysInfoDraw(dc);
+	    heatRateDraw(dc);       
     }
 
     function onShow() {
@@ -206,16 +271,4 @@ class BWFaceView extends Ui.WatchFace {
         Ui.requestUpdate();
     }
     
-    function heatRateDraw(dc)
-    {
-        dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_BLACK);
-        dc.clear();
-
-        dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
-
-        dc.drawText(dc.getWidth() / 2, 90, Gfx.FONT_LARGE, string_HR, Gfx.TEXT_JUSTIFY_CENTER);
-
-        //HR_graph.draw(dc, [0, 0], [dc.getWidth(), dc.getHeight()]);
-    }
-
 }

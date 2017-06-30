@@ -6,5 +6,6 @@
 <font id ="weekDayFont"  filename="calendar32px.fnt" antialias="true"/>
 <font id ="infoFont"  filename="info30px.fnt" antialias="true"/>
 <font id ="infoTitleFont"  filename="info14px.fnt" antialias="true"/>
+<font id ="iconsFont"  filename="typicons22.fnt" antialias="true"/>
 
 </fonts>
