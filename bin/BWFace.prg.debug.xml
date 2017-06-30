@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<pcToLineNum>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="20" pc="268435456" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="21" pc="268435460" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="24" pc="268435479" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="25" pc="268435483" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="27" pc="268435520" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="28" pc="268435563" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="30" pc="268435606" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="31" pc="268435643" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="32" pc="268435680" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="33" pc="268435717" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="34" pc="268435754" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="38" pc="268435790" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="39" pc="268435794" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="40" pc="268435822" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="41" pc="268435834" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="43" pc="268435851" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="44" pc="268435861" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="45" pc="268435886" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="46" pc="268435897" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="49" pc="268435913" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="50" pc="268435945" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="54" pc="268435961" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="55" pc="268435979" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="57" pc="268436003" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="58" pc="268436026" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="59" pc="268436054" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="61" pc="268436161" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="62" pc="268436189" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="64" pc="268436284" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="65" pc="268436307" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="66" pc="268436335" symbol="mydraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="70" pc="268436443" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="71" pc="268436447" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="74" pc="268436462" symbol="onShow"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="77" pc="268436467" symbol="onHide"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="80" pc="268436472" symbol="onExitSleep"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="83" pc="268436477" symbol="onEnterSleep"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="7" pc="268436482" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="8" pc="268436486" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="12" pc="268436507" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="15" pc="268436528" symbol="draw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="17" pc="268436532" symbol="draw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="18" pc="268436585" symbol="draw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="7" pc="268436598" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="8" pc="268436602" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="12" pc="268436621" symbol="onStart"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="14" pc="268436625" symbol="onStart"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="18" pc="268436647" symbol="onStop"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="22" pc="268436652" symbol="getInitialView"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="23" pc="268436656" symbol="getInitialView"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="27" pc="268436694" symbol="onSettingsChanged"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="28" pc="268436698" symbol="onSettingsChanged"/>
+<entry filename="Rez" lineNum="32" pc="268436715" symbol="WatchFace"/>
+<entry filename="Rez" lineNum="34" pc="268436727" symbol="WatchFace"/>
+<entry filename="Rez" lineNum="37" pc="268436751" symbol="WatchFace"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="8388644" module="true" symbol="System"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry field="true" id="26" symbol="ColorBlue"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry field="true" id="36" symbol="ColorWhite"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="8389068" method="true" symbol="draw"/>
+<entry id="8389377" method="true" symbol="onExitSleep"/>
+<entry field="true" id="13" symbol="hoursColor"/>
+<entry id="8388640" module="true" symbol="Lang"/>
+<entry id="19" method="true" symbol="mydraw"/>
+<entry field="true" id="31" symbol="ColorBlack"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry id="8389123" method="true" symbol="onShow"/>
+<entry field="true" id="34" symbol="ColorRed"/>
+<entry field="true" id="35" symbol="ForegroundColorTitle"/>
+<entry field="true" id="11" symbol="digitsFont"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry field="true" id="23" symbol="digits7Font"/>
+<entry field="true" id="32" symbol="AppName"/>
+<entry id="8389375" method="true" object="true" symbol="WatchFace"/>
+<entry field="true" id="18" symbol="colonSize"/>
+<entry id="8390146" module="true" object="true" symbol="Background"/>
+<entry field="true" id="22" symbol="LauncherIcon"/>
+<entry id="8389683" method="true" symbol="onSettingsChanged"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry field="true" id="17" symbol="colonString"/>
+<entry field="true" id="33" symbol="HoursColorTitle"/>
+<entry field="true" id="16" symbol="bgColor"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry field="true" id="30" symbol="MinutesColorTitle"/>
+<entry field="true" id="37" symbol="TimeColonColorTitle"/>
+<entry field="true" id="28" symbol="ColorDarkGray"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry id="8389376" method="true" symbol="onEnterSleep"/>
+<entry field="true" id="25" symbol="ColorLightGray"/>
+<entry field="true" id="27" symbol="BackgroundColorTitle"/>
+<entry field="true" id="24" symbol="digits7monoFont"/>
+<entry id="21" module="true" symbol="Layouts"/>
+<entry id="8389125" method="true" symbol="onHide"/>
+<entry id="9" object="true" symbol="BWFaceView"/>
+<entry field="true" id="29" symbol="MilitaryFormatTitle"/>
+<entry id="8390088" module="true" object="true" symbol="JsonData"/>
+<entry field="true" id="8389063" symbol="identifier"/>
+<entry field="true" id="12" symbol="digitsMonoFont"/>
+<entry field="true" id="15" symbol="minutesColor"/>
+<entry id="10" object="true" symbol="BWFaceApp"/>
+<entry id="20" module="true" symbol="Menus"/>
+<entry field="true" id="14" symbol="colonColor"/>
+<entry id="8388772" module="true" object="true" symbol="Fonts"/>
+</symbolTable>
+<localVars>
+<entry endPc="268435790" name="dc" stackId="1" startPc="268435479"/>
+<entry endPc="268436442" name="hours" stackId="3" startPc="268435794"/>
+<entry endPc="268436442" name="minutes" stackId="4" startPc="268435794"/>
+<entry endPc="268436442" name="minutesSize" stackId="6" startPc="268435794"/>
+<entry endPc="268436442" name="hoursSize" stackId="5" startPc="268435794"/>
+<entry endPc="268436442" name="clockTime" stackId="2" startPc="268435794"/>
+<entry endPc="268436443" name="dc" stackId="1" startPc="268435790"/>
+<entry endPc="268436462" name="dc" stackId="1" startPc="268436443"/>
+<entry endPc="268436527" name="dictionary" stackId="1" startPc="268436486"/>
+<entry endPc="268436598" name="dc" stackId="1" startPc="268436528"/>
+<entry endPc="268436647" name="state" stackId="1" startPc="268436621"/>
+<entry endPc="268436652" name="state" stackId="1" startPc="268436647"/>
+<entry endPc="268436768" name="rez_cmp_local_custom_drawable_7Q5ZQ6YI4QPP705PVQ47" stackId="2" startPc="268436727"/>
+<entry endPc="268436769" name="dc" stackId="1" startPc="268436715"/>
+</localVars>
+<annotations/>
+<functions>
+<functionEntry accessMode="public" name="initialize" parent="BWFaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onLayout" parent="BWFaceView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="mydraw" parent="BWFaceView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onUpdate" parent="BWFaceView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onShow" parent="BWFaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onHide" parent="BWFaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onExitSleep" parent="BWFaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onEnterSleep" parent="BWFaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="Background">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="draw" parent="Background">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="BWFaceApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStart" parent="BWFaceApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStop" parent="BWFaceApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getInitialView" parent="BWFaceApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onSettingsChanged" parent="BWFaceApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="WatchFace" parent="Layouts">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Draw the layout<br/> param The context<br/></div>]]></documentation>
+</functionEntry>
+</functions>
+<dataEntryOffsetMappings>
+<dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
+<dataEntry offset="182" parentId="globals" symbolId="Background" type="class"/>
+<dataEntry offset="237" parentId="globals" symbolId="BWFaceView" type="class"/>
+<dataEntry offset="404" parentId="globals" symbolId="BWFaceApp" type="class"/>
+<dataEntry offset="483" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="562" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="601" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="632" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="679" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="710" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="749" parentId="Rez" symbolId="Strings" type="module"/>
+</dataEntryOffsetMappings>
+</debugInfo>

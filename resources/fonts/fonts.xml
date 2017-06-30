@@ -1,0 +1,6 @@
+<fonts>
+
+<font id ="digits7Font"  filename="digits75x.fnt" filter="0123456789:" antialias="true"/>
+<font id ="digits7monoFont"  filename="digits7mono5x.fnt" filter="0123456789:" antialias="true"/>
+
+</fonts>
