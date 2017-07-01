@@ -14,15 +14,17 @@ class BWFaceView extends Ui.WatchFace {
         
     var iconsFont = null;
         
-	var digitsFont = null;
-	var digitsMonoFont = null;
+	var clockFont = null;
+	var colonFont = null;
+	
 	var calendarFont = Gfx.FONT_SYSTEM_LARGE;
 	var weekDayFont = Gfx.FONT_SYSTEM_MEDIUM;
 	
 	var infoFont      = Gfx.FONT_SYSTEM_SMALL;
 	var infoTitleFont = Gfx.FONT_SYSTEM_SMALL;
 	var infoFractFont = Gfx.FONT_SYSTEM_SMALL;
-	var clockPadding  = -12;
+	var clockPadding  = -16;
+	var battaryPadding= 4;
 	var infoPadding   = 8;
 	var framePadding  = 4;
 	var frameRadius   = 4;
@@ -47,13 +49,33 @@ class BWFaceView extends Ui.WatchFace {
     }
 
     function onLayout(dc) {
-        setLayout(Rez.Layouts.WatchFace(dc));
         
-        iconsFont      = Ui.loadResource(Rez.Fonts.iconsFont);	        
-        digitsFont     = Ui.loadResource(Rez.Fonts.digits7Font);	
-        digitsMonoFont = Ui.loadResource(Rez.Fonts.digits7monoFont);	
-        calendarFont   = Ui.loadResource(Rez.Fonts.calendarFont);	
-        weekDayFont    = Ui.loadResource(Rez.Fonts.weekDayFont);
+
+        setLayout(Rez.Layouts.WatchFace(dc));
+
+		if (dc.getWidth()<=218){
+        	clockFont = Ui.loadResource(Rez.Fonts.digits7monoSmallFont);
+			clockPadding  = -4;
+			battaryPadding = 2;
+		}
+		else {
+        	clockFont = Ui.loadResource(Rez.Fonts.digits7monoFont);
+        }	
+        	colonFont = Ui.loadResource(Rez.Fonts.digits7Font);	
+        
+        iconsFont      = Ui.loadResource(Rez.Fonts.iconsFont);
+        
+        if (dc.getWidth()<=218){
+        	System.println("small cal dim:" + dc.getWidth() + " " + dc.getHeight());
+        	
+        	calendarFont   = Ui.loadResource(Rez.Fonts.calendarFont);	
+        	weekDayFont    = Ui.loadResource(Rez.Fonts.weekDayFont);
+        }	        
+        else {
+        	System.println("large cal dim:" + dc.getWidth() + " " + dc.getHeight());
+        	calendarFont   = Ui.loadResource(Rez.Fonts.calendarSmallFont);	
+        	weekDayFont    = Ui.loadResource(Rez.Fonts.weekDaySmallFont);
+        }
         	
         infoFont      = Ui.loadResource(Rez.Fonts.infoFont);	
         infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);	
@@ -68,7 +90,7 @@ class BWFaceView extends Ui.WatchFace {
         batteryLowColor = App.getApp().getProperty("BatteryLowColor");
         batteryWarnColor = App.getApp().getProperty("BatteryWarnColor");
         
-        colonSize    = dc.getTextDimensions(colonString, digitsFont);
+        colonSize    = dc.getTextDimensions(colonString, colonFont);
     
     }
 
@@ -115,21 +137,21 @@ class BWFaceView extends Ui.WatchFace {
         hours   = hours.format("%02d");
 		minutes = minutes.format("%02d");		
 		
-		var hoursSize = dc.getTextDimensions(hours, digitsMonoFont);
-		var minutesSize = dc.getTextDimensions(minutes, digitsMonoFont);
+		var hoursSize = dc.getTextDimensions(hours, clockFont);
+		var minutesSize = dc.getTextDimensions(minutes, clockFont);
 		
 		var x = dc.getWidth()/2;
 		var y = dc.getHeight()/2-hoursSize[1]/2-framePadding+clockPadding;
 		var yc= dc.getHeight()/2-colonSize[1]/2-framePadding+clockPadding;
 		
 		dc.setColor(hoursColor, bgColor);
-		dc.drawText(x-colonSize[0]-hoursSize[0]+2, y,   digitsMonoFont, hours, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(x-colonSize[0]-hoursSize[0]+2, y,   clockFont, hours, Gfx.TEXT_JUSTIFY_LEFT);
 
 		dc.setColor(colonColor, bgColor);
-		dc.drawText(x, yc, digitsFont, colonString, Gfx.TEXT_JUSTIFY_CENTER);
+		dc.drawText(x, yc, colonFont, colonString, Gfx.TEXT_JUSTIFY_CENTER);
 	
 		dc.setColor(minutesColor, bgColor);
-		dc.drawText(x+colonSize[0]+minutesSize[0]-2, y, digitsMonoFont, minutes, Gfx.TEXT_JUSTIFY_RIGHT);
+		dc.drawText(x+colonSize[0]+minutesSize[0]-2, y, clockFont, minutes, Gfx.TEXT_JUSTIFY_RIGHT);
 
 		timeUnderLinePos = x+hoursSize[1]/2-infoPadding+clockPadding;
 	}
@@ -155,7 +177,7 @@ class BWFaceView extends Ui.WatchFace {
 		var info = Info.getActivityInfo();
 		var monitor = Act.getInfo();
 		
-		var calories = decFields(info.calories);//info.calories == null ? "--" : info.calories.format("%02d");
+		var calories = decFields(info.calories);
 		var distance = decFields(monitor.distance);
 		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
 				
@@ -215,7 +237,7 @@ class BWFaceView extends Ui.WatchFace {
 		var w = batterySize[0];
 		var h = batterySize[1];
         var x = dc.getWidth()/2-w/2-fsize[0]/2;
-		var y = infoUnderLinePos+h/2+2;
+		var y = infoUnderLinePos+h/2+battaryPadding;
         
         if (battery>50){
         	dc.setColor(labelColor, bgColor);
