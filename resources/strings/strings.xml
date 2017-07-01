@@ -2,6 +2,8 @@
 
     <string id="AppName">BWFace</string>
 
+    <string id="language">English</string>
+
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="ForegroundColorTitle">Foreground Color</string>
     <string id="HoursColorTitle">Hours Color</string>

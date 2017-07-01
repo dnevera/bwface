@@ -7,6 +7,7 @@ using Toybox.Application as App;
 using Toybox.Activity as Info;
 using Toybox.ActivityMonitor as Act;
 using Toybox.Sensor as Snsr;
+using Toybox.UserProfile as User;
 
 class BWFaceView extends Ui.WatchFace {
         
@@ -28,6 +29,7 @@ class BWFaceView extends Ui.WatchFace {
 	var clockPadding  = -7;
 	var batteryPadding= 4;
 	var infoPadding   = 8;
+	var activityPadding = 2;
 	var framePadding  = 4;
 	var frameRadius   = 4;
 	
@@ -49,6 +51,7 @@ class BWFaceView extends Ui.WatchFace {
 	var stepsTitle;
 	var caloriesTitle;
 	var distanceTitle;
+    var userBmr;
     
     function initialize() {
         WatchFace.initialize();
@@ -56,36 +59,52 @@ class BWFaceView extends Ui.WatchFace {
 
     function onLayout(dc) {
        
-        setLayout(Rez.Layouts.WatchFace(dc));
+		System.println("dim: w="+dc.getWidth() + " h="+dc.getHeight());
 
         stepsTitle = Ui.loadResource( Rez.Strings.StepsTitle );
         caloriesTitle = Ui.loadResource( Rez.Strings.CaloriesTitle );
         distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
-
-		if (dc.getWidth()<=218){
+        
+        if (dc.getHeight()<=180){
+        	clockFont = Ui.loadResource(Rez.Fonts.digits7monoTinyFont);
+        	clockPadding  = -8;
+		}
+		else if (dc.getWidth()<=218){
         	clockFont = Ui.loadResource(Rez.Fonts.digits7monoSmallFont);
-			clockPadding  = -12;
+			clockPadding  = -8;
 		}
 		else {
         	clockFont = Ui.loadResource(Rez.Fonts.digits7monoFont);
         }	
-        	colonFont = Ui.loadResource(Rez.Fonts.digits7Font);	
+        	
+        colonFont = Ui.loadResource(Rez.Fonts.digits7Font);	        
+        //iconsFont = Ui.loadResource(Rez.Fonts.iconsFont);
         
-        iconsFont      = Ui.loadResource(Rez.Fonts.iconsFont);
-        
-        if (dc.getWidth()<=218){        	
+        if (dc.getHeight()<=180){
+        	//
+        	// Use system fonts
+        	//
+        	weelDayPadding   =  1;
+			calendarPadding  = -4;  
+			infoPadding   = 8;
+			framePadding  = 4;
+			frameRadius   = 2;		     
+        }
+        else if (dc.getWidth()<=218){        	
         	calendarFont   = Ui.loadResource(Rez.Fonts.calendarSmallFont);	
         	weekDayFont    = Ui.loadResource(Rez.Fonts.weekDaySmallFont);
+        	infoFont      = Ui.loadResource(Rez.Fonts.infoFont);	
+        	infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);	
+        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFont);	        	
         }	        
         else {
         	calendarFont   = Ui.loadResource(Rez.Fonts.calendarFont);	
         	weekDayFont    = Ui.loadResource(Rez.Fonts.weekDayFont);
+        	infoFont      = Ui.loadResource(Rez.Fonts.infoFont);	
+        	infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);	
+        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFont);	        	
         }
-        	
-        infoFont      = Ui.loadResource(Rez.Fonts.infoFont);	
-        infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);	
-        infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFont);	
-        
+        	        
         labelColor   = App.getApp().getProperty("ForegroundColor");
         bgColor      = App.getApp().getProperty("BackgroundColor");
         hoursColor   = App.getApp().getProperty("HoursColor");
@@ -97,6 +116,8 @@ class BWFaceView extends Ui.WatchFace {
         
         colonSize    = dc.getTextDimensions(colonString, colonFont);
     
+        userBmr = bmr();
+        System.println("user bmr: " + userBmr);    
     }
 
 	function heatRateDraw(dc) {
@@ -128,18 +149,26 @@ class BWFaceView extends Ui.WatchFace {
 		
 		var hours   = clockTime.hour;
 		var minutes = clockTime.min;		
-		
+		var hformat = "";	
+		var ampm    = null;	
         if (!Sys.getDeviceSettings().is24Hour) {
             if (hours > 12) {
                 hours = hours - 12;
+            }
+            if ( hours >= 12 ) {
+            	ampm = "PM";
+            }
+            else {
+            	ampm = "AM";
             }
         } else {
             if (App.getApp().getProperty("UseMilitaryFormat")) {
                 timeFormat = "$1$$2$";
             }
+			hformat = "02";		
         }
         
-        hours   = hours.format("%02d");
+        hours   = hours.format("%"+hformat+"d");
 		minutes = minutes.format("%02d");		
 		
 		var hoursSize = dc.getTextDimensions(hours, clockFont);
@@ -151,14 +180,21 @@ class BWFaceView extends Ui.WatchFace {
 		
 		dc.setColor(hoursColor, bgColor);
 		dc.drawText(x-colonSize[0]-hoursSize[0]+2, y,   clockFont, hours, Gfx.TEXT_JUSTIFY_LEFT);
-
+				
 		dc.setColor(colonColor, bgColor);
 		dc.drawText(x, yc, colonFont, colonString, Gfx.TEXT_JUSTIFY_CENTER);
 	
 		dc.setColor(minutesColor, bgColor);
 		dc.drawText(x+colonSize[0]+minutesSize[0]-2, y, clockFont, minutes, Gfx.TEXT_JUSTIFY_RIGHT);
 
-		timeUnderLinePos = x+hoursSize[1]/2-infoPadding+clockPadding;
+		if (ampm!=null){
+			dc.setColor(hoursColor, bgColor);
+			var ampmsize = dc.getTextDimensions(ampm, infoTitleFont);
+			//dc.drawText(x-hoursSize[0]-colonSize[0]-ampmsize[0]/2, dc.getHeight()/2-framePadding+clockPadding, infoTitleFont, ampm, Gfx.TEXT_JUSTIFY_LEFT);
+			dc.drawText(framePadding, dc.getHeight()/2-framePadding+clockPadding, infoTitleFont, ampm, Gfx.TEXT_JUSTIFY_LEFT);
+		}  
+		
+		timeUnderLinePos = y+hoursSize[1]+activityPadding+clockPadding;
 	}
 
 	var stepDraft = "99999";
@@ -178,6 +214,26 @@ class BWFaceView extends Ui.WatchFace {
 		return [dec[0].toString(),f+dec[1].format("%0"+prec+"d")];
 	}
 	
+	function bmr(){
+		var profile = User.getProfile();		
+		var bmrvalue;
+		var today = Calendar.info(Time.now(), Time.FORMAT_MEDIUM);
+		var w   = profile.weight;
+		var h   = profile.height;
+		var g   = profile.gender; 
+		var age = profile.birthYear;
+		
+		System.println("profile: gender="+profile.gender+" weight="+profile.weight+", height="+profile.height+", age="+age+" years="+profile.birthYear);
+		
+		if (g == User.GENDER_FEMALE) {		
+			bmrvalue = 655.0 + (9.6*w/1000.0) + (1.8*h) - (4.7*age);
+		}
+		else {
+			bmrvalue = 66 + (13.7*w/1000.0) + (5.0*h) - (6.8*age);
+		}		
+		return bmrvalue;
+	}
+	
 	function activityDraw(dc) {
 		//var info = Info.getActivityInfo();
 		var monitor = Act.getInfo();
@@ -187,6 +243,8 @@ class BWFaceView extends Ui.WatchFace {
 		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
 						
 		var sSize = dc.getTextDimensions(stepDraft, infoFont);
+		sSize[0]=dc.getWidth()/3.2;
+		
 		var dSize = dc.getTextDimensions(distance[0], infoFont);
 		var cSize = dc.getTextDimensions(calories[0], infoFont);
 		
@@ -256,7 +314,7 @@ class BWFaceView extends Ui.WatchFace {
         dc.drawRoundedRectangle(x, y, w, h, 2);
         dc.fillRoundedRectangle(x, y, w*battery/100, h, 2);
         
-        dc.drawText(x+w+framePadding, y-fsize[1]/2+h/2-2, infoTitleFont,fbattery , Gfx.TEXT_JUSTIFY_LEFT);
+        dc.drawText(x+w+framePadding, y-fsize[1]/2+h/2-2, infoTitleFont, fbattery , Gfx.TEXT_JUSTIFY_LEFT);
 	}
 
     function onUpdate(dc) {

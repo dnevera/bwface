@@ -3,6 +3,7 @@
 <font id ="digits7Font"      filename="digits75x.fnt" filter="0123456789:" antialias="true"/>
 <font id ="digits7monoFont"  filename="digitsds5x.fnt" filter="0123456789:" antialias="true"/>
 <font id ="digits7monoSmallFont"  filename="digitsds5s.fnt" filter="0123456789:" antialias="true"/>
+<font id ="digits7monoTinyFont"  filename="digitsds735.fnt" filter="0123456789:" antialias="true"/>
 <font id ="calendarFont"       filename="calendar50px.fnt" antialias="true"/>
 <font id ="weekDayFont"        filename="calendar32px.fnt" antialias="true"/>
 <font id ="calendarSmallFont"  filename="calendar40px.fnt" antialias="true"/>
