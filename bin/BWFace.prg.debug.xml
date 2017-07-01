@@ -62,9 +62,9 @@
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="154" pc="268437242" symbol="clockDraw"/>
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="155" pc="268437267" symbol="clockDraw"/>
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="156" pc="268437278" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="158" pc="268437291" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="159" pc="268437302" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="162" pc="268437312" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="159" pc="268437288" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="161" pc="268437295" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="162" pc="268437306" symbol="clockDraw"/>
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="165" pc="268437322" symbol="clockDraw"/>
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="166" pc="268437354" symbol="clockDraw"/>
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="168" pc="268437370" symbol="clockDraw"/>
@@ -361,7 +361,7 @@
 <entry endPc="268440704" name="dc" stackId="1" startPc="268440634"/>
 <entry endPc="268440732" name="state" stackId="1" startPc="268440727"/>
 <entry endPc="268440737" name="state" stackId="1" startPc="268440732"/>
-<entry endPc="268440853" name="rez_cmp_local_custom_drawable_BTC3O34X0SBRPBOJ4CF4" stackId="2" startPc="268440812"/>
+<entry endPc="268440853" name="rez_cmp_local_custom_drawable_HSK4FLWG8L6BTF0C3GKH" stackId="2" startPc="268440812"/>
 <entry endPc="268440854" name="dc" stackId="1" startPc="268440800"/>
 </localVars>
 <annotations/>

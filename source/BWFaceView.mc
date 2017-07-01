@@ -152,14 +152,14 @@ class BWFaceView extends Ui.WatchFace {
 		var hformat = "";	
 		var ampm    = null;	
         if (!Sys.getDeviceSettings().is24Hour) {
-            if (hours > 12) {
-                hours = hours - 12;
-            }
             if ( hours >= 12 ) {
             	ampm = "PM";
             }
             else {
             	ampm = "AM";
+            }
+            if (hours > 12) {
+                hours = hours - 12;
             }
         } else {
             if (App.getApp().getProperty("UseMilitaryFormat")) {
