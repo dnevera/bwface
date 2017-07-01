@@ -1,309 +1,319 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <debugInfo>
 <pcToLineNum>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="47" pc="268435456" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="48" pc="268435460" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="51" pc="268435479" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="54" pc="268435483" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="56" pc="268435520" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="57" pc="268435540" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="58" pc="268435583" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="59" pc="268435596" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="62" pc="268435612" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="64" pc="268435655" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="66" pc="268435698" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="68" pc="268435741" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="69" pc="268435761" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="71" pc="268435814" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="72" pc="268435857" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="75" pc="268435903" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="76" pc="268435956" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="77" pc="268435999" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="80" pc="268436042" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="81" pc="268436085" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="82" pc="268436128" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="84" pc="268436171" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="85" pc="268436208" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="86" pc="268436245" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="87" pc="268436282" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="88" pc="268436319" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="89" pc="268436356" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="90" pc="268436393" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="91" pc="268436430" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="93" pc="268436467" symbol="onLayout"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="97" pc="268436503" symbol="heatRateDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="98" pc="268436507" symbol="heatRateDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="99" pc="268436524" symbol="heatRateDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="100" pc="268436534" symbol="heatRateDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="103" pc="268436561" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="104" pc="268436565" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="105" pc="268436613" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="113" pc="268436673" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="114" pc="268436696" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="116" pc="268436725" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="117" pc="268436753" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="118" pc="268436818" symbol="calendarDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="121" pc="268436881" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="122" pc="268436885" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="124" pc="268436902" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="125" pc="268436912" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="127" pc="268436922" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="128" pc="268436947" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="129" pc="268436958" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="132" pc="268436974" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="133" pc="268437006" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="137" pc="268437022" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="138" pc="268437040" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="140" pc="268437058" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="141" pc="268437081" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="143" pc="268437104" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="144" pc="268437123" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="145" pc="268437175" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="147" pc="268437233" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="148" pc="268437261" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="150" pc="268437329" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="151" pc="268437357" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="153" pc="268437401" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="154" pc="268437429" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="156" pc="268437497" symbol="clockDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="162" pc="268437541" symbol="decimals"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="163" pc="268437545" symbol="decimals"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="164" pc="268437570" symbol="decimals"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="165" pc="268437595" symbol="decimals"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="168" pc="268437671" symbol="decFields"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="169" pc="268437675" symbol="decFields"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="170" pc="268437682" symbol="decFields"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="172" pc="268437718" symbol="decFields"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="173" pc="268437733" symbol="decFields"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="176" pc="268437797" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="177" pc="268437801" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="178" pc="268437818" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="180" pc="268437835" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="181" pc="268437856" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="182" pc="268437877" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="184" pc="268437922" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="186" pc="268437978" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="187" pc="268438007" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="188" pc="268438036" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="190" pc="268438065" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="192" pc="268438094" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="193" pc="268438137" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="194" pc="268438180" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="195" pc="268438205" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="196" pc="268438215" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="197" pc="268438234" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="198" pc="268438253" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="200" pc="268438281" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="202" pc="268438298" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="204" pc="268438326" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="206" pc="268438355" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="207" pc="268438423" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="208" pc="268438482" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="210" pc="268438547" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="211" pc="268438591" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="213" pc="268438650" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="214" pc="268438709" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="215" pc="268438777" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="217" pc="268438842" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="219" pc="268438870" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="220" pc="268438880" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="222" pc="268438941" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="223" pc="268438978" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="225" pc="268439009" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="226" pc="268439055" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="228" pc="268439092" symbol="activityDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="231" pc="268439106" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="233" pc="268439110" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="234" pc="268439127" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="235" pc="268439137" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="236" pc="268439161" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="237" pc="268439184" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="238" pc="268439200" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="239" pc="268439216" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="240" pc="268439259" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="242" pc="268439287" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="243" pc="268439298" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="246" pc="268439340" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="249" pc="268439371" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="252" pc="268439399" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="253" pc="268439446" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="254" pc="268439471" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="256" pc="268439505" symbol="sysInfoDraw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="259" pc="268439586" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="260" pc="268439590" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="261" pc="268439618" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="262" pc="268439630" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="263" pc="268439644" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="264" pc="268439658" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="265" pc="268439672" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="266" pc="268439686" symbol="onUpdate"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="269" pc="268439701" symbol="onShow"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="271" pc="268439706" symbol="onHide"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="273" pc="268439711" symbol="onExitSleep"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="275" pc="268439716" symbol="onEnterSleep"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="7" pc="268439721" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="8" pc="268439725" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="12" pc="268439746" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="15" pc="268439767" symbol="draw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="17" pc="268439771" symbol="draw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="18" pc="268439824" symbol="draw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="7" pc="268439837" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="8" pc="268439841" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="12" pc="268439860" symbol="onStart"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="16" pc="268439865" symbol="onStop"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="20" pc="268439870" symbol="getInitialView"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="21" pc="268439874" symbol="getInitialView"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="25" pc="268439912" symbol="onSettingsChanged"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="26" pc="268439916" symbol="onSettingsChanged"/>
-<entry filename="Rez" lineNum="41" pc="268439933" symbol="WatchFace"/>
-<entry filename="Rez" lineNum="43" pc="268439945" symbol="WatchFace"/>
-<entry filename="Rez" lineNum="46" pc="268439969" symbol="WatchFace"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="53" pc="268435456" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="54" pc="268435460" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="57" pc="268435479" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="59" pc="268435483" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="61" pc="268435520" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="62" pc="268435563" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="63" pc="268435606" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="65" pc="268435649" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="66" pc="268435669" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="67" pc="268435712" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="70" pc="268435728" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="72" pc="268435771" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="74" pc="268435814" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="76" pc="268435857" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="77" pc="268435877" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="78" pc="268435920" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="81" pc="268435966" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="82" pc="268436009" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="85" pc="268436052" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="86" pc="268436095" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="87" pc="268436138" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="89" pc="268436181" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="90" pc="268436218" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="91" pc="268436255" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="92" pc="268436292" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="93" pc="268436329" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="94" pc="268436366" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="95" pc="268436403" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="96" pc="268436440" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="98" pc="268436477" symbol="onLayout"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="102" pc="268436513" symbol="heatRateDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="103" pc="268436517" symbol="heatRateDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="104" pc="268436534" symbol="heatRateDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="108" pc="268436545" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="109" pc="268436549" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="110" pc="268436597" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="118" pc="268436657" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="119" pc="268436680" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="121" pc="268436709" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="122" pc="268436737" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="123" pc="268436802" symbol="calendarDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="126" pc="268436871" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="127" pc="268436875" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="129" pc="268436892" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="130" pc="268436902" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="132" pc="268436912" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="133" pc="268436937" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="134" pc="268436948" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="137" pc="268436964" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="138" pc="268436996" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="142" pc="268437012" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="143" pc="268437030" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="145" pc="268437048" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="146" pc="268437071" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="148" pc="268437094" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="149" pc="268437113" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="150" pc="268437165" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="152" pc="268437223" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="153" pc="268437251" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="155" pc="268437319" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="156" pc="268437347" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="158" pc="268437391" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="159" pc="268437419" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="161" pc="268437487" symbol="clockDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="166" pc="268437531" symbol="decimals"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="167" pc="268437535" symbol="decimals"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="168" pc="268437560" symbol="decimals"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="169" pc="268437585" symbol="decimals"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="170" pc="268437643" symbol="decimals"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="173" pc="268437686" symbol="decFields"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="174" pc="268437690" symbol="decFields"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="175" pc="268437697" symbol="decFields"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="177" pc="268437733" symbol="decFields"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="178" pc="268437750" symbol="decFields"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="181" pc="268437825" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="183" pc="268437829" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="185" pc="268437846" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="186" pc="268437882" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="187" pc="268437933" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="189" pc="268437978" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="190" pc="268438007" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="191" pc="268438036" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="193" pc="268438065" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="195" pc="268438094" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="196" pc="268438137" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="197" pc="268438180" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="198" pc="268438205" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="199" pc="268438215" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="200" pc="268438234" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="201" pc="268438253" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="203" pc="268438281" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="205" pc="268438298" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="207" pc="268438326" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="209" pc="268438355" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="210" pc="268438423" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="211" pc="268438482" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="213" pc="268438550" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="214" pc="268438594" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="216" pc="268438653" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="217" pc="268438712" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="218" pc="268438780" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="220" pc="268438848" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="222" pc="268438876" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="223" pc="268438886" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="225" pc="268438947" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="226" pc="268438984" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="228" pc="268439015" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="229" pc="268439061" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="231" pc="268439098" symbol="activityDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="234" pc="268439112" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="236" pc="268439116" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="237" pc="268439133" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="238" pc="268439143" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="239" pc="268439167" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="240" pc="268439190" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="241" pc="268439206" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="242" pc="268439222" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="243" pc="268439265" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="245" pc="268439323" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="246" pc="268439334" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="249" pc="268439376" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="252" pc="268439407" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="255" pc="268439435" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="256" pc="268439482" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="257" pc="268439507" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="259" pc="268439541" symbol="sysInfoDraw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="262" pc="268439622" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="263" pc="268439626" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="264" pc="268439654" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="265" pc="268439666" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="266" pc="268439680" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="267" pc="268439694" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="268" pc="268439708" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="269" pc="268439722" symbol="onUpdate"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="272" pc="268439737" symbol="onShow"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="274" pc="268439742" symbol="onHide"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="276" pc="268439747" symbol="onExitSleep"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceView.mc" lineNum="278" pc="268439752" symbol="onEnterSleep"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="7" pc="268439757" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="8" pc="268439761" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="12" pc="268439782" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="15" pc="268439803" symbol="draw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="17" pc="268439807" symbol="draw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="18" pc="268439860" symbol="draw"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="7" pc="268439873" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="8" pc="268439877" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="12" pc="268439896" symbol="onStart"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="16" pc="268439901" symbol="onStop"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="20" pc="268439906" symbol="getInitialView"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="21" pc="268439910" symbol="getInitialView"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="25" pc="268439948" symbol="onSettingsChanged"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="26" pc="268439952" symbol="onSettingsChanged"/>
+<entry filename="Rez" lineNum="45" pc="268439969" symbol="WatchFace"/>
+<entry filename="Rez" lineNum="47" pc="268439981" symbol="WatchFace"/>
+<entry filename="Rez" lineNum="50" pc="268440005" symbol="WatchFace"/>
 </pcToLineNum>
 <symbolTable>
 <entry field="true" id="17" symbol="infoFont"/>
 <entry id="8388644" module="true" symbol="System"/>
+<entry field="true" id="40" symbol="caloriesTitle"/>
 <entry field="true" id="16" symbol="weekDayFont"/>
-<entry field="true" id="24" symbol="frameRadius"/>
+<entry field="true" id="26" symbol="frameRadius"/>
 <entry id="8389124" method="true" symbol="onUpdate"/>
 <entry field="true" id="13" symbol="clockFont"/>
-<entry field="true" id="36" symbol="infoUnderLinePos"/>
-<entry field="true" id="55" symbol="ColorBlue"/>
+<entry field="true" id="38" symbol="infoUnderLinePos"/>
+<entry field="true" id="60" symbol="ColorBlue"/>
+<entry field="true" id="39" symbol="stepsTitle"/>
 <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-<entry field="true" id="31" symbol="batteryLowColor"/>
+<entry field="true" id="33" symbol="batteryLowColor"/>
 <entry id="8388770" module="true" object="true" symbol="Strings"/>
-<entry field="true" id="65" symbol="ColorWhite"/>
+<entry field="true" id="73" symbol="ColorWhite"/>
 <entry id="8389280" method="true" symbol="getInitialView"/>
 <entry field="true" id="11" symbol="batterySize"/>
-<entry field="true" id="32" symbol="batteryWarnColor"/>
+<entry field="true" id="34" symbol="batteryWarnColor"/>
 <entry id="8389068" method="true" symbol="draw"/>
 <entry id="8389377" method="true" symbol="onExitSleep"/>
-<entry field="true" id="26" symbol="hoursColor"/>
-<entry field="true" id="22" symbol="infoPadding"/>
+<entry field="true" id="28" symbol="hoursColor"/>
+<entry field="true" id="24" symbol="infoPadding"/>
 <entry id="8388640" module="true" symbol="Lang"/>
-<entry id="45" method="true" symbol="sysInfoDraw"/>
-<entry field="true" id="20" symbol="clockPadding"/>
-<entry field="true" id="60" symbol="ColorBlack"/>
+<entry id="49" method="true" symbol="sysInfoDraw"/>
+<entry field="true" id="22" symbol="clockPadding"/>
+<entry field="true" id="65" symbol="ColorBlack"/>
 <entry id="8388769" module="true" object="true" symbol="Rez"/>
 <entry id="8389123" method="true" symbol="onShow"/>
-<entry field="true" id="40" symbol="stepTitle"/>
-<entry field="true" id="63" symbol="ColorRed"/>
-<entry id="38" method="true" symbol="calendarDraw"/>
-<entry field="true" id="64" symbol="ForegroundColorTitle"/>
+<entry field="true" id="21" symbol="calendarPadding"/>
+<entry field="true" id="69" symbol="ColorRed"/>
+<entry id="43" method="true" symbol="calendarDraw"/>
+<entry field="true" id="70" symbol="ForegroundColorTitle"/>
 <entry id="8388729" object="true" symbol="Info"/>
 <entry id="8388702" method="true" symbol="initialize"/>
-<entry field="true" id="49" symbol="digits7Font"/>
-<entry field="true" id="61" symbol="AppName"/>
+<entry field="true" id="53" symbol="digits7Font"/>
+<entry field="true" id="67" symbol="AppName"/>
 <entry field="true" id="19" symbol="infoFractFont"/>
 <entry field="true" id="12" symbol="iconsFont"/>
 <entry id="8389375" method="true" object="true" symbol="WatchFace"/>
-<entry field="true" id="34" symbol="colonSize"/>
-<entry id="42" method="true" symbol="decimals"/>
-<entry field="true" id="52" symbol="calendarSmallFont"/>
+<entry field="true" id="36" symbol="colonSize"/>
+<entry id="46" method="true" symbol="decimals"/>
+<entry field="true" id="56" symbol="calendarSmallFont"/>
 <entry id="8390146" module="true" object="true" symbol="Background"/>
-<entry field="true" id="48" symbol="LauncherIcon"/>
+<entry field="true" id="52" symbol="LauncherIcon"/>
 <entry id="8389683" method="true" symbol="onSettingsChanged"/>
 <entry id="8389281" method="true" symbol="onStop"/>
-<entry field="true" id="51" symbol="digits7monoSmallFont"/>
+<entry field="true" id="55" symbol="digits7monoSmallFont"/>
+<entry field="true" id="23" symbol="batteryPadding"/>
 <entry id="8388771" module="true" object="true" symbol="Drawables"/>
-<entry field="true" id="41" symbol="stepDraft"/>
-<entry field="true" id="33" symbol="colonString"/>
-<entry field="true" id="21" symbol="battaryPadding"/>
-<entry field="true" id="62" symbol="HoursColorTitle"/>
-<entry field="true" id="29" symbol="bgColor"/>
+<entry field="true" id="45" symbol="stepDraft"/>
+<entry field="true" id="35" symbol="colonString"/>
+<entry field="true" id="68" symbol="HoursColorTitle"/>
+<entry field="true" id="31" symbol="bgColor"/>
 <entry id="8389122" method="true" symbol="onLayout"/>
-<entry field="true" id="59" symbol="MinutesColorTitle"/>
-<entry field="true" id="66" symbol="TimeColonColorTitle"/>
-<entry field="true" id="57" symbol="ColorDarkGray"/>
+<entry field="true" id="64" symbol="MinutesColorTitle"/>
+<entry field="true" id="74" symbol="TimeColonColorTitle"/>
+<entry field="true" id="62" symbol="ColorDarkGray"/>
 <entry id="8389279" method="true" symbol="onStart"/>
-<entry field="true" id="30" symbol="framesColor"/>
+<entry field="true" id="20" symbol="weelDayPadding"/>
+<entry field="true" id="71" symbol="DistanceTitle"/>
+<entry field="true" id="32" symbol="framesColor"/>
 <entry field="true" id="18" symbol="infoTitleFont"/>
 <entry id="8389376" method="true" symbol="onEnterSleep"/>
-<entry field="true" id="54" symbol="ColorLightGray"/>
-<entry id="44" method="true" symbol="activityDraw"/>
-<entry id="39" method="true" symbol="clockDraw"/>
-<entry field="true" id="56" symbol="BackgroundColorTitle"/>
-<entry field="true" id="50" symbol="digits7monoFont"/>
+<entry field="true" id="58" symbol="ColorLightGray"/>
+<entry field="true" id="41" symbol="distanceTitle"/>
+<entry id="48" method="true" symbol="activityDraw"/>
+<entry id="44" method="true" symbol="clockDraw"/>
+<entry field="true" id="72" symbol="CaloriesTitle"/>
+<entry field="true" id="61" symbol="BackgroundColorTitle"/>
+<entry field="true" id="54" symbol="digits7monoFont"/>
 <entry field="true" id="15" symbol="calendarFont"/>
-<entry id="37" method="true" symbol="heatRateDraw"/>
-<entry field="true" id="35" symbol="timeUnderLinePos"/>
-<entry id="47" module="true" symbol="Layouts"/>
+<entry id="42" method="true" symbol="heatRateDraw"/>
+<entry field="true" id="37" symbol="timeUnderLinePos"/>
+<entry field="true" id="59" symbol="StepsTitle"/>
+<entry id="51" module="true" symbol="Layouts"/>
 <entry field="true" id="14" symbol="colonFont"/>
-<entry field="true" id="53" symbol="weekDaySmallFont"/>
+<entry field="true" id="66" symbol="language"/>
+<entry field="true" id="57" symbol="weekDaySmallFont"/>
 <entry id="8389125" method="true" symbol="onHide"/>
 <entry id="9" object="true" symbol="BWFaceView"/>
-<entry field="true" id="58" symbol="MilitaryFormatTitle"/>
+<entry field="true" id="63" symbol="MilitaryFormatTitle"/>
 <entry id="8390088" module="true" object="true" symbol="JsonData"/>
 <entry field="true" id="8389063" symbol="identifier"/>
-<entry field="true" id="23" symbol="framePadding"/>
-<entry field="true" id="28" symbol="minutesColor"/>
+<entry field="true" id="25" symbol="framePadding"/>
+<entry field="true" id="30" symbol="minutesColor"/>
 <entry id="10" object="true" symbol="BWFaceApp"/>
-<entry id="46" module="true" symbol="Menus"/>
-<entry field="true" id="25" symbol="labelColor"/>
-<entry id="43" method="true" symbol="decFields"/>
-<entry field="true" id="27" symbol="colonColor"/>
+<entry id="50" module="true" symbol="Menus"/>
+<entry field="true" id="27" symbol="labelColor"/>
+<entry id="47" method="true" symbol="decFields"/>
+<entry field="true" id="29" symbol="colonColor"/>
 <entry id="8388772" module="true" object="true" symbol="Fonts"/>
 </symbolTable>
 <localVars>
-<entry endPc="268436503" name="dc" stackId="1" startPc="268435479"/>
-<entry endPc="268436560" name="hr" stackId="3" startPc="268436507"/>
-<entry endPc="268436560" name="info" stackId="2" startPc="268436507"/>
-<entry endPc="268436561" name="dc" stackId="1" startPc="268436503"/>
-<entry endPc="268436880" name="day" stackId="3" startPc="268436565"/>
-<entry endPc="268436880" name="today" stackId="2" startPc="268436565"/>
-<entry endPc="268436880" name="wdsize" stackId="5" startPc="268436565"/>
-<entry endPc="268436880" name="dsize" stackId="4" startPc="268436565"/>
-<entry endPc="268436881" name="dc" stackId="1" startPc="268436561"/>
-<entry endPc="268437540" name="x" stackId="7" startPc="268436885"/>
-<entry endPc="268437540" name="hours" stackId="3" startPc="268436885"/>
-<entry endPc="268437540" name="minutes" stackId="4" startPc="268436885"/>
-<entry endPc="268437540" name="minutesSize" stackId="6" startPc="268436885"/>
-<entry endPc="268437540" name="hoursSize" stackId="5" startPc="268436885"/>
-<entry endPc="268437540" name="clockTime" stackId="2" startPc="268436885"/>
-<entry endPc="268437540" name="yc" stackId="9" startPc="268436885"/>
-<entry endPc="268437540" name="y" stackId="8" startPc="268436885"/>
-<entry endPc="268437541" name="dc" stackId="1" startPc="268436881"/>
-<entry endPc="268437670" name="t1" stackId="3" startPc="268437545"/>
-<entry endPc="268437670" name="t0" stackId="2" startPc="268437545"/>
-<entry endPc="268437671" name="n" stackId="1" startPc="268437541"/>
-<entry endPc="268437796" name="dec" stackId="2" startPc="268437675"/>
-<entry endPc="268437797" name="n" stackId="1" startPc="268437671"/>
-<entry endPc="268439105" name="steph" stackId="17" startPc="268437801"/>
-<entry endPc="268439105" name="monitor" stackId="3" startPc="268437801"/>
-<entry endPc="268439105" name="cx" stackId="21" startPc="268437801"/>
-<entry endPc="268439105" name="caloriesx" stackId="12" startPc="268437801"/>
-<entry endPc="268439105" name="distance" stackId="5" startPc="268437801"/>
-<entry endPc="268439105" name="stepTitleSize" stackId="10" startPc="268437801"/>
-<entry endPc="268439105" name="stepTitlew" stackId="16" startPc="268437801"/>
-<entry endPc="268439105" name="frameH" stackId="19" startPc="268437801"/>
-<entry endPc="268439105" name="calories" stackId="4" startPc="268437801"/>
-<entry endPc="268439105" name="dSize" stackId="8" startPc="268437801"/>
-<entry endPc="268439105" name="size" stackId="18" startPc="268437801"/>
-<entry endPc="268439105" name="stepy" stackId="14" startPc="268437801"/>
-<entry endPc="268439105" name="stepx" stackId="13" startPc="268437801"/>
-<entry endPc="268439105" name="stepw" stackId="15" startPc="268437801"/>
-<entry endPc="268439105" name="steps" stackId="6" startPc="268437801"/>
-<entry endPc="268439105" name="sSize" stackId="7" startPc="268437801"/>
-<entry endPc="268439105" name="dh" stackId="20" startPc="268437801"/>
-<entry endPc="268439105" name="info" stackId="2" startPc="268437801"/>
-<entry endPc="268439105" name="distx" stackId="11" startPc="268437801"/>
-<entry endPc="268439105" name="cSize" stackId="9" startPc="268437801"/>
-<entry endPc="268439106" name="dc" stackId="1" startPc="268437797"/>
-<entry endPc="268439585" name="x" stackId="8" startPc="268439110"/>
-<entry endPc="268439585" name="fsize" stackId="5" startPc="268439110"/>
-<entry endPc="268439585" name="battery" stackId="3" startPc="268439110"/>
-<entry endPc="268439585" name="w" stackId="6" startPc="268439110"/>
-<entry endPc="268439585" name="h" stackId="7" startPc="268439110"/>
-<entry endPc="268439585" name="fbattery" stackId="4" startPc="268439110"/>
-<entry endPc="268439585" name="systemStats" stackId="2" startPc="268439110"/>
-<entry endPc="268439585" name="y" stackId="9" startPc="268439110"/>
-<entry endPc="268439586" name="dc" stackId="1" startPc="268439106"/>
-<entry endPc="268439701" name="dc" stackId="1" startPc="268439586"/>
-<entry endPc="268439766" name="dictionary" stackId="1" startPc="268439725"/>
-<entry endPc="268439837" name="dc" stackId="1" startPc="268439767"/>
-<entry endPc="268439865" name="state" stackId="1" startPc="268439860"/>
-<entry endPc="268439870" name="state" stackId="1" startPc="268439865"/>
-<entry endPc="268439986" name="rez_cmp_local_custom_drawable_22798MKKSQH0Q698VBPD" stackId="2" startPc="268439945"/>
-<entry endPc="268439987" name="dc" stackId="1" startPc="268439933"/>
+<entry endPc="268436513" name="dc" stackId="1" startPc="268435479"/>
+<entry endPc="268436544" name="hr" stackId="3" startPc="268436517"/>
+<entry endPc="268436544" name="info" stackId="2" startPc="268436517"/>
+<entry endPc="268436545" name="dc" stackId="1" startPc="268436513"/>
+<entry endPc="268436870" name="day" stackId="3" startPc="268436549"/>
+<entry endPc="268436870" name="today" stackId="2" startPc="268436549"/>
+<entry endPc="268436870" name="wdsize" stackId="5" startPc="268436549"/>
+<entry endPc="268436870" name="dsize" stackId="4" startPc="268436549"/>
+<entry endPc="268436871" name="dc" stackId="1" startPc="268436545"/>
+<entry endPc="268437530" name="x" stackId="7" startPc="268436875"/>
+<entry endPc="268437530" name="hours" stackId="3" startPc="268436875"/>
+<entry endPc="268437530" name="minutes" stackId="4" startPc="268436875"/>
+<entry endPc="268437530" name="minutesSize" stackId="6" startPc="268436875"/>
+<entry endPc="268437530" name="hoursSize" stackId="5" startPc="268436875"/>
+<entry endPc="268437530" name="clockTime" stackId="2" startPc="268436875"/>
+<entry endPc="268437530" name="yc" stackId="9" startPc="268436875"/>
+<entry endPc="268437530" name="y" stackId="8" startPc="268436875"/>
+<entry endPc="268437531" name="dc" stackId="1" startPc="268436871"/>
+<entry endPc="268437685" name="t1" stackId="4" startPc="268437535"/>
+<entry endPc="268437685" name="fract" stackId="5" startPc="268437535"/>
+<entry endPc="268437685" name="t0" stackId="3" startPc="268437535"/>
+<entry endPc="268437686" name="scale" stackId="2" startPc="268437531"/>
+<entry endPc="268437686" name="n" stackId="1" startPc="268437531"/>
+<entry endPc="268437824" name="dec" stackId="5" startPc="268437690"/>
+<entry endPc="268437825" name="prec" stackId="4" startPc="268437686"/>
+<entry endPc="268437825" name="f" stackId="2" startPc="268437686"/>
+<entry endPc="268437825" name="scale" stackId="3" startPc="268437686"/>
+<entry endPc="268437825" name="n" stackId="1" startPc="268437686"/>
+<entry endPc="268439111" name="steph" stackId="16" startPc="268437829"/>
+<entry endPc="268439111" name="monitor" stackId="2" startPc="268437829"/>
+<entry endPc="268439111" name="cx" stackId="20" startPc="268437829"/>
+<entry endPc="268439111" name="caloriesx" stackId="11" startPc="268437829"/>
+<entry endPc="268439111" name="distance" stackId="4" startPc="268437829"/>
+<entry endPc="268439111" name="stepTitleSize" stackId="9" startPc="268437829"/>
+<entry endPc="268439111" name="stepTitlew" stackId="15" startPc="268437829"/>
+<entry endPc="268439111" name="frameH" stackId="18" startPc="268437829"/>
+<entry endPc="268439111" name="calories" stackId="3" startPc="268437829"/>
+<entry endPc="268439111" name="dSize" stackId="7" startPc="268437829"/>
+<entry endPc="268439111" name="size" stackId="17" startPc="268437829"/>
+<entry endPc="268439111" name="stepy" stackId="13" startPc="268437829"/>
+<entry endPc="268439111" name="stepx" stackId="12" startPc="268437829"/>
+<entry endPc="268439111" name="stepw" stackId="14" startPc="268437829"/>
+<entry endPc="268439111" name="steps" stackId="5" startPc="268437829"/>
+<entry endPc="268439111" name="sSize" stackId="6" startPc="268437829"/>
+<entry endPc="268439111" name="dh" stackId="19" startPc="268437829"/>
+<entry endPc="268439111" name="distx" stackId="10" startPc="268437829"/>
+<entry endPc="268439111" name="cSize" stackId="8" startPc="268437829"/>
+<entry endPc="268439112" name="dc" stackId="1" startPc="268437825"/>
+<entry endPc="268439621" name="x" stackId="8" startPc="268439116"/>
+<entry endPc="268439621" name="fsize" stackId="5" startPc="268439116"/>
+<entry endPc="268439621" name="battery" stackId="3" startPc="268439116"/>
+<entry endPc="268439621" name="w" stackId="6" startPc="268439116"/>
+<entry endPc="268439621" name="h" stackId="7" startPc="268439116"/>
+<entry endPc="268439621" name="fbattery" stackId="4" startPc="268439116"/>
+<entry endPc="268439621" name="systemStats" stackId="2" startPc="268439116"/>
+<entry endPc="268439621" name="y" stackId="9" startPc="268439116"/>
+<entry endPc="268439622" name="dc" stackId="1" startPc="268439112"/>
+<entry endPc="268439737" name="dc" stackId="1" startPc="268439622"/>
+<entry endPc="268439802" name="dictionary" stackId="1" startPc="268439761"/>
+<entry endPc="268439873" name="dc" stackId="1" startPc="268439803"/>
+<entry endPc="268439901" name="state" stackId="1" startPc="268439896"/>
+<entry endPc="268439906" name="state" stackId="1" startPc="268439901"/>
+<entry endPc="268440022" name="rez_cmp_local_custom_drawable_P0RF6FD8XZDU62VA493N" stackId="2" startPc="268439981"/>
+<entry endPc="268440023" name="dc" stackId="1" startPc="268439969"/>
 </localVars>
 <annotations/>
 <functions>
@@ -328,10 +338,14 @@
 </functionEntry>
 <functionEntry accessMode="public" name="decimals" parent="BWFaceView">
 <param id="n"/>
+<param id="scale"/>
 <documentation/>
 </functionEntry>
 <functionEntry accessMode="public" name="decFields" parent="BWFaceView">
 <param id="n"/>
+<param id="f"/>
+<param id="scale"/>
+<param id="prec"/>
 <documentation/>
 </functionEntry>
 <functionEntry accessMode="public" name="activityDraw" parent="BWFaceView">
@@ -391,13 +405,13 @@
 <dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
 <dataEntry offset="182" parentId="globals" symbolId="Background" type="class"/>
 <dataEntry offset="237" parentId="globals" symbolId="BWFaceView" type="class"/>
-<dataEntry offset="612" parentId="globals" symbolId="BWFaceApp" type="class"/>
-<dataEntry offset="691" parentId="globals" symbolId="Rez" type="module"/>
-<dataEntry offset="770" parentId="Rez" symbolId="Drawables" type="module"/>
-<dataEntry offset="809" parentId="Rez" symbolId="Menus" type="module"/>
-<dataEntry offset="840" parentId="Rez" symbolId="Fonts" type="module"/>
-<dataEntry offset="959" parentId="Rez" symbolId="JsonData" type="module"/>
-<dataEntry offset="990" parentId="Rez" symbolId="Layouts" type="module"/>
-<dataEntry offset="1029" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry offset="644" parentId="globals" symbolId="BWFaceApp" type="class"/>
+<dataEntry offset="723" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="802" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="841" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="872" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="991" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="1022" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="1061" parentId="Rez" symbolId="Strings" type="module"/>
 </dataEntryOffsetMappings>
 </debugInfo>

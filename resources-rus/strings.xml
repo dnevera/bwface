@@ -1,5 +1,6 @@
-<strings>
-
+<resources>
+    <string id="language">Русский</string>
+    
     <string id="AppName">BWFace</string>
 
     <string id="BackgroundColorTitle">Background Color</string>
@@ -15,9 +16,9 @@
     <string id="ColorWhite">White</string>
     <string id="ColorBlue">Blue</string>
     <string id="ColorRed">Red</string>
-
-    <string id="StepsTitle">Steps</string>
-    <string id="CaloriesTitle">KCal</string>
-    <string id="DistanceTitle">Km</string>
+       
+    <string id="StepsTitle">Шагов</string>
+    <string id="CaloriesTitle">ККал</string>
+    <string id="DistanceTitle">Км</string>
     
-</strings>
+</resources>
