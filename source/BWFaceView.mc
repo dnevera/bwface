@@ -9,9 +9,8 @@ using Toybox.ActivityMonitor as Act;
 using Toybox.Sensor as Snsr;
 
 class BWFaceView extends Ui.WatchFace {
-
- 	var string_HR;
-    var HR_graph;
+        
+	var batterySize = [18,9]; 
         
     var iconsFont = null;
         
@@ -22,6 +21,8 @@ class BWFaceView extends Ui.WatchFace {
 	
 	var infoFont      = Gfx.FONT_SYSTEM_SMALL;
 	var infoTitleFont = Gfx.FONT_SYSTEM_SMALL;
+	var infoFractFont = Gfx.FONT_SYSTEM_SMALL;
+	var clockPadding  = -12;
 	var infoPadding   = 8;
 	var framePadding  = 4;
 	var frameRadius   = 4;
@@ -43,9 +44,6 @@ class BWFaceView extends Ui.WatchFace {
     
     function initialize() {
         WatchFace.initialize();
-        //Snsr.setEnabledSensors( [Snsr.SENSOR_HEARTRATE] );
-        //Snsr.enableSensorEvents( method(:onSnsr) );  
-        //HR_graph = new LineGraph( 20, 10, Gfx.COLOR_RED );     
     }
 
     function onLayout(dc) {
@@ -59,6 +57,7 @@ class BWFaceView extends Ui.WatchFace {
         	
         infoFont      = Ui.loadResource(Rez.Fonts.infoFont);	
         infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);	
+        infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFont);	
         
         labelColor   = App.getApp().getProperty("ForegroundColor");
         bgColor      = App.getApp().getProperty("BackgroundColor");
@@ -75,18 +74,8 @@ class BWFaceView extends Ui.WatchFace {
 
 	function heatRateDraw(dc) {
     	var info = Info.getActivityInfo();
-    	var hr = info.currentHeartRate;
-    	
-    	System.println("hr:" + hr);
-    	
-        /*dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_BLACK);
-        dc.clear();
-
-        dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
-
-        dc.drawText(dc.getWidth() / 2, 90, Gfx.FONT_LARGE, string_HR, Gfx.TEXT_JUSTIFY_CENTER);*/
-
-        //HR_graph.draw(dc, [0, 0], [dc.getWidth(), dc.getHeight()]);
+    	var hr = info.currentHeartRate;    	
+    	System.println("hr:" + hr);    	
     }
 
 	function calendarDraw(dc){
@@ -98,20 +87,9 @@ class BWFaceView extends Ui.WatchFace {
         	today.month
     	]
 		);
-		/*var caledar = Lang.format(
-    		"$1$ $2$/$3$",
-    		[
-        	today.day_of_week,
-        	today.day,
-        	today.month
-    	]
-		);*/
 
 		var dsize = dc.getTextDimensions(day, calendarFont);
 		var wdsize = dc.getTextDimensions(today.day_of_week, weekDayFont);
-
-		System.println("size:" + dsize);
-		System.println("date:" + day);
 		
 		dc.setColor(labelColor, bgColor);
 		dc.drawText(dc.getWidth()/2, wdsize[1]+2, calendarFont, day, Gfx.TEXT_JUSTIFY_CENTER);		
@@ -121,7 +99,9 @@ class BWFaceView extends Ui.WatchFace {
 	function clockDraw(dc){
 		var clockTime = Sys.getClockTime();
 		
-		 var hours = clockTime.hour;
+		var hours   = clockTime.hour;
+		var minutes = clockTime.min;		
+		
         if (!Sys.getDeviceSettings().is24Hour) {
             if (hours > 12) {
                 hours = hours - 12;
@@ -133,34 +113,57 @@ class BWFaceView extends Ui.WatchFace {
         }
         
         hours   = hours.format("%02d");
-		var minutes = clockTime.min.format("%02d");		
+		minutes = minutes.format("%02d");		
 		
 		var hoursSize = dc.getTextDimensions(hours, digitsMonoFont);
+		var minutesSize = dc.getTextDimensions(minutes, digitsMonoFont);
+		
+		var x = dc.getWidth()/2;
+		var y = dc.getHeight()/2-hoursSize[1]/2-framePadding+clockPadding;
+		var yc= dc.getHeight()/2-colonSize[1]/2-framePadding+clockPadding;
+		
 		dc.setColor(hoursColor, bgColor);
-		dc.drawText(dc.getWidth()/2-colonSize[0]-hoursSize[0], dc.getHeight()/2-hoursSize[1]/2, digitsMonoFont, hours, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(x-colonSize[0]-hoursSize[0]+2, y,   digitsMonoFont, hours, Gfx.TEXT_JUSTIFY_LEFT);
 
 		dc.setColor(colonColor, bgColor);
-		dc.drawText(dc.getWidth()/2, dc.getHeight()/2-colonSize[1]/2, digitsFont, colonString, Gfx.TEXT_JUSTIFY_CENTER);
+		dc.drawText(x, yc, digitsFont, colonString, Gfx.TEXT_JUSTIFY_CENTER);
 	
-		var minutesSize = dc.getTextDimensions(minutes, digitsMonoFont);
 		dc.setColor(minutesColor, bgColor);
-		dc.drawText(dc.getWidth()/2+colonSize[0]+minutesSize[0], dc.getHeight()/2-minutesSize[1]/2, digitsMonoFont, minutes, Gfx.TEXT_JUSTIFY_RIGHT);
+		dc.drawText(x+colonSize[0]+minutesSize[0]-2, y, digitsMonoFont, minutes, Gfx.TEXT_JUSTIFY_RIGHT);
 
-		timeUnderLinePos = dc.getHeight()/2+hoursSize[1]/2;
+		timeUnderLinePos = x+hoursSize[1]/2-infoPadding+clockPadding;
 	}
 
-	var stepTitle = "steps";
+	var stepTitle = "шагов";
+	var stepDraft = "99999";
+		
+	function decimals(n){
+		var t0=(n.toDouble()-0.5)/1000.0;
+		var t1=(n.toDouble()+0.5)/1000.0;
+		return [(t0 - 0.5/1000.0).toLong(),((t1 - n.toLong()/1000)*1000).toLong()]; 
+	}
+	
+	function decFields(n){
+		if (n==null) {
+			return ["--",""];
+		} 
+		var dec  = decimals(n);	
+		return [dec[0].toString(),","+dec[1].toString()];
+	}
 	
 	function activityDraw(dc) {
 		var info = Info.getActivityInfo();
 		var monitor = Act.getInfo();
-		var calories = info.calories == null ? "--" : info.calories.format("%02d"); 
-		var dist     = monitor.steps == null ? "--" : (monitor.distance/100/1000).format("%02d");
-		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
 		
-		var dSize = dc.getTextDimensions(dist, infoFont);
-		var sSize = dc.getTextDimensions(steps, infoFont);
-		var cSize = dc.getTextDimensions(calories, infoFont);
+		var calories = decFields(info.calories);//info.calories == null ? "--" : info.calories.format("%02d");
+		var distance = decFields(monitor.distance);
+		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
+				
+		System.println("dist:" + distance[0] + distance[1] + " .. calories = "+info.calories);
+		
+		var sSize = dc.getTextDimensions(stepDraft, infoFont);
+		var dSize = dc.getTextDimensions(distance[0], infoFont);
+		var cSize = dc.getTextDimensions(calories[0], infoFont);
 		
 		var stepTitleSize = dc.getTextDimensions(stepTitle, infoTitleFont);
 		
@@ -176,13 +179,17 @@ class BWFaceView extends Ui.WatchFace {
 		
 		dc.setColor(labelColor, bgColor);
 		
-		dc.drawText(distx-framePadding, timeUnderLinePos, infoFont, dist, Gfx.TEXT_JUSTIFY_RIGHT);
+		var size = dc.getTextDimensions(distance[1], infoFractFont);
+		
+		dc.drawText(distx-framePadding-size[0], timeUnderLinePos, infoFont, distance[0], Gfx.TEXT_JUSTIFY_RIGHT);
+		dc.drawText(distx-framePadding, timeUnderLinePos, infoFractFont, distance[1], Gfx.TEXT_JUSTIFY_RIGHT);
 		dc.drawText(distx-framePadding, timeUnderLinePos+dSize[1], infoTitleFont, "km", Gfx.TEXT_JUSTIFY_RIGHT);
 		
 		dc.drawText(stepx, timeUnderLinePos, infoFont, steps, Gfx.TEXT_JUSTIFY_CENTER);
 		dc.drawText(stepx, timeUnderLinePos+dSize[1], infoTitleFont, stepTitle, Gfx.TEXT_JUSTIFY_CENTER);
-		
-		dc.drawText(caloriesx+framePadding, timeUnderLinePos, infoFont, calories, Gfx.TEXT_JUSTIFY_LEFT);
+				
+		dc.drawText(caloriesx+framePadding, timeUnderLinePos, infoFont, calories[0], Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(caloriesx+framePadding+cSize[0], timeUnderLinePos, infoFractFont, calories[1], Gfx.TEXT_JUSTIFY_LEFT);
 		dc.drawText(caloriesx+framePadding, timeUnderLinePos+dSize[1], infoTitleFont, "kCal", Gfx.TEXT_JUSTIFY_LEFT);
 		
 		dc.setColor(framesColor, bgColor);
@@ -203,15 +210,12 @@ class BWFaceView extends Ui.WatchFace {
 	
 		var systemStats = Sys.getSystemStats();
 		var battery = systemStats.battery;
-		var size = [20,20]; //dc.getTextDimensions("d", iconsFont);
         var fbattery =  battery.format("%d") + "%";
         var fsize = dc.getTextDimensions(fbattery, infoTitleFont);
-		var w = size[0];
-		var h = size[1]/2;
+		var w = batterySize[0];
+		var h = batterySize[1];
         var x = dc.getWidth()/2-w/2-fsize[0]/2;
 		var y = infoUnderLinePos+h/2+2;
-		//dc.drawText( x, y, iconsFont, "d",  Gfx.TEXT_JUSTIFY_LEFT);
-        //dc.fillRectangle(x, y, w*battery/100-2, h/2);
         
         if (battery>50){
         	dc.setColor(labelColor, bgColor);
@@ -223,7 +227,7 @@ class BWFaceView extends Ui.WatchFace {
         	dc.setColor(batteryLowColor, bgColor);
         }
         
-        dc.drawRectangle(x+w, y+h/3, 2, h/2-1);
+        dc.drawRectangle(x+w, y+h/3.0, 1.5, h/2.0-1);
         dc.drawRoundedRectangle(x, y, w, h, 2);
         dc.fillRoundedRectangle(x, y, w*battery/100, h, 2);
         
@@ -240,35 +244,12 @@ class BWFaceView extends Ui.WatchFace {
 	    heatRateDraw(dc);       
     }
 
-    function onShow() {
-    }
+    function onShow() {}
 
-    function onHide() {
-    }
+    function onHide() {}
 
-    function onExitSleep() {
-    }
+    function onExitSleep() {}
 
-    function onEnterSleep() {
-    }
-    
-     function onSnsr(sensor_info)
-    {
-        var HR = sensor_info.heartRate;
-        var bucket;
-        if( sensor_info.heartRate != null )
-        {
-            string_HR = HR.toString() + "bpm";
-
-            //Add value to graph
-            HR_graph.addItem(HR);
-        }
-        else
-        {
-            string_HR = "---bpm";
-        }
-
-        Ui.requestUpdate();
-    }
+    function onEnterSleep() {}
     
 }
