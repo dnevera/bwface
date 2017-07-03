@@ -26,8 +26,8 @@ class BWFaceView extends Ui.WatchFace {
 	var calendarPadding  =  2;
 	var clockPadding     = -2;
 	var batteryPadding   = -4;
-	var infoPadding      =  2;
-	var activityPadding  = -6;
+	var infoPadding      =  4;
+	var activityPadding  = -8;
 	var framePadding     =  4;
 	var frameRadius      =  4;
 	var caloriesCircleTickWidth = 12;
@@ -252,7 +252,7 @@ class BWFaceView extends Ui.WatchFace {
 		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
 						
 		var sSize = dc.getTextDimensions(stepDraft, infoFont);
-		sSize[0]=dc.getWidth()/3.2;
+		sSize[0]=dc.getWidth()/3.5;
 		
 		var dSize = dc.getTextDimensions(distance[0], infoFont);
 		var cSize = dc.getTextDimensions(calories[0], infoFont);
@@ -358,14 +358,16 @@ class BWFaceView extends Ui.WatchFace {
 		// pseudo antialiasing
 		dc.setPenWidth(1);
 
-		dc.setColor(Gfx.COLOR_DK_GRAY,  Gfx.COLOR_DK_GRAY);
+		dc.setColor(bgColor,  bgColor);
 		dc.drawArc(x, y, r-caloriesCircleWidth/2, dir, start, end);
 							
 		caloriesLinePos = txtY-size[1]/2-2;
 		
 		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
-		dc.setPenWidth(caloriesCircleWidth);
+		dc.setPenWidth(caloriesCircleWidth-1);
 		dc.drawLine(circleX-tickW, txtY, dc.getWidth()-1, txtY);
+
+		dc.setColor(labelColor,  Gfx.COLOR_TRANSPARENT);
 		dc.drawText(txtX-caloriesCircleWidth, caloriesLinePos, infoTitleFont, txt, Gfx.TEXT_JUSTIFY_LEFT);
 
 		dc.setPenWidth(1);		

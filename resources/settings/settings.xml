@@ -2,6 +2,7 @@
 
     <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
         <settingConfig type="list">
+            <listEntry value="#8F8F8F">@Strings.ColorGray56</listEntry>
             <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
             <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
             <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
@@ -45,8 +46,8 @@
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
+    <!--  setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
         <settingConfig type="boolean" />
-    </setting>
+    </setting-->
 
 </settings>
