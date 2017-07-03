@@ -1,11 +1,10 @@
 <fonts>
 
-<font id ="digits7Font"      filename="digits75x.fnt" filter="0123456789:" antialias="true"/>
-<font id ="digits7monoFont"  filename="digitsds5x.fnt" filter="0123456789:" antialias="true"/>
-<font id ="digits7monoSmallFont"  filename="digitsds5s.fnt" filter="0123456789:" antialias="true"/>
-<font id ="digits7monoTinyFont"  filename="digitsds735.fnt" filter="0123456789:" antialias="true"/>
-<font id ="calendarFont"       filename="calendar50px.fnt" antialias="true"/>
-<font id ="weekDayFont"        filename="calendar32px.fnt" antialias="true"/>
+<font id ="clockFont"          filename="clock-font-large.fnt" filter="0123456789:" antialias="true"/>
+<font id ="clockFontSmall"     filename="digitsds5s.fnt" filter="0123456789:" antialias="true"/>
+<font id ="clockFontTiny"      filename="digitsds735.fnt" filter="0123456789:" antialias="true"/>
+<font id ="calendarFontLarge"  filename="calendar-font-large.fnt" antialias="true"/>
+<font id ="weekDayFont"        filename="calendar26px.fnt" antialias="true"/>
 <font id ="calendarSmallFont"  filename="calendar40px.fnt" antialias="true"/>
 <font id ="weekDaySmallFont"   filename="calendar26px.fnt" antialias="true"/>
 <font id ="infoFont"           filename="info30px.fnt" antialias="true"/>

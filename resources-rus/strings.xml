@@ -17,8 +17,8 @@
     <string id="ColorBlue">Blue</string>
     <string id="ColorRed">Red</string>
        
-    <string id="StepsTitle">Шагов</string>
-    <string id="CaloriesTitle">ККал</string>
-    <string id="DistanceTitle">Км</string>
+    <string id="StepsTitle">шагов</string>
+    <string id="CaloriesTitle">кал</string>
+    <string id="DistanceTitle">км</string>
     
 </resources>

@@ -17,8 +17,8 @@
     <string id="ColorBlue">Blue</string>
     <string id="ColorRed">Red</string>
     	
-    <string id="StepsTitle">Steps</string>
-    <string id="CaloriesTitle">KCal</string>
-    <string id="DistanceTitle">Km</string>
+    <string id="StepsTitle">steps</string>
+    <string id="CaloriesTitle">cal</string>
+    <string id="DistanceTitle">km</string>
     
 </resources>
