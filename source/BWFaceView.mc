@@ -5,7 +5,7 @@ using Toybox.Lang as Lang;
 using Toybox.Time.Gregorian as Calendar;
 using Toybox.Application as App;
 using Toybox.Activity as Info;
-using Toybox.ActivityMonitor as Act;
+using Toybox.ActivityMonitor as Monitor;
 using Toybox.Sensor as Snsr;
 using Toybox.UserProfile as User;
 using Toybox.Math as Math;
@@ -244,7 +244,7 @@ class BWFaceView extends Ui.WatchFace {
 	var currentCalories;
 	
 	function activityDraw(dc) {
-		var monitor = Act.getInfo(); 
+		var monitor = Monitor.getInfo(); 
 		
 		currentCalories = monitor.calories;
 		var calories = decFields(currentCalories," ",1,3);
