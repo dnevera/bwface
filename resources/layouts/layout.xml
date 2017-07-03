@@ -1,9 +1,3 @@
 <layout id="WatchFace">
     <drawable class="Background" />
-    <!-- 
-    <label id="TimeLabel"    x="center" y="center" font="@Fonts.digits7Font"  justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
-    <label id="HoursLabel"   x="center" y="center" font="@Fonts.digits7monoFont"  justification="Gfx.TEXT_JUSTIFY_CENTER" color="#32CD32" />
-    <label id="TimeColonLabel"    x="center" y="center" font="@Fonts.digits7Font"      justification="Gfx.TEXT_JUSTIFY_CENTER" color="#443344" />
-    <label id="MinutesLable" x="center" y="center" font="@Fonts.digits7monoFont"  justification="Gfx.TEXT_JUSTIFY_CENTER" color="#FFA500" />
-     -->
 </layout>
