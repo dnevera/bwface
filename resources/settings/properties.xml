@@ -1,16 +1,15 @@
 <properties>
 
-    <property id="BackgroundColor" type="number">0x000000</property>
-    <!--property id="ForegroundColor" type="number">#CFDFDF</property-->
-    <property id="ForegroundColor" type="number">#EFEFEF</property>
-    <property id="FramesColor" type="number">#4F4F4F</property>
-    <property id="BatteryLowColor" type="number">#F42416</property>
-    <property id="BatteryWarnColor" type="number">#FFA500</property>
-    <property id="HoursColor" type="number">#FFA500</property>
-    <property id="TimeColonColor" type="number">#E0E0E0</property>
-    <property id="MinutesColor" type="number">#32CD32</property>
-    <property id="SurplusColor" type="number">#7F2400</property>
-    <property id="DeficitColor" type="number">#247F00</property>
+    <property id="BackgroundColor"   type="number">0x000000</property>
+    <property id="ForegroundColor"   type="number">0xEFEFEF</property>
+    <property id="FramesColor"       type="number">0x4F4F4F</property>
+    <property id="BatteryLowColor"   type="number">0xF42416</property>
+    <property id="BatteryWarnColor"  type="number">0xFFA500</property>
+    <property id="HoursColor"        type="number">0xFFA500</property>
+    <property id="TimeColonColor"    type="number">0xE0E0E0</property>
+    <property id="MinutesColor"      type="number">0x32CD32</property>
+    <property id="SurplusColor"      type="number">0x7F2400</property>
+    <property id="DeficitColor"      type="number">0x247F00</property>
     <!--  property id="UseMilitaryFormat" type="boolean">false</property-->
     
 </properties>

@@ -4,12 +4,10 @@
 <font id ="clockFontSmall"     filename="digitsds5s.fnt" filter="0123456789:" antialias="true"/>
 <font id ="clockFontTiny"      filename="digitsds735.fnt" filter="0123456789:" antialias="true"/>
 <font id ="calendarFontLarge"  filename="calendar-font-large.fnt" antialias="true"/>
-<font id ="weekDayFont"        filename="calendar26px.fnt" antialias="true"/>
 <font id ="calendarSmallFont"  filename="calendar40px.fnt" antialias="true"/>
-<font id ="weekDaySmallFont"   filename="calendar26px.fnt" antialias="true"/>
-<font id ="infoFont"           filename="info30px.fnt" antialias="true"/>
-<font id ="infoFractFont"      filename="info14px.fnt" antialias="true"/>
-<font id ="infoTitleFont"      filename="infotitle14px.fnt" antialias="true"/>
-<font id ="iconsFont"          filename="typicons22.fnt" antialias="true"/>
+<font id ="infoFont"           filename="info-first-digits-font-normal.fnt" antialias="true"/>
+<font id ="infoFontSmall"      filename="info-first-digits-font-small.fnt" antialias="true"/>
+<font id ="infoFractFont"      filename="info-fraction-font-normal.fnt" antialias="true"/>
+<font id ="infoTitleFont"      filename="info-title-font-normal.fnt" antialias="true"/>
 
 </fonts>

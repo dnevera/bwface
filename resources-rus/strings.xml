@@ -4,15 +4,25 @@
     <string id="AppName">BWFace</string>
 
     <string id="BackgroundColorTitle">Цвет фона</string>
+    <string id="SurplusColorTitle">Цвет профицита калорий</string>
+    <string id="DeficitColorTitle">Цвет дефицита калорий</string>
     <string id="ForegroundColorTitle">Цвет меток</string>
     <string id="HoursColorTitle">Цвет часов</string>
     <string id="TimeColonColorTitle">Цвет разделителя</string>
     <string id="MinutesColorTitle">Цвет минут</string>
     <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>
 
+    <string id="ColorDark">Тёмный</string>    
+    <string id="ColorLight">Нормальный</string>    
+    <string id="ColorBright">Яркий</string>    
+
     <string id="ColorGray56">Серый 56</string>
+    <string id="ColorCloudy">Облачный</string>
+    <string id="ColorRedCheese">Красный Сыр</string>
+    <string id="ColorLightDusk">Ранние сумерки</string>
+    <string id="ColorGeenApple">Зеленое Яблоко</string>
     
-    <string id="ColorBlack">Чорный</string>
+    <string id="ColorBlack">Чёрный</string>
     <string id="ColorDarkGray">Темно серый</string>
     <string id="ColorLightGray">Серебристый</string>
     <string id="ColorWhite">Белый</string>
