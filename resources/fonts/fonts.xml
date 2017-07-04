@@ -1,13 +1,16 @@
 <fonts>
 
 <font id ="clockFont"          filename="clock-font-large.fnt" filter="0123456789:" antialias="true"/>
-<font id ="clockFontSmall"     filename="digitsds5s.fnt" filter="0123456789:" antialias="true"/>
-<font id ="clockFontTiny"      filename="digitsds735.fnt" filter="0123456789:" antialias="true"/>
+<font id ="clockFontSmall"     filename="clock-font-small.fnt" filter="0123456789:" antialias="true"/>
+<font id ="clockFontTiny"      filename="clock-font-tiny.fnt" filter="0123456789:" antialias="true"/>
 <font id ="calendarFontLarge"  filename="calendar-font-large.fnt" antialias="true"/>
-<font id ="calendarSmallFont"  filename="calendar40px.fnt" antialias="true"/>
+<font id ="calendarFontSmall"  filename="calendar-font-small.fnt" antialias="true"/>
 <font id ="infoFont"           filename="info-first-digits-font-normal.fnt" antialias="true"/>
 <font id ="infoFontSmall"      filename="info-first-digits-font-small.fnt" antialias="true"/>
 <font id ="infoFractFont"      filename="info-fraction-font-normal.fnt" antialias="true"/>
+<font id ="infoFractFontSmall" filename="info-fraction-font-small.fnt" antialias="true"/>
 <font id ="infoTitleFont"      filename="info-title-font-normal.fnt" antialias="true"/>
+<font id ="infoTitleFontSmall" filename="info-title-font-small.fnt" antialias="true"/>
+<font id ="infoTitleFontTiny"  filename="info-title-font-tiny.fnt" antialias="true"/>
 
 </fonts>

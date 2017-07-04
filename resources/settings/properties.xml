@@ -10,6 +10,7 @@
     <property id="MinutesColor"      type="number">0x32CD32</property>
     <property id="SurplusColor"      type="number">0x7F2400</property>
     <property id="DeficitColor"      type="number">0x247F00</property>
+    <property id="CaloriesCheckPointOn12" type="boolean">false</property>
     <!--  property id="UseMilitaryFormat" type="boolean">false</property-->
     
 </properties>

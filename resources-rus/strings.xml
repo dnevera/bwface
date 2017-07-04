@@ -3,6 +3,8 @@
     
     <string id="AppName">BWFace</string>
 
+    <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12</string>
+
     <string id="BackgroundColorTitle">Цвет фона</string>
     <string id="SurplusColorTitle">Цвет профицита калорий</string>
     <string id="DeficitColorTitle">Цвет дефицита калорий</string>

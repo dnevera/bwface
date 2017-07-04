@@ -18,20 +18,22 @@ class BWFaceView extends Ui.WatchFace {
 	var calendarFont = Gfx.FONT_SYSTEM_LARGE;
 	var weekDayFont  = Gfx.FONT_SYSTEM_MEDIUM;
 	
-	var infoFont      = Gfx.FONT_SYSTEM_SMALL;
+	var infoFont      = Gfx.FONT_SYSTEM_MEDIUM;
 	var infoFontSmall = Gfx.FONT_SYSTEM_SMALL;
 	var infoTitleFont = Gfx.FONT_SYSTEM_SMALL;
+	var infoTitleFontTiny = Gfx.FONT_SYSTEM_TINY;
 	var infoFractFont = Gfx.FONT_SYSTEM_SMALL;
 	
-	var weekDayPadding   =  2;
-	var calendarPadding  =  2;
-	var clockPadding     = -2;
+	var weekDayPadding   = -3;
+	var calendarPadding  = -10;
+	var clockPadding     =  0;
 	var batteryPadding   = -4;
 	var infoPadding      =  4;
-	var activityPadding  = -8;
+	var activityPadding  = -12;
 	var framePadding     =  4;
 	var frameRadius      =  4;
-	var caloriesCircleTickWidth = 12;
+	var topActibitiesPadding =  0;
+	var caloriesCircleTickWidth = 10;
 	var caloriesCircleWidth     = 6;
 	
 	var surplusColor = Gfx.COLOR_RED;
@@ -54,13 +56,15 @@ class BWFaceView extends Ui.WatchFace {
 	var distanceTitle;
 	var bpmTitle;
     var userBmr;
+    var drawTopTitles = true;
+    var caloriesCircleTickOn12 = true; 
     
     function initialize() {
-        WatchFace.initialize();
+        WatchFace.initialize();        
     }
 
     function onLayout(dc) {
-                            
+                                                        
         stepsTitle = Ui.loadResource( Rez.Strings.StepsTitle );
         caloriesTitle = Ui.loadResource( Rez.Strings.CaloriesTitle );
         distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
@@ -68,11 +72,10 @@ class BWFaceView extends Ui.WatchFace {
         
         if (dc.getHeight()<=180){
         	clockFont = Ui.loadResource(Rez.Fonts.clockFontTiny);
-        	clockPadding  = -7;
+        	drawTopTitles = false;
 		}
 		else if (dc.getWidth()<=218){
         	clockFont = Ui.loadResource(Rez.Fonts.clockFontSmall);
-			clockPadding  = -7;
 		}
 		else {
         	clockFont = Ui.loadResource(Rez.Fonts.clockFont);
@@ -85,28 +88,43 @@ class BWFaceView extends Ui.WatchFace {
         	calendarFont = Gfx.FONT_SYSTEM_MEDIUM;
 			weekDayFont  = Gfx.FONT_SYSTEM_MEDIUM;
         	
-        	weekDayPadding   =  1;
+        	weekDayPadding   = -8;
 			calendarPadding  = -3;  
-			infoPadding   = 8;
+			infoPadding   = 4;
 			framePadding  = 4;
 			frameRadius   = 2;		     
+        	activityPadding  = -6;   
+        	clockPadding     =  -14;
+        	topActibitiesPadding = -14;   
+        	batteryPadding   = -2;        	  	
         }
         else if (dc.getWidth()<=240){   
         	if  (dc.getWidth()<=218){    	
-        		calendarFont  = Ui.loadResource(Rez.Fonts.calendarSmallFont);	
+        		calendarFont  = Ui.loadResource(Rez.Fonts.calendarFontSmall);
+	        	infoFont      = Ui.loadResource(Rez.Fonts.infoFontSmall);	
+	        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);
+            	infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);	
+        		calendarPadding  = -6;
+        		activityPadding  = -7;   
+        		clockPadding     = -2;     		
         	}
         	else {
 	        	calendarFont  = Ui.loadResource(Rez.Fonts.calendarFontLarge);	
+	        	infoFont      = Ui.loadResource(Rez.Fonts.infoFont);
+	        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFont);	        		
+	        	infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);
+	        	batteryPadding   = -4;        	  	
         	}
         	weekDayFont   = calendarFont; 
-        	infoFont      = Ui.loadResource(Rez.Fonts.infoFont);	
         	infoFontSmall = Ui.loadResource(Rez.Fonts.infoFontSmall);	
-        	infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);	
-        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFont);	        	
         }	        
 
+        infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);	
         surplusColor = App.getApp().getProperty("SurplusColor");
         deficitColor = App.getApp().getProperty("DeficitColor");
+        	        
+        	        
+        caloriesCircleTickOn12   = App.getApp().getProperty("CaloriesCheckPointOn12");
         	        
         labelColor   = App.getApp().getProperty("ForegroundColor");
         bgColor      = App.getApp().getProperty("BackgroundColor");
@@ -117,7 +135,7 @@ class BWFaceView extends Ui.WatchFace {
         batteryLowColor = App.getApp().getProperty("BatteryLowColor");
         batteryWarnColor = App.getApp().getProperty("BatteryWarnColor");
             
-        userBmr = bmr();
+        userBmr = bmr();        
     }
 
 	
@@ -154,7 +172,7 @@ class BWFaceView extends Ui.WatchFace {
             	ampm = "AM";
             }
             if (hours > 12) {
-                hours = hours - 12;
+                hours = hours - 1;
             }
         } else {
             if (App.getApp().getProperty("UseMilitaryFormat")) {
@@ -192,8 +210,8 @@ class BWFaceView extends Ui.WatchFace {
 			dc.getHeight()/2-framePadding+clockPadding, infoTitleFont, ampm, Gfx.TEXT_JUSTIFY_LEFT);
 		}  
 		
-		timeUnderLinePos = y+hoursSize[1]+activityPadding+clockPadding;		
-		timeAboveLinePos += (y-timeAboveLinePos)/2;
+		timeUnderLinePos = y+hoursSize[1]+activityPadding;		
+		timeAboveLinePos += (y-timeAboveLinePos)/2-2;
 	}
 
 	var stepDraft = "99999";
@@ -295,57 +313,49 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
 	var caloriesLinePos;
+	var caloriesTitleLinePos;
 	var caloriesOffsetPos;
-	function caloriesRestDraw(dc, calories) {
+
+	function caloriesRestDraw(dc, calories)  {
 	
 		var cl = calories - userBmr;
 		var isDeficit =  cl>=0;
-		var prcnt = cl/userBmr;
-		
+		var prcnt = (cl/userBmr).abs();
+				
 		var color = isDeficit ? deficitColor : surplusColor ;
 		
 		cl = cl.abs();
-		
-		//var fixed = userBmr.format("%d")+" BRM";
-		//var txt = userBmr.format("%d") + " " + cl.format("%d") + " " + prcnt.format("%.2f");
-		
-		//System.println( userBmr.format("%d") + " " + cl.format("%d") + " " + prcnt.format("%.2f"));
-		
-		var fields = decFields(currentCalories," ",1,3);
+				
+		var fields = decFields(cl," ",1,3);
 		
 		var value = fields[0];
 		var fract = fields[1];
 		
 		var fractSize = dc.getTextDimensions(fract, infoFractFont);
-		var size =  dc.getTextDimensions(value, infoFontSmall);
-		//size[0] += fractSize[0];
+		var size =  dc.getTextDimensions(value, infoFont);
 		 
-		//var title = userBmr.format("%d") + " "+caloriesTitle;
 		var title = " "+caloriesTitle;
-		var titleSize = dc.getTextDimensions(title, infoTitleFont);
 	
 		var x = dc.getWidth().toFloat()/2;
 		var y = dc.getHeight().toFloat()/2;
 		var r = x-caloriesCircleWidth/2;
 		
 		var tickW = caloriesCircleTickWidth;
-		var txtY    = timeAboveLinePos+size[1]/2; 
-		var titleY  = timeAboveLinePos+titleSize[1]; 
+		var txtY    = timeAboveLinePos+size[1]/2 + topActibitiesPadding; 
 		
-		var cat   = y - txtY + caloriesCircleWidth/2-0.5;
-		var titleCat   = y - titleY + caloriesCircleWidth/2-0.5;
+		var cat   = y - txtY;// + caloriesCircleWidth/2-2;
 		
 		var sin   = cat.toFloat()/r.toFloat();
-		var titleSin   = titleCat.toFloat()/r.toFloat();
 		var angle = Math.asin(sin);
-		var titleAngle = Math.asin(titleSin);
 		
 		var circleX = Math.cos(angle)*r+x;
-		var titleCircleX = Math.cos(titleAngle)*r+x;
 		var txtX = circleX-size[0]-fractSize[0]-tickW;
-		var titleX = titleCircleX-titleSize[0]-tickW;
 				
 		var s = angle*180.0/Math.PI;
+				
+		if (caloriesCircleTickOn12) {
+			s = 90;
+		} 
 								
 		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
 		dc.setPenWidth(caloriesCircleWidth*2);
@@ -372,33 +382,43 @@ class BWFaceView extends Ui.WatchFace {
 		dc.setColor(bgColor,  bgColor);
 		dc.drawArc(x, y, r-caloriesCircleWidth/2, dir, start, end);
 							
-		caloriesLinePos = titleY-titleSize[1]/2;
-		var mainCaloriesLinePos = txtY-size[1]/2-2;
+		caloriesLinePos = txtY-size[1]/2-2;
 		
 		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
 		dc.setPenWidth(caloriesCircleWidth-1);
-		dc.drawLine(circleX-tickW, txtY, dc.getWidth()-1, txtY);
+		if (caloriesCircleTickOn12){
+		}
+		else {
+			dc.drawLine(circleX-tickW, txtY, dc.getWidth()-1, txtY);
+		}
 
 		dc.setColor(labelColor,  Gfx.COLOR_TRANSPARENT);
-		dc.drawText(txtX-caloriesCircleWidth, mainCaloriesLinePos, infoFontSmall, value, Gfx.TEXT_JUSTIFY_LEFT);
-		dc.drawText(txtX-caloriesCircleWidth+size[0], mainCaloriesLinePos, infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(txtX-caloriesCircleWidth,           caloriesLinePos,  infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
+		
+		var fractPos = caloriesLinePos+size[1]-fractSize[1]-1;
+		dc.drawText(txtX-caloriesCircleWidth+size[0]-1, fractPos,  infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
+		
+		if (drawTopTitles) {
+			caloriesTitleLinePos = caloriesLinePos+2; 
+			dc.drawText(txtX-caloriesCircleWidth+size[0],   caloriesTitleLinePos, infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+		}
 				
-		//dc.drawText(titleX-caloriesCircleWidth, caloriesLinePos, infoTitleFont, title, Gfx.TEXT_JUSTIFY_LEFT);
-
 		dc.setPenWidth(1);		
-		caloriesOffsetPos = dc.getWidth()-(titleX+titleSize[0]);
+		caloriesOffsetPos = dc.getWidth() - (txtX-caloriesCircleWidth-tickW+size[0]+fractSize[0]);
 	}
 	
 	function heatRateDraw(dc) {
 	
     	var info = Info.getActivityInfo();
     	var hr = info.currentHeartRate;
-    	hr = hr == null ? "-- " + bpmTitle : hr.format("%d")+ " " + bpmTitle;    	
-    	
+    	hr = hr == null ? "-- " : hr.format("%d");   	
+    	var title = " "+bpmTitle;
     	dc.setColor(labelColor, Gfx.COLOR_TRANSPARENT);	
-		//dc.drawText(caloriesOffsetPos+caloriesCircleTickWidth, caloriesLinePos, infoTitleFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
-		dc.drawText(caloriesOffsetPos, caloriesLinePos, infoTitleFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
-		//dc.drawText(caloriesCircleTickWidth, caloriesLinePos, infoTitleFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(caloriesOffsetPos, caloriesLinePos, infoFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
+		if (drawTopTitles) {
+	    	var size = dc.getTextDimensions(hr,  infoFont);
+			dc.drawText(caloriesOffsetPos+size[0],   caloriesTitleLinePos, infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+		}
     }
     
 	function sysInfoDraw(dc) {
