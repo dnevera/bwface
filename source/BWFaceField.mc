@@ -5,7 +5,7 @@ class BWFaceField extends Ui.Drawable {
 	var properties;	
         
     function initialize(dictionary, newProperties){
-    	properties = newProperties;
+    	properties = newProperties.weak();
 		Drawable.initialize(dictionary);
     }
 }

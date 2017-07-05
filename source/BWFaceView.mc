@@ -48,7 +48,8 @@ class BWFaceView extends Ui.WatchFace {
     var drawTopTitles = true;
     
 	var properties = new BWFaceProperties();
-	var clockField = new BWFaceClockField(properties.weak());
+	var topField   = new BWFaceTopField(properties);
+	var clockField = new BWFaceClockField(properties);
     	
     function handlSettingUpdate(){    	
     	properties.setup();    	
@@ -121,7 +122,7 @@ class BWFaceView extends Ui.WatchFace {
     }
 
 	
-	function calendarDraw(dc){
+	/*function calendarDraw(dc){
 		var today = Calendar.info(Time.now(), Time.FORMAT_MEDIUM);
 		var day = Lang.format("$1$ $2$",[today.day,today.month]);
 
@@ -137,7 +138,7 @@ class BWFaceView extends Ui.WatchFace {
 		dc.drawText(x, yc, calendarFont, day,               Gfx.TEXT_JUSTIFY_CENTER);		
 		
 		timeAboveLinePos = yc+dsize[1];  		
-	}
+	}*/
 
 	function clockDraw(dc){
 	
@@ -438,13 +439,18 @@ class BWFaceView extends Ui.WatchFace {
     	dc.setColor(properties.bgColor, properties.bgColor);
 		dc.clear();
 		
-	    calendarDraw(dc);
-	    clockDraw(dc); 
+		topField.draw(dc);
+		
+		System.println("onUpdate WxH" + topField.width + "x" + topField.height);
+		
+		
+	    //calendarDraw(dc);
+	    //clockDraw(dc); 
 	    
-	    activityDraw(dc);
-	    sysInfoDraw(dc);	    
-	    caloriesRestDraw(dc,currentCalories);
-	    heatRateDraw(dc);	  	    	           
+	    //activityDraw(dc);
+	    //sysInfoDraw(dc);	    
+	    //caloriesRestDraw(dc,currentCalories);
+	    //heatRateDraw(dc);	  	    	           
     }
 
     function onShow() {}
