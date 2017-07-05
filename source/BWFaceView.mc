@@ -47,14 +47,15 @@ class BWFaceView extends Ui.WatchFace {
     var userBmr;
     var drawTopTitles = true;
     
-    var properties;
+	var properties = new BWFaceProperties();
+	var clockField = new BWFaceClockField(properties.weak());
     	
     function handlSettingUpdate(){    	
-    	properties = App.getApp().properties;    	
+    	properties.setup();    	
 	}
     
     function initialize() {
-        WatchFace.initialize();        
+        WatchFace.initialize();   
     }
 
     function onLayout(dc) {
@@ -139,6 +140,11 @@ class BWFaceView extends Ui.WatchFace {
 	}
 
 	function clockDraw(dc){
+	
+		clockField.draw(dc);	
+	
+		return;
+	
 		var clockTime = Sys.getClockTime();
 		
 		var hours   = clockTime.hour;
@@ -441,9 +447,7 @@ class BWFaceView extends Ui.WatchFace {
 	    heatRateDraw(dc);	  	    	           
     }
 
-    function onShow() {
-    	System.println("onShow()");
-    }
+    function onShow() {}
 
     function onHide() {}
 
