@@ -255,31 +255,34 @@
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="15" pc="268442172" symbol="draw"/>
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="17" pc="268442176" symbol="draw"/>
 <entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceBackground.mc" lineNum="18" pc="268442229" symbol="draw"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="21" pc="268442242" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="23" pc="268442246" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="24" pc="268442283" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="26" pc="268442320" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="28" pc="268442357" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="29" pc="268442394" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="30" pc="268442431" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="31" pc="268442468" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="33" pc="268442505" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="34" pc="268442518" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="35" pc="268442531" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="36" pc="268442544" symbol="setup"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="46" pc="268442559" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="47" pc="268442563" symbol="initialize"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="51" pc="268442582" symbol="onStart"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="52" pc="268442586" symbol="onStart"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="56" pc="268442605" symbol="onStop"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="60" pc="268442610" symbol="getInitialView"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="61" pc="268442614" symbol="getInitialView"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="65" pc="268442652" symbol="onSettingsChanged"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="66" pc="268442656" symbol="onSettingsChanged"/>
-<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="67" pc="268442674" symbol="onSettingsChanged"/>
-<entry filename="Rez" lineNum="58" pc="268442691" symbol="WatchFace"/>
-<entry filename="Rez" lineNum="60" pc="268442703" symbol="WatchFace"/>
-<entry filename="Rez" lineNum="63" pc="268442727" symbol="WatchFace"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="21" pc="268442242" symbol="getProperty"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="22" pc="268442246" symbol="getProperty"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="23" pc="268442274" symbol="getProperty"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="26" pc="268442290" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="28" pc="268442294" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="29" pc="268442323" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="31" pc="268442352" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="33" pc="268442378" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="34" pc="268442407" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="35" pc="268442436" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="36" pc="268442465" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="38" pc="268442494" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="39" pc="268442507" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="40" pc="268442520" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="41" pc="268442533" symbol="setup"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="51" pc="268442548" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="52" pc="268442552" symbol="initialize"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="56" pc="268442571" symbol="onStart"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="57" pc="268442575" symbol="onStart"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="61" pc="268442594" symbol="onStop"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="65" pc="268442599" symbol="getInitialView"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="66" pc="268442603" symbol="getInitialView"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="70" pc="268442641" symbol="onSettingsChanged"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="71" pc="268442645" symbol="onSettingsChanged"/>
+<entry filename="/Users/denn/Development/Garmin/watchfaces/BWFace/source/BWFaceApp.mc" lineNum="72" pc="268442663" symbol="onSettingsChanged"/>
+<entry filename="Rez" lineNum="58" pc="268442680" symbol="WatchFace"/>
+<entry filename="Rez" lineNum="60" pc="268442692" symbol="WatchFace"/>
+<entry filename="Rez" lineNum="63" pc="268442716" symbol="WatchFace"/>
 </pcToLineNum>
 <symbolTable>
 <entry field="true" id="28" symbol="infoFont"/>
@@ -343,6 +346,7 @@
 <entry field="true" id="32" symbol="infoFractFont"/>
 <entry id="8389375" method="true" object="true" symbol="WatchFace"/>
 <entry field="true" id="61" symbol="currentCalories"/>
+<entry id="8389282" method="true" symbol="getProperty"/>
 <entry field="true" id="53" symbol="properties"/>
 <entry id="58" method="true" symbol="decimals"/>
 <entry field="true" id="12" symbol="surplusColor"/>
@@ -511,10 +515,13 @@
 <entry endPc="268442083" name="dc" stackId="1" startPc="268441934"/>
 <entry endPc="268442171" name="dictionary" stackId="1" startPc="268442130"/>
 <entry endPc="268442242" name="dc" stackId="1" startPc="268442172"/>
-<entry endPc="268442605" name="state" stackId="1" startPc="268442582"/>
-<entry endPc="268442610" name="state" stackId="1" startPc="268442605"/>
-<entry endPc="268442744" name="rez_cmp_local_custom_drawable_MMB05JW1JUHE1CA6SUGS" stackId="2" startPc="268442703"/>
-<entry endPc="268442745" name="dc" stackId="1" startPc="268442691"/>
+<entry endPc="268442289" name="v" stackId="3" startPc="268442246"/>
+<entry endPc="268442290" name="default_value" stackId="2" startPc="268442242"/>
+<entry endPc="268442290" name="key" stackId="1" startPc="268442242"/>
+<entry endPc="268442594" name="state" stackId="1" startPc="268442571"/>
+<entry endPc="268442599" name="state" stackId="1" startPc="268442594"/>
+<entry endPc="268442733" name="rez_cmp_local_custom_drawable_CYJFCIKGZ5V6XG0F2YJJ" stackId="2" startPc="268442692"/>
+<entry endPc="268442734" name="dc" stackId="1" startPc="268442680"/>
 </localVars>
 <annotations/>
 <functions>
@@ -591,6 +598,11 @@
 <param id="dc"/>
 <documentation/>
 </functionEntry>
+<functionEntry accessMode="public" name="getProperty" parent="BWProperties">
+<param id="key"/>
+<param id="default_value"/>
+<documentation/>
+</functionEntry>
 <functionEntry accessMode="public" name="setup" parent="BWProperties">
 <documentation/>
 </functionEntry>
@@ -619,15 +631,15 @@
 <dataEntryOffsetMappings>
 <dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
 <dataEntry offset="190" parentId="globals" symbolId="BWProperties" type="class"/>
-<dataEntry offset="333" parentId="globals" symbolId="Background" type="class"/>
-<dataEntry offset="388" parentId="globals" symbolId="BWFaceView" type="class"/>
-<dataEntry offset="843" parentId="globals" symbolId="BWFaceApp" type="class"/>
-<dataEntry offset="930" parentId="globals" symbolId="Rez" type="module"/>
-<dataEntry offset="1009" parentId="Rez" symbolId="Drawables" type="module"/>
-<dataEntry offset="1048" parentId="Rez" symbolId="Menus" type="module"/>
-<dataEntry offset="1079" parentId="Rez" symbolId="Fonts" type="module"/>
-<dataEntry offset="1206" parentId="Rez" symbolId="JsonData" type="module"/>
-<dataEntry offset="1237" parentId="Rez" symbolId="Layouts" type="module"/>
-<dataEntry offset="1276" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry offset="341" parentId="globals" symbolId="Background" type="class"/>
+<dataEntry offset="396" parentId="globals" symbolId="BWFaceView" type="class"/>
+<dataEntry offset="851" parentId="globals" symbolId="BWFaceApp" type="class"/>
+<dataEntry offset="938" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="1017" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="1056" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="1087" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="1214" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="1245" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="1284" parentId="Rez" symbolId="Strings" type="module"/>
 </dataEntryOffsetMappings>
 </debugInfo>
