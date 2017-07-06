@@ -330,10 +330,10 @@ class BWFaceView extends Ui.WatchFace {
 		
 		cl = cl.abs();
 				
-		var clockTime = Sys.getClockTime();		
-		var offset    = clockTime.dst;				
+		//var clockTime = Sys.getClockTime();		
+		//var offset    = clockTime.dst;				
 				
-		var fields = decFields(offset," ",1,3);
+		var fields = decFields(cl," ",1,3);
 		
 		var value = fields[0];
 		var fract = fields[1];
