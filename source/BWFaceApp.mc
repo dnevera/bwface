@@ -4,11 +4,9 @@ using Toybox.System as System;
 
 class BWProperties{
 
-	//var infoTitleFontTiny;	
     var surplusColor;
     var deficitColor;
             	                	       
-    var caloriesCircleTickOn12;
 	var labelColor;
     var bgColor; 
 	var hoursColor;   
@@ -18,12 +16,17 @@ class BWProperties{
 	var batteryLowColor; 
 	var batteryWarnColor;     	
 
+    var useDayLightSavingTime = true;
+    var caloriesCircleTickOn12;
+
 	function getProperty(key,default_value) {
 		var v = App.getApp().getProperty(key);
 		return v == null ? default_value : v;
 	}
 
 	function setup(){
+		
+		useDayLightSavingTime = getProperty("UseDayLightSavingTime", false);
 		
         surplusColor = getProperty("SurplusColor",0x7F2400);                
         deficitColor = getProperty("DeficitColor",0x247F00);

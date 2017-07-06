@@ -4,6 +4,7 @@
     <string id="AppName">BWFace</string>
 
     <string id="CaloriesCheckPointOn12Title">Calories Check Point At 12</string>
+    <string id="UseDayLightSavingTimeTitle">Daylight Saving Time</string>
 
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="SurplusColorTitle">Surplus Color</string>
@@ -34,6 +35,7 @@
     <string id="StepsTitle">steps</string>
     <string id="CaloriesTitle">kcal</string>
     <string id="DistanceTitle">km</string>
+    <string id="DistanceMilesTitle">mi</string>
     <string id="BPMTitle">bpm</string>
     
 </resources>
