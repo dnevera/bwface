@@ -48,6 +48,9 @@ class BWFaceView extends Ui.WatchFace {
     var drawTopTitles = true;
     
     var properties;
+	var statuteFactor = 1.609344;
+	var statuteComa  = ",";
+	var statutePrec  = 2;
     	
     function handlSettingUpdate(){    	
     	properties = App.getApp().properties;    	
@@ -56,12 +59,24 @@ class BWFaceView extends Ui.WatchFace {
     function initialize() {
         WatchFace.initialize();        
     }
+	
+	function updateUnits(){
+	    var sysunits  = Sys.getDeviceSettings();
+	    if (sysunits.distanceUnits == Sys.UNIT_STATUTE) {
+	    	statuteFactor = 1.609344;
+	    	distanceTitle = Ui.loadResource( Rez.Strings.DistanceMilesTitle );
+	    } 
+        else {
+        	statuteFactor = 1;
+        	distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
+        }
+	}
 
-    function onLayout(dc) {
-                                                        
-        stepsTitle    = Ui.loadResource( Rez.Strings.StepsTitle );
+    function onLayout(dc) {				
+		updateUnits();
+		stepsTitle    = Ui.loadResource( Rez.Strings.StepsTitle );
+		                                         
         caloriesTitle = Ui.loadResource( Rez.Strings.CaloriesTitle );
-        distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
         bpmTitle      = Ui.loadResource( Rez.Strings.BPMTitle );
         
         if (dc.getHeight()<=180){
@@ -119,9 +134,20 @@ class BWFaceView extends Ui.WatchFace {
         userBmr = bmr();        
     }
 
+	function currentTime(){
+			var clockTime = Sys.getClockTime();
+			
+			var t = Time.now();	
+			
+			if (properties.useDayLightSavingTime) {	
+				var offset = new Time.Duration(clockTime.dst);
+				t=t.add(offset);
+			}		
+		
+			return  Calendar.info(t, Time.FORMAT_MEDIUM); 			
+	}
 	
-	function calendarDraw(dc){
-		var today = Calendar.info(Time.now(), Time.FORMAT_MEDIUM);
+	function calendarDraw(dc,today){
 		var day = Lang.format("$1$ $2$",[today.day,today.month]);
 
 		var wdsize = dc.getTextDimensions(today.day_of_week, weekDayFont);
@@ -138,11 +164,10 @@ class BWFaceView extends Ui.WatchFace {
 		timeAboveLinePos = yc+dsize[1];  		
 	}
 
-	function clockDraw(dc){
-		var clockTime = Sys.getClockTime();
-		
-		var hours   = clockTime.hour;
-		var minutes = clockTime.min;		
+	function clockDraw(dc,today){
+			
+		var hours   = today.hour;
+		var minutes = today.min;		
 		var hformat = "";	
 		var ampm    = null;	
         if (!Sys.getDeviceSettings().is24Hour) {
@@ -152,9 +177,10 @@ class BWFaceView extends Ui.WatchFace {
             else {
             	ampm = "AM";
             }
-            if (hours > 12) {
-                hours = hours - 1;
-            }
+            hours %= 12;
+            if(hours==0){
+        		hours=12;
+        	}
         } else {
 			hformat = "02";		
         }
@@ -233,13 +259,13 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
 	var currentCalories;
-	
+		
 	function activityDraw(dc) {
 		var monitor = Monitor.getInfo(); 
 		
 		currentCalories = monitor.calories;
 		var calories = decFields(currentCalories," ",1,3);
-		var distance = decFields(monitor.distance.toDouble()/100.0,",",10,2);
+		var distance = decFields(monitor.distance.toDouble()/100.0/statuteFactor,statuteComa,10,statutePrec);
 		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
 						
 		var sSize = dc.getTextDimensions(stepDraft, infoFont);
@@ -304,7 +330,10 @@ class BWFaceView extends Ui.WatchFace {
 		
 		cl = cl.abs();
 				
-		var fields = decFields(cl," ",1,3);
+		var clockTime = Sys.getClockTime();		
+		var offset    = clockTime.dst;				
+				
+		var fields = decFields(offset," ",1,3);
 		
 		var value = fields[0];
 		var fract = fields[1];
@@ -432,8 +461,9 @@ class BWFaceView extends Ui.WatchFace {
     	dc.setColor(properties.bgColor, properties.bgColor);
 		dc.clear();
 		
-	    calendarDraw(dc);
-	    clockDraw(dc); 
+		var today = currentTime();
+	    calendarDraw(dc,today);
+	    clockDraw(dc,today); 
 	    
 	    activityDraw(dc);
 	    sysInfoDraw(dc);	    
@@ -442,10 +472,11 @@ class BWFaceView extends Ui.WatchFace {
     }
 
     function onShow() {
-    	System.println("onShow()");
+ 
     }
 
-    function onHide() {}
+    function onHide() {
+    }
 
     function onExitSleep() {}
 
