@@ -21,16 +21,16 @@
      <setting propertyKey="@Properties.SurplusColor" title="@Strings.SurplusColorTitle">
         <settingConfig type="list">        
             <listEntry value="0x7F2400">@Strings.ColorDark</listEntry>
-            <listEntry value="0x984F32">@Strings.ColorLight</listEntry>
-            <listEntry value="0xB27B66">@Strings.ColorBright</listEntry>
+            <listEntry value="0xA5654C">@Strings.ColorLight</listEntry>
+            <listEntry value="0xD8BDB2">@Strings.ColorBright</listEntry>
         </settingConfig>
     </setting>
     
     <setting propertyKey="@Properties.DeficitColor" title="@Strings.DeficitColorTitle">
         <settingConfig type="list">        
             <listEntry value="0x247F00">@Strings.ColorDark</listEntry>
-            <listEntry value="0x4F9832">@Strings.ColorLight</listEntry>
-            <listEntry value="0x91BF7F">@Strings.ColorBright</listEntry>
+            <listEntry value="0x65A54C">@Strings.ColorLight</listEntry>
+            <listEntry value="0xBDD8B2">@Strings.ColorBright</listEntry>
         </settingConfig>
     </setting>
     
