@@ -9,7 +9,7 @@ class BWFaceTopField extends BWFaceField {
 	       
     function initialize(newProperties){
 		BWFaceField.initialize({:identifier => "TopField"}, newProperties);	
-		font = properties.get().fonts.weekDayFont;
+		font = properties.fonts.weekDayFont;
 		System.println("BWFaceTopField font ascent = " + Gfx.getFontAscent(font) + " descent = " + Gfx.getFontDescent(font) + " h = " + Gfx.getFontHeight(font));
     }
 
@@ -28,7 +28,7 @@ class BWFaceTopField extends BWFaceField {
 		var x = dc.getWidth()/2;
 		var y = 0;
 		var yc = y+wdsize[1]-Gfx.getFontDescent(font);
-		dc.setColor(properties.get().labelColor, Gfx.COLOR_TRANSPARENT);
+		dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
 					
 		dc.drawText(x, y,  font, today.day_of_week, Gfx.TEXT_JUSTIFY_CENTER);		
 		dc.drawText(x, yc, font, day,               Gfx.TEXT_JUSTIFY_CENTER);
