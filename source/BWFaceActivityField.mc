@@ -39,9 +39,9 @@ class BWFaceActivityField extends BWFaceField {
 		var dSize = dc.getTextDimensions(distance[0], properties.fonts.infoFont);
 		var cSize = dc.getTextDimensions(calories[0], properties.fonts.infoFont);
 				
-		var distx = dc.getWidth()/2-sSize[0]/2-framePadding;
-		var caloriesx = dc.getWidth()/2+sSize[0]/2+framePadding;
-		var stepx = dc.getWidth()/2+1;
+		var distx     = locX - sSize[0]/2-framePadding;
+		var caloriesx = locX + sSize[0]/2+framePadding;
+		var stepx = locX + 1;
 		var stepy = locY;
 		var stepw = sSize[0]+framePadding;
 		var stepTitlew = stepTitleSize[0]+framePadding;
@@ -70,7 +70,7 @@ class BWFaceActivityField extends BWFaceField {
 		dc.drawRoundedRectangle(stepx-(stepw+framePadding)/2, stepy, stepw+framePadding/2, frameH, frameRadius);
 				
 		var dh = dc.getWidth()/2-(stepw+framePadding)/2;
-		dc.drawRoundedRectangle(0,         stepy, dh,         frameH, frameRadius);		
+		dc.drawRoundedRectangle(0, stepy, dh,         frameH, frameRadius);		
 
 		var cx = stepx-(stepw+framePadding)/2 + stepw+framePadding/2+1;
 		dc.drawRoundedRectangle(cx, stepy, dc.getWidth(), frameH, frameRadius);

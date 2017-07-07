@@ -8,6 +8,7 @@ class BWFaceClockField extends BWFaceField {
 	protected var font;
 	var hoursSize;
 	var minutesSize;
+	var is24Hour;
 	
     function initialize(dictionary,newProperties){
 		BWFaceField.initialize(dictionary,newProperties);
@@ -16,7 +17,8 @@ class BWFaceClockField extends BWFaceField {
 		topY = locY;	
 		hoursSize   = dc.getTextDimensions("00", font);
 		minutesSize = dc.getTextDimensions("00", font);	
-		bottomY = locY + hoursSize[1];   						
+		bottomY = locY + hoursSize[1]; 
+		is24Hour = Sys.getDeviceSettings().is24Hour;  						
     }
 
     function draw(today){
@@ -26,7 +28,7 @@ class BWFaceClockField extends BWFaceField {
 		var hformat = "";	
 		var ampm    = null;		
         
-        if (!Sys.getDeviceSettings().is24Hour) {
+        if (!is24Hour) {
             if ( hours >= 12 ) {
             	ampm = "PM";
             }
@@ -43,10 +45,7 @@ class BWFaceClockField extends BWFaceField {
         
         hours   = hours.format("%"+hformat+"d");
 		minutes = minutes.format("%02d");		
-		
-		//var hoursSize   = dc.getTextDimensions(hours, font);
-		//var minutesSize = dc.getTextDimensions(minutes, font);
-		
+				
 		var x = locX;
 		var y = locY;		
 		
@@ -56,7 +55,7 @@ class BWFaceClockField extends BWFaceField {
 		var xc = x-colonSize[2]/2;
 		var ycc = yc;
 		
-		if (dc.getWidth()<=148) {
+		if (!is24Hour && dc.getWidth()<=148) {
 			ycc = locY+hoursSize[1]/2 - colonSize[2] + colonSize[3]/2;
 		}
 		
@@ -75,7 +74,7 @@ class BWFaceClockField extends BWFaceField {
 			var ampmsize = dc.getTextDimensions(ampm, properties.fonts.infoTitleFont);
 			var xa, ya;
 			if (dc.getWidth()<=148) { // vivoactive
-				xa = xc-ampmsize[0]/2;
+				xa = xc-colonSize[2]/2;
 				ya = yc-colonSize[3]-ampmsize[1]/2;
 			}
 			else {

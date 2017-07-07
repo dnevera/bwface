@@ -1,7 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 using Toybox.Graphics as Gfx;
-using Toybox.ActivityMonitor as Monitor;
 
 class BWFaceSysinfoField extends BWFaceField {
  
