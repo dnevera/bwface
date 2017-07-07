@@ -4,6 +4,7 @@
     <string id="AppName">BWFace</string>
 
     <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12</string>
+    <string id="UseDayLightSavingTimeTitle">Летнее время</string>
 
     <string id="BackgroundColorTitle">Цвет фона</string>
     <string id="SurplusColorTitle">Цвет профицита калорий</string>

@@ -47,9 +47,9 @@ class BWFaceView extends Ui.WatchFace {
     var userBmr;
     var drawTopTitles = true;
     
-	var properties = new BWFaceProperties();
-	var topField   = new BWFaceTopField(properties);
-	var clockField = new BWFaceClockField(properties);
+	var properties;// = new BWFaceProperties();
+	var topField; ///  = new BWFaceTopField(properties);
+	var clockField;// = new BWFaceClockField(properties);
     	
     function handlSettingUpdate(){    	
     	properties.setup();    	
@@ -60,6 +60,19 @@ class BWFaceView extends Ui.WatchFace {
     }
 
     function onLayout(dc) {
+		properties = new BWFaceProperties(dc);
+		 
+		topField   = new BWFaceTopField({
+				:identifier => "TopField", 
+				:locX=>dc.getWidth()/2, 
+				:locY=>2, 
+				:dayPadding=>-2}, properties);
+		
+		clockField = new BWFaceClockField({
+				:identifier => "ClockField", 
+				:locX=>dc.getWidth()/2, 
+				:locY=>topField.bottomY}, properties);
+                          
                                                         
         stepsTitle    = Ui.loadResource( Rez.Strings.StepsTitle );
         caloriesTitle = Ui.loadResource( Rez.Strings.CaloriesTitle );
@@ -434,14 +447,30 @@ class BWFaceView extends Ui.WatchFace {
         dc.drawText(x+w+framePadding, y-fsize[1]/2+h/2-2, infoTitleFont, fbattery , Gfx.TEXT_JUSTIFY_LEFT);
 	}
 	
+	
+	function currentTime(){
+			var clockTime = Sys.getClockTime();
+			
+			var t = Time.now();	
+			
+			if (properties.useDayLightSavingTime) {	
+				var offset = new Time.Duration(clockTime.dst);
+				t=t.add(offset);
+			}		
+		
+			return  Calendar.info(t, Time.FORMAT_MEDIUM); 			
+	}
+	
     function onUpdate(dc) {
     	    	    	
     	dc.setColor(properties.bgColor, properties.bgColor);
 		dc.clear();
 		
-		topField.draw(dc);
+		var today = currentTime();
+		topField.draw(today);
+		clockField.draw(today);
 		
-		System.println("onUpdate WxH" + topField.width + "x" + topField.height);
+		//System.println("onUpdate XxY" + topField.locX + ", " +topField.locY);
 		
 		
 	    //calendarDraw(dc);

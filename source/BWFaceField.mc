@@ -2,12 +2,15 @@ using Toybox.WatchUi as Ui;
 
 class BWFaceField extends Ui.Drawable {
 	
-	var topX    = 0;
-	var bottomX = 0;
+	var topY    = 0;
+	var bottomY = 0;
 	var properties;	
-        
-    function initialize(dictionary, newProperties){
+	var settings =  System.getDeviceSettings();
+	var dictionary;
+	        
+    function initialize(_dictionary, newProperties){
     	properties = newProperties;
-		Drawable.initialize(dictionary);
+    	dictionary = _dictionary;
+		Drawable.initialize(_dictionary);
     }
 }
