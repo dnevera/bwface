@@ -4,10 +4,19 @@ using Toybox.Graphics as Gfx;
 
 class BWFaceClockField extends BWFaceField {
 	       
-	var dc;
+	protected var dc;
+	protected var font;
+	var hoursSize;
+	var minutesSize;
+	
     function initialize(dictionary,newProperties){
 		BWFaceField.initialize(dictionary,newProperties);
-		dc = properties.dc;		
+		dc = properties.dc;
+		font = properties.fonts.clockFont;	
+		topY = locY;	
+		hoursSize   = dc.getTextDimensions("00", font);
+		minutesSize = dc.getTextDimensions("00", font);	
+		bottomY = locY + hoursSize[1];   						
     }
 
     function draw(today){
@@ -35,31 +44,45 @@ class BWFaceClockField extends BWFaceField {
         hours   = hours.format("%"+hformat+"d");
 		minutes = minutes.format("%02d");		
 		
-		var hoursSize   = dc.getTextDimensions(hours, properties.fonts.clockFont);
-		var minutesSize = dc.getTextDimensions(minutes, properties.fonts.clockFont);
+		//var hoursSize   = dc.getTextDimensions(hours, font);
+		//var minutesSize = dc.getTextDimensions(minutes, font);
 		
 		var x = locX;
 		var y = locY;		
 		
 		var colonSize = [12,22,8,8,1];
 		
-		var yc= dc.getHeight()/2-colonSize[1]/2;
+		var yc = locY+hoursSize[1]/2-colonSize[2];
+		var xc = x-colonSize[2]/2;
+		var ycc = yc;
+		
+		if (dc.getWidth()<=148) {
+			ycc = locY+hoursSize[1]/2 - colonSize[2] + colonSize[3]/2;
+		}
 		
 		dc.setColor(properties.colonColor, Gfx.COLOR_TRANSPARENT);
-		dc.fillRectangle(x-colonSize[2]/2, yc,              colonSize[2], colonSize[3]);
-		dc.fillRectangle(x-colonSize[2]/2, yc+colonSize[1], colonSize[2], colonSize[3]);
+		dc.fillRectangle(xc, ycc,              colonSize[2], colonSize[3]);
+		dc.fillRectangle(xc, ycc+colonSize[1], colonSize[2], colonSize[3]);
 		
 		dc.setColor(properties.hoursColor, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(x-colonSize[0]-hoursSize[0], y, properties.fonts.clockFont, hours, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(x-colonSize[0]-hoursSize[0], y, font, hours, Gfx.TEXT_JUSTIFY_LEFT);
 				
 		dc.setColor(properties.minutesColor, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(x+colonSize[0]-colonSize[4], y, properties.fonts.clockFont, minutes, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(x+colonSize[0]-colonSize[4], y, font, minutes, Gfx.TEXT_JUSTIFY_LEFT);
 
 		if (ampm!=null){
 			dc.setColor(properties.hoursColor, Gfx.COLOR_TRANSPARENT);
 			var ampmsize = dc.getTextDimensions(ampm, properties.fonts.infoTitleFont);
-			dc.drawText(properties.caloriesCircleWidth, dc.getHeight()/2, 
-			            properties.fonts.infoTitleFont, ampm, Gfx.TEXT_JUSTIFY_LEFT);
-		}      	
+			var xa, ya;
+			if (dc.getWidth()<=148) { // vivoactive
+				xa = xc-ampmsize[0]/2;
+				ya = yc-colonSize[3]-ampmsize[1]/2;
+			}
+			else {
+				xa = properties.caloriesCircleWidth;
+				ya = locY+hoursSize[1]/2;
+			}
+			dc.drawText(xa, ya, properties.fonts.infoTitleFont, ampm, Gfx.TEXT_JUSTIFY_LEFT);
+		}  		
     }
 }

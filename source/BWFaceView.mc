@@ -3,12 +3,12 @@ using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 using Toybox.Time.Gregorian as Calendar;
-using Toybox.Application as App;
-using Toybox.Activity as Info;
-using Toybox.ActivityMonitor as Monitor;
-using Toybox.Sensor as Snsr;
+//using Toybox.Application as App;
+//using Toybox.Activity as Info;
+//using Toybox.ActivityMonitor as Monitor;
+//using Toybox.Sensor as Snsr;
 using Toybox.UserProfile as User;
-using Toybox.Math as Math;
+//using Toybox.Math as Math;
 
 class BWFaceView extends Ui.WatchFace {
         
@@ -47,9 +47,11 @@ class BWFaceView extends Ui.WatchFace {
     var userBmr;
     var drawTopTitles = true;
     
-	var properties;// = new BWFaceProperties();
-	var topField; ///  = new BWFaceTopField(properties);
-	var clockField;// = new BWFaceClockField(properties);
+	var properties;
+	var topField; 
+	var clockField;
+    var activityField;	    	
+    var sysinfoField;	
     	
     function handlSettingUpdate(){    	
     	properties.setup();    	
@@ -62,6 +64,13 @@ class BWFaceView extends Ui.WatchFace {
     function onLayout(dc) {
 		properties = new BWFaceProperties(dc);
 		 
+		properties.setup();
+
+		var clockPadding = 0;
+        if (dc.getHeight()<=180){ // 735xt
+        	clockPadding = -12;
+		}
+		 
 		topField   = new BWFaceTopField({
 				:identifier => "TopField", 
 				:locX=>dc.getWidth()/2, 
@@ -71,10 +80,24 @@ class BWFaceView extends Ui.WatchFace {
 		clockField = new BWFaceClockField({
 				:identifier => "ClockField", 
 				:locX=>dc.getWidth()/2, 
-				:locY=>topField.bottomY}, properties);
+				:locY=>topField.bottomY+clockPadding}, properties);
                           
-                                                        
-        stepsTitle    = Ui.loadResource( Rez.Strings.StepsTitle );
+		activityField = new BWFaceActivityField({
+				:identifier => "ActivityField", 
+				:locX=>dc.getWidth()/2, 
+				:locY=>clockField.bottomY,
+				:framePadding=>4,
+				:frameRadius=>3}, properties);
+                        
+		var sysPadding = (dc.getHeight()-activityField.bottomY)/2;                        
+                          
+		sysinfoField = new BWFaceSysinfoField({
+				:identifier => "SysInfoField", 
+				:locX=>dc.getWidth()/2, 
+				:locY=>activityField.bottomY,
+				:framePadding=>4}, properties);
+    		                                                        
+        /*stepsTitle    = Ui.loadResource( Rez.Strings.StepsTitle );
         caloriesTitle = Ui.loadResource( Rez.Strings.CaloriesTitle );
         distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
         bpmTitle      = Ui.loadResource( Rez.Strings.BPMTitle );
@@ -131,88 +154,9 @@ class BWFaceView extends Ui.WatchFace {
 
 		handlSettingUpdate();
 		           
-        userBmr = bmr();        
+        userBmr = bmr();   */     
     }
 
-	
-	/*function calendarDraw(dc){
-		var today = Calendar.info(Time.now(), Time.FORMAT_MEDIUM);
-		var day = Lang.format("$1$ $2$",[today.day,today.month]);
-
-		var wdsize = dc.getTextDimensions(today.day_of_week, weekDayFont);
-		var dsize  = dc.getTextDimensions(day, calendarFont);
-		
-		var x = dc.getWidth()/2;
-		var y =  weekDayPadding+caloriesCircleWidth;
-		var yc = y+wdsize[1]+calendarPadding;
-		dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
-		
-		dc.drawText(x, y,  weekDayFont,  today.day_of_week, Gfx.TEXT_JUSTIFY_CENTER);		
-		dc.drawText(x, yc, calendarFont, day,               Gfx.TEXT_JUSTIFY_CENTER);		
-		
-		timeAboveLinePos = yc+dsize[1];  		
-	}*/
-
-	function clockDraw(dc){
-	
-		clockField.draw(dc);	
-	
-		return;
-	
-		var clockTime = Sys.getClockTime();
-		
-		var hours   = clockTime.hour;
-		var minutes = clockTime.min;		
-		var hformat = "";	
-		var ampm    = null;	
-        if (!Sys.getDeviceSettings().is24Hour) {
-            if ( hours >= 12 ) {
-            	ampm = "PM";
-            }
-            else {
-            	ampm = "AM";
-            }
-            if (hours > 12) {
-                hours = hours - 1;
-            }
-        } else {
-			hformat = "02";		
-        }
-        
-        hours   = hours.format("%"+hformat+"d");
-		minutes = minutes.format("%02d");		
-		
-		var hoursSize   = dc.getTextDimensions(hours, clockFont);
-		var minutesSize = dc.getTextDimensions(minutes, clockFont);
-		
-		var x = dc.getWidth()/2;
-		var y = dc.getHeight()/2-hoursSize[1]/2-framePadding+clockPadding;		
-		
-		var colonSize = [12,22,8,8,1];
-		var yc= dc.getHeight()/2-colonSize[1]/2-framePadding+clockPadding;
-		
-		dc.setColor(properties.colonColor, Gfx.COLOR_TRANSPARENT);
-		dc.fillRectangle(x-colonSize[2]/2, yc,              colonSize[2], colonSize[3]);
-		dc.fillRectangle(x-colonSize[2]/2, yc+colonSize[1], colonSize[2], colonSize[3]);
-		
-		dc.setColor(properties.hoursColor, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(x-colonSize[0]-hoursSize[0], y, clockFont, hours, Gfx.TEXT_JUSTIFY_LEFT);
-				
-		dc.setColor(properties.minutesColor, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(x+colonSize[0]-colonSize[4], y, clockFont, minutes, Gfx.TEXT_JUSTIFY_LEFT);
-
-		if (ampm!=null){
-			dc.setColor(properties.hoursColor, Gfx.COLOR_TRANSPARENT);
-			var ampmsize = dc.getTextDimensions(ampm, infoTitleFont);
-			dc.drawText(framePadding+caloriesCircleWidth, 
-			dc.getHeight()/2-framePadding+clockPadding, infoTitleFont, ampm, Gfx.TEXT_JUSTIFY_LEFT);
-		}  
-		
-		timeUnderLinePos = y+hoursSize[1]+activityPadding;		
-		timeAboveLinePos += (y-timeAboveLinePos)/2-2;
-	}
-
-	var stepDraft = "99999";
 		
 	function decimals(n,scale){
 		var t0=(n.toDouble()-0.5)/1000.0;
@@ -253,63 +197,6 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
 	var currentCalories;
-	
-	function activityDraw(dc) {
-		var monitor = Monitor.getInfo(); 
-		
-		currentCalories = monitor.calories;
-		var calories = decFields(currentCalories," ",1,3);
-		var distance = decFields(monitor.distance.toDouble()/100.0,",",10,2);
-		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
-						
-		var sSize = dc.getTextDimensions(stepDraft, infoFont);
-		sSize[0]=dc.getWidth()/3.5;
-		
-		var dSize = dc.getTextDimensions(distance[0], infoFont);
-		var cSize = dc.getTextDimensions(calories[0], infoFont);
-		
-		var stepTitleSize = dc.getTextDimensions(stepsTitle, infoTitleFont);
-		
-		var distx = dc.getWidth()/2-sSize[0]/2-infoPadding;
-		var caloriesx = dc.getWidth()/2+sSize[0]/2+infoPadding;
-		var stepx = dc.getWidth()/2+1;
-		var stepy = timeUnderLinePos;
-		var stepw = sSize[0]+framePadding;
-		var stepTitlew = stepTitleSize[0]+framePadding;
-		var steph = sSize[1]+framePadding + stepTitleSize[1]; 
-		
-		stepw = stepw>stepTitlew ? stepw : stepTitlew;
-		
-		dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
-		
-		var size = dc.getTextDimensions(distance[1], infoFractFont);
-		
-		dc.drawText(distx-framePadding-size[0], timeUnderLinePos, infoFont, distance[0], Gfx.TEXT_JUSTIFY_RIGHT);
-		dc.drawText(distx-framePadding, timeUnderLinePos, infoFractFont, distance[1], Gfx.TEXT_JUSTIFY_RIGHT);
-		dc.drawText(distx-framePadding, timeUnderLinePos+dSize[1], infoTitleFont, distanceTitle, Gfx.TEXT_JUSTIFY_RIGHT);
-		
-		dc.drawText(stepx, timeUnderLinePos, infoFont, steps, Gfx.TEXT_JUSTIFY_CENTER);
-		dc.drawText(stepx, timeUnderLinePos+dSize[1], infoTitleFont, stepsTitle, Gfx.TEXT_JUSTIFY_CENTER);
-				
-		dc.drawText(caloriesx+framePadding, timeUnderLinePos, infoFont, calories[0], Gfx.TEXT_JUSTIFY_LEFT);
-		dc.drawText(caloriesx+framePadding+cSize[0], timeUnderLinePos, infoFractFont, calories[1], Gfx.TEXT_JUSTIFY_LEFT);
-		dc.drawText(caloriesx+framePadding, timeUnderLinePos+dSize[1], infoTitleFont, caloriesTitle, Gfx.TEXT_JUSTIFY_LEFT);
-		
-		dc.setColor(properties.framesColor, Gfx.COLOR_TRANSPARENT);
-		
-		var frameH = steph+1;
-		dc.drawRoundedRectangle(stepx-(stepw+framePadding)/2, stepy, stepw+framePadding/2, frameH, frameRadius);
-				
-		var dh = dc.getWidth()/2-(stepw+framePadding)/2;
-		dc.drawRoundedRectangle(0,         stepy, dh,         frameH, frameRadius);		
-
-		var cx = stepx-(stepw+framePadding)/2 + stepw+framePadding/2+1;
-		dc.drawRoundedRectangle(cx, stepy, dc.getWidth(), frameH, frameRadius);
-		
-		infoUnderLinePos = stepy +  frameH;
-					
-	}
-	
 	var caloriesLinePos;
 	var caloriesTitleLinePos;
 	var caloriesOffsetPos;
@@ -419,34 +306,6 @@ class BWFaceView extends Ui.WatchFace {
 		}
     }
     
-	function sysInfoDraw(dc) {
-	
-		var systemStats = Sys.getSystemStats();
-		var battery = systemStats.battery;
-        var fbattery =  battery.format("%d") + "%";
-        var fsize = dc.getTextDimensions(fbattery, infoTitleFont);
-		var w = batterySize[0];
-		var h = batterySize[1];
-        var x = dc.getWidth()/2-w/2-fsize[0]/2;
-		var y = dc.getHeight() - (dc.getHeight()-infoUnderLinePos-batteryPadding)/2 - h/2;// - caloriesCircleWidth;
-        
-        if (battery>50){
-        	dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
-        }
-        else if (battery>20){
-        	dc.setColor(properties.batteryWarnColor, Gfx.COLOR_TRANSPARENT);
-        }
-        else {
-        	dc.setColor(properties.batteryLowColor, Gfx.COLOR_TRANSPARENT);
-        }
-        
-        dc.drawRectangle(x+w, y+h/3.0, 2, h/2.0-1);
-        dc.drawRoundedRectangle(x, y, w, h, 2);
-        dc.fillRoundedRectangle(x, y, w*battery/100, h, 2);
-        
-        dc.drawText(x+w+framePadding, y-fsize[1]/2+h/2-2, infoTitleFont, fbattery , Gfx.TEXT_JUSTIFY_LEFT);
-	}
-	
 	
 	function currentTime(){
 			var clockTime = Sys.getClockTime();
@@ -469,15 +328,9 @@ class BWFaceView extends Ui.WatchFace {
 		var today = currentTime();
 		topField.draw(today);
 		clockField.draw(today);
+		activityField.draw();
+		sysinfoField.draw();
 		
-		//System.println("onUpdate XxY" + topField.locX + ", " +topField.locY);
-		
-		
-	    //calendarDraw(dc);
-	    //clockDraw(dc); 
-	    
-	    //activityDraw(dc);
-	    //sysInfoDraw(dc);	    
 	    //caloriesRestDraw(dc,currentCalories);
 	    //heatRateDraw(dc);	  	    	           
     }
