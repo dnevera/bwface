@@ -3,7 +3,7 @@
     
     <string id="AppName">BWFace</string>
 
-    <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12</string>
+    <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12 (только для циферблатов)</string>
     <string id="UseDayLightSavingTimeTitle">Летнее время</string>
 
     <string id="BackgroundColorTitle">Цвет фона</string>
@@ -35,7 +35,7 @@
     <string id="StepsTitle">шагов</string>
     <string id="CaloriesTitle">ккал</string>
     <string id="DistanceTitle">км</string>
-    <string id="DistanceMilesTitle">mi</string>
+    <string id="DistanceMilesTitle">mi</string>    
     <string id="BPMTitle">чсс/м</string>
     
 </resources>

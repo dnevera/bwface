@@ -1,13 +1,5 @@
 <settings>
 
-    <!-- setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
-        <settingConfig type="list">
-            <listEntry value="0x8F8F8F">@Strings.ColorGray56</listEntry>
-            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
-            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
-        </settingConfig>
-    </setting-->
-
     <setting propertyKey="@Properties.ForegroundColor" title="@Strings.ForegroundColorTitle">
         <settingConfig type="list">
             <listEntry value="0xEFEFEF">@Strings.ColorCloudy</listEntry>
@@ -67,11 +59,11 @@
         </settingConfig>
     </setting>
 
-    <!--  setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
-        <settingConfig type="boolean" />
-    </setting-->
-
     <setting propertyKey="@Properties.CaloriesCheckPointOn12" title="@Strings.CaloriesCheckPointOn12Title">
+        <settingConfig type="boolean" />
+    </setting>
+
+   <setting propertyKey="@Properties.UseDayLightSavingTime" title="@Strings.UseDayLightSavingTimeTitle">
         <settingConfig type="boolean" />
     </setting>
 
