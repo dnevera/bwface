@@ -7,7 +7,7 @@ class BWFaceFonts {
 	var settings =  System.getDeviceSettings();   
 
 	var clockFont    = Gfx.FONT_SYSTEM_NUMBER_THAI_HOT;	
-	var weekDayFont  = Gfx.FONT_SYSTEM_MEDIUM;
+	var weekDayFont  = Gfx.FONT_SYSTEM_SMALL;
 	
 	var infoFont      = Gfx.FONT_SYSTEM_MEDIUM;
 	var infoFontSmall = Gfx.FONT_SYSTEM_SMALL;
@@ -19,7 +19,7 @@ class BWFaceFonts {
 			
 	 if (settings.screenHeight<=180){ // Foreruner 735xt
         	clockFont    = Ui.loadResource(Rez.Fonts.clockFontTiny);
-			weekDayFont  = Gfx.FONT_SYSTEM_MEDIUM;    
+			weekDayFont  = Ui.loadResource(Rez.Fonts.calendarFontTiny);    
 			
 			infoFontSmall     = Ui.loadResource(Rez.Fonts.infoFontSmall);	
         	infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);

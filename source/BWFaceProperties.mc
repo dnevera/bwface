@@ -51,9 +51,10 @@ class BWFaceProperties{
 	function setup(){
 		
         if (dc.getHeight()<=180){ // 735xt
-        	clockPadding = -18;
-        	caloriesCircleTickWidth = 8;
-        	topFieldPadding = 2;
+        	clockPadding = -10;
+        	caloriesCircleTickWidth = 6;
+        	topFieldPadding = 4;
+			dayPadding      = 0;        	
 			bmrTopPadding   =  6;        	
 			activityPadding = -6;  
 			sysinfoTopPadding = 6;
@@ -75,10 +76,13 @@ class BWFaceProperties{
 				bmrTopPadding = 4;				
 			}
 			else {
-				clockPadding = 6;
+				clockPadding    = 6;
+				topFieldPadding = 2;
+				dayPadding      = 1; 
 				activityPadding =  -11;	
 				sysinfoTopPadding =  4;	
-				bmrTopPadding = 2;				
+				bmrTopPadding = 2;	
+				sysinfoTopPadding =  4;							
 			}
 		}		
 		

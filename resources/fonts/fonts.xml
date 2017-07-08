@@ -6,6 +6,7 @@
 <font id ="clockFontTall"      filename="clock-font-tall.fnt"  filter="0123456789:" antialias="true"/>
 <font id ="calendarFontLarge"  filename="calendar-font-large.fnt" antialias="true"/>
 <font id ="calendarFontSmall"  filename="calendar-font-small.fnt" antialias="true"/>
+<font id ="calendarFontTiny"   filename="calendar-font-tiny.fnt" antialias="true"/>
 <font id ="infoFont"           filename="info-first-digits-font-normal.fnt" antialias="true"/>
 <font id ="infoFontSmall"      filename="info-first-digits-font-small.fnt" antialias="true"/>
 <font id ="infoFractFont"      filename="info-fraction-font-normal.fnt" antialias="true"/>

@@ -31,7 +31,7 @@ class BWFaceTopField extends BWFaceField {
 
     function draw(today){        	
     	var weekDay = today.day_of_week.toString().toUpper();
-		var day = Lang.format("$1$ $2$",[today.day,today.month]).toUpper();									
+		var day = Lang.format("$1$$2$",[today.day,today.month]).toUpper();									
 		properties.dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);				
 		properties.dc.drawText(locX, y,  font, weekDay, Gfx.TEXT_JUSTIFY_CENTER);		
 		properties.dc.drawText(locX, yc, font, day,     Gfx.TEXT_JUSTIFY_CENTER);
