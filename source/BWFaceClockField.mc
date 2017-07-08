@@ -40,7 +40,12 @@ class BWFaceClockField extends BWFaceField {
             if(hours==0){
         		hours=12;
         	}
-			hoursSize   = dc.getTextDimensions("0", font);
+        	if (hours<10) {        	
+				hoursSize   = dc.getTextDimensions("0", font);
+			}
+			else {
+				hoursSize   = dc.getTextDimensions("00", font);
+			}
         } else {
 			hformat = "02";		
         }
