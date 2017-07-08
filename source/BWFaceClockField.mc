@@ -26,6 +26,7 @@ class BWFaceClockField extends BWFaceField {
 		var hours   = today.hour;
 		var minutes = today.min;		
 		var hformat = "";	
+		var space   = "";	
 		var ampm    = null;		
         
         if (!is24Hour) {
@@ -39,6 +40,7 @@ class BWFaceClockField extends BWFaceField {
             if(hours==0){
         		hours=12;
         	}
+			hoursSize   = dc.getTextDimensions("0", font);
         } else {
 			hformat = "02";		
         }
@@ -78,7 +80,7 @@ class BWFaceClockField extends BWFaceField {
 				ya = yc-colonSize[3]-ampmsize[1]/2;
 			}
 			else {
-				xa = properties.caloriesCircleWidth;
+				xa = properties.caloriesCircleWidth+ampmsize[0]/2;
 				ya = locY+hoursSize[1]/2;
 			}
 			dc.drawText(xa, ya, properties.fonts.infoTitleFont, ampm, Gfx.TEXT_JUSTIFY_LEFT);

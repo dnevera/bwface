@@ -8,40 +8,87 @@ using Toybox.Time.Gregorian as Calendar;
 class BWFaceDBmrMeter extends BWFaceField {
 	
 	var userBmr;
+	var tickPosX = 0;		       
+	var tickPosY = 0;		       
 		       
 	protected var dc;
-	protected var drawTopTitles = true;
+	protected var drawTopTitles = true;	
 	
     function initialize(dictionary,newProperties){
 		BWFaceField.initialize(dictionary,newProperties);
 		dc = properties.dc;	
-		userBmr = bmr();	
-		
-		 if (dc.getHeight()<=180){
-        	drawTopTitles = false;
-		}
+		userBmr = bmr();			
 	}
 	
-	function draw(calories)  {
+	var cl;
+	var isDeficit;
+	var prcnt;
+	var color;
+	var fields;
+	var value;
+	var fract;
+	var fractSize;
+	var size;		 
+	var title;
 	
-		var cl = calories - userBmr;
-		var isDeficit =  cl>=0;
-		var prcnt = (cl/userBmr).abs();
+	function prepare(calories,isSemiRound){
+		cl = calories - userBmr;
+		isDeficit =  cl>=0;
+		//prcnt = (cl/userBmr).abs() * (isSemiRound ? 0.29 : 1);
+		prcnt = (cl/userBmr).abs();
 				
-		var color = isDeficit ? properties.deficitColor : properties.surplusColor ;
+		color = isDeficit ? properties.deficitColor : properties.surplusColor ;
 		
 		cl = cl.abs();
 				
-		var fields = BWFace.decFields(cl," ",1,3);
+		fields = BWFace.decFields(cl," ",1,3);
 		
-		var value = fields[0];
-		var fract = fields[1];
+		value = fields[0];
+		fract = fields[1];
 		
-		var fractSize = dc.getTextDimensions(fract, properties.fonts.infoFractFont);
-		var size      = dc.getTextDimensions(value, properties.fonts.infoFont);
+		fractSize = dc.getTextDimensions(fract, properties.fonts.infoFractFont);
+		size      = dc.getTextDimensions(value, properties.fonts.infoFont);
 		 
-		var title = " "+properties.strings.caloriesTitle;
+		title = " "+properties.strings.caloriesTitle;
+	} 
 	
+	function drawInRectangle(calories) {
+	
+		var y = locY+1;
+		var tickW = properties.caloriesCircleTickWidth;
+		
+		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
+		dc.setPenWidth(properties.caloriesCircleWidth);
+	
+		var ex = dc.getWidth(); 
+		var tickX = ex-tickW/2;	
+		dc.drawLine(tickX, y-tickW/2, tickX+tickW/2, y);
+		
+		var x = ex - ex * prcnt; 
+
+		dc.drawLine(x, y, tickX+tickW/2, y);
+		
+		dc.setPenWidth(1);	
+		
+		var txtX = ex-size[0]-fractSize[0]-tickW/2;
+		var caloriesLinePos = y-size[1] - properties.caloriesCircleWidth;
+	
+		dc.setColor(properties.labelColor,  Gfx.COLOR_TRANSPARENT);
+		dc.drawText(txtX-properties.caloriesCircleWidth, caloriesLinePos,  properties.fonts.infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
+				
+		var fractPos = caloriesLinePos+size[1]-fractSize[1]-1;
+		dc.drawText(txtX-properties.caloriesCircleWidth+size[0]-1, fractPos,  properties.fonts.infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
+	
+		if (drawTopTitles) {
+			var caloriesTitleLinePos = caloriesLinePos+2; 
+			dc.drawText(txtX-properties.caloriesCircleWidth+size[0],  caloriesTitleLinePos, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+		}
+	
+		tickPosX = properties.caloriesCircleWidth+tickW;
+		tickPosY = caloriesLinePos;							
+	}
+	
+	function drawInRound(calories, isSemiRound){	
 		var x = dc.getWidth().toFloat()/2;
 		var y = dc.getHeight().toFloat()/2;
 		var r = x-properties.caloriesCircleWidth/2;
@@ -59,7 +106,7 @@ class BWFaceDBmrMeter extends BWFaceField {
 				
 		var s = angle*180.0/Math.PI;
 				
-		if (properties.caloriesCircleTickOn12) {
+		if (!isSemiRound && properties.caloriesCircleTickOn12) {
 			s = 90;
 		} 
 								
@@ -110,7 +157,22 @@ class BWFaceDBmrMeter extends BWFaceField {
 		}
 				
 		dc.setPenWidth(1);		
-		//caloriesOffsetPos = dc.getWidth() - (txtX-caloriesCircleWidth-tickW+size[0]+fractSize[0]);
+		tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW+size[0]+fractSize[0]);
+		tickPosY = caloriesLinePos;
+	}
+	
+	function draw(calories)  {
+		
+		var isSemiRound = settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND;
+		
+		prepare(calories,isSemiRound);
+		
+		if (settings.screenShape == System.SCREEN_SHAPE_RECTANGLE){
+			drawInRectangle(calories);
+		} 
+		else {
+			drawInRound(calories,isSemiRound);
+		}
 	}
 	
 	

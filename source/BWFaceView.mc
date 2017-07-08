@@ -7,40 +7,14 @@ using Toybox.UserProfile as User;
 
 class BWFaceView extends Ui.WatchFace {
         
-	var batterySize = [18,9]; 
-        
-	var clockFont    = Gfx.FONT_SYSTEM_NUMBER_THAI_HOT;	
-	var calendarFont = Gfx.FONT_SYSTEM_LARGE;
-	var weekDayFont  = Gfx.FONT_SYSTEM_MEDIUM;
-	
-	var infoFont      = Gfx.FONT_SYSTEM_MEDIUM;
-	var infoFontSmall = Gfx.FONT_SYSTEM_SMALL;
-	var infoTitleFont = Gfx.FONT_SYSTEM_SMALL;
-	var infoTitleFontTiny = Gfx.FONT_SYSTEM_TINY;
-	var infoFractFont = Gfx.FONT_SYSTEM_SMALL;
-	
-	var weekDayPadding   = -4;
-	var calendarPadding  = -8;
 	var clockPadding     =  0;
-	var batteryPadding   = -4;
 	var infoPadding      =  4;
-	var activityPadding  = -12;
-	var framePadding     =  4;
-	var frameRadius      =  4;
-	var topActibitiesPadding =  0;
 	var caloriesCircleTickWidth = 10;
 	var caloriesCircleWidth     = 6;
 	    
     var timeUnderLinePos;
     var timeAboveLinePos;
     var infoUnderLinePos;
-
-	var stepsTitle;
-	var caloriesTitle;
-	var distanceTitle;
-	var bpmTitle;
-    var userBmr;
-    var drawTopTitles = true;
     
 	var properties;
 	var topField; 
@@ -48,6 +22,7 @@ class BWFaceView extends Ui.WatchFace {
     var activityField;	    	
     var sysinfoField;	
     var bmrMeter;	
+    var heartRateField;	
     	
     function handlSettingUpdate(){    	
     	properties.setup();    	
@@ -58,67 +33,57 @@ class BWFaceView extends Ui.WatchFace {
     }
 
     function onLayout(dc) {
-		properties = new BWFaceProperties(dc);
-		 
+    
+		properties = new BWFaceProperties(dc);		 
 		properties.setup();
-
-		var clockPadding = 0;
-        if (dc.getHeight()<=180){ // 735xt
-        	clockPadding = -12;
-		}
 		 
 		topField   = new BWFaceTopField({
 				:identifier => "TopField", 
 				:locX=>dc.getWidth()/2, 
-				:locY=>2, 
-				:dayPadding=>-2}, properties);
+				:locY=>properties.topFieldPadding, 
+				:dayPadding=>properties.dayPadding}, properties);
 		
 		clockField = new BWFaceClockField({
 				:identifier => "ClockField", 
 				:locX=>dc.getWidth()/2, 
-				:locY=>topField.bottomY+clockPadding}, properties);
+				:locY=>topField.bottomY+properties.clockPadding}, properties);
                           
 		activityField = new BWFaceActivityField({
 				:identifier => "ActivityField", 
 				:locX=>dc.getWidth()/2, 
-				:locY=>clockField.bottomY,
-				:framePadding=>4,
-				:frameRadius=>3}, properties);
+				:locY=>clockField.bottomY+properties.activityPadding,
+				:framePadding=>properties.framePadding,
+				:frameRadius=>properties.frameRadius}, properties);
                         
-		var sysPadding = (dc.getHeight()-activityField.bottomY)/2;                        
+        var bmrlocY = topField.bottomY+properties.bmrTopPadding; 
+        var sysInfoY = activityField.bottomY+properties.sysinfoTopPadding;
+  		
+  		if  (properties.settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND) {
+  		 	bmrlocY = properties.bmrTopPadding;
+  		}
+		else if (properties.settings.screenShape == System.SCREEN_SHAPE_RECTANGLE) {
+  		 	bmrlocY = dc.getHeight()-properties.caloriesCircleWidth+properties.bmrTopPadding;
+  		 	clockField.topY;
+  		 	sysInfoY = topField.bottomY+(clockField.topY-topField.bottomY)/2+properties.clockPadding/2+properties.sysinfoTopPadding;
+		}   		
                           
 		sysinfoField = new BWFaceSysinfoField({
 				:identifier => "SysInfoField", 
 				:locX=>dc.getWidth()/2, 
-				:locY=>activityField.bottomY,
-				:framePadding=>4}, properties);
-  	
+				:locY=>sysInfoY,
+				:framePadding=>properties.framePadding}, properties);
+  		  	
   		bmrMeter = new BWFaceDBmrMeter({
 				:identifier => "DeficitBMRMeter", 
 				:locX=>dc.getWidth()/2, 
-				:locY=>clockField.topY-2}, properties);    		                                                               
+				:locY=>bmrlocY}, properties);
+				
+		heartRateField = new  BWFaceHRField({
+				:identifier => "SysInfoField", 
+				:locX=>0, 
+				:locY=>bmrlocY}, properties);   		                                                               
     }
-			
-	var currentCalories;
-	var caloriesLinePos;
-	var caloriesTitleLinePos;
-	var caloriesOffsetPos;
-
-	function heatRateDraw(dc) {
-	
-    	var info = Info.getActivityInfo();
-    	var hr = info.currentHeartRate;
-    	hr = hr == null ? "-- " : hr.format("%d");   	
-    	var title = " "+bpmTitle;
-    	dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);	
-		dc.drawText(caloriesOffsetPos, caloriesLinePos, infoFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
-		if (drawTopTitles) {
-	    	var size = dc.getTextDimensions(hr,  infoFont);
-			dc.drawText(caloriesOffsetPos+size[0],   caloriesTitleLinePos, infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
-		}
-    }
-    
-	
+			    	
 	function currentTime(){
 			var clockTime = Sys.getClockTime();
 			
@@ -143,7 +108,8 @@ class BWFaceView extends Ui.WatchFace {
 		clockField.draw(today);
 		activityField.draw();
 		sysinfoField.draw();
-		bmrMeter.draw(activityField.currentCalories);		
+		bmrMeter.draw(activityField.currentCalories);
+		heartRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
     }
 
     function onShow() {}

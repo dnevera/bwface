@@ -4,8 +4,18 @@ using Toybox.System as System;
 
 class BWFaceProperties{
 
+	var settings =  System.getDeviceSettings();
+
+	var clockPadding = 0;
 	var caloriesCircleTickWidth = 10;
 	var caloriesCircleWidth     = 6;
+	var activityPadding =  -8;
+	var framePadding    =  4;
+	var frameRadius     =  3;
+	var topFieldPadding =  4;
+	var dayPadding      = -2;
+	var bmrTopPadding   =  4;
+	var sysinfoTopPadding =  4;
 
 	var dc;
 
@@ -37,6 +47,36 @@ class BWFaceProperties{
 	}
 
 	function setup(){
+		
+        if (dc.getHeight()<=180){ // 735xt
+        	clockPadding = -12;
+        	caloriesCircleTickWidth = 8;
+        	topFieldPadding = 2;
+			bmrTopPadding   =  6;        	
+			activityPadding = -2;  
+			sysinfoTopPadding = 6;									      
+		}
+		else {
+			if (dc.getWidth()<=148) { // vivoactive
+				caloriesCircleTickWidth = 6;
+				caloriesCircleWidth = 4;	
+				clockPadding = 12;
+				activityPadding = 0; 
+				sysinfoTopPadding = -2;	
+				bmrTopPadding = 1;					
+			}
+			else if  (dc.getHeight()<=218){
+				activityPadding = -6;  
+				clockPadding = 8;
+				bmrTopPadding = 1;				
+			}
+			else {
+				clockPadding = 7;
+				activityPadding =  -11;	
+				sysinfoTopPadding =  4;	
+				bmrTopPadding = 2;				
+			}
+		}		
 		
 		caloriesCircleTickOn12 = getProperty("CaloriesCheckPointOn12", false);
 		useDayLightSavingTime = getProperty("UseDayLightSavingTime", false);

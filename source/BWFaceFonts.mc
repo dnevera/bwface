@@ -16,12 +16,17 @@ class BWFaceFonts {
 	var infoFractFont = Gfx.FONT_SYSTEM_SMALL;
 	
 	function initialize() {
-		
-	System.println(" screen w="+settings.screenWidth + " h="+settings.screenHeight);
-	
+			
 	 if (settings.screenHeight<=180){ // Foreruner 735xt
         	clockFont    = Ui.loadResource(Rez.Fonts.clockFontTiny);
-			weekDayFont  = Gfx.FONT_SYSTEM_MEDIUM;        	
+			weekDayFont  = Gfx.FONT_SYSTEM_MEDIUM;    
+			
+			infoFontSmall     = Ui.loadResource(Rez.Fonts.infoFontSmall);	
+        	infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
+        	
+	        infoFont      = Ui.loadResource(Rez.Fonts.infoFontSmall);	
+	        infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);
+            infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);	        	        				    
 		}
 		else if (settings.screenHeight<=240){   
         	if  (settings.screenHeight<=218){  // 5S

@@ -70,7 +70,7 @@ class BWFaceActivityField extends BWFaceField {
 		dc.drawRoundedRectangle(stepx-(stepw+framePadding)/2, stepy, stepw+framePadding/2, frameH, frameRadius);
 				
 		var dh = dc.getWidth()/2-(stepw+framePadding)/2;
-		dc.drawRoundedRectangle(0, stepy, dh,         frameH, frameRadius);		
+		dc.drawRoundedRectangle(-1, stepy, dh+1,         frameH, frameRadius);		
 
 		var cx = stepx-(stepw+framePadding)/2 + stepw+framePadding/2+1;
 		dc.drawRoundedRectangle(cx, stepy, dc.getWidth(), frameH, frameRadius);
