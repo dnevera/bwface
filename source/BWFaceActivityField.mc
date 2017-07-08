@@ -40,11 +40,16 @@ class BWFaceActivityField extends BWFaceField {
 		currentCalories = monitor.calories;
 		var calories = BWFace.decFields(currentCalories," ",1,3);
 		var distance = BWFace.decFields(monitor.distance.toDouble()/100.0/properties.statuteFactor,",",10,2);
-		var steps ;//   = monitor.steps == null ? "--" : monitor.steps;//.format("%02d");
+		var steps ;
 		var stepx10=0;
 		var stepxFract=0;
 		
-		sSize[0]  = dc.getWidth()/3.5;
+		if (settings.screenShape == System.SCREEN_SHAPE_RECTANGLE){
+			sSize[0]  = dc.getWidth()/3;
+		}
+		else {
+			sSize[0]  = dc.getWidth()/3.5;
+		}
 		
 		if (monitor.steps!=null) {
 			if (monitor.steps<10000){
