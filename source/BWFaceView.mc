@@ -31,8 +31,6 @@ class BWFaceView extends Ui.WatchFace {
     
     function initialize() {
         WatchFace.initialize();
-		//Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
-    	//Sensor.enableSensorEvents(method(:onSensor));           
     }
 
     function onLayout(dc) {
@@ -114,10 +112,6 @@ class BWFaceView extends Ui.WatchFace {
 		bmrMeter.draw(activityField.currentCalories);
 		heartRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
     }
-
-	function onSensor(sensorInfo) {
-    	System.println("Heart Rate: " + sensorInfo.heartRate);
-	}
 
     function onShow() {}
 
