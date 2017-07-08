@@ -37,7 +37,7 @@ class BWFaceHRField extends BWFaceField {
 	    		yc = y + size[1];
 	    	}
 	    	else {
-	    		xc = x+csize[0];
+	    		xc = x+csize[0]+properties.fractionNumberPadding;
 	    		yc = y+2;
 	    	}
 			dc.drawText(xc, yc, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);

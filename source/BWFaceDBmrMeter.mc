@@ -4,6 +4,7 @@ using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 using Toybox.UserProfile as User;
 using Toybox.Time.Gregorian as Calendar;
+using Toybox.Math as Math;
 
 class BWFaceDBmrMeter extends BWFaceField {
 	
@@ -31,16 +32,26 @@ class BWFaceDBmrMeter extends BWFaceField {
 	var size;		 
 	var title;
 	
+	var scale = 1;
+	
 	function prepare(calories,isSemiRound){
 		cl = calories - userBmr;
 		isDeficit =  cl>=0;
-		//prcnt = (cl/userBmr).abs() * (isSemiRound ? 0.29 : 1);
 		prcnt = (cl/userBmr).abs();
 				
 		color = isDeficit ? properties.deficitColor : properties.surplusColor ;
 		
 		cl = cl.abs();
-				
+
+		if (isDeficit){
+			scale = Math.floor(prcnt+1);
+	
+			if (scale > 1) {
+				var ncl = calories - userBmr*scale;
+				prcnt = (ncl/userBmr).abs()/scale;
+			}				
+		}
+					
 		fields = BWFace.decFields(cl," ",1,3);
 		
 		value = fields[0];
@@ -64,6 +75,7 @@ class BWFaceDBmrMeter extends BWFaceField {
 		var tickX = ex-tickW/2;	
 		dc.drawLine(tickX, y-tickW/2, tickX+tickW/2, y);
 		
+		//var p = Math.floor(prcnt+1);
 		var x = ex - ex * prcnt; 
 
 		dc.drawLine(x, y, tickX+tickW/2, y);
@@ -73,15 +85,21 @@ class BWFaceDBmrMeter extends BWFaceField {
 		var txtX = ex-size[0]-fractSize[0]-tickW/2;
 		var caloriesLinePos = y-size[1] - properties.caloriesCircleWidth;
 	
+		txtX -= properties.caloriesCircleWidth;
 		dc.setColor(properties.labelColor,  Gfx.COLOR_TRANSPARENT);
-		dc.drawText(txtX-properties.caloriesCircleWidth, caloriesLinePos,  properties.fonts.infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(txtX, caloriesLinePos,  properties.fonts.infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
 				
 		var fractPos = caloriesLinePos+size[1]-fractSize[1]-1;
-		dc.drawText(txtX-properties.caloriesCircleWidth+size[0]-1, fractPos,  properties.fonts.infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
+		txtX += size[0]+properties.fractionNumberPadding;
+		dc.drawText(txtX, fractPos,  properties.fonts.infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
 	
 		if (drawTopTitles) {
 			var caloriesTitleLinePos = caloriesLinePos+2; 
-			dc.drawText(txtX-properties.caloriesCircleWidth+size[0],  caloriesTitleLinePos, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			dc.drawText(txtX+1,  caloriesTitleLinePos, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			if (isDeficit && scale>1){
+				var p = scale.format("%d");
+				dc.drawText(dc.getWidth()/2, caloriesLinePos, properties.fonts.infoFont, p, Gfx.TEXT_JUSTIFY_LEFT);
+			}			
 		}
 	
 		tickPosX = properties.caloriesCircleWidth+tickW;
@@ -145,15 +163,23 @@ class BWFaceDBmrMeter extends BWFaceField {
 			dc.drawLine(circleX-tickW, txtY, dc.getWidth()-1, txtY);
 		}
 
+		txtX -=properties.caloriesCircleWidth;
+		 
 		dc.setColor(properties.labelColor,  Gfx.COLOR_TRANSPARENT);
-		dc.drawText(txtX-properties.caloriesCircleWidth, caloriesLinePos,  properties.fonts.infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(txtX, caloriesLinePos,  properties.fonts.infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
 		
+		txtX += size[0];
 		var fractPos = caloriesLinePos+size[1]-fractSize[1]-1;
-		dc.drawText(txtX-properties.caloriesCircleWidth+size[0]-1, fractPos,  properties.fonts.infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(txtX-1+properties.fractionNumberPadding, fractPos,  properties.fonts.infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
 		
 		if (drawTopTitles) {
-			var caloriesTitleLinePos = caloriesLinePos+2; 
-			dc.drawText(txtX-properties.caloriesCircleWidth+size[0],  caloriesTitleLinePos, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			var y = caloriesLinePos+2;
+			txtX +=properties.fractionNumberPadding;  
+			dc.drawText(txtX, y, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			if (isDeficit && scale>1){
+				var p = " "+scale.format("%d");
+				dc.drawText(txtX+fractSize[0]+properties.caloriesCircleWidth, y, properties.fonts.infoTitleFontTiny, p, Gfx.TEXT_JUSTIFY_LEFT);
+			}
 		}
 				
 		dc.setPenWidth(1);		

@@ -6,15 +6,16 @@ class BWFaceProperties{
 
 	var settings =  System.getDeviceSettings();
 
-	var clockPadding = 0;
-	var caloriesCircleTickWidth = 10;
-	var caloriesCircleWidth     = 6;
-	var activityPadding =  -8;
-	var framePadding    =  4;
-	var frameRadius     =  3;
-	var topFieldPadding =  4;
-	var dayPadding      = -2;
-	var bmrTopPadding   =  4;
+	var clockPadding            =  0;
+	var caloriesCircleTickWidth =  10;
+	var caloriesCircleWidth     =  6;
+	var activityPadding         = -8;
+	var fractionNumberPadding   = -3;
+	var framePadding      =  4;
+	var frameRadius       =  3;
+	var topFieldPadding   =  4;
+	var dayPadding        = -2;
+	var bmrTopPadding     =  4;
 	var sysinfoTopPadding =  4;
 
 	var dc;
@@ -55,7 +56,7 @@ class BWFaceProperties{
         	topFieldPadding = 2;
 			bmrTopPadding   =  6;        	
 			activityPadding = -6;  
-			sysinfoTopPadding = 6;									      
+			sysinfoTopPadding = 6;
 		}
 		else {
 			if (dc.getWidth()<=148) { // vivoactive
@@ -64,7 +65,9 @@ class BWFaceProperties{
 				clockPadding = 12;
 				activityPadding = 0; 
 				sysinfoTopPadding = -2;	
-				bmrTopPadding = 1;					
+				bmrTopPadding = 1;
+				framePadding  =  3;									
+				fractionNumberPadding = -4;				
 			}
 			else if  (dc.getHeight()<=218){ // 5s
 				activityPadding = -7;  
