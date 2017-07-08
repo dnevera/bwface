@@ -31,7 +31,7 @@ class BWFaceActivityField extends BWFaceField {
 		
 		currentCalories = monitor.calories;
 		var calories = BWFace.decFields(currentCalories," ",1,3);
-		var distance = BWFace.decFields(monitor.distance.toDouble()/100.0,",",10,2);
+		var distance = BWFace.decFields(monitor.distance.toDouble()/100.0/properties.statuteFactor,",",10,2);
 		var steps    = monitor.steps == null ? "--" : monitor.steps.format("%02d");
 						
 		sSize[0]  = dc.getWidth()/3.5;

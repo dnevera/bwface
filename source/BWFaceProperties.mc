@@ -33,7 +33,8 @@ class BWFaceProperties{
 
     var useDayLightSavingTime;
     var caloriesCircleTickOn12;
-
+	var statuteFactor = 1;
+	
 	var fonts = new BWFaceFonts();	
 	var strings = new BWFaceStrings();
 
@@ -49,11 +50,11 @@ class BWFaceProperties{
 	function setup(){
 		
         if (dc.getHeight()<=180){ // 735xt
-        	clockPadding = -12;
+        	clockPadding = -18;
         	caloriesCircleTickWidth = 8;
         	topFieldPadding = 2;
 			bmrTopPadding   =  6;        	
-			activityPadding = -2;  
+			activityPadding = -6;  
 			sysinfoTopPadding = 6;									      
 		}
 		else {
@@ -65,13 +66,13 @@ class BWFaceProperties{
 				sysinfoTopPadding = -2;	
 				bmrTopPadding = 1;					
 			}
-			else if  (dc.getHeight()<=218){
-				activityPadding = -6;  
-				clockPadding = 8;
-				bmrTopPadding = 1;				
+			else if  (dc.getHeight()<=218){ // 5s
+				activityPadding = -7;  
+				clockPadding = 6;
+				bmrTopPadding = 4;				
 			}
 			else {
-				clockPadding = 7;
+				clockPadding = 6;
 				activityPadding =  -11;	
 				sysinfoTopPadding =  4;	
 				bmrTopPadding = 2;				
@@ -94,5 +95,13 @@ class BWFaceProperties{
         batteryLowColor  = 0xF42416;
         batteryWarnColor = 0xFFA500;    	
 		
+		strings.setup(settings);
+		
+		if (settings.distanceUnits == System.UNIT_STATUTE) {
+		   statuteFactor = 1.609344;
+		} 
+	    else {
+	       statuteFactor = 1;
+	   }		
 	}
 }

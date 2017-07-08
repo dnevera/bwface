@@ -35,6 +35,7 @@
     <string id="StepsTitle">steps</string>
     <string id="CaloriesTitle">kcal</string>
     <string id="DistanceTitle">km</string>
+    <string id="DistanceMilesTitle">mi</string>    
     <string id="BPMTitle">bpm</string>
     
 </strings>
