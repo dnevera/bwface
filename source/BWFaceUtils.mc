@@ -6,11 +6,11 @@ module BWFace {
 		return [(t0 - 0.5/1000.0).toLong(),fract]; 
 	}
 	
-	function decFields(n,f,scale,prec){
-		if (n==null) {
+	function decFields(number,delim,scale,prec){
+		if (number==null) {
 			return ["--",""];
 		} 
-		var dec  = decimals(n,scale);	
-		return [dec[0].toString(),f+dec[1].format("%0"+prec+"d")];
+		var dec  = decimals(number,scale);	
+		return [dec[0].toString(),delim+dec[1].format("%0"+prec+"d")];
 	}
 }

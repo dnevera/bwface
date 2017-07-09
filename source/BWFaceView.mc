@@ -5,6 +5,9 @@ using Toybox.Lang as Lang;
 using Toybox.Time.Gregorian as Calendar;
 using Toybox.UserProfile as User;
 using Toybox.Sensor;
+using Toybox.SensorHistory;
+using Toybox.System;
+
 
 class BWFaceView extends Ui.WatchFace {
         
@@ -28,7 +31,7 @@ class BWFaceView extends Ui.WatchFace {
     function handlSettingUpdate(){    	
     	properties.setup();    	
 	}
-    
+    	
     function initialize() {
         WatchFace.initialize();
     }
@@ -99,7 +102,15 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
     function onUpdate(dc) {
-    	    	    	
+		var sensorIter =  getIterator();
+		if  ( sensorIter != null ){   	    	    	
+			var n = sensorIter.next();
+			var t = Calendar.info(n.when, Time.FORMAT_MEDIUM);
+			System.println(" SENSOR " + sensorIter.getNewestSampleTime() + " w = " + t.hour + ":" + t.min + " data = "+n.data);
+			// Print out the next entry in the iterator
+			//System.println(sensorIter.next().data);
+    	}
+    		    	
     	dc.setColor(properties.bgColor, properties.bgColor);
 		dc.clear();
 		
@@ -112,6 +123,22 @@ class BWFaceView extends Ui.WatchFace {
 		bmrMeter.draw(activityField.currentCalories);
 		heartRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
     }
+
+	// Create a method to get the SensorHistoryIterator object
+	function getIterator() {
+	    // Check device for SensorHistory compatability
+	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getPressureHistory)) {
+	        // Set up the method with parameters
+	        var getMethod = new Lang.Method
+	            (
+	            Toybox.SensorHistory,
+	            :getPressureHistory
+	            );
+	        // Invoke the method with the given parameters
+	        return getMethod.invoke({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
+	    }
+	    return null;
+	}
 
     function onShow() {}
 

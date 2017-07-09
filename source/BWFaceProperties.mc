@@ -7,7 +7,7 @@ class BWFaceProperties{
 	var settings =  System.getDeviceSettings();
 
 	var clockPadding            =  0;
-	var caloriesCircleTickWidth =  10;
+	var caloriesCircleTickWidth =  8;
 	var caloriesCircleWidth     =  6;
 	var activityPadding         = -8;
 	var fractionNumberPadding   = -3;
@@ -77,13 +77,13 @@ class BWFaceProperties{
 				sysinfoTopPadding =  5;								
 			}
 			else {
-				clockPadding    = 6;
+				clockPadding    = 4;
 				topFieldPadding = 3;
-				dayPadding      = 1; 
+				dayPadding      = -1; 
 				activityPadding =  -11;	
 				sysinfoTopPadding =  4;	
-				bmrTopPadding = 2;	
-				sysinfoTopPadding =  4;							
+				bmrTopPadding = 0;	
+				sysinfoTopPadding =  8;							
 			}
 		}		
 		

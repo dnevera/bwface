@@ -76,7 +76,6 @@ class BWFaceDBmrMeter extends BWFaceField {
 		var tickX = ex-tickW/2;	
 		dc.drawLine(tickX, y-tickW/2, tickX+tickW/2, y);
 		
-		//var p = Math.floor(prcnt+1);
 		var x = ex - ex * prcnt; 
 
 		dc.drawLine(x, y, tickX+tickW/2, y);
