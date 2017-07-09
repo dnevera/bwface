@@ -25,6 +25,7 @@ class BWFaceNumber {
 	protected var justification;
 	protected var frameColor;
 	protected var color;
+	protected var bgColor;
 	protected var framePadding;
 	protected var frameRadius;
 	
@@ -47,6 +48,7 @@ class BWFaceNumber {
 		color = dictionary[:color] == null ? Gfx.COLOR_WHITE : dictionary[:color];
 		framePadding = dictionary[:framePadding] == null ? 2 : dictionary[:framePadding];
 		frameRadius = dictionary[:frameRadius] == null ? 3 : dictionary[:frameRadius];
+		bgColor = dictionary[:bgColor] == null ? Gfx.COLOR_BLACK : dictionary[:bgColor];
 
 		var draft;
 		if (scale>=10){
@@ -68,15 +70,19 @@ class BWFaceNumber {
 		fractionSize = dc.getTextDimensions(draft, fontFraction);
 	}
 	
-	function draw(value, isDynamic){
+	protected var vstr;
+	protected var _x;
+	protected var _xf;
+	protected var sectRect;
+	
+	function draw(value, isDynamic, isPartial){
 		
 		var size = [0,0];
 		var dosplit = true; 
 				
-		var vstr = dosplit ? BWFace.decFields(value,delim,scale,prec) : [value.format("%d"),""];
+		vstr = dosplit ? BWFace.decFields(value,delim,scale,prec) : [value.format("%d"),""];		
 		
-		
-		if (isDynamic && value<999) {
+		if (isDynamic && value<999 && scale <=1) {
 			size = draft1000Size;
 			vstr = [value.format("%d"),""];
 			dosplit = false;
@@ -88,8 +94,9 @@ class BWFaceNumber {
 			size[1] = significantSize[1];
 		}
 		
-		var _x  = x;
-		var _xf = x;
+		_x = x;
+		_xf = x;
+		
 		var _xt = x;
 		var _xr = frameX;
 		if (dosplit) {
@@ -121,12 +128,27 @@ class BWFaceNumber {
 		
 		dc.setColor(color, Gfx.COLOR_TRANSPARENT);
 		
-		dc.drawText(_x,  y, font,              vstr[0], justification);
-		dc.drawText(_xf, y, fontFraction,      vstr[1], justification);
+		sectRect = [_x, y, significantSize[0]+fractionSize[0], h-titleSize[1]];
+		partialDraw(vstr[0],vstr[1]);
 		dc.drawText(_xt, y+significantSize[1], fontTitle, title, justification);	
 		
 		dc.setColor(frameColor, Gfx.COLOR_TRANSPARENT);
 		dc.setPenWidth(1);
 		dc.drawRoundedRectangle(_xr, y, w, h+2*framePadding, frameRadius);	
+	}
+	
+	var oldValue = null;
+	function partialDraw(value,fract){
+			if (oldValue!=null){ 
+				dc.setColor(bgColor, bgColor);
+				dc.drawText(_x,  y, font, oldValue, justification);
+			}
+			oldValue = value;
+			//dc.fillRectangle(sectRect[0],sectRect[1],sectRect[2],sectRect[3]);
+			dc.setColor(color, Gfx.COLOR_TRANSPARENT);
+			dc.drawText(_x,  y, font, value, justification);
+			if (fract !=null ){
+				dc.drawText(_xf, y, fontFraction,      fract, justification);
+			}
 	}
 }

@@ -49,7 +49,7 @@
         </settingConfig>
     </setting>
 
-      <setting propertyKey="@Properties.MinutesColor" title="@Strings.MinutesColorTitle">
+     <setting propertyKey="@Properties.MinutesColor" title="@Strings.MinutesColorTitle">
         <settingConfig type="list">
             <listEntry value="0xFFA500">@Strings.ColorRedCheese</listEntry>        
             <listEntry value="0x32CD32">@Strings.ColorGeenApple</listEntry>        
@@ -59,15 +59,39 @@
         </settingConfig>
     </setting>
 
+	<setting propertyKey="@Properties.ActivityLeftField" title="@Strings.ActivityLeftFieldTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.Distance</listEntry>        
+            <listEntry value="1">@Strings.Steps</listEntry>        
+            <listEntry value="2">@Strings.Calories</listEntry>
+            <listEntry value="3">@Strings.Seconds</listEntry>
+        </settingConfig>
+    </setting>
+    
+	<setting propertyKey="@Properties.ActivityMidField" title="@Strings.ActivityMidFieldTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.Distance</listEntry>        
+            <listEntry value="1">@Strings.Steps</listEntry>        
+            <listEntry value="2">@Strings.Calories</listEntry>
+            <listEntry value="3">@Strings.Seconds</listEntry>
+        </settingConfig>
+    </setting>
+    	 	    
+    <setting propertyKey="@Properties.ActivityRightField" title="@Strings.ActivityRightFieldTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.Distance</listEntry>        
+            <listEntry value="1">@Strings.Steps</listEntry>        
+            <listEntry value="2">@Strings.Calories</listEntry>
+            <listEntry value="3">@Strings.Seconds</listEntry>
+        </settingConfig>
+    </setting>
+        
+
     <setting propertyKey="@Properties.CaloriesCheckPointOn12" title="@Strings.CaloriesCheckPointOn12Title">
         <settingConfig type="boolean" />
     </setting>
 
    <setting propertyKey="@Properties.UseDayLightSavingTime" title="@Strings.UseDayLightSavingTimeTitle">
-        <settingConfig type="boolean" />
-    </setting>
-
-    <setting propertyKey="@Properties.UseDayLightSavingTime" title="@Strings.UseDayLightSavingTimeTitle">
         <settingConfig type="boolean" />
     </setting>
 

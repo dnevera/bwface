@@ -29,7 +29,8 @@ class BWFaceView extends Ui.WatchFace {
     var heartRateField;	
     	
     function handlSettingUpdate(){    	
-    	properties.setup();    	
+    	properties.setup();  
+    	activityField.setup();  	
 	}
     	
     function initialize() {
@@ -123,6 +124,10 @@ class BWFaceView extends Ui.WatchFace {
 		bmrMeter.draw(activityField.currentCalories);
 		heartRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
     }
+	
+	function onPartialUpdate(dc) {
+		activityField.partialDraw();
+	}
 
 	// Create a method to get the SensorHistoryIterator object
 	function getIterator() {

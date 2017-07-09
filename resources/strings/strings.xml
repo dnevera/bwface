@@ -3,6 +3,10 @@
 
     <string id="AppName">BWFace</string>
 
+    <string id="ActivityLeftFieldTitle">Activity Left Field</string>
+    <string id="ActivityMidFieldTitle">Activity Middling Field</string>
+    <string id="ActivityRightFieldTitle">Activity Right Field</string>
+
     <string id="CaloriesCheckPointOn12Title">Calories Check Point At 12 (Round Watches only)</string>
     <string id="UseDayLightSavingTimeTitle">Daylight Saving Time</string>
 
@@ -37,5 +41,12 @@
     <string id="DistanceTitle">km</string>
     <string id="DistanceMilesTitle">mi</string>    
     <string id="BPMTitle">bpm</string>
+    <string id="SecondsTitle">sec</string>
+
+
+    <string id="Steps">Steps</string>
+    <string id="Calories">Calories</string>
+    <string id="Distance">Distance</string>
+    <string id="Seconds">Seconds</string>
     
 </strings>

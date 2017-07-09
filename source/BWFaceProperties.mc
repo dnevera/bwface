@@ -4,6 +4,11 @@ using Toybox.System as System;
 
 class BWFaceProperties{
 
+
+	var activityLeftField  = 0;
+	var activityMidField   = 1;
+	var activityRightField = 2;
+	
 	var settings =  System.getDeviceSettings();
 
 	var clockPadding            =  0;
@@ -86,6 +91,10 @@ class BWFaceProperties{
 				sysinfoTopPadding =  8;							
 			}
 		}		
+		
+		activityLeftField  = getProperty("ActivityLeftField", 0);
+		activityMidField   = getProperty("ActivityMidField",  1);
+		activityRightField = getProperty("ActivityRightField",2);
 		
 		caloriesCircleTickOn12 = getProperty("CaloriesCheckPointOn12", false);
 		useDayLightSavingTime = getProperty("UseDayLightSavingTime", false);

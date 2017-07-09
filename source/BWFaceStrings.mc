@@ -6,6 +6,7 @@ class BWFaceStrings {
         var caloriesTitle = Ui.loadResource( Rez.Strings.CaloriesTitle );
         var distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
         var bpmTitle      = Ui.loadResource( Rez.Strings.BPMTitle );
+        var secondsTitle      = Ui.loadResource( Rez.Strings.SecondsTitle );
         
         function setup(sysunits){
 		    if (sysunits.distanceUnits == Sys.UNIT_STATUTE) {
