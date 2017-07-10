@@ -10,8 +10,8 @@
     <property id="CaloriesCheckPointOn12" type="boolean">false</property>
     <property id="UseDayLightSavingTime" type="boolean">false</property>
     
-    <property id="ActivityLeftField"  type="number">0</property>
-    <property id="ActivityMidField"   type="number">1</property>
-    <property id="ActivityRightField" type="number">2</property>
+    <property id="ActivityLeftField"  type="number">4</property>
+    <property id="ActivityMidField"   type="number">5</property>
+    <property id="ActivityRightField" type="number">6</property>
     
 </properties>

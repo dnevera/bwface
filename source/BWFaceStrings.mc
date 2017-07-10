@@ -6,7 +6,10 @@ class BWFaceStrings {
         var caloriesTitle = Ui.loadResource( Rez.Strings.CaloriesTitle );
         var distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
         var bpmTitle      = Ui.loadResource( Rez.Strings.BPMTitle );
-        var secondsTitle      = Ui.loadResource( Rez.Strings.SecondsTitle );
+        var secondsTitle  = Ui.loadResource( Rez.Strings.SecondsTitle );
+        var sunriseTitle  = Ui.loadResource( Rez.Strings.SunriseTitle );
+        var sunsetTitle   = Ui.loadResource( Rez.Strings.SunsetTitle );
+        var altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeTitle );
         
         function setup(sysunits){
 		    if (sysunits.distanceUnits == Sys.UNIT_STATUTE) {
@@ -15,5 +18,12 @@ class BWFaceStrings {
 	        else {
 	        	distanceTitle = Ui.loadResource( Rez.Strings.DistanceTitle );
 	        }
+	       
+	       	if (sysunits.elevationUnits == Sys.UNIT_STATUTE) {
+		    	 altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeFeetTitle );
+		    } 
+	        else {
+	        	 altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeTitle );
+	        }	        
         }	
 }

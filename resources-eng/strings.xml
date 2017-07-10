@@ -39,13 +39,20 @@
     <string id="DistanceTitle">km</string>
     <string id="DistanceMilesTitle">mi</string>    
     <string id="BPMTitle">bpm</string>
+    
     <string id="SecondsTitle">sec</string>
-
+    <string id="SunriseTitle">SR</string>
+    <string id="SunsetTitle">SS</string>    
+    <string id="AltitudeFeetTitle">ft</string> 
+    <string id="AltitudeTitle">m</string> 
 
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
     <string id="Distance">Distance</string>
     <string id="Seconds">Seconds (availability  depends on watches model)</string>
     
+    <string id="Sunrise">Sunrise</string>
+    <string id="Sunset">Sunset</string>
+    <string id="Altitude">Altitude</string>
     
 </resources>

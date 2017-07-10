@@ -4,7 +4,6 @@ using Toybox.System as System;
 
 class BWFaceProperties{
 
-
 	var activityLeftField  = 0;
 	var activityMidField   = 1;
 	var activityRightField = 2;
@@ -76,7 +75,7 @@ class BWFaceProperties{
 				fractionNumberPadding = -4;				
 			}
 			else if  (dc.getHeight()<=218){ // 5s
-				activityPadding = -7;  
+				activityPadding = -8;  
 				clockPadding = 6;
 				bmrTopPadding = 4;	
 				sysinfoTopPadding =  7;								

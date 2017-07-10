@@ -29,7 +29,7 @@ class BWFaceHRField extends BWFaceField {
 		dc.drawText(x, y, properties.fonts.infoFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
 		
 		if (drawTopTitles) {
-	    	var csize = dc.getTextDimensions(hr,  properties.fonts.infoFont);
+	    	//var csize = dc.getTextDimensions(hr,  properties.fonts.infoFont);
 	    	var xc;
 	    	var yc;
 	    	if (settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
@@ -37,7 +37,7 @@ class BWFaceHRField extends BWFaceField {
 	    		yc = y + size[1];
 	    	}
 	    	else {
-	    		xc = x+csize[0]+properties.fractionNumberPadding;
+	    		xc = x+size[0]+properties.fractionNumberPadding;
 	    		yc = y+2;
 	    	}
 			dc.drawText(xc, yc, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);

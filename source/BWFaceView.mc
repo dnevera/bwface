@@ -28,9 +28,7 @@ class BWFaceView extends Ui.WatchFace {
     var sysinfoField;	
     var bmrMeter;	
     var heartRateField;	
-    	
-	var partialUpdatesAllowed;
-		
+    			
     function handlSettingUpdate(){    	
     	properties.setup();  
     	activityField.setup(); 
@@ -42,9 +40,8 @@ class BWFaceView extends Ui.WatchFace {
 
     function onLayout(dc) {
     
-    	partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );
-    	
-    	System.println("partialUpdatesAllowed = "+partialUpdatesAllowed);
+    	//partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );    	
+    	//System.println("partialUpdatesAllowed = "+partialUpdatesAllowed);
     
 		properties = new BWFaceProperties(dc);		 
 		properties.setup();
@@ -110,14 +107,12 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
     function onUpdate(dc) {
-		var sensorIter =  getIterator();
+		/*var sensorIter =  getIterator();
 		if  ( sensorIter != null ){   	    	    	
 			var n = sensorIter.next();
 			var t = Calendar.info(n.when, Time.FORMAT_MEDIUM);
 			System.println(" SENSOR " + sensorIter.getNewestSampleTime() + " w = " + t.hour + ":" + t.min + " data = "+n.data);
-			// Print out the next entry in the iterator
-			//System.println(sensorIter.next().data);
-    	}
+    	}*/
     		    	
 		dc.setClip(0, 0, dc.getWidth(), dc.getHeight());    		    	
     	dc.setColor(properties.bgColor, properties.bgColor);

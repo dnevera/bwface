@@ -30,6 +30,8 @@ class BWFaceNumber {
 	protected var framePadding;
 	protected var frameRadius;
 	
+	protected var realFont;
+	
 	function initialize(_dc,rect,dictionary){
 	    
 		dc = _dc;
@@ -52,6 +54,8 @@ class BWFaceNumber {
 		frameRadius = dictionary[:frameRadius] == null ? 3 : dictionary[:frameRadius];
 		bgColor = dictionary[:bgColor] == null ? Gfx.COLOR_BLACK : dictionary[:bgColor];
 
+		realFont = font;
+
 		var draft;
 		if (scale>=10){
 			prec = 2;
@@ -62,13 +66,21 @@ class BWFaceNumber {
 		}
 		
 		updateSizes("0",draft);
-		draft1000Size = dc.getTextDimensions("0000", font);
+		draft1000Size = dc.getTextDimensions("0000", realFont);
 		titleSize     = dc.getTextDimensions(title, fontTitle);
 		h = significantSize[1]+titleSize[1];
 	}
 	
 	function updateSizes(signif,draft) {
-		significantSize = dc.getTextDimensions(signif, font);
+	
+		if (signif.length()>=3){
+			realFont = fontFraction;			 
+		}
+		else {
+			realFont = font;
+		}
+	
+		significantSize = dc.getTextDimensions(signif, realFont);
 		if (draft!=null){
 			fractionSize = dc.getTextDimensions(draft, fontFraction);
 		}
@@ -87,21 +99,9 @@ class BWFaceNumber {
 		var size = [0,0];
 		var dosplit = true; 
 		var value = valueIn;
-		var isNumber = true;
+		var isNumber = !(value instanceof Toybox.Lang.String);
 		
-		try { 
-			if (value.toNumber() != null ){
-				vstr = dosplit ? BWFace.decFields(value,delim,scale,prec) : [value.format("%d"),""];
-			}		
-			else {
-			    vstr = [value,null];
-			    isNumber = false;		    
-			}
-		}
-		catch( ex ) {
-		    vstr = [value,null];
-		    isNumber = false;		    
-		}				
+		vstr = BWFace.decFields(value,delim,scale,prec);
 		
 		if (isDynamic && isNumber && scale <=1 && value<999) {
 			size = draft1000Size;
@@ -110,12 +110,15 @@ class BWFaceNumber {
 			}
 			dosplit = false;
 		}
-		else {
+		else {			
 			updateSizes(vstr[0],vstr[1]);
 			size[0] = significantSize[0] + fractionSize[0];
 			size[1] = significantSize[1];
 		}
 	
+		if (dosplit){
+			dosplit = vstr[1].length()>0;
+		}
 	
 		_x = x;
 		_xf = x;
@@ -126,8 +129,8 @@ class BWFaceNumber {
 		
 		if (dosplit) {
 			if (justification == Gfx.TEXT_JUSTIFY_CENTER){
-				_x -= significantSize[0]/2;
-				_xf+= fractionSize[0]/2;
+				_x -= significantSize[0]/2+1;
+				_xf+= fractionSize[0]/2-1;
 			}
 			else if (justification == Gfx.TEXT_JUSTIFY_LEFT){
 				_xf+= significantSize[0];
@@ -138,13 +141,17 @@ class BWFaceNumber {
 		}
 
 		if (justification == Gfx.TEXT_JUSTIFY_CENTER){
-			//_xr -= w/2;
 			_clippingx -= w/2;
+			var d = vstr[0].length();
+			if (d>=3){
+				_x+=significantSize[0]/d/2-1;
+				_xf+=significantSize[0]/d/2-1;
+			}
 		}
 		else if (justification == Gfx.TEXT_JUSTIFY_LEFT){
-			_xf +=framePadding;
-			_x  +=framePadding;
-			_xt +=framePadding;				
+			_xf +=framePadding+1;
+			_x  +=framePadding+1;
+			_xt +=framePadding+1;				
 		}
 		else {
 			_xf+=-framePadding+w;
@@ -156,11 +163,11 @@ class BWFaceNumber {
 		
 		sectRect = [_clippingx, y, w, h];
 		partialDraw(vstr[0],vstr[1],false);
-		dc.drawText(_xt, y+significantSize[1], fontTitle, title, justification);	
+		dc.drawText(_xt, y+h-titleSize[1], fontTitle, title, justification);	
 		
 		dc.setColor(frameColor, Gfx.COLOR_TRANSPARENT);
 		dc.setPenWidth(1);
-		dc.drawRoundedRectangle(_xr, y, w, h+2*framePadding, frameRadius);	
+		dc.drawRoundedRectangle(_xr, y, w, h+framePadding+2, frameRadius);	
 	}
 			
 	var oldValue = null;
@@ -172,13 +179,17 @@ class BWFaceNumber {
 		
 			if (oldValue!=null){ 
 				dc.setColor(bgColor, bgColor);
-				dc.drawText(_x,  y, font, oldValue, justification);
+				dc.drawText(_x,  y+1, realFont, oldValue, justification);
 			}
 			oldValue = value;
 			dc.setColor(color, Gfx.COLOR_TRANSPARENT);
-			dc.drawText(_x,  y, font, value, justification);
+			var offset = 0;
+			if (value.length()>=3){
+				offset = 2;
+			}
+			dc.drawText(_x,  y+offset, realFont, value, justification);
 			if (fract !=null ){
-				dc.drawText(_xf, y, fontFraction,      fract, justification);
+				dc.drawText(_xf, y+2, fontFraction,      fract, justification);
 			}
 	}
 }

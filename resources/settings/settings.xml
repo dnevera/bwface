@@ -65,6 +65,9 @@
             <listEntry value="1">@Strings.Steps</listEntry>        
             <listEntry value="2">@Strings.Calories</listEntry>
             <listEntry value="3">@Strings.Seconds</listEntry>
+            <listEntry value="4">@Strings.Sunrise</listEntry>
+            <listEntry value="5">@Strings.Sunset</listEntry>
+            <listEntry value="6">@Strings.Altitude</listEntry>
         </settingConfig>
     </setting>
     
@@ -74,6 +77,9 @@
             <listEntry value="1">@Strings.Steps</listEntry>        
             <listEntry value="2">@Strings.Calories</listEntry>
             <listEntry value="3">@Strings.Seconds</listEntry>
+            <listEntry value="4">@Strings.Sunrise</listEntry>
+            <listEntry value="5">@Strings.Sunset</listEntry>
+            <listEntry value="6">@Strings.Altitude</listEntry>
         </settingConfig>
     </setting>
     	 	    
@@ -83,6 +89,9 @@
             <listEntry value="1">@Strings.Steps</listEntry>        
             <listEntry value="2">@Strings.Calories</listEntry>
             <listEntry value="3">@Strings.Seconds</listEntry>
+            <listEntry value="4">@Strings.Sunrise</listEntry>
+            <listEntry value="5">@Strings.Sunset</listEntry>
+            <listEntry value="6">@Strings.Altitude</listEntry>
         </settingConfig>
     </setting>
         

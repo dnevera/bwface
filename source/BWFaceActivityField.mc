@@ -23,6 +23,12 @@ class BWFaceActivityField extends BWFaceField {
 	protected var partialFields = [null,null,null];
 	
 	function setup(){
+
+		leftField = null;
+		midField = null;
+		rightField = null;
+		partialFields = [null,null,null];
+		faceValue = null;
 										
 		faceValue = new BWFaceValue(properties);
 		
@@ -47,14 +53,14 @@ class BWFaceActivityField extends BWFaceField {
 		var rect2;
 		
 		if (settings.screenShape == System.SCREEN_SHAPE_RECTANGLE) {
-			rect0 = [-framePadding, locY, wf+framePadding-2,0,-framePadding];
-			rect1 = [w/2,           locY, wf,               0, wf-1];
-			rect2 = [w/d*2,         locY, wf+framePadding,  0, w/d*2];
+			rect0 = [-framePadding, locY, wf+framePadding,0,-framePadding];
+			rect1 = [w/2,           locY, wf,             0, wf+1];
+			rect2 = [w/d*2+1,       locY, wf+framePadding,  0, w/d*2+2];
 		}
 		else {
-			rect0 = [0,        locY, wf+2, 0, 0];
-			rect1 = [w/2,      locY, wf-6, 0, wf+3];
-			rect2 = [w/d*2-2,  locY, wf,   0, w/d*2-2];
+			rect0 = [0,       locY, wf+6,  0, 0];
+			rect1 = [w/2-1,   locY, wf-12, 0, wf+7];
+			rect2 = [w/d*2-5, locY, wf+5,  0, w/d*2-4];
 		}
 
 		dict[:justification] = Gfx.TEXT_JUSTIFY_RIGHT;
@@ -139,7 +145,7 @@ class BWFaceActivityField extends BWFaceField {
 			for( var i = 0; i < partialFields.size(); i++ ) {
 				var f = partialFields[i];
 				if (f != null ){ 
-					f.partialDraw(faceValue.value(BW_Seconds).format("%0d"), null, true);
+					f.partialDraw(faceValue.value(BW_Seconds).format("%02d"), null, true);
 				}
 			}
 		}
