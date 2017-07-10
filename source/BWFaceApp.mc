@@ -1,6 +1,8 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.System as System; 
+using Toybox.Timer;
+using Toybox.Lang;
 
 class BWFaceApp extends App.AppBase {
 
@@ -10,11 +12,9 @@ class BWFaceApp extends App.AppBase {
         AppBase.initialize();
     }
 
-    // onStart() is called on application start up
-    function onStart(state) {    	
+    function onStart(state) { 
     }
 
-    // onStop() is called when your application is exiting
     function onStop(state) {
     }
 
@@ -28,6 +28,5 @@ class BWFaceApp extends App.AppBase {
     function onSettingsChanged() {
     	mainView.handlSettingUpdate();
         Ui.requestUpdate();
-    }
-
+    }    
 }

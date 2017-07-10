@@ -4,57 +4,6 @@ using Toybox.Graphics as Gfx;
 using Toybox.ActivityMonitor as Monitor;
 using Toybox.Math as Math;
 
-class BWFaceValue {
-
-	var properties;
-	var monitor = Monitor.getInfo(); 
-	
-	function initialize(_properties){
-		properties = _properties;
-	}
-	
-	function info(id) {
-		var dict = {:scale=>1,:delim=>"",:title=>""};
-		switch (id) {
-			case 0: // distance
-				dict[:title] = properties.strings.distanceTitle;
-				dict[:scale] = 10;
-				dict[:delim] = ",";
-				break;
-			case 1: 
-				dict[:title] = properties.strings.stepsTitle;
-				break;
-			case 2: 
-				dict[:title] = properties.strings.caloriesTitle;
-				break;
-			case 3: 
-				dict[:title] = properties.strings.secondsTitle;
-				break;
-		}
-		return dict;
-	}
-
-	function value(id) {
-		var value = 0;
-		switch (id) {
-			case 0: // distance
-				return monitor.distance.toDouble()/100.0/properties.statuteFactor;
-				break;
-			case 1: 
-				return monitor.steps;
-				break;
-			case 2: 
-				return monitor.calories;
-				break;
-			case 3: 
-				return Sys.getClockTime().sec;
-				break;
-		}
-		return value;
-	} 
-
-}
-
 class BWFaceActivityField extends BWFaceField {
 	
 	var leftField;
@@ -71,19 +20,10 @@ class BWFaceActivityField extends BWFaceField {
 	
 	protected var faceValue;
 	
-	function setup(){
+	protected var partialFields = [null,null,null];
 	
-		Sys.println(" field0 =" + properties.activityLeftField);
-		Sys.println(" field1 =" + properties.activityMidField);
-		Sys.println(" field2 =" + properties.activityRightField);
-		
-		if (properties.activityMidField==3 || properties.activityRightField==3 || properties.activityLeftField==3) {
-			hasSeconds = true;
-		}
-		else {
-			hasSeconds = false;
-		}
-								
+	function setup(){
+										
 		faceValue = new BWFaceValue(properties);
 		
 		var dict = {:font=>properties.fonts.infoFont,
@@ -139,7 +79,38 @@ class BWFaceActivityField extends BWFaceField {
 		dict[:scale] = info[:scale];
 		dict[:delim] = info[:delim];
 		
-		rightField = new BWFaceNumber(dc, rect2, dict);	
+		rightField = new BWFaceNumber(dc, rect2, dict);
+				
+		setupPartial();
+	}
+	
+	function setupPartial(){
+		hasSeconds = false;
+		if (properties.activityLeftField==BW_Seconds) {
+			partialFields[0] = leftField;
+		}
+		else {
+			partialFields[0] = null;
+		}
+		if (properties.activityMidField==BW_Seconds) {
+			partialFields[1] = midField;
+		}
+		else {
+			partialFields[1] = null;
+		}
+		if (properties.activityRightField==BW_Seconds) {
+			partialFields[2] = rightField;
+		}
+		else {
+			partialFields[2] = null;
+		}
+		for( var i = 0; i < partialFields.size(); i++ )
+		{	
+			if ( partialFields[i] != null) {
+				hasSeconds = true;
+				break;
+			}
+		}	
 	}
 	
     function initialize(dictionary,newProperties){
@@ -165,15 +136,12 @@ class BWFaceActivityField extends BWFaceField {
 	
 	function partialDraw(){
 		if (hasSeconds){
-			if (properties.activityLeftField==3){
-				leftField.partialDraw(faceValue.value(properties.activityLeftField).format("%0d"), null);
+			for( var i = 0; i < partialFields.size(); i++ ) {
+				var f = partialFields[i];
+				if (f != null ){ 
+					f.partialDraw(faceValue.value(BW_Seconds).format("%0d"), null, true);
+				}
 			}
-			if (properties.activityMidField==3){
-				midField.partialDraw(faceValue.value(properties.activityMidField).format("%0d"), null);
-			}
-			if (properties.activityRightField==3){
-				rightField.partialDraw(faceValue.value(properties.activityRightField).format("%0d"), null);
-			}									    	
 		}
 	}
 }

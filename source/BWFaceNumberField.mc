@@ -1,5 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
+using Toybox.System;
 
 class BWFaceNumber {
 	
@@ -30,6 +31,7 @@ class BWFaceNumber {
 	protected var frameRadius;
 	
 	function initialize(_dc,rect,dictionary){
+	    
 		dc = _dc;
 		x = rect[0];
 		y = rect[1];
@@ -59,15 +61,20 @@ class BWFaceNumber {
 			draft = delim + "000";
 		}
 		
-		updateSizes("0000","0",draft);
+		updateSizes("0",draft);
 		draft1000Size = dc.getTextDimensions("0000", font);
 		titleSize     = dc.getTextDimensions(title, fontTitle);
 		h = significantSize[1]+titleSize[1];
 	}
 	
-	function updateSizes(value,signif,draft) {
+	function updateSizes(signif,draft) {
 		significantSize = dc.getTextDimensions(signif, font);
-		fractionSize = dc.getTextDimensions(draft, fontFraction);
+		if (draft!=null){
+			fractionSize = dc.getTextDimensions(draft, fontFraction);
+		}
+		else {
+			fractionSize[0]=0;
+		}
 	}
 	
 	protected var vstr;
@@ -75,30 +82,48 @@ class BWFaceNumber {
 	protected var _xf;
 	protected var sectRect;
 	
-	function draw(value, isDynamic, isPartial){
-		
+	function draw(valueIn, isDynamic, isPartial){
+				
 		var size = [0,0];
 		var dosplit = true; 
-				
-		vstr = dosplit ? BWFace.decFields(value,delim,scale,prec) : [value.format("%d"),""];		
+		var value = valueIn;
+		var isNumber = true;
 		
-		if (isDynamic && value<999 && scale <=1) {
+		try { 
+			if (value.toNumber() != null ){
+				vstr = dosplit ? BWFace.decFields(value,delim,scale,prec) : [value.format("%d"),""];
+			}		
+			else {
+			    vstr = [value,null];
+			    isNumber = false;		    
+			}
+		}
+		catch( ex ) {
+		    vstr = [value,null];
+		    isNumber = false;		    
+		}				
+		
+		if (isDynamic && isNumber && scale <=1 && value<999) {
 			size = draft1000Size;
-			vstr = [value.format("%d"),""];
+			if (isNumber){
+				vstr = [value.format("%d"),""];
+			}
 			dosplit = false;
 		}
 		else {
-			vstr = BWFace.decFields(value,delim,scale,prec);
-			updateSizes(value,vstr[0],vstr[1]);
+			updateSizes(vstr[0],vstr[1]);
 			size[0] = significantSize[0] + fractionSize[0];
 			size[1] = significantSize[1];
 		}
-		
+	
+	
 		_x = x;
 		_xf = x;
 		
 		var _xt = x;
 		var _xr = frameX;
+		var _clippingx = x;
+		
 		if (dosplit) {
 			if (justification == Gfx.TEXT_JUSTIFY_CENTER){
 				_x -= significantSize[0]/2;
@@ -114,6 +139,7 @@ class BWFaceNumber {
 
 		if (justification == Gfx.TEXT_JUSTIFY_CENTER){
 			//_xr -= w/2;
+			_clippingx -= w/2;
 		}
 		else if (justification == Gfx.TEXT_JUSTIFY_LEFT){
 			_xf +=framePadding;
@@ -128,23 +154,27 @@ class BWFaceNumber {
 		
 		dc.setColor(color, Gfx.COLOR_TRANSPARENT);
 		
-		sectRect = [_x, y, significantSize[0]+fractionSize[0], h-titleSize[1]];
-		partialDraw(vstr[0],vstr[1]);
+		sectRect = [_clippingx, y, w, h];
+		partialDraw(vstr[0],vstr[1],false);
 		dc.drawText(_xt, y+significantSize[1], fontTitle, title, justification);	
 		
 		dc.setColor(frameColor, Gfx.COLOR_TRANSPARENT);
 		dc.setPenWidth(1);
 		dc.drawRoundedRectangle(_xr, y, w, h+2*framePadding, frameRadius);	
 	}
-	
+			
 	var oldValue = null;
-	function partialDraw(value,fract){
+	function partialDraw(value,fract,clipping){	
+
+			if (clipping){
+				dc.setClip(sectRect[0], sectRect[1], sectRect[2], sectRect[3]);
+			}
+		
 			if (oldValue!=null){ 
 				dc.setColor(bgColor, bgColor);
 				dc.drawText(_x,  y, font, oldValue, justification);
 			}
 			oldValue = value;
-			//dc.fillRectangle(sectRect[0],sectRect[1],sectRect[2],sectRect[3]);
 			dc.setColor(color, Gfx.COLOR_TRANSPARENT);
 			dc.drawText(_x,  y, font, value, justification);
 			if (fract !=null ){

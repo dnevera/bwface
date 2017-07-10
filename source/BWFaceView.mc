@@ -7,6 +7,7 @@ using Toybox.UserProfile as User;
 using Toybox.Sensor;
 using Toybox.SensorHistory;
 using Toybox.System;
+using Toybox.Timer;
 
 
 class BWFaceView extends Ui.WatchFace {
@@ -28,9 +29,11 @@ class BWFaceView extends Ui.WatchFace {
     var bmrMeter;	
     var heartRateField;	
     	
+	var partialUpdatesAllowed;
+		
     function handlSettingUpdate(){    	
     	properties.setup();  
-    	activityField.setup();  	
+    	activityField.setup(); 
 	}
     	
     function initialize() {
@@ -38,6 +41,10 @@ class BWFaceView extends Ui.WatchFace {
     }
 
     function onLayout(dc) {
+    
+    	partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );
+    	
+    	System.println("partialUpdatesAllowed = "+partialUpdatesAllowed);
     
 		properties = new BWFaceProperties(dc);		 
 		properties.setup();
@@ -86,7 +93,7 @@ class BWFaceView extends Ui.WatchFace {
 		heartRateField = new  BWFaceHRField({
 				:identifier => "SysInfoField", 
 				:locX=>0, 
-				:locY=>bmrlocY}, properties);   		                                                               
+				:locY=>bmrlocY}, properties);   				
     }
 			    	
 	function currentTime(){
@@ -112,6 +119,7 @@ class BWFaceView extends Ui.WatchFace {
 			//System.println(sensorIter.next().data);
     	}
     		    	
+		dc.setClip(0, 0, dc.getWidth(), dc.getHeight());    		    	
     	dc.setColor(properties.bgColor, properties.bgColor);
 		dc.clear();
 		
@@ -128,7 +136,7 @@ class BWFaceView extends Ui.WatchFace {
 	function onPartialUpdate(dc) {
 		activityField.partialDraw();
 	}
-
+	
 	// Create a method to get the SensorHistoryIterator object
 	function getIterator() {
 	    // Check device for SensorHistory compatability
@@ -149,8 +157,10 @@ class BWFaceView extends Ui.WatchFace {
 
     function onHide() {}
 
-    function onExitSleep() {}
+    function onExitSleep() {
+    }
 
-    function onEnterSleep() {}
+    function onEnterSleep() {
+    }
     
 }

@@ -79,7 +79,7 @@ class BWFaceProperties{
 				activityPadding = -7;  
 				clockPadding = 6;
 				bmrTopPadding = 4;	
-				sysinfoTopPadding =  5;								
+				sysinfoTopPadding =  7;								
 			}
 			else {
 				clockPadding    = 4;

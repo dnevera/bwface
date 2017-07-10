@@ -45,7 +45,7 @@
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
     <string id="Distance">Distance</string>
-    <string id="Seconds">Seconds</string>
+    <string id="Seconds">Seconds (availability  depends on watches model)</string>
     
     
 </resources>

@@ -48,7 +48,7 @@
     <string id="Steps">Шагов</string>
     <string id="Calories">Калории</string>
     <string id="Distance">Дистанция</string>
-    <string id="Seconds">Секунды</string>
+    <string id="Seconds">Секунды (наличие зависит от модели часов)</string>
     
     
 </resources>
