@@ -15,16 +15,24 @@ class BWFaceGeoInfo
 	}
 
 	function getLocation() {
+		
+		if (actInfo == null ) {
+			actInfo = Activity.getActivityInfo();			
+		}
+		else if (actInfo.currentLocation == null ) {
+			actInfo = Activity.getActivityInfo();
+		}
+				
         if(actInfo != null)
         {
             var deg = actInfo.currentLocation;
             if(deg != null)
             {
                var degArray = deg.toDegrees();
-               properties.setProperty("CurrentLocation", degArray);           
+               properties.setProperty("CurrentLocation", degArray);                  
                return degArray;
             }
-        }
+        }        
         return properties.getProperty("CurrentLocation", null);
     }
     
@@ -67,7 +75,7 @@ class BWFaceGeoInfo
             output:
                 time of sunrise/sunset in hours */
 		var location = getLocation();
-		
+						
 		if (location == null) {
 			return null;
 		}
