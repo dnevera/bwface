@@ -43,8 +43,8 @@
     <string id="SecondsTitle">sec</string>
     <string id="SunriseTitle">SR</string>
     <string id="SunsetTitle">SS</string>    
-    <string id="AltitudeFeetTitle">ft</string> 
-    <string id="AltitudeTitle">m</string> 
+    <string id="AltitudeFeetTitle">alt ft</string> 
+    <string id="AltitudeTitle">alt m</string> 
 
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
