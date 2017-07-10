@@ -52,6 +52,10 @@ class BWFaceProperties{
 		return v == null ? default_value : v;
 	}
 
+	function setProperty(key,value) {
+		App.getApp().setProperty(key, value);
+	}
+
 	function setup(){
 		
         if (dc.getHeight()<=180){ // 735xt

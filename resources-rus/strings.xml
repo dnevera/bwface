@@ -46,8 +46,8 @@
     
     <string id="SunriseTitle">восх</string>
     <string id="SunsetTitle">закат</string>
-    <string id="AltitudeFeetTitle">фт</string> 
-    <string id="AltitudeTitle">м</string> 
+    <string id="AltitudeFeetTitle">Выс фт</string> 
+    <string id="AltitudeTitle">Выс м</string> 
 
     <string id="Steps">Шагов</string>
     <string id="Calories">Калории</string>
