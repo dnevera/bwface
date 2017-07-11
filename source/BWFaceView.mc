@@ -129,10 +129,8 @@ class BWFaceView extends Ui.WatchFace {
 
     function onHide() {}
 
-    function onExitSleep() {
-    }
+    function onExitSleep() {}
 
-    function onEnterSleep() {
-    }
+    function onEnterSleep() {}
     
 }

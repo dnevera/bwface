@@ -29,6 +29,7 @@ class BWFaceNumber {
 	protected var bgColor;
 	protected var framePadding;
 	protected var frameRadius;
+	protected var format = "%d";
 	
 	protected var realFont;
 	
@@ -43,7 +44,9 @@ class BWFaceNumber {
 
 		scale = dictionary[:scale] == null ? 1 : dictionary[:scale];
 		delim = dictionary[:delim] == null ? 1 : dictionary[:delim];
-		font  = dictionary[:font] == null ? 1 : dictionary[:font];
+		font  = dictionary[:font] == null ? 1 : dictionary[:font];		
+		format = dictionary[:format] == null ? 1 : dictionary[:format];
+		
 		fontTitle     = dictionary[:fontTitle] == null ? 1 : dictionary[:fontTitle];
 		fontFraction  = dictionary[:fontFraction] == null ? 1 : dictionary[:fontFraction];
 		title         = dictionary[:title] == null ? 1 : dictionary[:title];
@@ -106,7 +109,7 @@ class BWFaceNumber {
 		if (isDynamic && isNumber && scale <=1 && value<999) {
 			size = draft1000Size;
 			if (isNumber){
-				vstr = [value.format("%d"),""];
+				vstr = [value.format(format),""];
 			}
 			dosplit = false;
 		}

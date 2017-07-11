@@ -23,8 +23,10 @@ class BWFaceMetricField extends BWFaceField {
  	
  	function draw(tickPosX,tickPosY){ 	
  	 	
-    	var hr    = faceValue.value(properties.metricField); 
-    		
+    	var hr  = faceValue.value(properties.metricField); 
+		if (!(hr instanceof Toybox.Lang.String)) {
+			hr = hr.format(faceValue.info(properties.metricField)[:format]); 
+		}    		
 		var size      = dc.getTextDimensions(hr, properties.fonts.infoFont);
 
 	 	var x = tickPosX;

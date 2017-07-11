@@ -31,7 +31,7 @@ class BWFaceValue {
 	}
 		
 	function info(id) {
-		var dict = {:scale=>1,:delim=>"",:title=>""};
+		var dict = {:scale=>1,:delim=>"",:title=>"", :format=>"%d", :prec=>3};
 		switch (id) {
 			case BW_Distance: // distance
 				dict[:title] = properties.strings.distanceTitle;
@@ -165,7 +165,7 @@ class BWFaceValue {
 		var sensorIter =  getPressureIterator();
 		if  ( sensorIter != null ){   	    	    	
 			var n = sensorIter.next();
-			return (n.data*factor).format("%.0f");
+			return (n.data*factor).format("%.1f");
     	}			
 		else {
 			return "--";
