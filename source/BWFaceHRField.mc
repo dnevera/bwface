@@ -29,7 +29,6 @@ class BWFaceHRField extends BWFaceField {
 		dc.drawText(x, y, properties.fonts.infoFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
 		
 		if (drawTopTitles) {
-	    	//var csize = dc.getTextDimensions(hr,  properties.fonts.infoFont);
 	    	var xc;
 	    	var yc;
 	    	if (settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND){

@@ -7,35 +7,12 @@ using Toybox.Activity as Activity;
 
 class BWFaceGeoInfo
 {	
-    var actInfo = Activity.getActivityInfo();
 	var properties;
 	
 	function initialize(_properties){
 		properties = _properties;
 	}
-
-	function getLocation() {
-		
-		if (actInfo == null ) {
-			actInfo = Activity.getActivityInfo();			
-		}
-		else if (actInfo.currentLocation == null ) {
-			actInfo = Activity.getActivityInfo();
-		}
-				
-        if(actInfo != null)
-        {
-            var deg = actInfo.currentLocation;
-            if(deg != null)
-            {
-               var degArray = deg.toDegrees();
-               properties.setProperty("CurrentLocation", degArray);                  
-               return degArray;
-            }
-        }        
-        return properties.getProperty("CurrentLocation", null);
-    }
-    
+	    
     var altitude = null;
     
     function getAltitude() {
@@ -49,7 +26,7 @@ class BWFaceGeoInfo
         if (altitude != null) {
 			return Math.ceil(altitude * factor);
         }
-        return null;
+        return altitude;
     }
     
     function dayOfTheYear()
@@ -74,7 +51,7 @@ class BWFaceGeoInfo
                 sunrise = true for sunrise, false for sunset
             output:
                 time of sunrise/sunset in hours */
-		var location = getLocation();
+		var location = properties.getLocation();
 						
 		if (location == null) {
 			return null;

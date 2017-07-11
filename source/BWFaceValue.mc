@@ -1,5 +1,4 @@
 using Toybox.System as Sys;
-using Toybox.ActivityMonitor as Monitor;
 using Toybox.Math as Math;
 
 enum {
@@ -15,7 +14,6 @@ enum {
 class BWFaceValue {
 
 	var properties;
-	var monitor = Monitor.getInfo(); 
 	var geoInfo;
 	
 	var partialUpdatesAllowed;
@@ -60,13 +58,13 @@ class BWFaceValue {
 		var value = 0;
 		switch (id) {
 			case BW_Distance: // distance
-				return monitor.distance.toDouble()/100.0/properties.statuteFactor;
+				return properties.monitor.distance.toDouble()/100.0/properties.statuteFactor;
 				break;
 			case BW_Steps: 
-				return monitor.steps;
+				return properties.monitor.steps;
 				break;
 			case BW_Calories: 
-				return monitor.calories;
+				return properties.monitor.calories;
 				break;
 			case BW_Seconds: 
 				if (partialUpdatesAllowed){

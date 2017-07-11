@@ -1,15 +1,19 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.System as System; 
+using Toybox.Activity as Activity;
+using Toybox.ActivityMonitor as Monitor;
 
 class BWFaceProperties{
+
+	var settings =  System.getDeviceSettings();
+	var monitor  = Monitor.getInfo(); 
+    var actInfo  = Activity.getActivityInfo();
 
 	var activityLeftField  = 0;
 	var activityMidField   = 1;
 	var activityRightField = 2;
 	
-	var settings =  System.getDeviceSettings();
-
 	var clockPadding            =  0;
 	var caloriesCircleTickWidth =  8;
 	var caloriesCircleWidth     =  6;
@@ -124,4 +128,26 @@ class BWFaceProperties{
 	       statuteFactor = 1;
 	   }		
 	}
+	
+	function getLocation() {
+		
+		if (actInfo == null ) {
+			actInfo = Activity.getActivityInfo();			
+		}
+		else if (actInfo.currentLocation == null ) {
+			actInfo = Activity.getActivityInfo();
+		}
+				
+        if(actInfo != null)
+        {
+            var deg = actInfo.currentLocation;
+            if(deg != null)
+            {
+               var degArray = deg.toDegrees();
+               setProperty("CurrentLocation", degArray);                  
+               return degArray;
+            }
+        }        
+        return getProperty("CurrentLocation", null);
+    }    
 }
