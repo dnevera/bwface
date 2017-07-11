@@ -6,7 +6,7 @@
     <string id="ActivityLeftFieldTitle">Левое поле в строке активностей</string>
     <string id="ActivityMidFieldTitle">Среднее поле в строке активносте</string>
     <string id="ActivityRightFieldTitle">Правое поле в строке активносте</string>
-    <string id="MetricFieldTitle">Поле метрик</string>
+    <string id="MetricFieldTitle">Поле сенсоров</string>
 
     <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12 (только для циферблатов)</string>
     <string id="UseDayLightSavingTimeTitle">Летнее время</string>

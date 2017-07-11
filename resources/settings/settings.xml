@@ -58,7 +58,16 @@
             <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
         </settingConfig>
     </setting>
-
+ 	
+ 	<setting propertyKey="@Properties.MetricField" title="@Strings.MetricFieldTitle">
+        <settingConfig type="list">
+            <listEntry value="7">@Strings.HeartRate</listEntry>        
+            <listEntry value="8">@Strings.Temperature</listEntry>        
+            <listEntry value="9">@Strings.Pressure</listEntry>
+            <listEntry value="10">@Strings.PressureMmHg</listEntry>
+        </settingConfig>
+    </setting>    
+    
 	<setting propertyKey="@Properties.ActivityLeftField" title="@Strings.ActivityLeftFieldTitle">
         <settingConfig type="list">
             <listEntry value="0">@Strings.Distance</listEntry>        
@@ -105,16 +114,7 @@
             <listEntry value="9">@Strings.Pressure</listEntry>
             <listEntry value="10">@Strings.PressureMmHg</listEntry>
         </settingConfig>
-    </setting>
-        
- 	<setting propertyKey="@Properties.MetricField" title="@Strings.MetricFieldTitle">
-        <settingConfig type="list">
-            <listEntry value="7">@Strings.HeartRate</listEntry>        
-            <listEntry value="8">@Strings.Temperature</listEntry>        
-            <listEntry value="9">@Strings.Pressure</listEntry>
-            <listEntry value="10">@Strings.PressureMmHg</listEntry>
-        </settingConfig>
-    </setting>           
+    </setting>       
 
     <setting propertyKey="@Properties.CaloriesCheckPointOn12" title="@Strings.CaloriesCheckPointOn12Title">
         <settingConfig type="boolean" />

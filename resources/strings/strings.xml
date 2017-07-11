@@ -6,7 +6,7 @@
     <string id="ActivityLeftFieldTitle">Activity Left Field</string>
     <string id="ActivityMidFieldTitle">Activity Middling Field</string>
     <string id="ActivityRightFieldTitle">Activity Right Field</string>
-    <string id="MetricFieldTitle">Metrics</string>
+    <string id="MetricFieldTitle">Sensors Field</string>
 
     <string id="CaloriesCheckPointOn12Title">Calories Check Point At 12 (Round Watches only)</string>
     <string id="UseDayLightSavingTimeTitle">Daylight Saving Time</string>
