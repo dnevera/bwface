@@ -162,7 +162,12 @@ class BWFaceNumber {
 		dc.setColor(color, Gfx.COLOR_TRANSPARENT);
 		
 		sectRect = [_clippingx, y, w, h];
-		partialDraw(vstr[0],vstr[1],false);
+		if (isPartial && isNumber) {
+			partialDraw(valueIn.format("%02.0f"), null, false);
+		}
+		else {
+			partialDraw(vstr[0],vstr[1],false);
+		}
 		dc.drawText(_xt, y+h-titleSize[1], fontTitle, title, justification);	
 		
 		dc.setColor(frameColor, Gfx.COLOR_TRANSPARENT);
