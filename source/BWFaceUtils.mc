@@ -21,8 +21,7 @@ module BWFace {
 			var v1 = value.substring(index, value.length());
 			return [v0,v1];
 		}				
-		var number = value.toNumber();		
-		var dec  = decimals(number,scale);	
+		var dec  = decimals(value.toNumber(),scale);	
 		return [dec[0].toString(),delim+dec[1].format("%0"+prec+"d")];
 	}
 }

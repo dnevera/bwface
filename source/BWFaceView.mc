@@ -27,11 +27,12 @@ class BWFaceView extends Ui.WatchFace {
     var activityField;	    	
     var sysinfoField;	
     var bmrMeter;	
-    var heartRateField;	
+    var metricRateField;	
     			
     function handlSettingUpdate(){    	
     	properties.setup();  
     	activityField.setup(); 
+    	metricRateField.setup();
 	}
     	
     function initialize() {
@@ -39,10 +40,7 @@ class BWFaceView extends Ui.WatchFace {
     }
 
     function onLayout(dc) {
-    
-    	//partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );    	
-    	//System.println("partialUpdatesAllowed = "+partialUpdatesAllowed);
-    
+        
 		properties = new BWFaceProperties(dc);		 
 		properties.setup();
 		 
@@ -67,10 +65,10 @@ class BWFaceView extends Ui.WatchFace {
         var bmrlocY = topField.bottomY+properties.bmrTopPadding; 
         var sysInfoY = activityField.bottomY+properties.sysinfoTopPadding;
   		
-  		if  (properties.settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND) {
+  		if  (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND) {
   		 	bmrlocY = properties.bmrTopPadding;
   		}
-		else if (properties.settings.screenShape == System.SCREEN_SHAPE_RECTANGLE) {
+		else if (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_RECTANGLE) {
   		 	bmrlocY = dc.getHeight()-properties.caloriesCircleWidth+properties.bmrTopPadding;
   		 	clockField.topY;
   		 	sysInfoY = topField.bottomY+(clockField.topY-topField.bottomY)/2+properties.clockPadding/2+properties.sysinfoTopPadding;
@@ -87,7 +85,7 @@ class BWFaceView extends Ui.WatchFace {
 				:locX=>dc.getWidth()/2, 
 				:locY=>bmrlocY}, properties);
 				
-		heartRateField = new  BWFaceHRField({
+		metricRateField = new  BWFaceMetricField({
 				:identifier => "SysInfoField", 
 				:locX=>0, 
 				:locY=>bmrlocY}, properties);   				
@@ -107,12 +105,6 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
     function onUpdate(dc) {
-		/*var sensorIter =  getIterator();
-		if  ( sensorIter != null ){   	    	    	
-			var n = sensorIter.next();
-			var t = Calendar.info(n.when, Time.FORMAT_MEDIUM);
-			System.println(" SENSOR " + sensorIter.getNewestSampleTime() + " w = " + t.hour + ":" + t.min + " data = "+n.data);
-    	}*/
     		    	
 		dc.setClip(0, 0, dc.getWidth(), dc.getHeight());    		    	
     	dc.setColor(properties.bgColor, properties.bgColor);
@@ -125,28 +117,13 @@ class BWFaceView extends Ui.WatchFace {
 		activityField.draw();
 		sysinfoField.draw();
 		bmrMeter.draw(activityField.currentCalories);
-		heartRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
+		metricRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
     }
 	
 	function onPartialUpdate(dc) {
 		activityField.partialDraw();
 	}
 	
-	// Create a method to get the SensorHistoryIterator object
-	function getIterator() {
-	    // Check device for SensorHistory compatability
-	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getPressureHistory)) {
-	        // Set up the method with parameters
-	        var getMethod = new Lang.Method
-	            (
-	            Toybox.SensorHistory,
-	            :getPressureHistory
-	            );
-	        // Invoke the method with the given parameters
-	        return getMethod.invoke({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
-	    }
-	    return null;
-	}
 
     function onShow() {}
 

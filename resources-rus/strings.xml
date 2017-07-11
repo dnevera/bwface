@@ -6,6 +6,7 @@
     <string id="ActivityLeftFieldTitle">Левое поле в строке активностей</string>
     <string id="ActivityMidFieldTitle">Среднее поле в строке активносте</string>
     <string id="ActivityRightFieldTitle">Правое поле в строке активносте</string>
+    <string id="MetricFieldTitle">Поле метрик</string>
 
     <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12 (только для циферблатов)</string>
     <string id="UseDayLightSavingTimeTitle">Летнее время</string>
@@ -49,6 +50,11 @@
     <string id="AltitudeFeetTitle">Выс фт</string> 
     <string id="AltitudeTitle">Выс м</string> 
 
+    <string id="TemperatureTitle">C</string> 
+    <string id="TemperatureFahrTitle">F</string> 
+    <string id="PressureTitle">кПа</string> 
+    <string id="PressureMmHgTitle">мм.рс</string> 
+
     <string id="Steps">Шагов</string>
     <string id="Calories">Калории</string>
     <string id="Distance">Дистанция</string>
@@ -57,5 +63,10 @@
     <string id="Sunrise">Восход</string>
     <string id="Sunset">Закат</string>
     <string id="Altitude">Высота</string>
+
+    <string id="HeartRate">ЧСС</string>    
+    <string id="Temperature">Температура</string>
+    <string id="Pressure">Атмосферное давление кПа</string>
+    <string id="PressureMmHg">Атмосферное давление мм.рт.ст.</string>
     
 </resources>

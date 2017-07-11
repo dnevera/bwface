@@ -3,22 +3,27 @@ using Toybox.System as Sys;
 using Toybox.Graphics as Gfx;
 using Toybox.Activity as Act;
 
-class BWFaceHRField extends BWFaceField {
+class BWFaceMetricField extends BWFaceField {
   
  	protected var dc;
  	protected var drawTopTitles = true;
- 
+ 	protected var faceValue;
+ 	protected var title;
  	function initialize(dictionary,newProperties){
 		BWFaceField.initialize(dictionary,newProperties);
-		dc = properties.dc;		
+		dc = properties.dc;
+		faceValue = new BWFaceValue(properties);	
+		setup();	
+ 	}
+ 	
+ 	
+ 	function setup(){
+ 		title = " "+ faceValue.info(properties.metricField)[:title];
  	}
  	
  	function draw(tickPosX,tickPosY){ 	
  	 	
- 		var info = Act.getActivityInfo();
-    	var hr = info.currentHeartRate;
-    	hr = hr == null ? "-- " : hr.format("%d");   	
-    	var title = " "+ properties.strings.bpmTitle;
+    	var hr    = faceValue.value(properties.metricField); 
     		
 		var size      = dc.getTextDimensions(hr, properties.fonts.infoFont);
 
@@ -31,7 +36,7 @@ class BWFaceHRField extends BWFaceField {
 		if (drawTopTitles) {
 	    	var xc;
 	    	var yc;
-	    	if (settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
+	    	if (Sys.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
 	    		xc = x-3;
 	    		yc = y + size[1];
 	    	}

@@ -32,7 +32,7 @@ class BWFaceTopField extends BWFaceField {
     function draw(today){        	
     	var weekDay = today.day_of_week.toString().toUpper();
 		var day;									
-    	if (settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
+    	if (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
     		day = Lang.format("$1$$2$",[today.day,today.month]).toUpper();
     	}
     	else {

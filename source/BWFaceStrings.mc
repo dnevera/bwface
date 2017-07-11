@@ -10,6 +10,9 @@ class BWFaceStrings {
         var sunriseTitle  = Ui.loadResource( Rez.Strings.SunriseTitle );
         var sunsetTitle   = Ui.loadResource( Rez.Strings.SunsetTitle );
         var altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeTitle );
+        var temperatureTitle = Ui.loadResource( Rez.Strings.TemperatureTitle );
+        var pressureTitle    = Ui.loadResource( Rez.Strings.PressureTitle );
+        var pressuremmHgTitle    = Ui.loadResource( Rez.Strings.PressureMmHgTitle );
         
         function setup(sysunits){
 		    if (sysunits.distanceUnits == Sys.UNIT_STATUTE) {
@@ -24,6 +27,13 @@ class BWFaceStrings {
 		    } 
 	        else {
 	        	 altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeTitle );
+	        }	
+	        
+	        if (sysunits.temperatureUnits == Sys.UNIT_STATUTE) {
+		    	 temperatureTitle = Ui.loadResource( Rez.Strings.TemperatureFahrTitle );
+		    } 
+	        else {
+	        	 temperatureTitle = Ui.loadResource( Rez.Strings.TemperatureTitle );
 	        }	        
         }	
 }

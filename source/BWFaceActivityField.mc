@@ -52,7 +52,7 @@ class BWFaceActivityField extends BWFaceField {
 		var rect1;
 		var rect2;
 		
-		if (settings.screenShape == System.SCREEN_SHAPE_RECTANGLE) {
+		if (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_RECTANGLE) {
 			rect0 = [-framePadding, locY, wf+framePadding,0,-framePadding];
 			rect1 = [w/2,           locY, wf,             0, wf+1];
 			rect2 = [w/d*2+1,       locY, wf+framePadding,  0, w/d*2+2];

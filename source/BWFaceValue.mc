@@ -1,14 +1,20 @@
 using Toybox.System as Sys;
 using Toybox.Math as Math;
+using Toybox.Activity as Activity;
+using Toybox.ActivityMonitor as Monitor;
 
 enum {
-	BW_Distance = 0,
-	BW_Steps    = 1,
-	BW_Calories = 2,
-	BW_Seconds  = 3,
-	BW_Sunrise  = 4,
-	BW_Sunset   = 5,
-	BW_Altitude = 6
+	BW_Distance    = 0,
+	BW_Steps       = 1,
+	BW_Calories    = 2,
+	BW_Seconds     = 3,
+	BW_Sunrise     = 4,
+	BW_Sunset      = 5,
+	BW_Altitude    = 6,
+	BW_HeartRate   = 7,
+	BW_Temperature = 8,
+	BW_Pressure    = 9,
+	BW_PressureMmHg= 10
 }
 
 class BWFaceValue {
@@ -50,6 +56,18 @@ class BWFaceValue {
 			case BW_Altitude: 
 				dict[:title] = properties.strings.altitudeTitle;
 				break;
+			case BW_HeartRate:
+				dict[:title] = properties.strings.bpmTitle;
+				break;
+			case BW_Temperature:
+				dict[:title] = properties.strings.temperatureTitle;
+				break;
+			case BW_Pressure:
+				dict[:title] = properties.strings.pressureTitle;
+				break;
+			case BW_PressureMmHg:
+				dict[:title] = properties.strings.pressuremmHgTitle;
+				break;
 		}
 		return dict;
 	}
@@ -58,32 +76,67 @@ class BWFaceValue {
 		var value = 0;
 		switch (id) {
 			case BW_Distance: // distance
-				return properties.monitor.distance.toDouble()/100.0/properties.statuteFactor;
+				value = Monitor.getInfo().distance.toDouble()/100.0/properties.statuteFactor;
 				break;
+				
 			case BW_Steps: 
-				return properties.monitor.steps;
+				value = Monitor.getInfo().steps;
 				break;
+				
 			case BW_Calories: 
-				return properties.monitor.calories;
+				value = Monitor.getInfo().calories;
 				break;
+				
 			case BW_Seconds: 
 				if (partialUpdatesAllowed){
-					return Sys.getClockTime().sec;
+					value = Sys.getClockTime().sec;
 				}
 				else {
-					return "--";
+					value = "--";
 				}
 				break;
+				
 			case BW_Sunrise: 
-				return sunrise();
+				value = sunrise();				
 				break;
+				
 			case BW_Sunset: 
-				return sunset();
+				value = sunset();				
 				break;
+				
 			case BW_Altitude: 
-				var a = geoInfo.getAltitude();				
-				return a == null ? "--" : a;
+				value = geoInfo.getAltitude();				
+				value = value == null ? "--" : value;
 				break;
+								
+			case BW_HeartRate:
+				var a = Activity.getActivityInfo();
+				if (a!=null){
+					value = a.currentHeartRate;
+					value = value == null ? "-- " : value.format("%d");
+				}
+				else {
+					value = "--";
+				}
+				break;  	
+
+			case BW_Temperature:
+				var sensorIter =  getTemperatureIterator();
+				if  ( sensorIter != null ){   	    	    	
+					var n = sensorIter.next();
+					value = n.data.format("%.0f");
+		    	}			
+				else {
+					value = "--";
+				}
+				break;
+			case BW_Pressure:
+				value =  pressure(0.001);
+				break;
+			case BW_PressureMmHg:
+				value =  pressure(0.00750062);
+				break;
+							
 		}
 		return value;
 	} 
@@ -106,6 +159,31 @@ class BWFaceValue {
         sunSet=sunSet/1000/60/60;
         var r = Lang.format("$1$:$2$", [Math.floor(sunSet).format("%02.0f"), Math.floor((sunSet-Math.floor(sunSet))*60).format("%02.0f")]);
 		return r;
+	}
+
+	function pressure(factor){
+		var sensorIter =  getPressureIterator();
+		if  ( sensorIter != null ){   	    	    	
+			var n = sensorIter.next();
+			return (n.data*factor).format("%.0f");
+    	}			
+		else {
+			return "--";
+		}
+	}
+
+	function getPressureIterator() {
+	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getPressureHistory)) {
+	        return Toybox.SensorHistory.getPressureHistory({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
+	    }
+	    return null;
+	}
+	
+	function getTemperatureIterator() {
+	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getTemperatureHistory)) {
+	        return Toybox.SensorHistory.getTemperatureHistory({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
+	    }
+	    return null;
 	}
 
 }

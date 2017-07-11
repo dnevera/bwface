@@ -13,5 +13,6 @@
     <property id="ActivityLeftField"  type="number">0</property>
     <property id="ActivityMidField"   type="number">1</property>
     <property id="ActivityRightField" type="number">2</property>
+    <property id="MetricField" type="number">7</property>
     
 </properties>

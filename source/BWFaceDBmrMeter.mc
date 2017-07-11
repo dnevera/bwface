@@ -8,7 +8,7 @@ using Toybox.Math as Math;
 
 class BWFaceDBmrMeter extends BWFaceField {
 	
-	var userBmr;
+	//var userBmr;
 	var tickPosX = 0;		       
 	var tickPosY = 0;		       
 		       
@@ -18,7 +18,7 @@ class BWFaceDBmrMeter extends BWFaceField {
     function initialize(dictionary,newProperties){
 		BWFaceField.initialize(dictionary,newProperties);
 		dc = properties.dc;	
-		userBmr = bmr();			
+		//userBmr = properties.bmr();			
 	}
 	
 	var cl;
@@ -36,6 +36,7 @@ class BWFaceDBmrMeter extends BWFaceField {
 	var isSemiRound;
 	
 	function prepare(calories,isSemiRound){
+		var userBmr = properties.bmr();
 		cl = calories - userBmr;
 		isDeficit =  cl>=0;
 		prcnt = (cl/userBmr).abs();
@@ -187,39 +188,15 @@ class BWFaceDBmrMeter extends BWFaceField {
 	
 	function draw(calories)  {
 
-		isSemiRound = settings.screenShape == System.SCREEN_SHAPE_SEMI_ROUND;
+		isSemiRound = Sys.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND;
 				
 		prepare(calories,isSemiRound);
 		
-		if (settings.screenShape == System.SCREEN_SHAPE_RECTANGLE){
+		if (Sys.getDeviceSettings().screenShape == System.SCREEN_SHAPE_RECTANGLE){
 			drawInRectangle(calories);
 		} 
 		else {
 			drawInRound(calories,isSemiRound);
 		}
-	}
-	
-	
-	function bmr(){
-		var profile = User.getProfile();		
-		var bmrvalue;
-		var today = Calendar.info(Time.now(), Time.FORMAT_LONG);
-		var w   = profile.weight;
-		var h   = profile.height;
-		var g   = profile.gender; 
-		var birthYear = profile.birthYear;
-		if (birthYear<100) {
-		    // simulator
-			birthYear = 1900+birthYear;
-		}
-		var age = today.year - birthYear;
-				
-		if (g == User.GENDER_FEMALE) {		
-			bmrvalue = 655.0 + (9.6*w/1000.0) + (1.8*h) - (4.7*age);
-		}
-		else {
-			bmrvalue = 66 + (13.7*w/1000.0) + (5.0*h) - (6.8*age);
-		}		
-		return bmrvalue;
 	}
 }

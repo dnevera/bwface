@@ -1,18 +1,17 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.System as System; 
-using Toybox.Activity as Activity;
-using Toybox.ActivityMonitor as Monitor;
+using Toybox.UserProfile as User;
+using Toybox.Time.Gregorian as Calendar;
 
 class BWFaceProperties{
 
-	var settings =  System.getDeviceSettings();
-	var monitor  = Monitor.getInfo(); 
-    var actInfo  = Activity.getActivityInfo();
+	//var settings =  System.getDeviceSettings();
 
-	var activityLeftField  = 0;
-	var activityMidField   = 1;
-	var activityRightField = 2;
+	var activityLeftField  = BW_Distance;
+	var activityMidField   = BW_Steps;
+	var activityRightField = BW_Calories;
+	var metricField        = BW_HeartRate;
 	
 	var clockPadding            =  0;
 	var caloriesCircleTickWidth =  8;
@@ -47,6 +46,7 @@ class BWFaceProperties{
 	var fonts = new BWFaceFonts();	
 	var strings = new BWFaceStrings();
 
+
 	function initialize(_dc){
 		dc = _dc;
 	}
@@ -61,6 +61,7 @@ class BWFaceProperties{
 	}
 
 	function setup(){
+		//settings =  System.getDeviceSettings();
 		
         if (dc.getHeight()<=180){ // 735xt
         	clockPadding = -6;
@@ -99,9 +100,10 @@ class BWFaceProperties{
 			}
 		}		
 		
-		activityLeftField  = getProperty("ActivityLeftField", 0);
-		activityMidField   = getProperty("ActivityMidField",  1);
-		activityRightField = getProperty("ActivityRightField",2);
+		activityLeftField  = getProperty("ActivityLeftField", BW_Distance);
+		activityMidField   = getProperty("ActivityMidField",  BW_Steps);
+		activityRightField = getProperty("ActivityRightField",BW_Calories);
+		metricField        = getProperty("MetricField",BW_HeartRate);
 		
 		caloriesCircleTickOn12 = getProperty("CaloriesCheckPointOn12", false);
 		useDayLightSavingTime = getProperty("UseDayLightSavingTime", false);
@@ -119,9 +121,9 @@ class BWFaceProperties{
         batteryLowColor  = 0xF42416;
         batteryWarnColor = 0xFFA500;    	
 		
-		strings.setup(settings);
+		strings.setup(System.getDeviceSettings());
 		
-		if (settings.distanceUnits == System.UNIT_STATUTE) {
+		if (System.getDeviceSettings().distanceUnits == System.UNIT_STATUTE) {
 		   statuteFactor = 1.609344;
 		} 
 	    else {
@@ -131,6 +133,8 @@ class BWFaceProperties{
 	
 	function getLocation() {
 		
+		var actInfo  = Activity.getActivityInfo();
+		
 		if (actInfo == null ) {
 			actInfo = Activity.getActivityInfo();			
 		}
@@ -138,6 +142,7 @@ class BWFaceProperties{
 			actInfo = Activity.getActivityInfo();
 		}
 				
+		//var a = actInfo(); 				
         if(actInfo != null)
         {
             var deg = actInfo.currentLocation;
@@ -149,5 +154,28 @@ class BWFaceProperties{
             }
         }        
         return getProperty("CurrentLocation", null);
-    }    
+    }  
+    
+    function bmr(){
+		var profile = User.getProfile();		
+		var bmrvalue;
+		var today = Calendar.info(Time.now(), Time.FORMAT_LONG);
+		var w   = profile.weight;
+		var h   = profile.height;
+		var g   = profile.gender; 
+		var birthYear = profile.birthYear;
+		if (birthYear<100) {
+		    // simulator
+			birthYear = 1900+birthYear;
+		}
+		var age = today.year - birthYear;
+				
+		if (g == User.GENDER_FEMALE) {		
+			bmrvalue = 655.0 + (9.6*w/1000.0) + (1.8*h) - (4.7*age);
+		}
+		else {
+			bmrvalue = 66 + (13.7*w/1000.0) + (5.0*h) - (6.8*age);
+		}		
+		return bmrvalue;  
+	}
 }
