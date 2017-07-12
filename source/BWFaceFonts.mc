@@ -38,9 +38,9 @@ class BWFaceFonts {
 	 			else {
 	 				clockFont = Ui.loadResource(Rez.Fonts.clockFontSmall);
 	 				infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);
+	        		weekDayFont   = Ui.loadResource(Rez.Fonts.calendarFontSmall);
 	 			}
         	  		        	
-        		weekDayFont   = Ui.loadResource(Rez.Fonts.calendarFontSmall);
 	        	infoFont      = Ui.loadResource(Rez.Fonts.infoFontSmall);	
 	        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);	        	
         	}

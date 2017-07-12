@@ -105,7 +105,9 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
     function onUpdate(dc) {
-    		    	
+    	
+    	if(BWFace.partialUpdatesAllowed) {dc.clearClip();}
+    	    		    	
 		dc.setClip(0, 0, dc.getWidth(), dc.getHeight());    		    	
     	dc.setColor(properties.bgColor, properties.bgColor);
 		dc.clear();
@@ -129,8 +131,32 @@ class BWFaceView extends Ui.WatchFace {
 
     function onHide() {}
 
-    function onExitSleep() {}
+    function onExitSleep() {
+    	BWFace.partialUpdatesAllowed = Toybox.WatchUi.WatchFace has :onPartialUpdate;
+    	if(!BWFace.partialUpdatesAllowed) {Ui.requestUpdate();} 
+    }
 
-    function onEnterSleep() {}
+    function onEnterSleep() {
+    	if(!BWFace.partialUpdatesAllowed) {Ui.requestUpdate();}
+    }
     
+}
+
+// https://forums.garmin.com/forum/developers/connect-iq/1229818-watch-face-onpartialupdate-does-not-work-on-all-devices-which-support-this-function
+
+// with onPartialUpdate, the println()'s are useful for debugging.  
+// If you exceed the budget, you can see by how much, etc.  The do1hz is used in onUpdate()
+// and is key.
+class BWFaceDelegate extends Ui.WatchFaceDelegate
+{
+
+	function initialize() {
+		WatchFaceDelegate.initialize();	
+	}
+
+    function onPowerBudgetExceeded(powerInfo) {
+        //Sys.println( "Average execution time: " + powerInfo.executionTimeAverage );
+        //Sys.println( "Allowed execution time: " + powerInfo.executionTimeLimit );
+        BWFace.partialUpdatesAllowed=false;
+    }
 }

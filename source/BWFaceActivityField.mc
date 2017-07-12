@@ -65,18 +65,18 @@ class BWFaceActivityField extends BWFaceField {
 
 		dict[:justification] = Gfx.TEXT_JUSTIFY_RIGHT;
 		var info = faceValue.info(properties.activityLeftField);
-		dict[:title] = info[:title];
-		dict[:scale] = info[:scale];
-		dict[:delim] = info[:delim];
+		dict[:title]  = info[:title];
+		dict[:scale]  = info[:scale];
+		dict[:delim]  = info[:delim];
 		dict[:format] = info[:format];
 		
 		leftField = new BWFaceNumber(dc, rect0, dict);
 	
 		dict[:justification] = Gfx.TEXT_JUSTIFY_CENTER;
 		info = faceValue.info(properties.activityMidField);
-		dict[:title] = info[:title];
-		dict[:scale] = info[:scale];
-		dict[:delim] = info[:delim];
+		dict[:title]  = info[:title];
+		dict[:scale]  = info[:scale];
+		dict[:delim]  = info[:delim];
 		dict[:format] = info[:format];
 		
 		midField = new BWFaceNumber(dc, rect1, dict);
