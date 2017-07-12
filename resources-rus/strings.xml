@@ -54,7 +54,9 @@
     <string id="TemperatureFahrTitle">F</string> 
     <string id="PressureTitle">кПа</string> 
     <string id="PressureMmHgTitle">мм.рс</string> 
-
+    <string id="PressurehPaTitle">гПа</string> 
+	<string id="UserBMRTitle">УБМ КК</string>
+	
     <string id="Steps">Шагов</string>
     <string id="Calories">Калории</string>
     <string id="Distance">Дистанция</string>
@@ -67,6 +69,8 @@
     <string id="HeartRate">ЧСС</string>    
     <string id="Temperature">Температура</string>
     <string id="Pressure">Атмосферное давление кПа</string>
+    <string id="PressurehPa">Атмосферное давление гПа</string>
     <string id="PressureMmHg">Атмосферное давление мм.рт.ст.</string>
+    <string id="UserBMR">Уровень основного обмена</string>
     
 </resources>

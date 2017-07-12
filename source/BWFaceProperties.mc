@@ -38,6 +38,7 @@ class BWFaceProperties{
 	var framesColor; 
 	var batteryLowColor; 
 	var batteryWarnColor;     	
+	//var userBmr;
 
     var useDayLightSavingTime;
     var caloriesCircleTickOn12;
@@ -80,7 +81,7 @@ class BWFaceProperties{
 				activityPadding = 0; 
 				sysinfoTopPadding = -2;	
 				bmrTopPadding = 1;
-				framePadding  =  3;									
+				framePadding  =  4;									
 				fractionNumberPadding = -4;				
 			}
 			else if  (dc.getHeight()<=218){ // 5s
