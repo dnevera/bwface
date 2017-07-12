@@ -24,10 +24,8 @@ class BWFaceValue {
 	var properties;
 	var geoInfo;
 	
-	var partialUpdatesAllowed;
 		
 	function initialize(_properties){
-		partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );	
 		properties = _properties;
 		geoInfo = new BWFaceGeoInfo(properties);
 	}
@@ -96,7 +94,7 @@ class BWFaceValue {
 				break;
 				
 			case BW_Seconds: 
-				if (partialUpdatesAllowed){
+				if (BWFace.partialUpdatesAllowed){
 					value = Sys.getClockTime().sec;
 				}
 				else {
@@ -121,10 +119,19 @@ class BWFaceValue {
 				var a = Activity.getActivityInfo();
 				if (a!=null){
 					value = a.currentHeartRate;
-					value = value == null ? "-- " : value.format("%d");
+				}
+				if (value == null){
+					var sensorIter= getHeartRateIterator();
+					if  ( sensorIter != null ){   	    	    	
+						var n = sensorIter.next();
+						value = n.data.format("%d");
+			    	}			
+					else {
+						value = "--";
+					}				
 				}
 				else {
-					value = "--";
+					value = value.format("%d");
 				}
 				break;  	
 
@@ -197,6 +204,13 @@ class BWFaceValue {
 	function getTemperatureIterator() {
 	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getTemperatureHistory)) {
 	        return Toybox.SensorHistory.getTemperatureHistory({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
+	    }
+	    return null;
+	}
+
+	function getHeartRateIterator() {
+	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getHeartRateHistory)) {
+	        return Toybox.SensorHistory.getHeartRateHistory({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
 	    }
 	    return null;
 	}

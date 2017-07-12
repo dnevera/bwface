@@ -21,7 +21,12 @@ class BWFaceApp extends App.AppBase {
     // Return the initial view of your application here
     function getInitialView() {
     	mainView = new BWFaceView();
-        return [ mainView ];
+    	if( Toybox.WatchUi.WatchFace has :onPartialUpdate ) {
+        	return [ mainView, new BWFaceDelegate() ];
+    	}
+    	else {
+        	return [ mainView ];
+        }
     }
 
     // New app settings have been received so trigger a UI update
