@@ -1,6 +1,9 @@
 using Toybox.System;
 
 module BWFace {
+
+	var partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );	
+
 	function decimals(n,scale){
 		var t0=(n.toFloat()-0.5)/1000.0;
 		var t1=(n.toFloat()+0.5)/1000.0;

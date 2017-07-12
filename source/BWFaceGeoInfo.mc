@@ -17,9 +17,12 @@ class BWFaceGeoInfo
     
     function getAltitude() {
     	var factor = 1;
-    	if (properties.settings.elevationUnits == Sys.UNIT_STATUTE){
+    	if (Sys.getDeviceSettings().elevationUnits == Sys.UNIT_STATUTE){
     		factor = 3.28084;
     	} 
+
+		var actInfo  = Activity.getActivityInfo();
+    	
         if(actInfo != null) {
             altitude = actInfo.altitude == null ? altitude : actInfo.altitude;
         }

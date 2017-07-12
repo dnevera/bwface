@@ -6,8 +6,6 @@ using Toybox.Time.Gregorian as Calendar;
 
 class BWFaceProperties{
 
-	//var settings =  System.getDeviceSettings();
-
 	var activityLeftField  = BW_Distance;
 	var activityMidField   = BW_Steps;
 	var activityRightField = BW_Calories;
@@ -38,7 +36,6 @@ class BWFaceProperties{
 	var framesColor; 
 	var batteryLowColor; 
 	var batteryWarnColor;     	
-	//var userBmr;
 
     var useDayLightSavingTime;
     var caloriesCircleTickOn12;
@@ -46,7 +43,6 @@ class BWFaceProperties{
 	
 	var fonts = new BWFaceFonts();	
 	var strings = new BWFaceStrings();
-
 
 	function initialize(_dc){
 		dc = _dc;
@@ -62,8 +58,7 @@ class BWFaceProperties{
 	}
 
 	function setup(){
-		//settings =  System.getDeviceSettings();
-		
+			
         if (dc.getHeight()<=180){ // 735xt
         	clockPadding = -6;
         	caloriesCircleTickWidth = 6;

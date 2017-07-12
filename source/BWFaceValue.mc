@@ -24,10 +24,8 @@ class BWFaceValue {
 	var properties;
 	var geoInfo;
 	
-	var partialUpdatesAllowed;
 		
 	function initialize(_properties){
-		partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );	
 		properties = _properties;
 		geoInfo = new BWFaceGeoInfo(properties);
 	}
@@ -96,7 +94,7 @@ class BWFaceValue {
 				break;
 				
 			case BW_Seconds: 
-				if (partialUpdatesAllowed){
+				if (BWFace.partialUpdatesAllowed){
 					value = Sys.getClockTime().sec;
 				}
 				else {
