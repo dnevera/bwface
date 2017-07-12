@@ -33,15 +33,16 @@ class BWFaceFonts {
         	  	
         	  	if (settings.screenWidth<=148){ // vivoactive
         	  		clockFont = Ui.loadResource(Rez.Fonts.clockFontTall);
+        	  		infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
 	 			} 	
 	 			else {
 	 				clockFont = Ui.loadResource(Rez.Fonts.clockFontSmall);
+	 				infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);
 	 			}
         	  		        	
         		weekDayFont   = Ui.loadResource(Rez.Fonts.calendarFontSmall);
 	        	infoFont      = Ui.loadResource(Rez.Fonts.infoFontSmall);	
-	        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);
-            	infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);	
+	        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);	        	
         	}
         	else {        	
 	        	clockFont = Ui.loadResource(Rez.Fonts.clockFont);

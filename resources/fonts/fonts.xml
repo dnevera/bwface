@@ -1,9 +1,9 @@
 <fonts>
 
-<font id ="clockFont"          filename="clock-font-large.fnt" filter="0123456789:" antialias="true"/>
-<font id ="clockFontSmall"     filename="clock-font-small.fnt" filter="0123456789:" antialias="true"/>
-<font id ="clockFontTiny"      filename="clock-font-tiny.fnt"  filter="0123456789:" antialias="true"/>
-<font id ="clockFontTall"      filename="clock-font-tall.fnt"  filter="0123456789:" antialias="true"/>
+<font id ="clockFont"          filename="clock-font-large.fnt" filter="0123456789" antialias="true"/>
+<font id ="clockFontSmall"     filename="clock-font-small.fnt" filter="0123456789" antialias="true"/>
+<font id ="clockFontTiny"      filename="clock-font-tiny.fnt"  filter="0123456789" antialias="true"/>
+<font id ="clockFontTall"      filename="clock-font-tall.fnt"  filter="0123456789" antialias="true"/>
 <font id ="calendarFontLarge"  filename="calendar-font-large.fnt" antialias="true"/>
 <font id ="calendarFontSmall"  filename="calendar-font-small.fnt" antialias="true"/>
 <font id ="calendarFontTiny"   filename="calendar-font-tiny.fnt" antialias="true"/>

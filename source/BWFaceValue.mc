@@ -14,7 +14,9 @@ enum {
 	BW_HeartRate   = 7,
 	BW_Temperature = 8,
 	BW_Pressure    = 9,
-	BW_PressureMmHg= 10
+	BW_PressureMmHg= 10,
+	BW_PressurehPa = 1001, // NOTE: currently i can't read sys configuration
+	BW_UserBMR     = 11
 }
 
 class BWFaceValue {
@@ -65,8 +67,14 @@ class BWFaceValue {
 			case BW_Pressure:
 				dict[:title] = properties.strings.pressureTitle;
 				break;
+			case BW_PressurehPa:
+				dict[:title] = properties.strings. pressurehPaTitle;
+				break;
 			case BW_PressureMmHg:
 				dict[:title] = properties.strings.pressuremmHgTitle;
+				break;
+			case BW_UserBMR :
+				dict[:title] = properties.strings.userBMRTitle;
 				break;
 		}
 		return dict;
@@ -131,10 +139,17 @@ class BWFaceValue {
 				}
 				break;
 			case BW_Pressure:
-				value =  pressure(0.001);
+				value =  pressure(0.001, "%.1f");
+				break;
+			case BW_PressurehPa:
+				value =  pressure(0.01, "%.2f");
 				break;
 			case BW_PressureMmHg:
-				value =  pressure(0.00750062);
+				value =  pressure(0.00750062, "%.1f");
+				break;
+				
+			case BW_UserBMR :
+				value =  properties.bmr();
 				break;
 							
 		}
@@ -161,11 +176,11 @@ class BWFaceValue {
 		return r;
 	}
 
-	function pressure(factor){
+	function pressure(factor, format){
 		var sensorIter =  getPressureIterator();
 		if  ( sensorIter != null ){   	    	    	
 			var n = sensorIter.next();
-			return (n.data*factor).format("%.1f");
+			return (n.data*factor).format(format);
     	}			
 		else {
 			return "--";

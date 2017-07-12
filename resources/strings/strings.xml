@@ -53,7 +53,9 @@
     <string id="TemperatureFahrTitle">F</string> 
     <string id="PressureTitle">kPa</string> 
     <string id="PressureMmHgTitle">mmHg</string> 
-
+    <string id="PressurehPaTitle">hPa</string> 
+    <string id="UserBMRTitle">BMR KC</string> 
+	
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
     <string id="Distance">Distance</string>
@@ -67,6 +69,8 @@
     <string id="HeartRate">Heart Rate</string>
     <string id="Temperature">Temperature</string>
     <string id="Pressure">Atmospheric Pressure kPa</string>
+    <string id="PressurehPa">Atmospheric Pressure hPa</string>
     <string id="PressureMmHg">Atmospheric Pressure mmHg</string>
+    <string id="UserBMR">Basal metabolic rate</string>
     
 </strings>

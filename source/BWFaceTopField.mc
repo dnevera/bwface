@@ -18,14 +18,13 @@ class BWFaceTopField extends BWFaceField {
 		BWFaceField.initialize(dictionary,newProperties);	
 		font = properties.fonts.weekDayFont;
 		
-		descent = Gfx.getFontDescent(font);
+		descent = Gfx.getFontDescent(properties.fonts.weekDayFont);
 		topY = 0;		
 		dayPadding = dictionary[:dayPadding];
 		
-		wdsize = properties.dc.getTextDimensions("OOOO", font);
-		dsize  = properties.dc.getTextDimensions("0 OOO", font);
-		y      = locY;		
-		yc     = y+wdsize[1]-descent+dayPadding;
+		wdsize = properties.dc.getTextDimensions("OOOO", properties.fonts.weekDayFont);
+		dsize  = properties.dc.getTextDimensions("0 OOO", properties.fonts.weekDayFont);
+		yc     = locY+wdsize[1]-descent+dayPadding;
 		bottomY = yc + dsize[1];				
     }
 
@@ -38,8 +37,18 @@ class BWFaceTopField extends BWFaceField {
     	else {
     		day = Lang.format("$1$ $2$",[today.day,today.month]).toUpper();
     	}
+    	
+		/*var descent = Gfx.getFontDescent(properties.fonts.weekDayFont);
+		var topY = 0;		
+		var dayPadding = dictionary[:dayPadding];
+		
+		var wdsize  = properties.dc.getTextDimensions("OOOO", properties.fonts.weekDayFont);
+		var dsize   = properties.dc.getTextDimensions("0 OOO", properties.fonts.weekDayFont);
+		var yc      = locY+wdsize[1]-descent+dayPadding;
+		var bottomY = yc + dsize[1];	*/			
+    	
 		properties.dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);				
-		properties.dc.drawText(locX, y,  font, weekDay, Gfx.TEXT_JUSTIFY_CENTER);		
-		properties.dc.drawText(locX, yc, font, day,     Gfx.TEXT_JUSTIFY_CENTER);
+		properties.dc.drawText(locX, locY,  properties.fonts.weekDayFont, weekDay, Gfx.TEXT_JUSTIFY_CENTER);		
+		properties.dc.drawText(locX, yc, properties.fonts.weekDayFont, day,     Gfx.TEXT_JUSTIFY_CENTER);
     }
 }
