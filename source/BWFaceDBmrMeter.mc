@@ -36,7 +36,7 @@ class BWFaceDBmrMeter extends BWFaceField {
 	var isSemiRound;
 	
 	function prepare(calories,isSemiRound){
-		var userBmr = properties.bmr();
+		var userBmr = properties.bmr();		
 		cl = calories - userBmr;
 		isDeficit =  cl>=0;
 		prcnt = (cl/userBmr).abs();

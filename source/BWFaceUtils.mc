@@ -1,4 +1,5 @@
 using Toybox.System;
+using Toybox.Graphics as Gfx;
 
 module BWFace {
 
@@ -27,4 +28,19 @@ module BWFace {
 		var dec  = decimals(value.toNumber(),scale);	
 		return [dec[0].toString(),delim+dec[1].format("%0"+prec+"d")];
 	}
+	
+
+	function phoneIcon(dc,_x,y,size,width,color){
+		var x = _x + size;
+
+		dc.setPenWidth(1);
+		
+		dc.setColor(color, Gfx.COLOR_TRANSPARENT);
+
+    	dc.fillPolygon([[x-size,y-size], [x-size+width,y-size-width],[x+size+width,y+size-width],[x+size,y+size]]);
+		dc.fillPolygon([[x+size,y+size],[x+size-width,y+size-width],[x-width+1,y+size*2-width],[x,y+size*2]]);
+		dc.fillPolygon([[x+2,y+size*2-2],[x+2-width-1,y+size*2+width-2],[x+2-width-1,y-size*2-width+2],[x+2,y-size*2+2]]);
+		dc.fillPolygon([[x,y-size*2],[x-width+1,y-size*2+width],[x+size-width,y-size+width],[x+size,y-size]]);
+		dc.fillPolygon([[x+size,y-size],[x+size+width,y-size+width],[x-size+width,y+size+width],[x-size,y+size]]);	
+	}	
 }

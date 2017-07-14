@@ -3,6 +3,7 @@ using Toybox.WatchUi as Ui;
 using Toybox.System as System; 
 using Toybox.UserProfile as User;
 using Toybox.Time.Gregorian as Calendar;
+using Toybox.Graphics as Gfx;
 
 class BWFaceProperties{
 
@@ -22,6 +23,10 @@ class BWFaceProperties{
 	var dayPadding        = -2;
 	var bmrTopPadding     =  4;
 	var sysinfoTopPadding =  4;
+
+	var btIconSize     = 4;
+	var btIconPenWidth = 1;
+	var btIconColor    = Gfx.COLOR_BLUE;
 
 	var dc;
 
@@ -138,7 +143,6 @@ class BWFaceProperties{
 			actInfo = Activity.getActivityInfo();
 		}
 				
-		//var a = actInfo(); 				
         if(actInfo != null)
         {
             var deg = actInfo.currentLocation;
