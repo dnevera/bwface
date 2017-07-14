@@ -24,7 +24,7 @@ class BWFaceProperties{
 	var bmrTopPadding     =  4;
 	var sysinfoTopPadding =  4;
 
-	var btIconSize     = 4;
+	var btIconSize     = 6;
 	var btIconPenWidth = 1;
 	var btIconColor    = Gfx.COLOR_BLUE;
 

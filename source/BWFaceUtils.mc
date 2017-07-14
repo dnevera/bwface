@@ -30,17 +30,31 @@ module BWFace {
 	}
 	
 
-	function phoneIcon(dc,_x,y,size,width,color){
+	function phoneIcon(dc,_x,y,size,width,color, isConnected){
 		var x = _x + size;
 
-		dc.setPenWidth(1);
+		dc.setPenWidth(width);
 		
 		dc.setColor(color, Gfx.COLOR_TRANSPARENT);
-
-    	dc.fillPolygon([[x-size,y-size], [x-size+width,y-size-width],[x+size+width,y+size-width],[x+size,y+size]]);
-		dc.fillPolygon([[x+size,y+size],[x+size-width,y+size-width],[x-width+1,y+size*2-width],[x,y+size*2]]);
-		dc.fillPolygon([[x+2,y+size*2-2],[x+2-width-1,y+size*2+width-2],[x+2-width-1,y-size*2-width+2],[x+2,y-size*2+2]]);
-		dc.fillPolygon([[x,y-size*2],[x-width+1,y-size*2+width],[x+size-width,y-size+width],[x+size,y-size]]);
-		dc.fillPolygon([[x+size,y-size],[x+size+width,y-size+width],[x-size+width,y+size+width],[x-size,y+size]]);	
+	
+		if (isConnected){
+			dc.drawLine(x-size/2-2, y-size/2-1, x+size/2, y+size/2);
+			dc.drawLine(x-size/2-2, y+size/2+1, x+size/2, y-size/2);
+			dc.drawLine(x-1, y+size, x-1, y-size);
+			dc.drawLine(x-1, y+size, x+size/2, y+size/2-1);
+			dc.drawLine(x-1, y-size, x+size/2, y-size/2+1);
+		}
+		else {
+			dc.drawLine(x-size/2-1, y-size/2, x+size/2, y+size/2+1);
+			dc.drawLine(x-size/2-1, y+size/2, x+size/2, y-size/2-1);
+		}
+		
+    	//dc.fillPolygon([[x-size,y-size], [x-size+width,y-size-width]]);//,[x+size+width,y+size-width],[x+size,y+size]]);
+    	/*if (isConnected){
+			dc.fillPolygon([[x+size,y+size],[x+size-width,y+size-width],[x-width+1,y+size*2-width],[x,y+size*2]]);
+			dc.fillPolygon([[x+2,y+size*2-2],[x+2-width-1,y+size*2+width-2],[x+2-width-1,y-size*2-width+2],[x+2,y-size*2+2]]);
+			dc.fillPolygon([[x,y-size*2],[x-width+1,y-size*2+width],[x+size-width,y-size+width],[x+size,y-size]]);
+		}
+		dc.fillPolygon([[x+size,y-size],[x+size+width,y-size+width],[x-size+width,y+size+width],[x-size,y+size]]);*/	
 	}	
 }

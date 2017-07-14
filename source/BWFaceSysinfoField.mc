@@ -24,8 +24,8 @@ class BWFaceSysinfoField extends BWFaceField {
 	
 	function draw() {
 	
-		var picon = false; //properties.getProperty("SystemStatus", BW_SysBattery);
-		var bicon = false; //properties.getProperty("ShowBatteryIcon", false);
+		var picon = false; 
+		var bicon = false; 
 		
 		switch(properties.getProperty("SystemStatus", BW_SysBattery)) {
 			case BW_SysBatteryNone: 
@@ -63,6 +63,8 @@ class BWFaceSysinfoField extends BWFaceField {
         	dc.setColor(properties.batteryLowColor, Gfx.COLOR_TRANSPARENT);
         }
         
+        x = picon ? x + properties.btIconSize/2 : x;
+        
         if (bicon) {
         	dc.drawRectangle(x+w, y+h/3.0, 2, h/2.0-1);
        		dc.drawRoundedRectangle(x, y, w, h, 2);
@@ -71,19 +73,19 @@ class BWFaceSysinfoField extends BWFaceField {
         
         var xp = bicon ? x+w+framePadding : locX;
         var yp = y-fsize[1]/2+h/2-2;      
-        
+                
         if (picon){
-        	xp = bicon ? xp+properties.btIconSize : xp - properties.btIconSize*3+properties.btIconSize/2;
-        	var color = Sys.getDeviceSettings().phoneConnected ? properties.btIconColor: Gfx.COLOR_DK_GRAY;
+        	//xp = bicon ? xp+properties.btIconSize/2 : xp - properties.btIconSize*3+properties.btIconSize/2;
+        	xp = bicon ? xp  : locX-properties.btIconSize - framePadding;
+        	var color = Sys.getDeviceSettings().phoneConnected ? properties.btIconColor: 0x303030;
 	        BWFace.phoneIcon(dc,
                          xp+properties.btIconSize, y+h/2, 
                          properties.btIconSize, properties.btIconPenWidth, 
-                         color);
+                         color,
+                         Sys.getDeviceSettings().phoneConnected);
         }
         else if (bicon) {
        		dc.drawText(xp, yp, properties.fonts.infoTitleFont, fbattery , Gfx.TEXT_JUSTIFY_LEFT);
-       	}
-        
-        //dc.drawText(x+w+framePadding, y-fsize[1]/2+h/2-2, properties.fonts.infoTitleFont, fbattery , Gfx.TEXT_JUSTIFY_LEFT);
+       	}        
 	}	
 }

@@ -126,8 +126,8 @@ class BWFaceValue {
 				if (value == null){
 					var sensorIter= getHeartRateIterator();
 					if  ( sensorIter != null ){   	    	    	
-						var n = sensorIter.next();
-						value = n.data.format("%d");
+						value = sensorIter.next();
+						value = value == null ? "--" : value.data == null ? "--" : value.data.format("%d");
 			    	}			
 					else {
 						value = "--";
@@ -141,8 +141,8 @@ class BWFaceValue {
 			case BW_Temperature:
 				var sensorIter =  getTemperatureIterator();
 				if  ( sensorIter != null ){   	    	    	
-					var n = sensorIter.next();
-					value = n.data.format("%.0f");
+					value = sensorIter.next();
+					value = value == null ? "--" : value.data == null ? "--" : value.data.format("%.0f");
 		    	}			
 				else {
 					value = "--";
