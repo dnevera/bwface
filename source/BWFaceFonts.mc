@@ -19,7 +19,7 @@ class BWFaceFonts {
 			
 	 if (settings.screenHeight<=180){ // Foreruner 735xt
         	clockFont    = Ui.loadResource(Rez.Fonts.clockFontTiny);
-			weekDayFont  = Ui.loadResource(Rez.Fonts.calendarFontTiny);    
+			//weekDayFont  = Ui.loadResource(Rez.Fonts.calendarFontTiny);    
 			
 			infoFontSmall     = Ui.loadResource(Rez.Fonts.infoFontSmall);	
         	infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);

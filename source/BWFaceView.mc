@@ -106,7 +106,7 @@ class BWFaceView extends Ui.WatchFace {
 	
     function onUpdate(dc) {
     	
-    	if(BWFace.partialUpdatesAllowed) {dc.clearClip();}
+    	//if(BWFace.partialUpdatesAllowed) {dc.clearClip();}
     	    		    	
 		dc.setClip(0, 0, dc.getWidth(), dc.getHeight());    		    	
     	dc.setColor(properties.bgColor, properties.bgColor);
@@ -118,7 +118,12 @@ class BWFaceView extends Ui.WatchFace {
 		clockField.draw(today);
 		activityField.draw();
 		sysinfoField.draw();
-		bmrMeter.draw(activityField.currentCalories);
+		if (activityField.currentCalories instanceof Toybox.Lang.String){
+			bmrMeter.draw(0);
+		}
+		else {
+			bmrMeter.draw(activityField.currentCalories);
+		}
 		metricRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
     }
 	

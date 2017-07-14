@@ -82,11 +82,13 @@ class BWFaceValue {
 		var value = 0;
 		switch (id) {
 			case BW_Distance: // distance
-				value = Monitor.getInfo().distance.toDouble()/100.0/properties.statuteFactor;
+				value = Monitor.getInfo().distance;
+				value = value == null ? "--" : value/100.0/properties.statuteFactor;
 				break;
 				
 			case BW_Steps: 
 				value = Monitor.getInfo().steps;
+				value = value== null ? "--" : value;
 				break;
 				
 			case BW_Calories: 
@@ -96,6 +98,7 @@ class BWFaceValue {
 			case BW_Seconds: 
 				if (BWFace.partialUpdatesAllowed){
 					value = Sys.getClockTime().sec;
+					value = value== null ? "--" : value.format("%02.0f");
 				}
 				else {
 					value = "--";
@@ -123,8 +126,8 @@ class BWFaceValue {
 				if (value == null){
 					var sensorIter= getHeartRateIterator();
 					if  ( sensorIter != null ){   	    	    	
-						var n = sensorIter.next();
-						value = n.data.format("%d");
+						value = sensorIter.next();
+						value = value == null ? "--" : value.data == null ? "--" : value.data.format("%d");
 			    	}			
 					else {
 						value = "--";
@@ -138,8 +141,8 @@ class BWFaceValue {
 			case BW_Temperature:
 				var sensorIter =  getTemperatureIterator();
 				if  ( sensorIter != null ){   	    	    	
-					var n = sensorIter.next();
-					value = n.data.format("%.0f");
+					value = sensorIter.next();
+					value = value == null ? "--" : value.data == null ? "--" : value.data.format("%.0f");
 		    	}			
 				else {
 					value = "--";
@@ -187,6 +190,9 @@ class BWFaceValue {
 		var sensorIter =  getPressureIterator();
 		if  ( sensorIter != null ){   	    	    	
 			var n = sensorIter.next();
+			if (n.data == null){
+				return "--";
+			}
 			return (n.data*factor).format(format);
     	}			
 		else {

@@ -148,7 +148,7 @@ class BWFaceActivityField extends BWFaceField {
 			for( var i = 0; i < partialFields.size(); i++ ) {
 				var f = partialFields[i];
 				if (f != null ){ 
-					f.partialDraw(faceValue.value(BW_Seconds).format("%02.0f"), null, true);
+					f.partialDraw(faceValue.value(BW_Seconds), null, true);
 				}
 			}
 		}

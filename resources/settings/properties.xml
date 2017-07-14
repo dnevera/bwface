@@ -7,12 +7,15 @@
     <property id="MinutesColor"      type="number">0x32CD32</property>
     <property id="SurplusColor"      type="number">0x7F2400</property>
     <property id="DeficitColor"      type="number">0x247F00</property>
-    <property id="CaloriesCheckPointOn12" type="boolean">false</property>
-    <property id="UseDayLightSavingTime" type="boolean">false</property>
     
+    <property id="SystemStatus" type="number">102</property>
+        
     <property id="ActivityLeftField"  type="number">0</property>
     <property id="ActivityMidField"   type="number">1</property>
     <property id="ActivityRightField" type="number">2</property>
     <property id="MetricField" type="number">7</property>
+    
+    <property id="CaloriesCheckPointOn12" type="boolean">false</property>
+    <property id="UseDayLightSavingTime" type="boolean">false</property>
     
 </properties>
