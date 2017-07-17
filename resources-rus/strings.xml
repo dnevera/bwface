@@ -59,6 +59,11 @@
     <string id="PressurehPaTitle">гПа</string> 
 	<string id="UserBMRTitle">УБМ КК</string>
 	
+	<string id="ActivityFactorTitle">убм</string>
+    <string id="FloorsClimbedTitle">этаж.</string>
+    <string id="ElevationTitle">м</string>
+    <string id="ElevationFeetTitle">фт</string>
+	
     <string id="Steps">Шагов</string>
     <string id="Calories">Калории</string>
     <string id="Distance">Дистанция</string>
@@ -79,5 +84,9 @@
     <string id="Battery">Аккумулятор</string>
     <string id="BatteryPhone">Аккумулятор и подкл. к телефону</string>
     <string id="PhoneConnection">Сост. подкл. к телефону</string>
+    
+    <string id="ActivityFactor">Коэффициент активности</string>
+    <string id="FloorsClimbed">Пройденных этажей</string>
+    <string id="Elevation">Общий подъем</string>
     
 </resources>

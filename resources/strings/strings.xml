@@ -20,6 +20,7 @@
     <string id="HoursColorTitle">Hours Color</string>
     <string id="TimeColonColorTitle">Time Colon Color</string>
     <string id="MinutesColorTitle">Minutes Color</string>
+    
     <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>
 
     <string id="ColorDark">Dark</string>    
@@ -58,6 +59,11 @@
     <string id="PressurehPaTitle">hPa</string> 
     <string id="UserBMRTitle">BMR KC</string> 
 	
+	<string id="ActivityFactorTitle">bmr</string>
+    <string id="FloorsClimbedTitle">floors</string>
+    <string id="ElevationTitle">m</string>
+    <string id="ElevationFeetTitle">ft</string>
+	
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
     <string id="Distance">Distance</string>
@@ -79,4 +85,8 @@
     <string id="BatteryPhone">Battery and Phone Connection</string>
     <string id="PhoneConnection">Phone Connection Status</string>
     
+    <string id="ActivityFactor">Activity Factor</string>
+    <string id="FloorsClimbed">Floors Climbed</string>
+    <string id="Elevation">Elevation</string>
+        
 </strings>

@@ -15,6 +15,10 @@ class BWFaceStrings {
         var pressuremmHgTitle = Ui.loadResource( Rez.Strings.PressureMmHgTitle );
         var pressurehPaTitle  = Ui.loadResource( Rez.Strings.PressurehPaTitle );
         var userBMRTitle      = Ui.loadResource( Rez.Strings.UserBMRTitle );
+        var activityFactorTitle  = Ui.loadResource( Rez.Strings.ActivityFactorTitle );
+        var floorsClimbedTitle   = Ui.loadResource( Rez.Strings.FloorsClimbedTitle );
+        
+        var elevationTitle       = Ui.loadResource( Rez.Strings.ElevationTitle );
         
         function setup(sysunits){
 		    if (sysunits.distanceUnits == Sys.UNIT_STATUTE) {
@@ -25,10 +29,12 @@ class BWFaceStrings {
 	        }
 	       
 	       	if (sysunits.elevationUnits == Sys.UNIT_STATUTE) {
-		    	 altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeFeetTitle );
+		    	 altitudeTitle  = Ui.loadResource( Rez.Strings.AltitudeFeetTitle );
+		    	 elevationTitle = Ui.loadResource( Rez.Strings.ElevationFeetTitle );
 		    } 
 	        else {
 	        	 altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeTitle );
+	        	 elevationTitle= Ui.loadResource( Rez.Strings.ElevationTitle );
 	        }	
 	        
 	        if (sysunits.temperatureUnits == Sys.UNIT_STATUTE) {

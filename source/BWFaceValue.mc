@@ -16,7 +16,10 @@ enum {
 	BW_Pressure    = 9,
 	BW_PressureMmHg= 10,
 	BW_PressurehPa = 1001, // NOTE: currently i can't read sys configuration
-	BW_UserBMR     = 11
+	BW_UserBMR     = 11,
+	BW_ActivityFactor    = 12,
+	BW_FloorsClimbed     = 13,	
+	BW_Elevation     = 14	
 }
 
 class BWFaceValue {
@@ -74,6 +77,18 @@ class BWFaceValue {
 			case BW_UserBMR :
 				dict[:title] = properties.strings.userBMRTitle;
 				break;
+			case BW_ActivityFactor :
+				dict[:title] = properties.strings.activityFactorTitle;
+				dict[:scale] = 10;
+				dict[:delim] = ",";
+				
+				break;
+			case BW_FloorsClimbed :
+				dict[:title] = properties.strings.floorsClimbedTitle;
+				break;
+			case BW_Elevation :
+				dict[:title] = properties.strings.elevationTitle;
+				break;
 		}
 		return dict;
 	}
@@ -84,6 +99,11 @@ class BWFaceValue {
 			case BW_Distance: // distance
 				value = Monitor.getInfo().distance;
 				value = value == null ? "--" : value/100.0/properties.statuteFactor;
+				break;
+
+			case BW_FloorsClimbed: 
+				value = Monitor.getInfo().floorsClimbed;
+				value = value == null ? "--" : value;
 				break;
 				
 			case BW_Steps: 
@@ -161,7 +181,29 @@ class BWFaceValue {
 			case BW_UserBMR :
 				value =  properties.bmr();
 				break;
-							
+
+			case BW_ActivityFactor :
+				var c = Monitor.getInfo().calories;
+				if (c>0) {
+					value =  (c/properties.bmr()*1000);
+					
+				}
+				else {
+					value = "--";
+				}
+				break;
+				
+			case BW_Elevation:{
+				var sensorIter = getElevationIterator();
+				if  ( sensorIter != null ){   	    	    	
+					value = sensorIter.next();
+					value = value == null ? "--" : value.data == null ? "--" : value.data/properties.statuteFactor;
+		    	}			
+				else {
+					value = "--";
+				}
+				}
+				break;							
 		}
 		return value;
 	} 
@@ -217,6 +259,13 @@ class BWFaceValue {
 	function getHeartRateIterator() {
 	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getHeartRateHistory)) {
 	        return Toybox.SensorHistory.getHeartRateHistory({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
+	    }
+	    return null;
+	}
+	
+	function getElevationIterator() {
+	    if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getElevationHistory)) {
+	        return Toybox.SensorHistory.getElevationHistory({:order=>SensorHistory.ORDER_NEWEST_FIRST,:period=>1});
 	    }
 	    return null;
 	}
