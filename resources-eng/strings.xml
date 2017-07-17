@@ -58,6 +58,12 @@
     <string id="PressurehPaTitle">hPa</string> 
     <string id="UserBMRTitle">BMR KC</string> 
 
+	<string id="ActivityFactorTitle">bmr</string>
+    <string id="FloorsClimbedTitle">floors</string>
+    <string id="ElevationTitle">m</string>
+    <string id="ElevationFeetTitle">ft</string>
+
+
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
     <string id="Distance">Distance</string>
@@ -78,5 +84,9 @@
     <string id="Battery">Battery Status</string>
     <string id="BatteryPhone">Battery and Phone</string>
     <string id="PhoneConnection">Phone conn. status</string>
+    
+    <string id="ActivityFactor">Activity Factor</string>
+    <string id="FloorsClimbed">Floors Climbed</string>
+    <string id="Elevation">Elevation</string>
     
 </resources>
