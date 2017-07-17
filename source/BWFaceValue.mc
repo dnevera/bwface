@@ -102,8 +102,13 @@ class BWFaceValue {
 				break;
 
 			case BW_FloorsClimbed: 
-				value = Monitor.getInfo().floorsClimbed;
-				value = value == null ? "--" : value;
+			    if (Toybox.ActivityMonitor.Info has :floorsClimbed) {
+					value = Monitor.getInfo().floorsClimbed;
+					value = value == null ? "--" : value;
+				}
+				else {
+					value = "--";
+				}
 				break;
 				
 			case BW_Steps: 
