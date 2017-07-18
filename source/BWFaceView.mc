@@ -161,7 +161,9 @@ class BWFaceView5 extends BWFaceView {
 	
 	function onUpdate(dc) {
 		BWFaceView.onUpdateBase(dc);	
-		graphsField(dc, dc.getWidth()/2, clockField.topY, properties.graphsHeight);	
+		if ( properties.getProperty("CaloriesBarGraphsOn", false) ){
+			graphsField(dc, dc.getWidth()/2, clockField.topY, properties.graphsHeight);
+		}	
 		metricRateField.draw(bmrMeter.tickPosX+properties.metricPadding, bmrMeter.tickPosY);		
 	}
 
@@ -174,7 +176,7 @@ class BWFaceView5 extends BWFaceView {
     	var w = (colSize[0]+properties.framePadding/2);    	
     	
     	var x0 = locX - w*7/2+properties.graphsPadding;    	
-    	var y = locY+colSize[1]+properties.framePadding;
+    	var y = locY+colSize[1]+properties.framePadding+properties.graphsTopPadding;
     	var x = x0;
     	
     	if (hist.size()==0){

@@ -29,13 +29,25 @@ class BWFaceMetricField extends BWFaceField {
 			hr = hr.format(faceValue.info(properties.metricField)[:format]); 
 		}    		
 		
+		var right = null;
+		if ((Toybox.WatchUi.WatchFace has :onPartialUpdate ) && properties.getProperty("CaloriesBarGraphsOn", false) ){
+			if (hr.length()>3){
+				right = hr.substring(1,hr.length());	
+				hr = hr.substring(0,1);
+			}
+		}
+		
 		var size      = dc.getTextDimensions(hr, properties.fonts.infoFont);
-
+				
 	 	var x = tickPosX;
  		var y = tickPosY;
 		
 		dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);	    	
 		dc.drawText(x, y, properties.fonts.infoFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
+		if (right!=null){
+			var sizer  = dc.getTextDimensions(right, properties.fonts.infoFractFont);
+			dc.drawText(x+size[0]+1, y+size[1]-sizer[1], properties.fonts.infoFractFont, right, Gfx.TEXT_JUSTIFY_LEFT);
+		}
 		
 		if (drawTopTitles) {
 	    	var xc;
