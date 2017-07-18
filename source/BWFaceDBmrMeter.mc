@@ -183,7 +183,9 @@ class BWFaceDBmrMeter extends BWFaceField {
 		}
 				
 		dc.setPenWidth(1);		
-		tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW+size[0]+fractSize[0])+properties.bmrPadding;
+		//tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW+size[0]+fractSize[0])+properties.bmrPadding;
+		//tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW)+properties.bmrPadding;
+		tickPosX = dc.getWidth()/2* (1 - Math.cos(angle))+properties.caloriesCircleWidth+tickW; //dc.getWidth() - (properties.caloriesCircleWidth+tickW+txtX+properties.bmrPadding);
 		tickPosY = caloriesLinePos;
 	}
 	

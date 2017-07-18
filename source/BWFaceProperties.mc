@@ -77,6 +77,7 @@ class BWFaceProperties{
 			bmrTopPadding   =  12;        	
 			activityPadding = -6;  
 			sysinfoTopPadding = 6;
+			metricPadding = 8;
 		}
 		else {
 			if (dc.getWidth()<=148) { // vivoactive
@@ -93,9 +94,10 @@ class BWFaceProperties{
 				activityPadding = -10;  
 				clockPadding = 8;
 				bmrTopPadding = 4;	
+				bmrPadding    = 6;
 				sysinfoTopPadding =  7;	
-				metricPadding = -4;
-				graphsPadding = 4;							
+				metricPadding = 0;
+				graphsPadding = 7;							
 			}
 			else {
 				clockPadding    = 5;
@@ -105,8 +107,8 @@ class BWFaceProperties{
 				sysinfoTopPadding =  4;	
 				bmrTopPadding = 2;	
 				sysinfoTopPadding =  8;	
-				metricPadding = -4;	
-				graphsPadding = 4;					
+				metricPadding = 1;	
+				graphsPadding = 7;					
 			}
 		}		
 		
