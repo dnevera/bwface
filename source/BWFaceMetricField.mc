@@ -9,6 +9,7 @@ class BWFaceMetricField extends BWFaceField {
  	protected var drawTopTitles = true;
  	protected var faceValue;
  	protected var title;
+ 	
  	function initialize(dictionary,newProperties){
 		BWFaceField.initialize(dictionary,newProperties);
 		dc = properties.dc;
@@ -27,6 +28,7 @@ class BWFaceMetricField extends BWFaceField {
 		if (!(hr instanceof Toybox.Lang.String)) {
 			hr = hr.format(faceValue.info(properties.metricField)[:format]); 
 		}    		
+		
 		var size      = dc.getTextDimensions(hr, properties.fonts.infoFont);
 
 	 	var x = tickPosX;
@@ -45,8 +47,18 @@ class BWFaceMetricField extends BWFaceField {
 	    	else {
 	    		xc = x+size[0]+properties.fractionNumberPadding;
 	    		yc = y+2;
-	    	}
-			dc.drawText(xc, yc, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+	    	}			
+			
+			dc.setColor(properties.bgColor, Gfx.COLOR_TRANSPARENT);
+			dc.drawText(xc-1, yc-1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			dc.drawText(xc+1, yc+1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			dc.drawText(xc-1, yc+1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			dc.drawText(xc+1, yc-1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			
+			dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
+			dc.drawText(xc, yc, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);	    			
 		}
+		
+		bottomY = y;
 	}
  }

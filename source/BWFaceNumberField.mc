@@ -132,8 +132,8 @@ class BWFaceNumber {
 		
 		if (dosplit) {
 			if (justification == Gfx.TEXT_JUSTIFY_CENTER){
-				_x -= significantSize[0]/2+1;
-				_xf+= fractionSize[0]/2-1;
+				_x -= significantSize[0]/2-1;
+				_xf+= fractionSize[0]/2+1;
 			}
 			else if (justification == Gfx.TEXT_JUSTIFY_LEFT){
 				_xf+= significantSize[0];
@@ -147,8 +147,8 @@ class BWFaceNumber {
 			_clippingx -= w/2;
 			var d = vstr[0].length();
 			if (d>=3){
-				_x+=significantSize[0]/d/2-1;
-				_xf+=significantSize[0]/d/2-1;
+				_x+=significantSize[0]/d/2;
+				_xf+=significantSize[0]/d/2;
 			}
 		}
 		else if (justification == Gfx.TEXT_JUSTIFY_LEFT){

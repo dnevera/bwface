@@ -2,6 +2,7 @@ using Toybox.System as Sys;
 using Toybox.Math as Math;
 using Toybox.Activity as Activity;
 using Toybox.ActivityMonitor as Monitor;
+using Toybox.Time.Gregorian as Calendar;
 
 enum {
 	BW_Distance    = 0,
@@ -19,7 +20,8 @@ enum {
 	BW_UserBMR     = 11,
 	BW_ActivityFactor    = 12,
 	BW_FloorsClimbed     = 13,	
-	BW_Elevation     = 14	
+	BW_Elevation         = 14,	
+	BW_Climbed     = 15	
 }
 
 class BWFaceValue {
@@ -86,6 +88,9 @@ class BWFaceValue {
 			case BW_FloorsClimbed :
 				dict[:title] = properties.strings.floorsClimbedTitle;
 				break;
+			case BW_Climbed :
+				dict[:title] = properties.strings.climbedTitle;
+				break;
 			case BW_Elevation :
 				dict[:title] = properties.strings.elevationTitle;
 				break;
@@ -105,6 +110,16 @@ class BWFaceValue {
 			    if (Toybox.ActivityMonitor.Info has :floorsClimbed) {
 					value = Monitor.getInfo().floorsClimbed;
 					value = value == null ? "--" : value;
+				}
+				else {
+					value = "--";
+				}
+				break;
+
+			case BW_Climbed: 
+			    if (Toybox.ActivityMonitor.Info has :metersClimbed) {
+					value = Monitor.getInfo().metersClimbed;
+					value = value == null ? "--" : value/properties.statuteFactor;
 				}
 				else {
 					value = "--";
@@ -174,13 +189,13 @@ class BWFaceValue {
 				}
 				break;
 			case BW_Pressure:
-				value =  pressure(0.001, "%.1f");
+				value =  pressure(0.001, "%.1f", 10);
 				break;
 			case BW_PressurehPa:
-				value =  pressure(0.01, "%.2f");
+				value =  pressure(0.01, "%.2f", 100);
 				break;
 			case BW_PressureMmHg:
-				value =  pressure(0.00750062, "%.1f");
+				value =  pressure(0.00750062, "%.1f", 10);
 				break;
 				
 			case BW_UserBMR :
@@ -233,14 +248,14 @@ class BWFaceValue {
 		return r;
 	}
 
-	function pressure(factor, format){
+	function pressure(factor, format, scale){
 		var sensorIter =  getPressureIterator();
 		if  ( sensorIter != null ){   	    	    	
 			var n = sensorIter.next();
 			if (n.data == null){
 				return "--";
 			}
-			return (n.data*factor).format(format);
+			return (Math.round(n.data*factor*scale)/scale).format(format);
     	}			
 		else {
 			return "--";

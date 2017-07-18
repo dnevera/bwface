@@ -74,7 +74,9 @@
         <settingConfig type="list">
             <listEntry value="0">@Strings.Distance</listEntry>        
             <listEntry value="1">@Strings.Steps</listEntry>        
+            <listEntry value="15">@Strings.Climbed</listEntry>        
             <listEntry value="13">@Strings.FloorsClimbed</listEntry>        
+            <listEntry value="6">@Strings.Altitude</listEntry>
             <listEntry value="14">@Strings.Elevation</listEntry>        
             <listEntry value="2">@Strings.Calories</listEntry>
             <listEntry value="11">@Strings.UserBMR</listEntry>
@@ -82,7 +84,6 @@
             <listEntry value="3">@Strings.Seconds</listEntry>
             <listEntry value="4">@Strings.Sunrise</listEntry>
             <listEntry value="5">@Strings.Sunset</listEntry>
-            <listEntry value="6">@Strings.Altitude</listEntry>
             <listEntry value="7">@Strings.HeartRate</listEntry>        
             <listEntry value="8">@Strings.Temperature</listEntry>        
             <listEntry value="9">@Strings.Pressure</listEntry>
@@ -95,7 +96,9 @@
         <settingConfig type="list">
             <listEntry value="0">@Strings.Distance</listEntry>        
             <listEntry value="1">@Strings.Steps</listEntry>        
+            <listEntry value="15">@Strings.Climbed</listEntry>        
             <listEntry value="13">@Strings.FloorsClimbed</listEntry>        
+            <listEntry value="6">@Strings.Altitude</listEntry>
             <listEntry value="14">@Strings.Elevation</listEntry>        
             <listEntry value="2">@Strings.Calories</listEntry>
             <listEntry value="11">@Strings.UserBMR</listEntry>
@@ -103,7 +106,6 @@
             <listEntry value="3">@Strings.Seconds</listEntry>
             <listEntry value="4">@Strings.Sunrise</listEntry>
             <listEntry value="5">@Strings.Sunset</listEntry>
-            <listEntry value="6">@Strings.Altitude</listEntry>
             <listEntry value="7">@Strings.HeartRate</listEntry>        
             <listEntry value="8">@Strings.Temperature</listEntry>        
             <listEntry value="9">@Strings.Pressure</listEntry>
@@ -117,6 +119,8 @@
             <listEntry value="0">@Strings.Distance</listEntry>        
             <listEntry value="1">@Strings.Steps</listEntry>        
             <listEntry value="13">@Strings.FloorsClimbed</listEntry>        
+            <listEntry value="15">@Strings.Climbed</listEntry>        
+            <listEntry value="6">@Strings.Altitude</listEntry>
             <listEntry value="14">@Strings.Elevation</listEntry>        
             <listEntry value="2">@Strings.Calories</listEntry>
             <listEntry value="11">@Strings.UserBMR</listEntry>
@@ -124,7 +128,6 @@
             <listEntry value="3">@Strings.Seconds</listEntry>
             <listEntry value="4">@Strings.Sunrise</listEntry>
             <listEntry value="5">@Strings.Sunset</listEntry>
-            <listEntry value="6">@Strings.Altitude</listEntry>
             <listEntry value="7">@Strings.HeartRate</listEntry>        
             <listEntry value="8">@Strings.Temperature</listEntry>        
             <listEntry value="9">@Strings.Pressure</listEntry>

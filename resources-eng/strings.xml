@@ -62,7 +62,8 @@
     <string id="FloorsClimbedTitle">floors</string>
     <string id="ElevationTitle">m</string>
     <string id="ElevationFeetTitle">ft</string>
-
+    <string id="ClimbedTitle">m</string>
+    <string id="ClimbedFeetTitle">ft</string>
 
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
@@ -87,6 +88,7 @@
     
     <string id="ActivityFactor">Activity Factor</string>
     <string id="FloorsClimbed">Floors Climbed</string>
+    <string id="Climbed">Climbed</string>
     <string id="Elevation">Elevation</string>
     
 </resources>
