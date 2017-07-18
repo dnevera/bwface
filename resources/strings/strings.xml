@@ -8,6 +8,7 @@
     <string id="ActivityRightFieldTitle">Activity Right Field</string>
     <string id="MetricFieldTitle">Sensors Field</string>
 
+    <string id="CaloriesBarGraphsOnTitle">Calories Bar-graph (Round Watches only)</string>
     <string id="CaloriesCheckPointOn12Title">Calories Check Point At 12 (Round Watches only)</string>
     <string id="UseDayLightSavingTimeTitle">Daylight Saving Time</string>
     
