@@ -20,11 +20,12 @@ class BWFaceApp extends App.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() {
-    	mainView = new BWFaceView();
     	if( Toybox.WatchUi.WatchFace has :onPartialUpdate ) {
+	    	mainView = new BWFaceView5();
         	return [ mainView, new BWFaceDelegate() ];
     	}
     	else {
+        	mainView = new BWFaceView();
         	return [ mainView ];
         }
     }

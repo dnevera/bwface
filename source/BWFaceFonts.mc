@@ -22,11 +22,14 @@ class BWFaceFonts {
 			//weekDayFont  = Ui.loadResource(Rez.Fonts.calendarFontTiny);    
 			
 			infoFontSmall     = Ui.loadResource(Rez.Fonts.infoFontSmall);	
-        	infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
+        	//infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
+        	//infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);
         	
 	        infoFont      = Ui.loadResource(Rez.Fonts.infoFontSmall);	
 	        infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);
-            infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);	        	        				    
+            //infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);
+            infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
+            infoTitleFontTiny = infoTitleFont;	        	        				    
 		}
 		else if (settings.screenHeight<=240){   
         	if  (settings.screenHeight<=218){  // 5S
@@ -34,15 +37,19 @@ class BWFaceFonts {
         	  	if (settings.screenWidth<=148){ // vivoactive
         	  		clockFont = Ui.loadResource(Rez.Fonts.clockFontTall);
         	  		infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
+        	  		infoFractFont = infoTitleFont;
+        	  		infoTitleFontTiny = infoTitleFont;
 	 			} 	
 	 			else {
 	 				clockFont = Ui.loadResource(Rez.Fonts.clockFontSmall);
 	 				infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);
 	        		weekDayFont   = Ui.loadResource(Rez.Fonts.calendarFontSmall);
+	        		infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);
+	        		infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
 	 			}
         	  		        	
 	        	infoFont      = Ui.loadResource(Rez.Fonts.infoFontSmall);	
-	        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);	        	
+	        	//infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);	        	
         	}
         	else {        	
 	        	clockFont = Ui.loadResource(Rez.Fonts.clockFont);
@@ -51,10 +58,11 @@ class BWFaceFonts {
 	        	infoFont      = Ui.loadResource(Rez.Fonts.infoFont);
 	        	infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFont);	        		
 	        	infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFont);
+	        	infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
         	}
         	
         	infoFontSmall     = Ui.loadResource(Rez.Fonts.infoFontSmall);	
-        	infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
+        	//infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
         }	                       
 	}
 }

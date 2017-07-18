@@ -22,8 +22,13 @@ class BWFaceProperties{
 	var topFieldPadding   =  4;
 	var dayPadding        = -2;
 	var bmrTopPadding     =  4;
+	var bmrPadding        =  4;
 	var sysinfoTopPadding =  4;
-
+	
+	var metricPadding     = 0;	
+	var graphsHeight      = 15;
+	var graphsPadding     = 0;
+	
 	var btIconSize     = 6;
 	var btIconPenWidth = 1;
 	var btIconColor    = Gfx.COLOR_BLUE;
@@ -85,19 +90,23 @@ class BWFaceProperties{
 				fractionNumberPadding = -4;				
 			}
 			else if  (dc.getHeight()<=218){ // 5s
-				activityPadding = -8;  
-				clockPadding = 6;
+				activityPadding = -10;  
+				clockPadding = 8;
 				bmrTopPadding = 4;	
-				sysinfoTopPadding =  7;								
+				sysinfoTopPadding =  7;	
+				metricPadding = -4;
+				graphsPadding = 4;							
 			}
 			else {
-				clockPadding    = 4;
+				clockPadding    = 5;
 				topFieldPadding = 3;
 				dayPadding      = -1; 
-				activityPadding =  -11;	
+				activityPadding =  -12;	
 				sysinfoTopPadding =  4;	
-				bmrTopPadding = 0;	
-				sysinfoTopPadding =  8;							
+				bmrTopPadding = 2;	
+				sysinfoTopPadding =  8;	
+				metricPadding = -4;	
+				graphsPadding = 4;					
 			}
 		}		
 		

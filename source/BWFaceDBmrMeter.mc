@@ -104,7 +104,8 @@ class BWFaceDBmrMeter extends BWFaceField {
 		}
 	
 		tickPosX = properties.caloriesCircleWidth+tickW;
-		tickPosY = caloriesLinePos;							
+		tickPosY = caloriesLinePos;	
+		bottomY = caloriesLinePos - size[1];				
 	}
 	
 	function drawInRound(calories, isSemiRound){	
@@ -162,7 +163,7 @@ class BWFaceDBmrMeter extends BWFaceField {
 			dc.drawLine(circleX-tickW, txtY, dc.getWidth()-1, txtY);
 		}
 
-		txtX -=properties.caloriesCircleWidth;
+		txtX -=properties.caloriesCircleWidth-properties.bmrPadding;
 		 
 		dc.setColor(properties.labelColor,  Gfx.COLOR_TRANSPARENT);
 		dc.drawText(txtX, caloriesLinePos,  properties.fonts.infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
@@ -177,12 +178,12 @@ class BWFaceDBmrMeter extends BWFaceField {
 			dc.drawText(txtX, y, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
 			if (isDeficit && scale>1){
 				var p = " "+scale.format("%d");
-				dc.drawText(txtX+fractSize[0]+properties.caloriesCircleWidth, y, properties.fonts.infoTitleFontTiny, p, Gfx.TEXT_JUSTIFY_LEFT);
+				dc.drawText(txtX+fractSize[0]+properties.caloriesCircleWidth-properties.bmrPadding-1, y, properties.fonts.infoTitleFontTiny, p, Gfx.TEXT_JUSTIFY_LEFT);
 			}
 		}
 				
 		dc.setPenWidth(1);		
-		tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW+size[0]+fractSize[0]);
+		tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW+size[0]+fractSize[0])+properties.bmrPadding;
 		tickPosY = caloriesLinePos;
 	}
 	

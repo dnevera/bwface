@@ -2,13 +2,14 @@ using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
 using Toybox.Lang as Lang;
+using Toybox.Time as Time;
 using Toybox.Time.Gregorian as Calendar;
 using Toybox.UserProfile as User;
 using Toybox.Sensor;
 using Toybox.SensorHistory;
 using Toybox.System;
 using Toybox.Timer;
-
+using Toybox.ActivityMonitor;
 
 class BWFaceView extends Ui.WatchFace {
         
@@ -86,7 +87,7 @@ class BWFaceView extends Ui.WatchFace {
 				:locY=>bmrlocY}, properties);
 				
 		metricRateField = new  BWFaceMetricField({
-				:identifier => "SysInfoField", 
+				:identifier => "MetricField", 
 				:locX=>0, 
 				:locY=>bmrlocY}, properties);   				
     }
@@ -104,7 +105,7 @@ class BWFaceView extends Ui.WatchFace {
 			return  Calendar.info(t, Time.FORMAT_MEDIUM); 			
 	}
 	
-    function onUpdate(dc) {
+    function onUpdateBase(dc) {
     	
     	//if(BWFace.partialUpdatesAllowed) {dc.clearClip();}
     	    		    	
@@ -123,9 +124,13 @@ class BWFaceView extends Ui.WatchFace {
 		}
 		else {
 			bmrMeter.draw(activityField.currentCalories);
-		}
-		metricRateField.draw(bmrMeter.tickPosX,bmrMeter.tickPosY);		
+		}		
     }
+	
+	function onUpdate(dc) {
+		onUpdateBase(dc);
+		metricRateField.draw(bmrMeter.tickPosX+properties.metricPadding, bmrMeter.tickPosY);
+	}
 	
 	function onPartialUpdate(dc) {
 		activityField.partialDraw();
@@ -143,8 +148,123 @@ class BWFaceView extends Ui.WatchFace {
 
     function onEnterSleep() {
     	if(!BWFace.partialUpdatesAllowed) {Ui.requestUpdate();}
-    }
+    }    
     
+   
+}
+
+class BWFaceView5 extends BWFaceView {
+	
+	function initialize() {
+        BWFaceView.initialize();
+    }
+	
+	function onUpdate(dc) {
+		BWFaceView.onUpdateBase(dc);	
+		graphsField(dc, dc.getWidth()/2, clockField.topY, properties.graphsHeight);	
+		metricRateField.draw(bmrMeter.tickPosX+properties.metricPadding, bmrMeter.tickPosY);		
+	}
+
+	 function graphsField(dc,locX,locY, height) {
+    	var hist = ActivityMonitor.getHistory();
+    	var info = ActivityMonitor.getInfo();
+    	
+    	var font = properties.fonts.infoTitleFontTiny;
+    	var colSize = dc.getTextDimensions("W", font);
+    	var w = (colSize[0]+properties.framePadding/2);    	
+    	
+    	var x0 = locX - w*7/2+properties.graphsPadding;    	
+    	var y = locY+colSize[1]+properties.framePadding;
+    	var x = x0;
+    	
+    	if (hist.size()==0){
+    	
+	    	for (var i = 7; i>=0; i--){
+	    		var m = new Time.Moment(Time.today().value()-3600*24*i);
+	    		var t = Calendar.info(m, Time.FORMAT_MEDIUM); 
+	    		dc.drawText(x, y, font, t.day_of_week.toString().substring(0, 1), Gfx.TEXT_JUSTIFY_CENTER);
+	    		dc.fillRectangle(x-colSize[0]/2, y-1, w/2, 1);
+	    		x +=  w;
+	    	}
+    		return;
+    	}
+    	    	
+    	x = x0;    	    	
+    	var min0 = 100000;
+    	var max0 = 0.1;
+    	for (var i = hist.size()-1; i>=0; i--){
+    		var t = Calendar.info(hist[i].startOfDay, Time.FORMAT_MEDIUM); 
+
+    		if (hist[i].calories<min0) { min0 = hist[i].calories; }
+    		if (hist[i].calories>max0) { max0 = hist[i].calories; }
+
+    		dc.drawText(x, y, font, t.day_of_week.toString().substring(0, 1), Gfx.TEXT_JUSTIFY_CENTER);
+    		x +=  w;
+    	}
+	
+		var m = new Time.Moment(Time.today().value());
+	    var t = Calendar.info(m, Time.FORMAT_MEDIUM); 
+		dc.drawText(x, y, font, t.day_of_week.toString().substring(0, 1), Gfx.TEXT_JUSTIFY_CENTER);	
+	
+	    if (info.calories<min0) { min0 = info.calories; }
+    	if (info.calories>max0) { max0 = info.calories; }
+	
+		var threshold = properties.getProperty("ActivityFactorThreshold", 1.5);
+		var bmr = properties.bmr();
+		x = x0-colSize[0]/2;
+		var avrg = 0;
+		var avrgAf = 0;
+    	var color;
+    	for (var i = hist.size()-1; i>=0; i--){
+    		var af = hist[i].calories/bmr;
+    		avrgAf += af;
+    		var h = height * hist[i].calories/max0;
+    		if (af<=threshold){
+    			color = properties.surplusColor; 
+    		} 		
+    		else {
+    			color = properties.deficitColor;
+    		}
+    		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
+    		dc.fillRectangle(x, y-h, w/2, h);
+    		x +=  w;
+    		avrg += h;
+		}	
+		
+		var af = info.calories/bmr;
+		avrgAf += info.calories/bmr;
+		var h = height * info.calories/max0;
+		avrg += h;
+		
+		if (af<=threshold){
+			color = properties.surplusColor; 
+		} 		
+		else {
+			color = properties.deficitColor;
+		}
+		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
+		dc.fillRectangle(x, y-h, w/2, h);
+		x +=  w;
+		
+		avrg /= hist.size();	
+		avrgAf /= hist.size();
+		
+		if (avrgAf>=threshold){
+			color = properties.deficitColor;
+		}
+		else {
+			color = properties.surplusColor;
+		}
+		
+		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
+		var x1 = x0-colSize[0]/2;
+		var x2 = x-w/2-1;
+		var y1 = y-avrg;
+		dc.drawLine(x1, y1, x2, y1);    
+		dc.setColor(properties.bgColor,  Gfx.COLOR_TRANSPARENT);
+		dc.drawLine(x1, y1+1, x2, y1+1);    
+		dc.drawLine(x1, y1-1, x2, y1-1);    
+    }  
 }
 
 // https://forums.garmin.com/forum/developers/connect-iq/1229818-watch-face-onpartialupdate-does-not-work-on-all-devices-which-support-this-function
@@ -160,8 +280,6 @@ class BWFaceDelegate extends Ui.WatchFaceDelegate
 	}
 
     function onPowerBudgetExceeded(powerInfo) {
-        //Sys.println( "Average execution time: " + powerInfo.executionTimeAverage );
-        //Sys.println( "Allowed execution time: " + powerInfo.executionTimeLimit );
         BWFace.partialUpdatesAllowed=false;
     }
 }
