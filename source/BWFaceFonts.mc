@@ -25,7 +25,7 @@ class BWFaceFonts {
         	//infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
         	//infoTitleFontTiny = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);
         	
-	        infoFont      = Ui.loadResource(Rez.Fonts.infoFontSmall);	
+	        infoFont      = infoFontSmall; //Ui.loadResource(Rez.Fonts.infoFontSmall);	
 	        infoFractFont = Ui.loadResource(Rez.Fonts.infoFractFontSmall);
             //infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontSmall);
             infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
