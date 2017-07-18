@@ -28,6 +28,7 @@ class BWFaceProperties{
 	var metricPadding     = 0;	
 	var graphsHeight      = 15;
 	var graphsPadding     = 0;
+	var graphsTopPadding  = 0;
 	
 	var btIconSize     = 6;
 	var btIconPenWidth = 1;
@@ -97,18 +98,19 @@ class BWFaceProperties{
 				bmrPadding    = 6;
 				sysinfoTopPadding =  7;	
 				metricPadding = 0;
-				graphsPadding = 7;							
+				graphsPadding = 6;	
+				graphsTopPadding = -2;						
 			}
 			else {
-				clockPadding    = 5;
+				clockPadding    = 7;
 				topFieldPadding = 3;
 				dayPadding      = -1; 
-				activityPadding =  -12;	
+				activityPadding =  -10;	
 				sysinfoTopPadding =  4;	
-				bmrTopPadding = 2;	
-				sysinfoTopPadding =  8;	
+				bmrTopPadding = 1;	
+				sysinfoTopPadding =  5;	
 				metricPadding = 1;	
-				graphsPadding = 7;					
+				graphsPadding = 5;					
 			}
 		}		
 		

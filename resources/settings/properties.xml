@@ -17,6 +17,7 @@
         
     <property id="ActivityFactorThreshold" type="float">1.5</property>
     
+    <property id="CaloriesBarGraphsOn" type="boolean">true</property>
     <property id="CaloriesCheckPointOn12" type="boolean">false</property>
     <property id="UseDayLightSavingTime" type="boolean">false</property>
     
