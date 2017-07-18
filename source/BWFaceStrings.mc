@@ -17,6 +17,7 @@ class BWFaceStrings {
         var userBMRTitle      = Ui.loadResource( Rez.Strings.UserBMRTitle );
         var activityFactorTitle  = Ui.loadResource( Rez.Strings.ActivityFactorTitle );
         var floorsClimbedTitle   = Ui.loadResource( Rez.Strings.FloorsClimbedTitle );
+        var climbedTitle         = Ui.loadResource( Rez.Strings.ClimbedTitle );
         
         var elevationTitle       = Ui.loadResource( Rez.Strings.ElevationTitle );
         
@@ -31,10 +32,12 @@ class BWFaceStrings {
 	       	if (sysunits.elevationUnits == Sys.UNIT_STATUTE) {
 		    	 altitudeTitle  = Ui.loadResource( Rez.Strings.AltitudeFeetTitle );
 		    	 elevationTitle = Ui.loadResource( Rez.Strings.ElevationFeetTitle );
+		    	 climbedTitle = Ui.loadResource( Rez.Strings.ClimbedFeetTitle );
 		    } 
 	        else {
 	        	 altitudeTitle = Ui.loadResource( Rez.Strings.AltitudeTitle );
 	        	 elevationTitle= Ui.loadResource( Rez.Strings.ElevationTitle );
+	        	 climbedTitle  = Ui.loadResource( Rez.Strings.ClimbedTitle );	        	 
 	        }	
 	        
 	        if (sysunits.temperatureUnits == Sys.UNIT_STATUTE) {

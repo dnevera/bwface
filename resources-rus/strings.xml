@@ -63,6 +63,8 @@
     <string id="FloorsClimbedTitle">этаж.</string>
     <string id="ElevationTitle">м</string>
     <string id="ElevationFeetTitle">фт</string>
+    <string id="ClimbedTitle">m</string>
+    <string id="ClimbedFeetTitle">ft</string>
 	
     <string id="Steps">Шагов</string>
     <string id="Calories">Калории</string>
@@ -87,6 +89,7 @@
     
     <string id="ActivityFactor">Коэффициент активности</string>
     <string id="FloorsClimbed">Пройденных этажей</string>
-    <string id="Elevation">Общий подъем</string>
+    <string id="Climbed">Общий подъем вверх</string>
+    <string id="Elevation">Подъем</string>
     
 </resources>
