@@ -7,7 +7,15 @@
             <listEntry value="0xD8BDB2">@Strings.ColorBright</listEntry>
         </settingConfig>
     </setting>
-    
+
+    <setting propertyKey="@Properties.ActivityColor" title="@Strings.ActivityColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0xD06900">@Strings.ColorDark</listEntry>
+            <listEntry value="0xE57400">@Strings.ColorLight</listEntry>
+            <listEntry value="0xFF9931">@Strings.ColorBright</listEntry>
+        </settingConfig>
+    </setting>
+
     <setting propertyKey="@Properties.DeficitColor" title="@Strings.DeficitColorTitle">
         <settingConfig type="list">        
             <listEntry value="0x247F00">@Strings.ColorDark</listEntry>

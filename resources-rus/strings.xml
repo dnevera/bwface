@@ -16,6 +16,7 @@
 
     <string id="BackgroundColorTitle">Цвет фона</string>
     <string id="SurplusColorTitle">Цвет профицита калорий</string>
+    <string id="ActivityColorTitle">Цвет активного использования калорий</string>
     <string id="DeficitColorTitle">Цвет дефицита калорий</string>
     <string id="ForegroundColorTitle">Цвет меток</string>
     <string id="HoursColorTitle">Цвет часов</string>

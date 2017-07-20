@@ -6,6 +6,7 @@
     <property id="TimeColonColor"    type="number">0xE0E0E0</property>
     <property id="MinutesColor"      type="number">0x32CD32</property>
     <property id="SurplusColor"      type="number">0x7F2400</property>
+    <property id="ActivityColor"     type="number">0xD06900</property>
     <property id="DeficitColor"      type="number">0x247F00</property>
     
     <property id="SystemStatus" type="number">102</property>

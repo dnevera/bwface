@@ -16,6 +16,7 @@
 
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="SurplusColorTitle">Surplus Color</string>
+    <string id="ActivityColorTitle">Activity Zone Color</string>
     <string id="DeficitColorTitle">Deficit Color</string>
     <string id="ForegroundColorTitle">Foreground Color</string>
     <string id="HoursColorTitle">Hours Color</string>

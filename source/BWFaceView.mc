@@ -169,7 +169,8 @@ class BWFaceView5 extends BWFaceView {
 
 	 function graphsField(dc,locX,locY, height) {
     	var hist = ActivityMonitor.getHistory();
-    	var info = ActivityMonitor.getInfo();
+    	//var info = ActivityMonitor.getInfo();
+    	var calories = activityField.currentCalories;
     	
     	var font = properties.fonts.infoTitleFontTiny;
     	var colSize = dc.getTextDimensions("W", font);
@@ -208,8 +209,8 @@ class BWFaceView5 extends BWFaceView {
 	    var t = Calendar.info(m, Time.FORMAT_MEDIUM); 
 		dc.drawText(x, y, font, t.day_of_week.toString().substring(0, 1), Gfx.TEXT_JUSTIFY_CENTER);	
 	
-	    if (info.calories<min0) { min0 = info.calories; }
-    	if (info.calories>max0) { max0 = info.calories; }
+	    if (calories<min0) { min0 = calories; }
+    	if (calories>max0) { max0 = calories; }
 	
 		var threshold = properties.getProperty("ActivityFactorThreshold", 1.5);
 		var bmr = properties.bmr();
@@ -221,11 +222,14 @@ class BWFaceView5 extends BWFaceView {
     		var af = hist[i].calories/bmr;
     		avrgAf += af;
     		var h = height * hist[i].calories/max0;
-    		if (af<=threshold){
+    		if (af<1){
     			color = properties.surplusColor; 
     		} 		
-    		else {
+    		else if (af>=threshold) {
     			color = properties.deficitColor;
+    		}
+    		else {
+    		    color = properties.getProperty("ActivityColor",0xD06900);
     		}
     		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
     		dc.fillRectangle(x, y-h, w/2, h);
@@ -233,16 +237,16 @@ class BWFaceView5 extends BWFaceView {
     		avrg += h;
 		}	
 		
-		var af = info.calories/bmr;
-		avrgAf += info.calories/bmr;
-		var h = height * info.calories/max0;
+		var af = calories/bmr;
+		avrgAf += calories/bmr;
+		var h = height * calories/max0;
 		avrg += h;
 		
-		if (af<=threshold){
+		if (af<1){
 			color = properties.surplusColor; 
 		} 		
 		else {
-			color = properties.deficitColor;
+			color = af<=threshold ? properties.getProperty("ActivityColor",0xD06900) : properties.deficitColor;
 		}
 		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
 		dc.fillRectangle(x, y-h, w/2, h);
