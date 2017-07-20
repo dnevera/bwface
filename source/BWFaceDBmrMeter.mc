@@ -41,9 +41,15 @@ class BWFaceDBmrMeter extends BWFaceField {
 		isDeficit =  cl>=0;
 		prcnt = (cl/userBmr).abs();
 				
-		color = isDeficit ? properties.deficitColor : properties.surplusColor ;
+		color = isDeficit ? properties.getProperty("ActivityColor",0xD06900) : properties.surplusColor ;
 		
 		cl = cl.abs();
+
+        if (isDeficit){
+            if (calories/userBmr > properties.getProperty("ActivityFactorThreshold", 1.5)) {
+                color = properties.deficitColor;
+            }
+        }
 
 		if (isDeficit){
 			scale = Math.floor(prcnt+1);
