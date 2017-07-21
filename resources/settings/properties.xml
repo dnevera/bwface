@@ -8,9 +8,10 @@
     <property id="SurplusColor"      type="number">0x7F2400</property>
     <property id="ActivityColor"     type="number">0xD06900</property>
     <property id="DeficitColor"      type="number">0x247F00</property>
-    
+
     <property id="SystemStatus" type="number">102</property>
-        
+    <property id="DateFieldType" type="number">100</property>
+
     <property id="ActivityLeftField"  type="number">0</property>
     <property id="ActivityMidField"   type="number">1</property>
     <property id="ActivityRightField" type="number">2</property>

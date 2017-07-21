@@ -9,8 +9,8 @@ class BWFaceTopField extends BWFaceField {
     var descent;  
     
 	protected var dayPadding = 0;	
-	protected var wdsize;
-	protected var dsize;
+	//protected var wdsize;
+	//protected var dsize;
 	protected var y;		
 	protected var yc;		
 	
@@ -21,23 +21,55 @@ class BWFaceTopField extends BWFaceField {
 		descent = Gfx.getFontDescent(properties.fonts.weekDayFont);
 		topY = 0;		
 		dayPadding = dictionary[:dayPadding];
-		
-		wdsize = properties.dc.getTextDimensions("OOOO", properties.fonts.weekDayFont);
-		dsize  = properties.dc.getTextDimensions("0 OOO", properties.fonts.weekDayFont);
+
+		//if (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
+		    var wdsize = properties.dc.getTextDimensions("OOOO", properties.fonts.weekDayFont);
+		//}
+		//else {
+		//    wdsize = properties.dc.getTextDimensions("OOOO", properties.fonts.infoFractFont);
+		//}
+		var dsize  = properties.dc.getTextDimensions("00 OOO", properties.fonts.weekDayFont);
 		yc     = locY+wdsize[1]-descent+dayPadding;
 		bottomY = yc + dsize[1];				
     }
 
-    function draw(today){        	
-    	var weekDay = today.day_of_week.toString().toUpper();
-		var day;									
-    	if (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
-    		day = Lang.format("$1$$2$",[today.day,today.month]).toUpper();
+    function draw(today){
+
+        var ss = "";
+
+        //if (System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_ROUND){
+        //    var pv = new BWFaceValue(properties);
+        //    ss = pv.value(BW_Sunrise).toString().toUpper();
+        //}
+    	//var wdsize;
+	    //var dsize;
+
+        var topFont;
+        var topY = locY;
+    	var weekDay = today.day_of_week;//.toString().toUpper();
+		var day;
+    	if (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND
+    	||
+    	properties.getProperty("DateFieldType", 100) == 100
+    	){
+    	    //weekDay = today.day_of_week;//.toString().toUpper();
+    	    ss = weekDay.toString().toUpper();
+    		day = Lang.format("$1$ $2$",[today.day,today.month]).toUpper();
+    		topFont = properties.fonts.weekDayFont;
     	}
     	else {
-    		day = Lang.format("$1$ $2$",[today.day,today.month]).toUpper();
+    		day = Lang.format("$1$ $2$ $3$",[weekDay, today.day,today.month]).toUpper();
+            var pv = new BWFaceValue(properties);
+            ss = pv.value(BW_Sunrise).toString().toUpper();
+            ss += "  " + pv.value(BW_Sunset).toString().toUpper();
+            topFont = properties.fonts.infoFractFont;
+            var dsize  = properties.dc.getTextDimensions(day, topFont);
+            topY = locY+properties.sunHoursPadding;//-properties;
     	}
-    	
+
+    	//wdsize = properties.dc.getTextDimensions(ss, properties.fonts.weekDayFont);
+    	//dsize  = properties.dc.getTextDimensions(day, properties.fonts.weekDayFont);
+
 		/*var descent = Gfx.getFontDescent(properties.fonts.weekDayFont);
 		var topY = 0;		
 		var dayPadding = dictionary[:dayPadding];
@@ -48,7 +80,8 @@ class BWFaceTopField extends BWFaceField {
 		var bottomY = yc + dsize[1];	*/			
     	
 		properties.dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);				
-		properties.dc.drawText(locX, locY,  properties.fonts.weekDayFont, weekDay, Gfx.TEXT_JUSTIFY_CENTER);		
+		//properties.dc.drawText(locX, locY,  properties.fonts.weekDayFont, weekDay, Gfx.TEXT_JUSTIFY_CENTER);
+		properties.dc.drawText(locX, topY,  topFont, ss, Gfx.TEXT_JUSTIFY_CENTER);
 		properties.dc.drawText(locX, yc, properties.fonts.weekDayFont, day,     Gfx.TEXT_JUSTIFY_CENTER);
     }
 }

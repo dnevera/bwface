@@ -22,7 +22,7 @@ class BWFaceView extends Ui.WatchFace {
     var timeAboveLinePos;
     var infoUnderLinePos;
     
-	var properties;
+	var properties = null;
 	var topField; 
 	var clockField;
     var activityField;	    	
@@ -38,10 +38,13 @@ class BWFaceView extends Ui.WatchFace {
     	
     function initialize() {
         WatchFace.initialize();
+        if (properties!=null){
+            properties.setup();
+        }
     }
 
     function onLayout(dc) {
-        
+
 		properties = new BWFaceProperties(dc);		 
 		properties.setup();
 		 
@@ -106,7 +109,7 @@ class BWFaceView extends Ui.WatchFace {
 	}
 	
     function onUpdateBase(dc) {
-    	
+
     	//if(BWFace.partialUpdatesAllowed) {dc.clearClip();}
     	    		    	
 		dc.setClip(0, 0, dc.getWidth(), dc.getHeight());    		    	

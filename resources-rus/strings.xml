@@ -1,7 +1,13 @@
 <resources>
+
     <string id="language">Русский</string>
-    
+    <string id="locale">rus</string>
+
     <string id="AppName">BWFace</string>
+
+    <string id="ActivityFactorThresholdTitle">Порог коэффициента активности</string>
+
+    <string id="DateFieldTypeTitle">Верхнее поле</string>
 
     <string id="ActivityLeftFieldTitle">Левое поле в строке активностей</string>
     <string id="ActivityMidFieldTitle">Среднее поле в строке активносте</string>
@@ -72,7 +78,10 @@
     <string id="Calories">Калории</string>
     <string id="Distance">Дистанция</string>
     <string id="Seconds">Секунды</string>
-    
+
+    <string id="Date">Только дата</string>
+    <string id="DateAndSuns">Дата/восход/закат</string>
+
     <string id="Sunrise">Восход</string>
     <string id="Sunset">Закат</string>
     <string id="Altitude">Высота</string>
