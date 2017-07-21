@@ -21,6 +21,7 @@ class BWFaceProperties{
 	var frameRadius       =  3;
 	var topFieldPadding   =  4;
 	var dayPadding        = -2;
+	var sunHoursPadding   =  9;
 	var bmrTopPadding     =  4;
 	var bmrPadding        =  4;
 	var sysinfoTopPadding =  4;
@@ -69,7 +70,7 @@ class BWFaceProperties{
 	}
 
 	function setup(){
-			
+
         if (dc.getHeight()<=180){ // 735xt
         	clockPadding = -6;
         	caloriesCircleTickWidth = 6;
@@ -86,10 +87,12 @@ class BWFaceProperties{
 				caloriesCircleWidth = 4;	
 				clockPadding = 12;
 				activityPadding = 0; 
-				sysinfoTopPadding = -2;	
+				sysinfoTopPadding = -4;
 				bmrTopPadding = 1;
 				framePadding  =  4;									
-				fractionNumberPadding = -4;				
+				fractionNumberPadding = -4;
+	            sunHoursPadding   =  6;
+	            dayPadding        = 9;
 			}
 			else if  (dc.getHeight()<=218){ // 5s
 				activityPadding = -10;  
@@ -99,7 +102,8 @@ class BWFaceProperties{
 				sysinfoTopPadding =  7;	
 				metricPadding = 0;
 				graphsPadding = 6;	
-				graphsTopPadding = -2;						
+				graphsTopPadding = -2;
+				sunHoursPadding  =  8;
 			}
 			else {
 				clockPadding    = 7;

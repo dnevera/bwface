@@ -228,13 +228,27 @@ class BWFaceValue {
 		return value;
 	} 
 
+    function toSysHour(hour){
+        if (Sys.getDeviceSettings().is24Hour){
+            return (Math.floor(hour).toLong() % 24).format("%02.0f");
+        }
+        else {
+            var h = Math.floor(hour).toLong() % 12;
+            if(h==0){
+                h=12;
+            }
+            return h.format("%2.0f");
+        }
+    }
+
 	function sunrise(){
 	    var sunRise = geoInfo.computeSunrise(true);
 	    if (sunRise==null) {
 	    	return "--"; 
 	    }
-	    sunRise=sunRise/1000/60/60;    
-		var r = Lang.format("$1$:$2$", [Math.floor(sunRise).format("%02.0f"), Math.floor((sunRise-Math.floor(sunRise))*60).format("%02.0f")]);
+	    sunRise=sunRise/1000/60/60;
+	    //var h = toSysHour(sunRise);
+		var r = Lang.format("$1$:$2$", [toSysHour(sunRise), Math.floor((sunRise-Math.floor(sunRise))*60).format("%02.0f")]);
 		return r;
 	}
 	
@@ -244,7 +258,18 @@ class BWFaceValue {
 	    	return "--"; 
 	    }
         sunSet=sunSet/1000/60/60;
-        var r = Lang.format("$1$:$2$", [Math.floor(sunSet).format("%02.0f"), Math.floor((sunSet-Math.floor(sunSet))*60).format("%02.0f")]);
+
+//        if (Sys.getDeviceSettings().is24Hour){
+//            sunSet %= 24;
+//        }
+//        else {
+//            sunSet %= 12;
+//            if(hours==0){
+//                hours=12;
+//            }
+//
+//        }
+        var r = Lang.format("$1$:$2$", [toSysHour(sunSet), Math.floor((sunSet-Math.floor(sunSet))*60).format("%02.0f")]);
 		return r;
 	}
 

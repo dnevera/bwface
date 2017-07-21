@@ -1,7 +1,11 @@
 <resources>
     <string id="language">English</string>
-    
+    <string id="locale">eng</string>
+
     <string id="AppName">BWFace</string>
+
+    <string id="ActivityFactorThresholdTitle">Activity factor threshold</string>
+    <string id="DateFieldTypeTitle">Top field</string>
 
     <string id="ActivityLeftFieldTitle">Activity Left Field</string>
     <string id="ActivityMidFieldTitle">Activity Middling Field</string>
@@ -71,7 +75,10 @@
     <string id="Calories">Calories</string>
     <string id="Distance">Distance</string>
     <string id="Seconds">Seconds</string>
-    
+
+    <string id="Date">Only date</string>
+    <string id="DateAndSuns">Date and sunrise/sunset</string>
+
     <string id="Sunrise">Sunrise</string>
     <string id="Sunset">Sunset</string>
     <string id="Altitude">Altitude</string>

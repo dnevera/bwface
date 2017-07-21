@@ -142,7 +142,14 @@
             <listEntry value="1001">@Strings.PressurehPa</listEntry>
             <listEntry value="10">@Strings.PressureMmHg</listEntry>
         </settingConfig>
-    </setting>       
+    </setting>
+
+    <setting propertyKey="@Properties.DateFieldType" title="@Strings.DateFieldTypeTitle">
+        <settingConfig type="list">
+            <listEntry value="100">@Strings.Date</listEntry>
+            <listEntry value="101">@Strings.DateAndSuns</listEntry>
+        </settingConfig>
+    </setting>
 
     <setting propertyKey="@Properties.SystemStatus" title="@Strings.SystemStatusTitle">
         <settingConfig type="list">
@@ -151,7 +158,17 @@
             <listEntry value="102">@Strings.BatteryPhone</listEntry>
             <listEntry value="103">@Strings.PhoneConnection</listEntry>
         </settingConfig>
-    </setting>       
+    </setting>
+
+    <!--setting propertyKey="@Properties.ActivityFactorThreshold" title="@Strings.ActivityFactorThresholdTitle">
+        <settingConfig type="list">
+            <listEntry value="1">1.0</listEntry>
+            <listEntry value="125">1.25</listEntry>
+            <listEntry value="15">1.5</listEntry>
+            <listEntry value="18">1.8</listEntry>
+            <listEntry value="20">2.0</listEntry>
+        </settingConfig>
+    </setting-->
 
     <setting propertyKey="@Properties.CaloriesBarGraphsOn" title="@Strings.CaloriesBarGraphsOnTitle">
         <settingConfig type="boolean" />
