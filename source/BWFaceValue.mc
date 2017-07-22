@@ -247,7 +247,6 @@ class BWFaceValue {
 	    	return "--"; 
 	    }
 	    sunRise=sunRise/1000/60/60;
-	    //var h = toSysHour(sunRise);
 		var r = Lang.format("$1$:$2$", [toSysHour(sunRise), Math.floor((sunRise-Math.floor(sunRise))*60).format("%02.0f")]);
 		return r;
 	}
@@ -259,16 +258,6 @@ class BWFaceValue {
 	    }
         sunSet=sunSet/1000/60/60;
 
-//        if (Sys.getDeviceSettings().is24Hour){
-//            sunSet %= 24;
-//        }
-//        else {
-//            sunSet %= 12;
-//            if(hours==0){
-//                hours=12;
-//            }
-//
-//        }
         var r = Lang.format("$1$:$2$", [toSysHour(sunSet), Math.floor((sunSet-Math.floor(sunSet))*60).format("%02.0f")]);
 		return r;
 	}
@@ -280,7 +269,8 @@ class BWFaceValue {
 			if (n.data == null){
 				return "--";
 			}
-			return (Math.round(n.data*factor*scale)/scale).format(format);
+			n = n.data;
+			return (Math.round(n*factor*scale)/scale).format(format);
     	}			
 		else {
 			return "--";
