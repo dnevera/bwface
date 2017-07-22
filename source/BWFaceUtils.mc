@@ -20,7 +20,11 @@ module BWFace {
 		if (value instanceof Lang.String){
 			var index = value.find(":");
 			if (index==null){
-				return [value,""];
+			    index = value.find(".");
+			    if (index==null){
+				    return [value,""];
+				}
+				index = 1;
 			}
 			var v0 = value.substring(0, index);
 			var v1 = value.substring(index, value.length());
@@ -49,13 +53,5 @@ module BWFace {
 			dc.drawLine(x-size/2-1, y-size/2, x+size/2, y+size/2+1);
 			dc.drawLine(x-size/2-1, y+size/2, x+size/2, y-size/2-1);
 		}
-		
-    	//dc.fillPolygon([[x-size,y-size], [x-size+width,y-size-width]]);//,[x+size+width,y+size-width],[x+size,y+size]]);
-    	/*if (isConnected){
-			dc.fillPolygon([[x+size,y+size],[x+size-width,y+size-width],[x-width+1,y+size*2-width],[x,y+size*2]]);
-			dc.fillPolygon([[x+2,y+size*2-2],[x+2-width-1,y+size*2+width-2],[x+2-width-1,y-size*2-width+2],[x+2,y-size*2+2]]);
-			dc.fillPolygon([[x,y-size*2],[x-width+1,y-size*2+width],[x+size-width,y-size+width],[x+size,y-size]]);
-		}
-		dc.fillPolygon([[x+size,y-size],[x+size+width,y-size+width],[x-size+width,y+size+width],[x-size,y+size]]);*/	
-	}	
+	}
 }
