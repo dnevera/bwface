@@ -179,14 +179,7 @@ class BWFaceValue {
 				break;  	
 
 			case BW_Temperature:
-				var sensorIter =  getTemperatureIterator();
-				if  ( sensorIter != null ){   	    	    	
-					value = sensorIter.next();
-					value = value == null ? "--" : value.data == null ? "--" : value.data.format("%.0f");
-		    	}			
-				else {
-					value = "--";
-				}
+				value = temperature();
 				break;
 			case BW_Pressure:
 				value =  pressure(0.001, "%.1f", 10);
@@ -275,6 +268,24 @@ class BWFaceValue {
 		else {
 			return "--";
 		}
+	}
+
+	function temperature(){
+        var sensorIter =  getTemperatureIterator();
+        if  ( sensorIter != null ){
+            var value = sensorIter.next();
+            if (value.data == null) {
+                return "--";
+            }
+            value = value.data;
+            if (Sys.getDeviceSettings().temperatureUnits == Sys.UNIT_STATUTE) {
+                value = value * 9/5 + 32;
+            }
+            return (Math.round(value)).format("%.0f");
+        }
+        else {
+            return "--";
+        }
 	}
 
 	function getPressureIterator() {
