@@ -7,13 +7,13 @@
     <string id="ActivityFactorThresholdTitle">Activity factor threshold</string>
     <string id="DateFieldTypeTitle">Top field</string>
 
-    <string id="ActivityLeftFieldTitle">Activity Left Field</string>
-    <string id="ActivityMidFieldTitle">Activity Middling Field</string>
-    <string id="ActivityRightFieldTitle">Activity Right Field</string>
+    <string id="ActivityLeftFieldTitle">Left Field</string>
+    <string id="ActivityMidFieldTitle">Middling Field</string>
+    <string id="ActivityRightFieldTitle">Right Field</string>
     <string id="MetricFieldTitle">Sensors Field</string>
 
-    <string id="CaloriesBarGraphsOnTitle">Calories Bar-graph (Round Watches only)</string>
-    <string id="CaloriesCheckPointOn12Title">Calories Check Point At 12 (Round Watches only)</string>
+    <string id="CaloriesBarGraphsOnTitle">Calories Bar-graph</string>
+    <string id="CaloriesCheckPointOn12Title">Calories Check Point At 12</string>
     <string id="UseDayLightSavingTimeTitle">Daylight Saving Time</string>
 
     <string id="SystemStatusTitle">System Status</string>
@@ -26,7 +26,6 @@
     <string id="HoursColorTitle">Hours Color</string>
     <string id="TimeColonColorTitle">Time Colon Color</string>
     <string id="MinutesColorTitle">Minutes Color</string>
-    <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>
 
     <string id="ColorDark">Dark</string>    
     <string id="ColorLight">Light</string>    
@@ -71,6 +70,10 @@
     <string id="ClimbedTitle">m</string>
     <string id="ClimbedFeetTitle">ft</string>
 
+    <string id="SpeedTitle">km/h</string>
+    <string id="SpeedFeetTitle">mph</string>
+    <string id="CadenceTitle">rpm</string>
+
     <string id="Steps">Steps</string>
     <string id="Calories">Calories</string>
     <string id="Distance">Distance</string>
@@ -85,9 +88,9 @@
     
     <string id="HeartRate">Heart Rate</string>
     <string id="Temperature">Temperature</string>
-    <string id="Pressure">Atmospheric Pressure kPa</string>
-    <string id="PressurehPa">Atmospheric Pressure hPa</string>
-    <string id="PressureMmHg">Atmospheric Pressure mmHg</string>
+    <string id="Pressure">Pressure kPa</string>
+    <string id="PressurehPa">Pressure hPa</string>
+    <string id="PressureMmHg">Pressure mmHg</string>
     <string id="UserBMR">Basal metabolic rate</string>
 
     <string id="NotShow">Nothing shows</string>
@@ -99,5 +102,8 @@
     <string id="FloorsClimbed">Floors Climbed</string>
     <string id="Climbed">Climbed</string>
     <string id="Elevation">Elevation</string>
-    
+
+    <string id="Speed">Speed</string>
+    <string id="Cadence">Cadence</string>
+
 </resources>

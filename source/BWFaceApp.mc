@@ -12,11 +12,9 @@ class BWFaceApp extends App.AppBase {
         AppBase.initialize();
     }
 
-    function onStart(state) { 
-    }
+    function onStart(state) {}
 
-    function onStop(state) {
-    }
+    function onStop(state) {}
 
     // Return the initial view of your application here
     function getInitialView() {

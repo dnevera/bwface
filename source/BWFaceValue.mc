@@ -3,6 +3,7 @@ using Toybox.Math as Math;
 using Toybox.Activity as Activity;
 using Toybox.ActivityMonitor as Monitor;
 using Toybox.Time.Gregorian as Calendar;
+using Toybox.WatchUi as Ui;
 
 enum {
 	BW_Distance    = 0,
@@ -21,7 +22,11 @@ enum {
 	BW_ActivityFactor    = 12,
 	BW_FloorsClimbed     = 13,	
 	BW_Elevation         = 14,	
-	BW_Climbed     = 15	
+	BW_Climbed       = 15,	
+	BW_Speed         = 16,
+	//BW_AverageSpeed  = 17,	
+	BW_Cadence         = 18
+	//BW_AverageCadence  = 19	
 }
 
 class BWFaceValue {
@@ -39,60 +44,97 @@ class BWFaceValue {
 		var dict = {:scale=>1,:delim=>"",:title=>"", :format=>"%d", :prec=>3};
 		switch (id) {
 			case BW_Distance: // distance
-				dict[:title] = properties.strings.distanceTitle;
+                if (Sys.getDeviceSettings().distanceUnits == Sys.UNIT_STATUTE) {
+                    dict[:title] = Ui.loadResource( Rez.Strings.DistanceMilesTitle ).toUpper();
+                }
+                else {
+                    dict[:title] = Ui.loadResource( Rez.Strings.DistanceTitle ).toUpper();
+                }
 				dict[:scale] = 10;
 				dict[:delim] = ",";
 				break;
 			case BW_Steps: 
-				dict[:title] = properties.strings.stepsTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.StepsTitle ).toUpper();
 				break;
 			case BW_Calories: 
-				dict[:title] = properties.strings.caloriesTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.CaloriesTitle ).toUpper();
 				break;
 			case BW_Seconds: 
-				dict[:title] = properties.strings.secondsTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.SecondsTitle ).toUpper();
 				break;
 			case BW_Sunrise: 
-				dict[:title] = properties.strings.sunriseTitle;
+				dict[:title] =  Ui.loadResource( Rez.Strings.SunriseTitle ).toUpper();
 				break;
 			case BW_Sunset: 
-				dict[:title] = properties.strings.sunsetTitle;
+				dict[:title] =  Ui.loadResource( Rez.Strings.SunsetTitle ).toUpper();
 				break;
-			case BW_Altitude: 
-				dict[:title] = properties.strings.altitudeTitle;
+			case BW_Altitude:
+			    if (Sys.getDeviceSettings().elevationUnits == Sys.UNIT_STATUTE){
+				    dict[:title] = Ui.loadResource( Rez.Strings.AltitudeFeetTitle ).toUpper();
+				}
+				else {
+				    dict[:title] = Ui.loadResource( Rez.Strings.AltitudeTitle ).toUpper();
+				}
 				break;
 			case BW_HeartRate:
-				dict[:title] = properties.strings.bpmTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.BPMTitle ).toUpper();
 				break;
 			case BW_Temperature:
-				dict[:title] = properties.strings.temperatureTitle;
+                if (Sys.getDeviceSettings().temperatureUnits == Sys.UNIT_STATUTE) {
+                     dict[:title] = Ui.loadResource( Rez.Strings.TemperatureFahrTitle ).toUpper();
+                }
+                else {
+                     dict[:title]= Ui.loadResource( Rez.Strings.TemperatureTitle ).toUpper();
+                }
 				break;
 			case BW_Pressure:
-				dict[:title] = properties.strings.pressureTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.PressureTitle ).toUpper();
 				break;
 			case BW_PressurehPa:
-				dict[:title] = properties.strings. pressurehPaTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.PressurehPaTitle ).toUpper();
 				break;
 			case BW_PressureMmHg:
-				dict[:title] = properties.strings.pressuremmHgTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.PressureMmHgTitle ).toUpper();
 				break;
 			case BW_UserBMR :
-				dict[:title] = properties.strings.userBMRTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.UserBMRTitle ).toUpper();
 				break;
 			case BW_ActivityFactor :
-				dict[:title] = properties.strings.activityFactorTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.ActivityFactorTitle ).toUpper();
 				dict[:scale] = 10;
 				dict[:delim] = ",";
 				
 				break;
 			case BW_FloorsClimbed :
-				dict[:title] = properties.strings.floorsClimbedTitle;
+				dict[:title] = Ui.loadResource( Rez.Strings.FloorsClimbedTitle ).toUpper();
 				break;
 			case BW_Climbed :
-				dict[:title] = properties.strings.climbedTitle;
+			    if (Sys.getDeviceSettings().elevationUnits == Sys.UNIT_STATUTE){
+				    dict[:title] = Ui.loadResource( Rez.Strings.ClimbedFeetTitle ).toUpper();
+				}
+				else {
+				    dict[:title] = Ui.loadResource(Rez.Strings.ClimbedTitle  ).toUpper();
+				}
 				break;
 			case BW_Elevation :
-				dict[:title] = properties.strings.elevationTitle;
+                if (Sys.getDeviceSettings().elevationUnits == Sys.UNIT_STATUTE) {
+                     dict[:title] = Ui.loadResource( Rez.Strings.ElevationFeetTitle ).toUpper();
+                }
+                else {
+                     dict[:title]= Ui.loadResource( Rez.Strings.ElevationTitle ).toUpper();
+                }
+				break;
+				
+			case BW_Speed :
+                if (Sys.getDeviceSettings().elevationUnits == Sys.UNIT_STATUTE) {
+                     dict[:title] = Ui.loadResource( Rez.Strings.SpeedFeetTitle ).toUpper();
+                }
+                else {
+                     dict[:title] = Ui.loadResource( Rez.Strings.SpeedTitle ).toUpper();
+                }
+				break;
+			case BW_Cadence :
+				dict[:title] = Ui.loadResource( Rez.Strings.CadenceTitle ).toUpper();
 				break;
 		}
 		return dict;
@@ -206,7 +248,7 @@ class BWFaceValue {
 				}
 				break;
 				
-			case BW_Elevation:{
+			case BW_Elevation:
 				var sensorIter = getElevationIterator();
 				if  ( sensorIter != null ){   	    	    	
 					value = sensorIter.next();
@@ -214,9 +256,33 @@ class BWFaceValue {
 		    	}			
 				else {
 					value = "--";
+				}				
+				break;
+				
+			case BW_Speed :
+				value = Activity.getActivityInfo().currentSpeed;
+				if (value != null ) {
+				    if (Sys.getDeviceSettings().distanceUnits == Sys.UNIT_STATUTE){
+                        value =  Math.round(value*2.23694).format("%.1f");
+				    }
+				    else {
+					    value =  Math.round(value*3.6).format("%.1f");
+					 }
 				}
+				else {
+					value = "--";
 				}
-				break;							
+				break;
+
+            case BW_Cadence :
+				value = Activity.getActivityInfo().currentCadence;
+				if (value != null ) {
+				    value = value.format("%.0f");
+				}
+				else {
+					value = "--";
+				}
+				break;
 		}
 		return value;
 	} 

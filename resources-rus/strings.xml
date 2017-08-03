@@ -9,13 +9,13 @@
 
     <string id="DateFieldTypeTitle">Верхнее поле</string>
 
-    <string id="ActivityLeftFieldTitle">Левое поле в строке активностей</string>
-    <string id="ActivityMidFieldTitle">Среднее поле в строке активносте</string>
-    <string id="ActivityRightFieldTitle">Правое поле в строке активносте</string>
+    <string id="ActivityLeftFieldTitle">Левое поле</string>
+    <string id="ActivityMidFieldTitle">Среднее поле</string>
+    <string id="ActivityRightFieldTitle">Правое поле</string>
     <string id="MetricFieldTitle">Поле сенсоров</string>
 
-    <string id="CaloriesBarGraphsOnTitle">График расхода калорий (только для циферблатов)</string>
-    <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12 (только для циферблатов)</string>
+    <string id="CaloriesBarGraphsOnTitle">График расхода калорий</string>
+    <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12</string>
     <string id="UseDayLightSavingTimeTitle">Летнее время</string>
 
     <string id="SystemStatusTitle">Системные статусы</string>
@@ -28,7 +28,6 @@
     <string id="HoursColorTitle">Цвет часов</string>
     <string id="TimeColonColorTitle">Цвет разделителя</string>
     <string id="MinutesColorTitle">Цвет минут</string>
-    <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>
 
     <string id="ColorDark">Тёмный</string>    
     <string id="ColorLight">Нормальный</string>    
@@ -51,7 +50,7 @@
     <string id="CaloriesTitle">ккал</string>
     <string id="DistanceTitle">км</string>
     <string id="DistanceMilesTitle">mi</string>    
-    <string id="BPMTitle">чс/м</string>
+    <string id="BPMTitle">уд/м</string>
     
     <string id="SecondsTitle">сек</string>
     
@@ -71,9 +70,13 @@
     <string id="FloorsClimbedTitle">этаж.</string>
     <string id="ElevationTitle">м</string>
     <string id="ElevationFeetTitle">фт</string>
-    <string id="ClimbedTitle">m</string>
-    <string id="ClimbedFeetTitle">ft</string>
-	
+    <string id="ClimbedTitle">м</string>
+    <string id="ClimbedFeetTitle">фт</string>
+
+    <string id="SpeedTitle">км/ч</string>
+    <string id="SpeedFeetTitle">мил/ч</string>
+    <string id="CadenceTitle">об/м</string>
+
     <string id="Steps">Шагов</string>
     <string id="Calories">Калории</string>
     <string id="Distance">Дистанция</string>
@@ -88,9 +91,9 @@
 
     <string id="HeartRate">ЧСС</string>    
     <string id="Temperature">Температура</string>
-    <string id="Pressure">Атмосферное давление кПа</string>
-    <string id="PressurehPa">Атмосферное давление гПа</string>
-    <string id="PressureMmHg">Атмосферное давление мм.рт.ст.</string>
+    <string id="Pressure">Давление кПа</string>
+    <string id="PressurehPa">Давление гПа</string>
+    <string id="PressureMmHg">Давление мм.рт.ст.</string>
     <string id="UserBMR">Уровень основного обмена</string>
     
     <string id="NotShow">Ничего</string>
@@ -102,5 +105,8 @@
     <string id="FloorsClimbed">Пройденных этажей</string>
     <string id="Climbed">Общий подъем вверх</string>
     <string id="Elevation">Подъем</string>
-    
+
+    <string id="Speed">Скорость</string>
+    <string id="Cadence">Каденция</string>
+
 </resources>

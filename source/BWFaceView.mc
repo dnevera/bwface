@@ -29,11 +29,14 @@ class BWFaceView extends Ui.WatchFace {
     var sysinfoField;	
     var bmrMeter;	
     var metricRateField;	
-    			
+
+    var _dc;
+
     function handlSettingUpdate(){    	
     	properties.setup();  
     	activityField.setup(); 
     	metricRateField.setup();
+    	//onLayout(_dc);
 	}
     	
     function initialize() {
@@ -172,14 +175,14 @@ class BWFaceView5 extends BWFaceView {
 
 	 function graphsField(dc,locX,locY, height) {
     	var hist = ActivityMonitor.getHistory();
-    	//var info = ActivityMonitor.getInfo();
     	var calories = activityField.currentCalories;
     	
     	var font = properties.fonts.infoTitleFontTiny;
     	var colSize = dc.getTextDimensions("W", font);
-    	var w = (colSize[0]+properties.framePadding/2);    	
-    	
-    	var x0 = locX - w*7/2+properties.graphsPadding;    	
+    	var w      = (colSize[0]+properties.framePadding/2) * 2;
+    	var offset = w/2+properties.framePadding/2;
+
+    	var x0 = locX - (offset)*8/2+properties.graphsPadding;
     	var y = locY+colSize[1]+properties.framePadding+properties.graphsTopPadding;
     	var x = x0;
     	
@@ -190,12 +193,12 @@ class BWFaceView5 extends BWFaceView {
 	    		var t = Calendar.info(m, Time.FORMAT_MEDIUM); 
 	    		dc.drawText(x, y, font, t.day_of_week.toString().substring(0, 1), Gfx.TEXT_JUSTIFY_CENTER);
 	    		dc.fillRectangle(x-colSize[0]/2, y-1, w/2, 1);
-	    		x +=  w;
+	    		x +=  offset;
 	    	}
     		return;
     	}
     	    	
-    	x = x0;    	    	
+    	x = x0+properties.framePadding/2;
     	var min0 = 100000;
     	var max0 = 0.1;
     	for (var i = hist.size()-1; i>=0; i--){
@@ -205,7 +208,7 @@ class BWFaceView5 extends BWFaceView {
     		if (hist[i].calories>max0) { max0 = hist[i].calories; }
 
     		dc.drawText(x, y, font, t.day_of_week.toString().substring(0, 1), Gfx.TEXT_JUSTIFY_CENTER);
-    		x +=  w;
+    		x +=  offset;
     	}
 	
 		var m = new Time.Moment(Time.today().value());
@@ -236,7 +239,7 @@ class BWFaceView5 extends BWFaceView {
     		}
     		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
     		dc.fillRectangle(x, y-h, w/2, h);
-    		x +=  w;
+    		x +=  offset;
     		avrg += h;
 		}	
 		
@@ -253,7 +256,7 @@ class BWFaceView5 extends BWFaceView {
 		}
 		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
 		dc.fillRectangle(x, y-h, w/2, h);
-		x +=  w;
+		x +=  w+properties.framePadding/2;
 		
 		avrg /= hist.size();	
 		avrgAf /= hist.size();
@@ -277,7 +280,6 @@ class BWFaceView5 extends BWFaceView {
 }
 
 // https://forums.garmin.com/forum/developers/connect-iq/1229818-watch-face-onpartialupdate-does-not-work-on-all-devices-which-support-this-function
-
 // with onPartialUpdate, the println()'s are useful for debugging.  
 // If you exceed the budget, you can see by how much, etc.  The do1hz is used in onUpdate()
 // and is key.
