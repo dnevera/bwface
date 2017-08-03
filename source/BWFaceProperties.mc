@@ -27,7 +27,7 @@ class BWFaceProperties{
 	var sysinfoTopPadding =  4;
 	
 	var metricPadding     = 0;	
-	var graphsHeight      = 15;
+	var graphsHeight      = 21;
 	var graphsPadding     = 0;
 	var graphsTopPadding  = 0;
 	
@@ -54,7 +54,6 @@ class BWFaceProperties{
 	var statuteFactor = 1;
 	
 	var fonts = new BWFaceFonts();	
-	var strings = new BWFaceStrings();
 
 	function initialize(_dc){
 		dc = _dc;
@@ -76,12 +75,14 @@ class BWFaceProperties{
         	caloriesCircleTickWidth = 6;
         	topFieldPadding = 1;
 			dayPadding      = 0;        	
-			bmrTopPadding   =  12;        	
-			activityPadding = -6;  
+			bmrTopPadding   =  12;
+			bmrPadding      =  4;
+			activityPadding = -6;
 			sysinfoTopPadding = 6;
 			metricPadding = 8;
 		}
 		else {
+			var f = !getProperty("CaloriesBarGraphsOn", false);// && System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_ROUND;
 			if (dc.getWidth()<=148) { // vivoactive
 				caloriesCircleTickWidth = 6;
 				caloriesCircleWidth = 4;	
@@ -95,26 +96,44 @@ class BWFaceProperties{
 	            dayPadding        = 9;
 			}
 			else if  (dc.getHeight()<=218){ // 5s
-				activityPadding = -10;  
-				clockPadding = 8;
-				bmrTopPadding = 4;	
-				bmrPadding    = 6;
+			    graphsHeight    = 18;
+				activityPadding = -11;
+				clockPadding = 9;
+				bmrTopPadding = 0;
+				bmrPadding    = 4;
 				sysinfoTopPadding =  7;	
 				metricPadding = 0;
-				graphsPadding = 6;	
-				graphsTopPadding = -2;
+				graphsPadding = 1;
+				graphsTopPadding = -1;
 				sunHoursPadding  =  8;
+//				if (f) {
+//				    bmrTopPadding += 3;
+//				    bmrPadding -= 6;
+//				    metricPadding = 8;
+//				    clockPadding += -1;
+//				}
 			}
 			else {
-				clockPadding    = 7;
-				topFieldPadding = 3;
+				clockPadding    = 10;
+				topFieldPadding = 4;
 				dayPadding      = -1; 
-				activityPadding =  -10;	
+				activityPadding =  -12;
 				sysinfoTopPadding =  4;	
-				bmrTopPadding = 1;	
-				sysinfoTopPadding =  5;	
-				metricPadding = 1;	
-				graphsPadding = 5;					
+				bmrTopPadding = -2;
+				bmrPadding    = 5;
+            	sysinfoTopPadding =  5;
+				metricPadding = 4;
+				graphsPadding = 5;
+				graphsTopPadding = 1;
+//				if (f) {
+//				    activityPadding += 1;
+//				    clockPadding += -2;
+//				    bmrTopPadding += 5;
+//				    bmrPadding -= 6;
+//				    metricPadding = 12;
+//				    //sunHoursPadding += -2;
+//				    topFieldPadding += 2;
+//				}
 			}
 		}		
 		
@@ -138,9 +157,7 @@ class BWFaceProperties{
         framesColor      = 0x4F4F4F; 
         batteryLowColor  = 0xF42416;
         batteryWarnColor = 0xFFA500;    	
-		
-		strings.setup(System.getDeviceSettings());
-		
+
 		if (System.getDeviceSettings().distanceUnits == System.UNIT_STATUTE) {
 		   statuteFactor = 1.609344;
 		} 

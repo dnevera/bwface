@@ -97,6 +97,8 @@
             <listEntry value="9">@Strings.Pressure</listEntry>
             <listEntry value="1001">@Strings.PressurehPa</listEntry>
             <listEntry value="10">@Strings.PressureMmHg</listEntry>
+            <listEntry value="16">@Strings.Speed</listEntry>
+            <listEntry value="18">@Strings.Cadence</listEntry>
         </settingConfig>
     </setting>
     
@@ -119,6 +121,8 @@
             <listEntry value="9">@Strings.Pressure</listEntry>
             <listEntry value="1001">@Strings.PressurehPa</listEntry>
             <listEntry value="10">@Strings.PressureMmHg</listEntry>
+            <listEntry value="16">@Strings.Speed</listEntry>
+            <listEntry value="18">@Strings.Cadence</listEntry>
         </settingConfig>
     </setting>
     	 	    
@@ -141,6 +145,8 @@
             <listEntry value="9">@Strings.Pressure</listEntry>
             <listEntry value="1001">@Strings.PressurehPa</listEntry>
             <listEntry value="10">@Strings.PressureMmHg</listEntry>
+            <listEntry value="16">@Strings.Speed</listEntry>
+            <listEntry value="18">@Strings.Cadence</listEntry>
         </settingConfig>
     </setting>
 

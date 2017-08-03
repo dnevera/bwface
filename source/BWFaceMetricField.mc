@@ -52,15 +52,30 @@ class BWFaceMetricField extends BWFaceField {
 		if (drawTopTitles) {
 	    	var xc;
 	    	var yc;
-	    	if (Sys.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
-	    		xc = x-3;
-	    		yc = y + size[1];
-	    	}
-	    	else {
+	    	//if (Sys.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND){
+	    	//	xc = x-3;
+	    	//	yc = y + size[1]-2;
+	    	//}
+	    	//else {
+	    	//	xc = x+size[0]+properties.fractionNumberPadding;
+	    	//	yc = y+2;
+	    	//}
+
+            //var tp = (!properties.getProperty("CaloriesBarGraphsOn", false)) && (Sys.getDeviceSettings().screenShape != Sys.SCREEN_SHAPE_SEMI_ROUND)
+			if (
+			(/*!properties.getProperty("CaloriesBarGraphsOn", false) ||*/
+			Sys.getDeviceSettings().screenShape == Sys.SCREEN_SHAPE_RECTANGLE)
+			&&
+			Sys.getDeviceSettings().screenShape != Sys.SCREEN_SHAPE_SEMI_ROUND
+			) {
 	    		xc = x+size[0]+properties.fractionNumberPadding;
 	    		yc = y+2;
-	    	}			
-			
+			}
+			else {
+	    		xc = x-3;
+	    		yc = y + size[1]-2;
+			}
+
 			dc.setColor(properties.bgColor, Gfx.COLOR_TRANSPARENT);
 			dc.drawText(xc-1, yc-1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
 			dc.drawText(xc+1, yc+1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);

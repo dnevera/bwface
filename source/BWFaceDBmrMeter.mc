@@ -9,8 +9,8 @@ using Toybox.Math as Math;
 class BWFaceDBmrMeter extends BWFaceField {
 	
 	//var userBmr;
-	var tickPosX = 0;		       
-	var tickPosY = 0;		       
+	var tickPosX = 0;
+	var tickPosY = 0;
 		       
 	protected var dc;
 	protected var drawTopTitles = true;	
@@ -68,7 +68,7 @@ class BWFaceDBmrMeter extends BWFaceField {
 		fractSize = dc.getTextDimensions(fract, properties.fonts.infoFractFont);
 		size      = dc.getTextDimensions(value, properties.fonts.infoFont);
 		 
-		title = " "+properties.strings.caloriesTitle;		
+		title = " "+Ui.loadResource( Rez.Strings.CaloriesTitle ).toUpper();
 	} 
 	
 	function drawInRectangle(calories) {
@@ -173,25 +173,42 @@ class BWFaceDBmrMeter extends BWFaceField {
 		 
 		dc.setColor(properties.labelColor,  Gfx.COLOR_TRANSPARENT);
 		dc.drawText(txtX, caloriesLinePos,  properties.fonts.infoFont, value, Gfx.TEXT_JUSTIFY_LEFT);
-		
-		txtX += size[0];
-		var fractPos = caloriesLinePos+size[1]-fractSize[1]-1;
-		dc.drawText(txtX-1+properties.fractionNumberPadding, fractPos,  properties.fonts.infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
+
+		var f = !properties.getProperty("CaloriesBarGraphsOn", false) && Sys.getDeviceSettings().screenShape != Sys.SCREEN_SHAPE_SEMI_ROUND;
+        var fractPos;
+
+//	    if (f){
+//	        //txtX += size[0];
+//            fractPos = caloriesLinePos+size[1]-fractSize[1]-1;
+//        }
+//        else {
+		    fractPos = caloriesLinePos+1;
+//        }
+		var xx = txtX-1+properties.fractionNumberPadding + size[0];
+		dc.drawText(xx, fractPos,  properties.fonts.infoFractFont, fract, Gfx.TEXT_JUSTIFY_LEFT);
 		
 		if (drawTopTitles) {
-			var y = caloriesLinePos+2;
-			txtX +=properties.fractionNumberPadding;  
-			dc.drawText(txtX, y, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			var y;
+			var tx;
+			//txtX +=properties.fractionNumberPadding;
+//			if (f){
+//			    tx = txtX +properties.fractionNumberPadding+size[0];
+//			    y = caloriesLinePos+2;
+//			}
+//			else {
+			    y = caloriesLinePos+size[1]-2;
+			    tx = txtX-2;
+//			}
+			dc.drawText(tx, y, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
 			if (isDeficit && scale>1){
-				var p = " "+scale.format("%d");
-				dc.drawText(txtX+fractSize[0]+properties.caloriesCircleWidth-properties.bmrPadding-1, y, properties.fonts.infoTitleFontTiny, p, Gfx.TEXT_JUSTIFY_LEFT);
+				var p = scale.format("%d");
+				dc.drawText(txtX+fractSize[0]+properties.caloriesCircleWidth-properties.bmrPadding+size[0],
+				    caloriesLinePos+2, properties.fonts.infoTitleFontTiny, p, Gfx.TEXT_JUSTIFY_LEFT);
 			}
 		}
 				
 		dc.setPenWidth(1);		
-		//tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW+size[0]+fractSize[0])+properties.bmrPadding;
-		//tickPosX = dc.getWidth() - (txtX-properties.caloriesCircleWidth-tickW)+properties.bmrPadding;
-		tickPosX = dc.getWidth()/2* (1 - Math.cos(angle))+properties.caloriesCircleWidth+tickW; //dc.getWidth() - (properties.caloriesCircleWidth+tickW+txtX+properties.bmrPadding);
+		tickPosX = dc.getWidth()/2* (1 - Math.cos(angle))+properties.caloriesCircleWidth+tickW;
 		tickPosY = caloriesLinePos;
 	}
 	
