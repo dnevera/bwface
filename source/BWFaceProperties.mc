@@ -103,7 +103,7 @@ class BWFaceProperties{
 				bmrPadding    = 4;
 				sysinfoTopPadding =  7;	
 				metricPadding = 0;
-				graphsPadding = 1;
+				graphsPadding = -2;
 				graphsTopPadding = -1;
 				sunHoursPadding  =  8;
 //				if (f) {
@@ -122,8 +122,8 @@ class BWFaceProperties{
 				bmrTopPadding = -2;
 				bmrPadding    = 5;
             	sysinfoTopPadding =  5;
-				metricPadding = 4;
-				graphsPadding = 5;
+				metricPadding = 3;
+				graphsPadding = 0;
 				graphsTopPadding = 1;
 //				if (f) {
 //				    activityPadding += 1;

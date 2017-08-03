@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffddc631-a7be-4f14-b38a-3ee1d2b74fb4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/BWFaceStrings.mc" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/BWFace-settings.json" afterPath="$PROJECT_DIR$/bin/BWFace-settings.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources-eng/strings.xml" afterPath="$PROJECT_DIR$/resources-eng/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources-rus/strings.xml" afterPath="$PROJECT_DIR$/resources-rus/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/settings/settings.xml" afterPath="$PROJECT_DIR$/resources/settings/settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/strings/strings.xml" afterPath="$PROJECT_DIR$/resources/strings/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceApp.mc" afterPath="$PROJECT_DIR$/source/BWFaceApp.mc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceDBmrMeter.mc" afterPath="$PROJECT_DIR$/source/BWFaceDBmrMeter.mc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceFonts.mc" afterPath="$PROJECT_DIR$/source/BWFaceFonts.mc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceMetricField.mc" afterPath="$PROJECT_DIR$/source/BWFaceMetricField.mc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceProperties.mc" afterPath="$PROJECT_DIR$/source/BWFaceProperties.mc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceValue.mc" afterPath="$PROJECT_DIR$/source/BWFaceValue.mc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceView.mc" afterPath="$PROJECT_DIR$/source/BWFaceView.mc" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +17,8 @@
       <file leaf-file-name="BWFaceProperties.mc" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/BWFaceProperties.mc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="107" column="19" lean-forward="true" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+            <state relative-caret-position="524">
+              <caret line="126" column="17" lean-forward="false" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -40,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/source/BWFaceValue.mc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-196">
-              <caret line="143" column="22" lean-forward="true" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
+              <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -50,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/source/BWFaceMetricField.mc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="428">
-              <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+              <caret line="82" column="35" lean-forward="false" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -60,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/source/BWFaceDBmrMeter.mc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="372">
-              <caret line="198" column="32" lean-forward="true" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
+              <caret line="198" column="32" lean-forward="false" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -70,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/source/BWFaceView.mc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="684">
-              <caret line="189" column="8" lean-forward="true" selection-start-line="189" selection-start-column="8" selection-end-line="189" selection-end-column="8" />
+              <caret line="189" column="8" lean-forward="false" selection-start-line="189" selection-start-column="8" selection-end-line="189" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -355,7 +343,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28656000" />
+    <option name="totallyTimeSpent" value="28776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -424,13 +412,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/BWFaceStrings.mc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/source/BWFaceStrings.mc" />
     <entry file="file://$PROJECT_DIR$/resources/drawables/drawables.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -515,7 +497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,7 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -677,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,14 +675,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/BWFaceStrings.mc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/source/BWFaceStrings.mc" />
     <entry file="file://$PROJECT_DIR$/source/BWFaceFonts.mc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -732,7 +703,7 @@
     <entry file="file://$PROJECT_DIR$/source/BWFaceMetricField.mc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
-          <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+          <caret line="82" column="35" lean-forward="false" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -740,7 +711,7 @@
     <entry file="file://$PROJECT_DIR$/source/BWFaceDBmrMeter.mc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
-          <caret line="198" column="32" lean-forward="true" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
+          <caret line="198" column="32" lean-forward="false" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -756,7 +727,7 @@
     <entry file="file://$PROJECT_DIR$/source/BWFaceValue.mc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-196">
-          <caret line="143" column="22" lean-forward="true" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
+          <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -764,15 +735,15 @@
     <entry file="file://$PROJECT_DIR$/source/BWFaceView.mc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
-          <caret line="189" column="8" lean-forward="true" selection-start-line="189" selection-start-column="8" selection-end-line="189" selection-end-column="8" />
+          <caret line="189" column="8" lean-forward="false" selection-start-line="189" selection-start-column="8" selection-end-line="189" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/BWFaceProperties.mc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="107" column="19" lean-forward="true" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+        <state relative-caret-position="524">
+          <caret line="126" column="17" lean-forward="false" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
           <folding />
         </state>
       </provider>
