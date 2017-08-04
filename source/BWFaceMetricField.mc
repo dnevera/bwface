@@ -4,7 +4,8 @@ using Toybox.Graphics as Gfx;
 using Toybox.Activity as Act;
 
 class BWFaceMetricField extends BWFaceField {
-  
+
+    //var rightY;
  	protected var dc;
  	protected var drawTopTitles = true;
  	protected var faceValue;
@@ -46,7 +47,8 @@ class BWFaceMetricField extends BWFaceField {
 		dc.drawText(x, y, properties.fonts.infoFont, hr, Gfx.TEXT_JUSTIFY_LEFT);
 		if (right!=null){
 			var sizer  = dc.getTextDimensions(right, properties.fonts.infoFractFont);
-			dc.drawText(x+size[0]+1, y+size[1]-sizer[1], properties.fonts.infoFractFont, right, Gfx.TEXT_JUSTIFY_LEFT);
+			//dc.drawText(x+size[0]+1, y+size[1]-sizer[1], properties.fonts.infoFractFont, right, Gfx.TEXT_JUSTIFY_LEFT);
+			dc.drawText(x+size[0], y, properties.fonts.infoFractFont, right, Gfx.TEXT_JUSTIFY_LEFT);
 		}
 		
 		if (drawTopTitles) {
@@ -76,11 +78,11 @@ class BWFaceMetricField extends BWFaceField {
 	    		yc = y + size[1]-2;
 			}
 
-			dc.setColor(properties.bgColor, Gfx.COLOR_TRANSPARENT);
-			dc.drawText(xc-1, yc-1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
-			dc.drawText(xc+1, yc+1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
-			dc.drawText(xc-1, yc+1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
-			dc.drawText(xc+1, yc-1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			//dc.setColor(properties.bgColor, Gfx.COLOR_TRANSPARENT);
+			//dc.drawText(xc-1, yc-1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			//dc.drawText(xc+1, yc+1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			//dc.drawText(xc-1, yc+1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
+			//dc.drawText(xc+1, yc-1, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);
 			
 			dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
 			dc.drawText(xc, yc, properties.fonts.infoTitleFontTiny, title, Gfx.TEXT_JUSTIFY_LEFT);	    			

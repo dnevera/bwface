@@ -14,7 +14,7 @@
     <string id="ActivityRightFieldTitle">Правое поле</string>
     <string id="MetricFieldTitle">Поле сенсоров</string>
 
-    <string id="CaloriesBarGraphsOnTitle">График расхода калорий</string>
+    <string id="CaloriesBarGraphsOnTitle">График коэффициента активности</string>
     <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12</string>
     <string id="UseDayLightSavingTimeTitle">Летнее время</string>
 

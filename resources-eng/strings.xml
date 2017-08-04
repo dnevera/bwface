@@ -12,7 +12,7 @@
     <string id="ActivityRightFieldTitle">Right Field</string>
     <string id="MetricFieldTitle">Sensors Field</string>
 
-    <string id="CaloriesBarGraphsOnTitle">Calories Bar-graph</string>
+    <string id="CaloriesBarGraphsOnTitle">Activity factor Bar-graph</string>
     <string id="CaloriesCheckPointOn12Title">Calories Check Point At 12</string>
     <string id="UseDayLightSavingTimeTitle">Daylight Saving Time</string>
 

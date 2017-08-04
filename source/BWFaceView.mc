@@ -182,13 +182,34 @@ class BWFaceView5 extends BWFaceView {
     	var w      = (colSize[0]+properties.framePadding/2) * 2;
     	var offset = w/2+properties.framePadding/2;
 
-    	var x0 = locX - (offset)*8/2+properties.graphsPadding;
+        var count;
+        var start;
+        var start0 = 8;
+        var shift;
+
+        if (
+        properties.metricField == BW_HeartRate ||
+        properties.metricField == BW_Temperature ||
+        properties.metricField == BW_Pressure
+        ) {
+            count = 8;
+            start = hist.size()-1;
+            shift = 0;
+        }
+        else {
+            count = 7;
+            start = hist.size()-2;
+            shift = colSize[0]/2;
+            start0 -= 1;
+        }
+
+    	var x0 = locX - (offset)*count/2+properties.graphsPadding + shift;
     	var y = locY+colSize[1]+properties.framePadding+properties.graphsTopPadding;
     	var x = x0;
     	
     	if (hist.size()==0){
     	
-	    	for (var i = 7; i>=0; i--){
+	    	for (var i = start0; i>=0; i--){
 	    		var m = new Time.Moment(Time.today().value()-3600*24*i);
 	    		var t = Calendar.info(m, Time.FORMAT_MEDIUM); 
 	    		dc.drawText(x, y, font, t.day_of_week.toString().substring(0, 1), Gfx.TEXT_JUSTIFY_CENTER);
@@ -201,7 +222,7 @@ class BWFaceView5 extends BWFaceView {
     	x = x0+properties.framePadding/2;
     	var min0 = 100000;
     	var max0 = 0.1;
-    	for (var i = hist.size()-1; i>=0; i--){
+    	for (var i = start; i>=0; i--){
     		var t = Calendar.info(hist[i].startOfDay, Time.FORMAT_MEDIUM); 
 
     		if (hist[i].calories<min0) { min0 = hist[i].calories; }
@@ -224,7 +245,7 @@ class BWFaceView5 extends BWFaceView {
 		var avrg = 0;
 		var avrgAf = 0;
     	var color;
-    	for (var i = hist.size()-1; i>=0; i--){
+    	for (var i = start; i>=0; i--){
     		var af = hist[i].calories/bmr;
     		avrgAf += af;
     		var h = height * hist[i].calories/max0;
@@ -272,10 +293,12 @@ class BWFaceView5 extends BWFaceView {
 		var x1 = x0-colSize[0]/2;
 		var x2 = x-w/2-1;
 		var y1 = y-avrg;
-		dc.drawLine(x1, y1, x2, y1);    
+		dc.drawLine(x1, y1, x2, y1);
+		dc.drawLine(x1, y1+1, x2, y1+1);
+
 		dc.setColor(properties.bgColor,  Gfx.COLOR_TRANSPARENT);
-		dc.drawLine(x1, y1+1, x2, y1+1);    
-		dc.drawLine(x1, y1-1, x2, y1-1);    
+		dc.drawLine(x1, y1+2, x2, y1+2);
+		dc.drawLine(x1, y1-1, x2, y1-1);
     }  
 }
 
