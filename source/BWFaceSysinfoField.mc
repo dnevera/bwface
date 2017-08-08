@@ -6,13 +6,17 @@ enum {
 	BW_SysBatteryNone    = 100,
 	BW_SysBattery        = 101,
 	BW_SysBatteryPhone   = 102,
-	BW_SysPhone          = 103
+	BW_SysPhone          = 103,
+	BW_SysBatteryPhoneNotifications = 104,
+	BW_SysPhoneNotifications = 105,
+	BW_SysNotifications = 106
 }
 
 class BWFaceSysinfoField extends BWFaceField {
  
  	var batterySize = [18,9]; 
- 
+ 	var messageSize = [12,7];
+
  	protected var dc;
  	protected var framePadding;
  
@@ -23,12 +27,26 @@ class BWFaceSysinfoField extends BWFaceField {
 	}
 	
 	function draw() {
-	
+
+        var systemStats = Sys.getSystemStats();
+        var battery  = systemStats.battery;
+        var fbattery =  battery.format("%d") + "%";
+
+        var fsize = dc.getTextDimensions(fbattery, properties.fonts.infoTitleFont);
+
+        var wm = messageSize[0];
+        var w = batterySize[0];
+        var h = batterySize[1];
+        var hm = messageSize[1];
+        var x = locX-w/2-fsize[0]/2;
+        var y = locY;
+
 		var picon = false; 
-		var bicon = false; 
-		
+		var bicon = false;
+		var micon = false;
+
 		switch(properties.getProperty("SystemStatus", BW_SysBattery)) {
-			case BW_SysBatteryNone: 
+			case BW_SysBatteryNone:
 				break;
 			case BW_SysBattery:
 				bicon = true;
@@ -40,19 +58,30 @@ class BWFaceSysinfoField extends BWFaceField {
 			case BW_SysPhone:
 				picon = true;
 				break;
+            case BW_SysBatteryPhoneNotifications:
+				bicon = true;
+				picon = true;
+				micon = Sys.getDeviceSettings().notificationCount>0;
+				break;
+            case BW_SysPhoneNotifications:
+				picon = true;
+				micon = Sys.getDeviceSettings().notificationCount>0;
+				x = locX-properties.btIconSize;
+				break;
+            case BW_SysNotifications:
+				micon = Sys.getDeviceSettings().notificationCount>0;
+				x = locX;
+				break;
 		}
-	
-		var systemStats = Sys.getSystemStats();		
-		var battery  = systemStats.battery;
-        var fbattery =  battery.format("%d") + "%";
-		
-		var fsize = dc.getTextDimensions(fbattery, properties.fonts.infoTitleFont);
-		
-		var w = batterySize[0];
-		var h = batterySize[1];
-        var x = locX-w/2-fsize[0]/2;
-		var y = locY;
         
+        dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
+
+        if (micon) {
+            BWFace.messagesIcon(dc,x-wm/2, y, wm, hm);
+            x += wm/2+4;
+            x = picon ? x + properties.btIconSize/2 : x;
+        }
+
         if (battery>50){
         	dc.setColor(properties.labelColor, Gfx.COLOR_TRANSPARENT);
         }
@@ -62,7 +91,7 @@ class BWFaceSysinfoField extends BWFaceField {
         else {
         	dc.setColor(properties.batteryLowColor, Gfx.COLOR_TRANSPARENT);
         }
-        
+
         x = picon ? x + properties.btIconSize/2 : x;
         
         if (bicon) {
@@ -70,13 +99,13 @@ class BWFaceSysinfoField extends BWFaceField {
        		dc.drawRoundedRectangle(x, y, w, h, 2);
         	dc.fillRoundedRectangle(x, y, w*battery/100, h, 2);
         }
-        
+
         var xp = bicon ? x+w+framePadding : locX;
-        var yp = y-fsize[1]/2+h/2-2;      
-                
+        var yp = y-fsize[1]/2+h/2-2;
+
         if (picon){
-        	//xp = bicon ? xp+properties.btIconSize/2 : xp - properties.btIconSize*3+properties.btIconSize/2;
         	xp = bicon ? xp  : locX-properties.btIconSize - framePadding;
+        	xp = micon && !bicon ? xp + wm : xp;
         	var color = Sys.getDeviceSettings().phoneConnected ? properties.btIconColor: 0x303030;
 	        BWFace.phoneIcon(dc,
                          xp+properties.btIconSize, y+h/2, 

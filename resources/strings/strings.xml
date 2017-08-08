@@ -96,8 +96,11 @@
 
     <string id="NotShow">Nothing shows</string>
     <string id="Battery">Battery Status</string>
-    <string id="BatteryPhone">Battery and Phone Connection</string>
-    <string id="PhoneConnection">Phone Connection Status</string>
+    <string id="BatteryPhone">Battery/Phone</string>
+    <string id="PhoneConnection">Phone Connection</string>
+    <string id="NotificationBatteryPhoneConnection">Notification/Battery/Phone</string>
+    <string id="NotificationPhoneConnection">Notification/Phone</string>
+    <string id="Notification">Notification</string>
 
     <string id="ActivityFactor">Activity Factor</string>
     <string id="FloorsClimbed">Floors Climbed</string>

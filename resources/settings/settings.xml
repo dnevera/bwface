@@ -163,6 +163,9 @@
             <listEntry value="101">@Strings.Battery</listEntry>        
             <listEntry value="102">@Strings.BatteryPhone</listEntry>
             <listEntry value="103">@Strings.PhoneConnection</listEntry>
+            <listEntry value="104">@Strings.NotificationBatteryPhoneConnection</listEntry>
+            <listEntry value="105">@Strings.NotificationPhoneConnection</listEntry>
+            <listEntry value="106">@Strings.Notification</listEntry>
         </settingConfig>
     </setting>
 

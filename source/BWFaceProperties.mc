@@ -118,10 +118,9 @@ class BWFaceProperties{
 				topFieldPadding = 4;
 				dayPadding      = -1; 
 				activityPadding =  -12;
-				sysinfoTopPadding =  4;	
 				bmrTopPadding = -2;
 				bmrPadding    = 5;
-            	sysinfoTopPadding =  5;
+            	sysinfoTopPadding =  3;
 				metricPadding = 2;
 				graphsPadding = 2;
 				graphsTopPadding = 1;

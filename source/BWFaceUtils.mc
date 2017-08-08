@@ -34,8 +34,12 @@ module BWFace {
 		return [dec[0].toString(),delim+dec[1].format("%0"+prec+"d")];
 	}
 	
+	function messagesIcon(dc, x, y, w, h){
+	    var m = [[x,y], [x+w,y], [x+w,y+h], [x+w*2/3-1,y+h], [x+w*1/3-1,y+h+h/2], [x+w*1/3-1,y+h], [x,y+h]];
+		dc.fillPolygon(m);
+	}
 
-	function phoneIcon(dc,_x,y,size,width,color, isConnected){
+	function phoneIcon(dc, _x, y, size, width, color, isConnected){
 		var x = _x + size;
 
 		dc.setPenWidth(width);

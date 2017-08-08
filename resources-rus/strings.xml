@@ -98,9 +98,12 @@
     
     <string id="NotShow">Ничего</string>
     <string id="Battery">Аккумулятор</string>
-    <string id="BatteryPhone">Аккумулятор и подкл. к телефону</string>
-    <string id="PhoneConnection">Сост. подкл. к телефону</string>
-    
+    <string id="BatteryPhone">Аккумулятор/Телефон</string>
+    <string id="PhoneConnection">Телефон</string>
+    <string id="NotificationBatteryPhoneConnection">Уведомления/Аккумулятор/Телефон</string>
+    <string id="NotificationPhoneConnection">Уведомления/Телефон</string>
+    <string id="Notification">Уведомления</string>
+
     <string id="ActivityFactor">Коэффициент активности</string>
     <string id="FloorsClimbed">Пройденных этажей</string>
     <string id="Climbed">Общий подъем вверх</string>
