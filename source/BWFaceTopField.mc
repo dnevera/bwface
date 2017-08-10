@@ -6,7 +6,7 @@ using Toybox.System as Sys;
 class BWFaceTopField extends BWFaceField {
 
     var font;
-    var descent;  
+    var descent;
     
 	protected var dayPadding = 0;	
 	protected var y;
@@ -28,22 +28,40 @@ class BWFaceTopField extends BWFaceField {
 
     function draw(today){
 
+        var months = Ui.loadResource(Rez.Strings.Months);
+        var weekDays = Ui.loadResource(Rez.Strings.WeekDays);
+
         var ss = "";
 
         var topFont;
         var topY = locY;
-    	var weekDay = today.day_of_week;
+
+    	var weekDay = 4*(today.day_of_week-1);
+        var month = 5*(today.month-1);
+
+        month   = months.substring(month,month+5);
+        var s = month.find(" ");
+        if (s != null){
+            month = month.substring(0,s);
+        }
+
+        weekDay = weekDays.substring(weekDay,weekDay+4);
+        s = weekDay.find(" ");
+        if (s != null){
+            weekDay = weekDay.substring(0,s);
+        }
+
 		var day;
     	if (System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_SEMI_ROUND
     	||
     	properties.getProperty("DateFieldType", 100) == 100
     	){
     	    ss = weekDay.toString().toUpper();
-    		day = Lang.format("$1$ $2$",[today.day,today.month]).toUpper();
+    		day = Lang.format("$1$ $2$",[today.day,month]).toUpper();
     		topFont = properties.fonts.weekDayFont;
     	}
     	else {
-    		day = Lang.format("$1$ $2$ $3$",[weekDay, today.day,today.month]).toUpper();
+    		day = Lang.format("$1$ $2$ $3$",[weekDay, today.day,month]).toUpper();
             var pv = new BWFaceValue(properties);
             ss = pv.value(BW_Sunrise).toString().toUpper();
             ss += "  " + pv.value(BW_Sunset).toString().toUpper();

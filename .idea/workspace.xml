@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ffddc631-a7be-4f14-b38a-3ee1d2b74fb4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceValue.mc" afterPath="$PROJECT_DIR$/source/BWFaceValue.mc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/BWFace-settings.json" afterPath="$PROJECT_DIR$/bin/BWFace-settings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources-eng/strings.xml" afterPath="$PROJECT_DIR$/resources-eng/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources-rus/strings.xml" afterPath="$PROJECT_DIR$/resources-rus/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/layouts/layout.xml" afterPath="$PROJECT_DIR$/resources/layouts/layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/strings/strings.xml" afterPath="$PROJECT_DIR$/resources/strings/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceClockField.mc" afterPath="$PROJECT_DIR$/source/BWFaceClockField.mc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceTopField.mc" afterPath="$PROJECT_DIR$/source/BWFaceTopField.mc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/BWFaceView.mc" afterPath="$PROJECT_DIR$/source/BWFaceView.mc" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,21 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BWFaceProperties.mc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/BWFaceProperties.mc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="122" column="38" lean-forward="false" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BWFaceValue.mc" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BWFaceValue.mc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/BWFaceValue.mc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4105">
-              <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+            <state relative-caret-position="-442">
+              <caret line="47" column="63" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -37,8 +34,18 @@
       <file leaf-file-name="BWFaceGeoInfo.mc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/BWFaceGeoInfo.mc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="2130">
               <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources-rus/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1210">
+              <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -47,8 +54,48 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/strings/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="100" column="65" lean-forward="false" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="65" />
+            <state relative-caret-position="540">
+              <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/layouts/layout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BWFaceView.mc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/BWFaceView.mc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BWFaceTopField.mc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/BWFaceTopField.mc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BWFaceClockField.mc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/BWFaceClockField.mc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,56 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
               <caret line="167" column="56" lean-forward="false" selection-start-line="167" selection-start-column="56" selection-end-line="167" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BWFaceClockField.mc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/BWFaceClockField.mc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="38" column="12" lean-forward="false" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BWFaceSysinfoField.mc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/BWFaceSysinfoField.mc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="119" column="1" lean-forward="false" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BWFaceView.mc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/BWFaceView.mc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1965">
-              <caret line="110" column="60" lean-forward="false" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BWFaceApp.mc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/BWFaceApp.mc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BWFaceUtils.mc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/BWFaceUtils.mc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="57" column="68" lean-forward="false" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -147,8 +144,6 @@
         <option value="$PROJECT_DIR$/resources-rus/fonts.xml" />
         <option value="$PROJECT_DIR$/resources-eng/fonts.xml" />
         <option value="$PROJECT_DIR$/resources/fonts/fonts.xml" />
-        <option value="$PROJECT_DIR$/resources/layouts/layout.xml" />
-        <option value="$PROJECT_DIR$/source/BWFaceTopField.mc" />
         <option value="$PROJECT_DIR$/source/BWFaceNumberField.mc" />
         <option value="$PROJECT_DIR$/manifest-release.xml" />
         <option value="$PROJECT_DIR$/manifest.xml" />
@@ -157,16 +152,19 @@
         <option value="$PROJECT_DIR$/resources/settings/properties.xml" />
         <option value="$PROJECT_DIR$/source/BWFaceDBmrMeter.mc" />
         <option value="$PROJECT_DIR$/source/BWFaceMetricField.mc" />
-        <option value="$PROJECT_DIR$/source/BWFaceView.mc" />
         <option value="$PROJECT_DIR$/source/BWFaceUtils.mc" />
         <option value="$PROJECT_DIR$/source/BWFaceProperties.mc" />
         <option value="$PROJECT_DIR$/source/BWFaceSysinfoField.mc" />
         <option value="$PROJECT_DIR$/resources/settings/settings.xml" />
-        <option value="$PROJECT_DIR$/resources/strings/strings.xml" />
-        <option value="$PROJECT_DIR$/resources-eng/strings.xml" />
-        <option value="$PROJECT_DIR$/resources-rus/strings.xml" />
         <option value="$PROJECT_DIR$/source/BWFaceGeoInfo.mc" />
         <option value="$PROJECT_DIR$/source/BWFaceValue.mc" />
+        <option value="$PROJECT_DIR$/source/BWFaceClockField.mc" />
+        <option value="$PROJECT_DIR$/resources-rus/strings.xml" />
+        <option value="$PROJECT_DIR$/resources-eng/strings.xml" />
+        <option value="$PROJECT_DIR$/resources/layouts/layout.xml" />
+        <option value="$PROJECT_DIR$/resources/strings/strings.xml" />
+        <option value="$PROJECT_DIR$/source/BWFaceView.mc" />
+        <option value="$PROJECT_DIR$/source/BWFaceTopField.mc" />
       </list>
     </option>
   </component>
@@ -211,18 +209,6 @@
               <item name="BWFace" type="b2602c69:ProjectViewProjectNode" />
               <item name="BWFace" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BWFace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BWFace" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BWFace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BWFace" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="settings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BWFace" type="b2602c69:ProjectViewProjectNode" />
@@ -379,7 +365,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41722000" />
+    <option name="totallyTimeSpent" value="46347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -426,18 +412,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/layouts/layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/fonts/fonts.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="65" lean-forward="false" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -446,6 +425,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -613,14 +593,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/BWFaceClockField.mc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="38" column="12" lean-forward="false" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources-rus/fonts-rus.xml" />
     <entry file="file://$PROJECT_DIR$/resources-eng/fonts-eng.xml" />
     <entry file="file://$PROJECT_DIR$/resources/fonts/typicons22_0.png">
@@ -628,18 +600,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/layouts/layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/fonts/fonts.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="65" lean-forward="false" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -647,6 +612,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -662,14 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="75" lean-forward="false" selection-start-line="1" selection-start-column="75" selection-end-line="1" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/BWFaceTopField.mc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -715,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/BWFaceView.mc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1965">
-          <caret line="110" column="60" lean-forward="false" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/BWFaceProperties.mc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -747,38 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources-eng/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="101" column="42" lean-forward="false" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources-rus/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/BWFaceGeoInfo.mc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/strings/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="100" column="65" lean-forward="false" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/settings/settings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -787,10 +705,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/BWFaceApp.mc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/BWFaceClockField.mc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources-rus/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1210">
+          <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/BWFaceGeoInfo.mc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2130">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources-eng/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1195">
+          <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/layouts/layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/strings/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/BWFaceValue.mc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4105">
-          <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+        <state relative-caret-position="-442">
+          <caret line="47" column="63" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/BWFaceView.mc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/BWFaceTopField.mc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding />
         </state>
       </provider>
