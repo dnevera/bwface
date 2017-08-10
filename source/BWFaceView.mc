@@ -36,7 +36,6 @@ class BWFaceView extends Ui.WatchFace {
     	properties.setup();  
     	activityField.setup(); 
     	metricRateField.setup();
-    	//onLayout(_dc);
 	}
     	
     function initialize() {
@@ -95,7 +94,7 @@ class BWFaceView extends Ui.WatchFace {
 		metricRateField = new  BWFaceMetricField({
 				:identifier => "MetricField", 
 				:locX=>0, 
-				:locY=>bmrlocY}, properties);   				
+				:locY=>bmrlocY}, properties);
     }
 			    	
 	function currentTime(){
@@ -108,7 +107,7 @@ class BWFaceView extends Ui.WatchFace {
 				t=t.add(offset);
 			}		
 		
-			return  Calendar.info(t, Time.FORMAT_MEDIUM); 			
+			return  Calendar.info(t, Time.FORMAT_SHORT);
 	}
 	
     function onUpdateBase(dc) {
@@ -123,6 +122,7 @@ class BWFaceView extends Ui.WatchFace {
 		
 		topField.draw(today);
 		clockField.draw(today);
+
 		activityField.draw();
 		sysinfoField.draw();
 		if (activityField.currentCalories instanceof Toybox.Lang.String){
