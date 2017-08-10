@@ -201,24 +201,24 @@ class BWFaceValue {
 				break;
 								
 			case BW_HeartRate:
-				var a = Activity.getActivityInfo();
-				if (a!=null){
-					value = a.currentHeartRate;
+
+				value = Activity.getActivityInfo();
+
+				if (value != null){
+					value = value.currentHeartRate;
 				}
+
 				if (value == null){
-					var sensorIter= getHeartRateIterator();
-					if  ( sensorIter != null ){   	    	    	
+					var sensorIter = getHeartRateIterator();
+					if  ( sensorIter != null ){
 						value = sensorIter.next();
-						value = value == null ? "--" : value.data == null ? "--" : value.data.format("%d");
-			    	}			
-					else {
-						value = "--";
-					}				
+						value = value == null ? null : value.data;
+			    	}
 				}
-				else {
-					value = value.format("%d");
-				}
-				break;  	
+
+				value = value == null ? "--" : value.format("%d");
+
+				break;
 
 			case BW_Temperature:
 				value = temperature();
@@ -260,7 +260,10 @@ class BWFaceValue {
 				break;
 				
 			case BW_Speed :
-				value = Activity.getActivityInfo().currentSpeed;
+				value = Activity.getActivityInfo();
+
+				value = value == null ? null : value.currentSpeed;
+
 				if (value != null ) {
 				    if (Sys.getDeviceSettings().distanceUnits == Sys.UNIT_STATUTE){
                         value =  Math.round(value*2.23694).format("%.1f");
@@ -275,12 +278,13 @@ class BWFaceValue {
 				break;
 
             case BW_Cadence :
-				value = Activity.getActivityInfo().currentCadence;
-				if (value != null ) {
-				    value = value.format("%.0f");
+				value = Activity.getActivityInfo();
+				if (value == null){
+				    value = "--";
 				}
 				else {
-					value = "--";
+                    value = value.currentCadence;
+                    value = value == null ? "--" : value.format("%.0f");
 				}
 				break;
 		}

@@ -48,7 +48,7 @@ class BWFaceGeoInfo
     {
 
         /*Sunrise/Sunset Algorithm taken from
-            http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
+            http://www.edwilliams.org/sunrise_sunset_algorithm.htm
             inputs:
                 day = day of the year
                 sunrise = true for sunrise, false for sunset
@@ -124,6 +124,7 @@ class BWFaceGeoInfo
 
         //adjust back to UTC
         var UT = T - lnHour;
+
         if (UT > 24) {
             UT = UT - 24;
         } else if (UT < 0) {
@@ -133,6 +134,12 @@ class BWFaceGeoInfo
         //convert UT value to local time zone of latitude/longitude
         var clockTime = Sys.getClockTime();
         var localT = UT + clockTime.timeZoneOffset/3600;
+
+        if (localT > 24) {
+            localT = localT - 24;
+        } else if (localT < 0) {
+            localT = localT + 24;
+        }
 
         //convert to Milliseconds
         return localT * 3600 * 1000;

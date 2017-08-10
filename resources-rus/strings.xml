@@ -1,11 +1,14 @@
 <resources>
 
-    <string id="language">Русский</string>
-    <string id="locale">rus</string>
+    <!--string id="language">Русский</string>
+    <string id="locale">rus</string-->
 
     <string id="AppName">BWFace</string>
 
-    <string id="ActivityFactorThresholdTitle">Порог коэффициента активности</string>
+    <string id="Months">Янв  Фев  Мрт  Апр  Май  Июн  Июл  Авг  Сен  Окт  Нбр  Дек  </string>
+    <string id="WeekDays">Вс  Пн  Вт  Ср  Чтв Птн Сбт </string>
+
+    <string id="ActivityFactorThresholdTitle">Порог коэфф. активности</string>
 
     <string id="DateFieldTypeTitle">Верхнее поле</string>
 
@@ -14,7 +17,7 @@
     <string id="ActivityRightFieldTitle">Правое поле</string>
     <string id="MetricFieldTitle">Поле сенсоров</string>
 
-    <string id="CaloriesBarGraphsOnTitle">График коэффициента активности</string>
+    <string id="CaloriesBarGraphsOnTitle">График активности</string>
     <string id="CaloriesCheckPointOn12Title">Отсчет калорий на 12</string>
     <string id="UseDayLightSavingTimeTitle">Летнее время</string>
 
@@ -22,7 +25,7 @@
 
     <string id="BackgroundColorTitle">Цвет фона</string>
     <string id="SurplusColorTitle">Цвет профицита калорий</string>
-    <string id="ActivityColorTitle">Цвет активного использования калорий</string>
+    <string id="ActivityColorTitle">Цвет активных калорий</string>
     <string id="DeficitColorTitle">Цвет дефицита калорий</string>
     <string id="ForegroundColorTitle">Цвет меток</string>
     <string id="HoursColorTitle">Цвет часов</string>
@@ -100,7 +103,7 @@
     <string id="Battery">Аккумулятор</string>
     <string id="BatteryPhone">Аккумулятор/Телефон</string>
     <string id="PhoneConnection">Телефон</string>
-    <string id="NotificationBatteryPhoneConnection">Уведомления/Аккумулятор/Телефон</string>
+    <string id="NotificationBatteryPhoneConnection">Уведомления/Аккум./Телефон</string>
     <string id="NotificationPhoneConnection">Уведомления/Телефон</string>
     <string id="Notification">Уведомления</string>
 

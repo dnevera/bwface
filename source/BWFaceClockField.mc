@@ -28,7 +28,7 @@ class BWFaceClockField extends BWFaceField {
 		var hformat = "";	
 		var space   = "";	
 		var ampm    = null;		
-        
+
         if (!is24Hour) {
             if ( hours >= 12 ) {
             	ampm = "PM";
