@@ -72,14 +72,14 @@ class BWFaceProperties{
 
         if (dc.getHeight()<=180){ // 735xt
         	clockPadding = -6;
-        	caloriesCircleTickWidth = 6;
+        	caloriesCircleTickWidth = 4;
         	topFieldPadding = 1;
 			dayPadding      = 0;        	
 			bmrTopPadding   =  12;
 			bmrPadding      =  4;
 			activityPadding = -6;
 			sysinfoTopPadding = 6;
-			metricPadding = 8;
+			metricPadding = 2;
 		}
 		else {
 			var f = !getProperty("CaloriesBarGraphsOn", false);// && System.getDeviceSettings().screenShape != System.SCREEN_SHAPE_SEMI_ROUND;
@@ -208,7 +208,10 @@ class BWFaceProperties{
 		}
 		else {
 			bmrvalue = 66 + (13.7*w/1000.0) + (5.0*h) - (6.8*age);
-		}		
-		return bmrvalue;  
+		}
+		var af = getProperty("ActivityFactor",1).toFloat();
+		af = af == null ? 1 : af;
+		af = af < 1 ? 1 : af;
+		return bmrvalue * af ;
 	}
 }
