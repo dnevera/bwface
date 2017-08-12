@@ -12,6 +12,8 @@
     <property id="SystemStatus" type="number">102</property>
     <property id="DateFieldType" type="number">100</property>
 
+    <property id="ActivityFactor"  type="float">1</property>
+
     <property id="ActivityLeftField"  type="number">0</property>
     <property id="ActivityMidField"   type="number">1</property>
     <property id="ActivityRightField" type="number">2</property>

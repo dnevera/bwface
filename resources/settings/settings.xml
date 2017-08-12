@@ -1,5 +1,9 @@
 <settings>
 
+    <setting propertyKey="@Properties.ActivityFactor" title="@Strings.ActivityFactorSettingsTitle">
+        <settingConfig type="numeric" />
+    </setting>
+
     <setting propertyKey="@Properties.SurplusColor" title="@Strings.SurplusColorTitle">
         <settingConfig type="list">        
             <listEntry value="0x7F2400">@Strings.ColorDark</listEntry>

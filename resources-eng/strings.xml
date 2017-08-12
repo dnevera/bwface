@@ -8,7 +8,8 @@
     <string id="Months">Jan  Feb  Mar  Apr  May  June July Aug  Sept Oct  Nov  Dec  </string>
     <string id="WeekDays">Sun Mon Tue Wed Thu Fri Sat </string>
 
-    <string id="ActivityFactorThresholdTitle">Activity factor threshold</string>
+    <string id="ActivityFactorSettingsTitle">BMR Factor</string>
+    <string id="ActivityFactorThresholdTitle">Activity Factor Threshold</string>
     <string id="DateFieldTypeTitle">Top field</string>
 
     <string id="ActivityLeftFieldTitle">Left Field</string>

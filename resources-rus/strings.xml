@@ -8,8 +8,8 @@
     <string id="Months">Янв  Фев  Мрт  Апр  Май  Июн  Июл  Авг  Сен  Окт  Нбр  Дек  </string>
     <string id="WeekDays">Вс  Пн  Вт  Ср  Чтв Птн Сбт </string>
 
+    <string id="ActivityFactorSettingsTitle">Множитель УБМ</string>
     <string id="ActivityFactorThresholdTitle">Порог коэфф. активности</string>
-
     <string id="DateFieldTypeTitle">Верхнее поле</string>
 
     <string id="ActivityLeftFieldTitle">Левое поле</string>
