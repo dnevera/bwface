@@ -106,12 +106,6 @@ class BWFaceProperties{
 				graphsPadding = 2;
 				graphsTopPadding = -1;
 				sunHoursPadding  =  8;
-//				if (f) {
-//				    bmrTopPadding += 3;
-//				    bmrPadding -= 6;
-//				    metricPadding = 8;
-//				    clockPadding += -1;
-//				}
 			}
 			else {
 				clockPadding    = 10;
@@ -124,15 +118,6 @@ class BWFaceProperties{
 				metricPadding = 2;
 				graphsPadding = 2;
 				graphsTopPadding = 1;
-//				if (f) {
-//				    activityPadding += 1;
-//				    clockPadding += -2;
-//				    bmrTopPadding += 5;
-//				    bmrPadding -= 6;
-//				    metricPadding = 12;
-//				    //sunHoursPadding += -2;
-//				    topFieldPadding += 2;
-//				}
 			}
 		}		
 		
