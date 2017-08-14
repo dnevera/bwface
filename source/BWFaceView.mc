@@ -244,6 +244,7 @@ class BWFaceView5 extends BWFaceView {
 		x = x0-colSize[0]/2;
 		var avrg = 0;
 		var avrgAf = 0;
+		var avrgCount = 0;
     	var color;
     	for (var i = start; i>=0; i--){
     		var af = hist[i].calories/bmr;
@@ -262,13 +263,16 @@ class BWFaceView5 extends BWFaceView {
     		dc.fillRectangle(x, y-h, w/2, h);
     		x +=  offset;
     		avrg += h;
+    		avrgCount += 1;
 		}	
 		
 		var af = calories/bmr;
 		avrgAf += calories/bmr;
 		var h = height * calories/max0;
 		avrg += h;
-		
+
+		avrgCount += 1;
+
 		if (af<1){
 			color = properties.surplusColor; 
 		} 		
@@ -279,8 +283,8 @@ class BWFaceView5 extends BWFaceView {
 		dc.fillRectangle(x, y-h, w/2, h);
 		x +=  w+properties.framePadding/2;
 		
-		avrg /= hist.size();	
-		avrgAf /= hist.size();
+		avrg /= avrgCount;
+		avrgAf /= avrgCount;
 		
 		if (avrgAf>=threshold){
 			color = properties.deficitColor;
