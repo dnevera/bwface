@@ -273,26 +273,17 @@ class BWFaceView5 extends BWFaceView {
 
 		avrgCount += 1;
 
-		if (af<1){
-			color = properties.surplusColor; 
-		} 		
-		else {
-			color = af<=threshold ? properties.getProperty("ActivityColor",0xD06900) : properties.deficitColor;
-		}
+        color =  whatColor(af,threshold);
+
 		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
 		dc.fillRectangle(x, y-h, w/2, h);
 		x +=  w+properties.framePadding/2;
 		
 		avrg /= avrgCount;
 		avrgAf /= avrgCount;
-		
-		if (avrgAf>=threshold){
-			color = properties.deficitColor;
-		}
-		else {
-			color = properties.surplusColor;
-		}
-		
+
+		color =  whatColor(avrgAf,threshold);
+
 		dc.setColor(color,  Gfx.COLOR_TRANSPARENT);
 		var x1 = x0-colSize[0]/2;
 		var x2 = x-w/2-1;
@@ -303,7 +294,16 @@ class BWFaceView5 extends BWFaceView {
 		dc.setColor(properties.bgColor,  Gfx.COLOR_TRANSPARENT);
 		dc.drawLine(x1, y1+2, x2, y1+2);
 		dc.drawLine(x1, y1-1, x2, y1-1);
-    }  
+    }
+
+    function whatColor(af,threshold){
+        if (af<1){
+            return properties.surplusColor;
+        }
+        else {
+             return af<=threshold ? properties.getProperty("ActivityColor",0xD06900) : properties.deficitColor;
+        }
+    }
 }
 
 // https://forums.garmin.com/forum/developers/connect-iq/1229818-watch-face-onpartialupdate-does-not-work-on-all-devices-which-support-this-function
