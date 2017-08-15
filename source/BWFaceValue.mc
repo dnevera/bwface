@@ -209,9 +209,9 @@ class BWFaceValue {
 				}
 
 				if (value == null){
-					var sensorIter = getHeartRateIterator();
-					if  ( sensorIter != null ){
-						value = sensorIter.next();
+					value = getHeartRateIterator();
+					if  ( value != null ){
+						value = value.next();
 						value = value == null ? null : value.data;
 			    	}
 				}
