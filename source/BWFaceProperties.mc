@@ -107,7 +107,7 @@ class BWFaceProperties{
 				graphsTopPadding = -1;
 				sunHoursPadding  =  8;
 			}
-			else {
+			else if  (dc.getHeight()<=240) {
 				clockPadding    = 10;
 				topFieldPadding = 4;
 				dayPadding      = -1; 
@@ -115,6 +115,30 @@ class BWFaceProperties{
 				bmrTopPadding = -2;
 				bmrPadding    = 5;
             	sysinfoTopPadding =  3;
+				metricPadding = 2;
+				graphsPadding = 2;
+				graphsTopPadding = 1;
+			}
+			else if  (dc.getHeight()<=260) {
+				clockPadding    = 15;
+				topFieldPadding = 4;
+				dayPadding      = -1; 
+				activityPadding =  -5;
+				bmrTopPadding = -2;
+				bmrPadding    = 5;
+            	sysinfoTopPadding =  10;
+				metricPadding = 2;
+				graphsPadding = 2;
+				graphsTopPadding = 1;
+			}
+			else if  (dc.getHeight()<=280) {
+				clockPadding    = 24;
+				topFieldPadding = 4;
+				dayPadding      = -1; 
+				activityPadding =  -0;
+				bmrTopPadding = -2;
+				bmrPadding    = 5;
+            	sysinfoTopPadding =  10;
 				metricPadding = 2;
 				graphsPadding = 2;
 				graphsTopPadding = 1;
