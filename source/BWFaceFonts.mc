@@ -31,7 +31,7 @@ class BWFaceFonts {
             infoTitleFont = Ui.loadResource(Rez.Fonts.infoTitleFontTiny);
             infoTitleFontTiny = infoTitleFont;	        	        				    
 		}
-		else if (settings.screenHeight<=240){   
+		else if (settings.screenHeight<=280){   
         	if  (settings.screenHeight<=218){  // 5S
         	  	
         	  	if (settings.screenWidth<=148){ // vivoactive

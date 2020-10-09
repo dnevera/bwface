@@ -34,3 +34,21 @@ class BWFaceApp extends App.AppBase {
         Ui.requestUpdate();
     }    
 }
+
+class Background extends Ui.Drawable {
+
+    function initialize() {
+        var dictionary = {
+            :identifier => "Background"
+        };
+
+        Drawable.initialize(dictionary);
+    }
+
+    function draw(dc) {
+        // Set the background color then call to clear the screen
+        //dc.setColor(Gfx.COLOR_TRANSPARENT, BWFace.getColor("BackgroundColor"));
+        dc.clear();
+    }
+
+}
